@@ -6,6 +6,12 @@ public class ChangePanel : MonoBehaviour {
     public GameObject myself;
     public GameObject c2;
     public GameObject c3;
+    public GameObject myhighlight;
+    public GameObject c1highlight;
+    public GameObject c2highlight;
+    public GameObject mypanel;
+    public GameObject c1panel;
+    public GameObject c2panel;
 
 
     // Use this for initialization
@@ -23,6 +29,12 @@ public class ChangePanel : MonoBehaviour {
         myself.SetActive(true);
         c2.SetActive(false);
         c3.SetActive(false);
+        myhighlight.SetActive(true);
+        c1highlight.SetActive(false);
+        c2highlight.SetActive(false);
+        mypanel.SetActive(true);
+        c1panel.SetActive(false);
+        c2panel.SetActive(false);
 
     }
 }
