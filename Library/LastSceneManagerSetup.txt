@@ -1,8 +1,1 @@
-sceneSetups:
-<<<<<<< HEAD
-- path: Assets/New Scene.unity
-=======
-- path: Assets/Tuto_scene.unity
->>>>>>> bedd6d91e082787256bc5d18e0519e65c2f89db7
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
