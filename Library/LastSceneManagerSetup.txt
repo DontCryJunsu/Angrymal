@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Battle.unity
+- path: Assets/Tuto_scene.unity
   isLoaded: 1
   isActive: 1
