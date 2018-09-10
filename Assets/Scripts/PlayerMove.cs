@@ -29,29 +29,49 @@ public class PlayerMove : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.5f); // 이동시 딜레이
             if (MapArray.Map[x + 1, y] == 0) //오른쪽
             {
+                transform.rotation = Quaternion.LookRotation(Vector3.forward);
                 x++;
-                transform.Translate(new Vector3(5, 0, 0), Space.World);
+                for (int i = 0; i < 20; i++)
+                {
+                    transform.Translate(new Vector3(0.25f, 0, 0), Space.World);
+                    yield return new WaitForSeconds(0.01f);
+                }
             }
             else if (MapArray.Map[x - 1, y] == 0) //왼쪽
             {
+                transform.rotation = Quaternion.LookRotation(Vector3.back);
                 x--;
-                transform.Translate(new Vector3(-5, 0, 0), Space.World);
+                for (int i = 0; i < 20; i++)
+                {
+                    transform.Translate(new Vector3(-0.25f, 0, 0), Space.World);
+                    yield return new WaitForSeconds(0.01f);
+                }
             }
             else if (MapArray.Map[x, y + 1] == 0) //위쪽
             {
+                transform.rotation = Quaternion.LookRotation(Vector3.left);
                 y++;
-                transform.Translate(new Vector3(0, 0, 5), Space.World);
+                for (int i = 0; i < 20; i++)
+                {
+                    transform.Translate(new Vector3(0, 0, 0.25f), Space.World);
+                    yield return new WaitForSeconds(0.01f);
+                }
             }
             else if (MapArray.Map[x, y - 1] == 0) //아래쪽
             {
+                transform.rotation = Quaternion.LookRotation(Vector3.right);
                 y--;
-                transform.Translate(new Vector3(0, 0, -5), Space.World);
+                for (int i = 0; i < 20; i++)
+                {
+                    transform.Translate(new Vector3(0, 0, -0.25f), Space.World);
+                    yield return new WaitForSeconds(0.01f);
+                }
             }
         }
-       
+
 
     }
 }
