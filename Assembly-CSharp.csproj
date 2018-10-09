@@ -53,10 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BlockColor.cs" />
      <Compile Include="Assets\Scripts\ButtonImg.cs" />
      <Compile Include="Assets\Scripts\ChangePanel.cs" />
      <Compile Include="Assets\Scripts\ChangeScene.cs" />
      <Compile Include="Assets\Scripts\Goto_TeamScene.cs" />
+     <Compile Include="Assets\Scripts\gravity.cs" />
      <Compile Include="Assets\Scripts\MapArray.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
  <Reference Include="UnityEditor.StandardEvents">
