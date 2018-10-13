@@ -22,10 +22,11 @@ public class BlockColor : MonoBehaviour {
     void OnTriggerEnter(Collider other)
     {
         Renderer renderer = gameObject.GetComponent<Renderer>();
-        if (other.gameObject.tag == "blueteam")
+        if (other.gameObject.tag == "blueteam")  //블루팀의 캐릭터일 경우
         {
-            renderer.material.color = Color.blue;
-            renderer.material.color = new Color(renderer.material.color.r, renderer.material.color.g, renderer.material.color.b, 255);
+
+            renderer.material.color = new Color32(39, 39, 255, 255);  //파란색
+             
         }
     }
 }
