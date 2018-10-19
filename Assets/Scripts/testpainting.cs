@@ -2,31 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class testpainting : MonoBehaviour {
+public class testpainting : MonoBehaviour
+{
 
     public Transform baseDot;
     public GameObject ob;
-
+    bool check = true;
     public int i = 2;
     public float destsec = 0.3f;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
 
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "blueteam")
+        {
+            check = false;
+        }
+        if (other.tag == "redteam")
+        {
+            Destroy(other.gameObject);
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "blueteam")
+        {
+            check = true;
+        }
+    }
+    // Update is called once per frame
+    void Update()
+    {
 
         StartCoroutine("Makedot");
 
-	}
+    }
 
-    IEnumerator Makedot() 
+
+
+    IEnumerator Makedot()
     {
+
         Vector3 objPosition = ob.transform.position;
-        Instantiate(baseDot, objPosition, baseDot.rotation);
+        if (check == true)
+            Instantiate(baseDot, objPosition, baseDot.rotation);
         yield return new WaitForSeconds(2f);
     }
 

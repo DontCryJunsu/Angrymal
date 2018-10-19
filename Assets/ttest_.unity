@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -133,6 +133,18 @@ MonoBehaviour:
   ob: {fileID: 122332318}
   i: 2
   destsec: 0.3
+--- !u!65 &122332321
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 122332318}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &349036667 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100002, guid: f7b985377e1af174db242ae438658c81,
@@ -146,24 +158,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 349036667}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caa4bdc7a0bc2c24daad532c6e36fbec, type: 3}
+  m_Script: {fileID: 11500000, guid: 0409034e39b09af479e64c2070c2a37f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   baseDot: {fileID: 4068095109038884, guid: 01098bc4e7f70654194d5c81841d668c, type: 2}
   ob: {fileID: 349036667}
   i: 2
   destsec: 0.3
---- !u!114 &349036670
-MonoBehaviour:
+--- !u!65 &349036671
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349036667}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9f5cec44334d604bb9903e18ff22794, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &561888452
 GameObject:
   m_ObjectHideFlags: 0
@@ -453,6 +466,10 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: f7b985377e1af174db242ae438658c81, type: 3}
+      propertyPath: m_TagString
+      value: redteam
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7b985377e1af174db242ae438658c81, type: 3}
   m_IsPrefabAsset: 0
@@ -514,6 +531,10 @@ Prefab:
     - target: {fileID: 400002, guid: eaef08a463ee86b4482ba69ef089793a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: eaef08a463ee86b4482ba69ef089793a, type: 3}
+      propertyPath: m_TagString
+      value: blueteam
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaef08a463ee86b4482ba69ef089793a, type: 3}
