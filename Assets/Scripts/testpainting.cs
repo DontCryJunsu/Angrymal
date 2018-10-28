@@ -6,6 +6,7 @@ public class testpainting : MonoBehaviour
 {
 
     public Transform baseDot;
+    public Transform catDot;
     public GameObject ob;
     bool check = true;
     public int i = 2;
@@ -50,7 +51,7 @@ public class testpainting : MonoBehaviour
 
         Vector3 objPosition = ob.transform.position;
         if (check == true)
-            Instantiate(baseDot, objPosition, baseDot.rotation);
+            Instantiate(baseDot, objPosition, catDot.rotation);
         yield return new WaitForSeconds(2f);
     }
 

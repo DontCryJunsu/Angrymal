@@ -129,10 +129,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa4bdc7a0bc2c24daad532c6e36fbec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseDot: {fileID: 4918867542486714, guid: 93437e9330fefa8488b996f389ca3003, type: 2}
+  baseDot: {fileID: 4997934329391248, guid: 6cddaa364dfd9c9419b1296442abf574, type: 2}
+  catDot: {fileID: 122332320}
   ob: {fileID: 122332318}
   i: 2
   destsec: 0.3
+--- !u!4 &122332320 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400002, guid: eaef08a463ee86b4482ba69ef089793a,
+    type: 3}
+  m_PrefabInternal: {fileID: 1749310433}
 --- !u!65 &122332321
 BoxCollider:
   m_ObjectHideFlags: 0
