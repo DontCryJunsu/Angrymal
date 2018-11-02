@@ -8,6 +8,7 @@ TagManager:
   - redteam
   - wall
   - cat
+  - chicken
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - 
   - blue
-  - 
+  - red
   - 
   - 
   - 

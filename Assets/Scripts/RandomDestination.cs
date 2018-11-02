@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class RandomDestination : MonoBehaviour {
 
-    public GameObject chase;
-
+    //public GameObject chase;
+    public string chaser;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "cat" || other.tag == "wall")
+        if (other.tag == chaser || other.tag == "wall")
         {
             UnityEngine.Debug.Log("goal");
             
@@ -20,6 +20,21 @@ public class RandomDestination : MonoBehaviour {
          
   
          
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == chaser || other.tag == "wall")
+        {
+            UnityEngine.Debug.Log("goal");
+
+            transform.position = new Vector3(Random.Range(-19, 19), 5, Random.Range(-30, 30));
+
+
+        }
+
+
+
+
     }
     // Use this for initialization
     void Start () {

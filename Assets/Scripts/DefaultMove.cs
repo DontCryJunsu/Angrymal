@@ -32,7 +32,7 @@ public class DefaultMove : MonoBehaviour {
         while (true)
         {
             yield return null;
-            nav.SetDestination(goal.transform.position);
+            nav.SetDestination(goal.transform.position);  //goal 오브젝트를 향해 이동
         }
     }
 
