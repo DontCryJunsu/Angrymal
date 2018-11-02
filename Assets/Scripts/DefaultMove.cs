@@ -19,11 +19,21 @@ public class DefaultMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        StartCoroutine("JustWalk");
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        nav.SetDestination(goal.transform.position);
+       // nav.SetDestination(goal.transform.position);
 	}
+
+    IEnumerator JustWalk()
+    {
+        while (true)
+        {
+            yield return null;
+            nav.SetDestination(goal.transform.position);
+        }
+    }
+
 }

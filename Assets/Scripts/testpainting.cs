@@ -15,8 +15,8 @@ public class testpainting : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        StartCoroutine("Makedot");
 
-       
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -43,7 +43,7 @@ public class testpainting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine("Makedot");
+         
 
     }
 
@@ -51,13 +51,17 @@ public class testpainting : MonoBehaviour
 
     IEnumerator Makedot()
     {
-       
-          Vector3 objPosition = ob.transform.position;
-        if (check == true)
-            baseDot.transform.rotation = Quaternion.Euler(0,Tf.rotation.y,0);
-              Instantiate(baseDot, objPosition, baseDot.rotation);
-          yield return new WaitForSeconds(2f);
- 
+
+        while (true) {
+            Vector3 objPosition = ob.transform.position;
+            if (check == true)
+            {
+                //baseDot.transform.rotation = Quaternion.Euler(0, Tf.rotation.y, 0);
+                //Instantiate(baseDot, objPosition, baseDot.rotation);
+                Instantiate(baseDot, objPosition, Tf.transform.rotation); 
+            }
+            yield return null;
+         }
     }
 
 

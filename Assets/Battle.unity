@@ -1122,6 +1122,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1224247304}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1312675988 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4619642212748928, guid: b067e2340d5e2ab49b58c1713c3f1050,
+    type: 2}
+  m_PrefabInternal: {fileID: 2090797174}
 --- !u!1 &1439376611
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1584,31 @@ Prefab:
       propertyPath: goal
       value: 
       objectReference: {fileID: 1954535762}
+    - target: {fileID: 114882236138794114, guid: b067e2340d5e2ab49b58c1713c3f1050,
+        type: 2}
+      propertyPath: Tf
+      value: 
+      objectReference: {fileID: 1312675988}
+    - target: {fileID: 195456929996975058, guid: b067e2340d5e2ab49b58c1713c3f1050,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114987112014295672, guid: b067e2340d5e2ab49b58c1713c3f1050,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 65317782240692130, guid: b067e2340d5e2ab49b58c1713c3f1050,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 65317782240692130, guid: b067e2340d5e2ab49b58c1713c3f1050,
+        type: 2}
+      propertyPath: m_Size.z
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b067e2340d5e2ab49b58c1713c3f1050, type: 2}
   m_IsPrefabAsset: 0
