@@ -10,6 +10,7 @@ public class testpainting : MonoBehaviour
     bool check = true;
     public int i = 2;
     public float destsec = 0.3f;
+    public Transform Tf;
 
     // Use this for initialization
     void Start()
@@ -52,7 +53,8 @@ public class testpainting : MonoBehaviour
     {
        
           Vector3 objPosition = ob.transform.position;
-          if (check == true)
+        if (check == true)
+            baseDot.transform.rotation = Quaternion.Euler(0,Tf.rotation.y,0);
               Instantiate(baseDot, objPosition, baseDot.rotation);
           yield return new WaitForSeconds(2f);
  
