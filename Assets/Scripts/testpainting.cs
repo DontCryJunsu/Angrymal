@@ -56,8 +56,6 @@ public class testpainting : MonoBehaviour
             Vector3 objPosition = ob.transform.position;
             if (check == true)
             {
-                //baseDot.transform.rotation = Quaternion.Euler(0, Tf.rotation.y, 0);
-                //Instantiate(baseDot, objPosition, baseDot.rotation);
                 Instantiate(baseDot, objPosition, Tf.transform.rotation); 
             }
             yield return null;
