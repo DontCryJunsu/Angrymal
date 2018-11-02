@@ -15,7 +15,7 @@ public class testpainting : MonoBehaviour
     void Start()
     {
 
-
+       
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -28,17 +28,20 @@ public class testpainting : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+   
+
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "blueteam")
         {
             check = true;
+            Debug.Log("Exit");
         }
     }
     // Update is called once per frame
     void Update()
     {
-
         StartCoroutine("Makedot");
 
     }
@@ -47,11 +50,12 @@ public class testpainting : MonoBehaviour
 
     IEnumerator Makedot()
     {
-
-        Vector3 objPosition = ob.transform.position;
-        if (check == true)
-            Instantiate(baseDot, objPosition, baseDot.rotation);
-        yield return new WaitForSeconds(2f);
+       
+          Vector3 objPosition = ob.transform.position;
+          if (check == true)
+              Instantiate(baseDot, objPosition, baseDot.rotation);
+          yield return new WaitForSeconds(2f);
+ 
     }
 
 
