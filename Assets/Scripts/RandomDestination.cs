@@ -10,7 +10,7 @@ public class RandomDestination : MonoBehaviour {
     {
         if (other.name == chaser || other.tag == "wall")
         {
-            UnityEngine.Debug.Log("goal");
+          //  UnityEngine.Debug.Log("goal");
             
             transform.position = new Vector3(Random.Range(-19, 19), 5, Random.Range(-30, 30));
            
@@ -25,7 +25,7 @@ public class RandomDestination : MonoBehaviour {
     {
         if (other.tag == chaser || other.tag == "wall")
         {
-            UnityEngine.Debug.Log("goal");
+           // UnityEngine.Debug.Log("goal");
 
             transform.position = new Vector3(Random.Range(-19, 19), 5, Random.Range(-30, 30));
 

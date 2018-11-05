@@ -9,6 +9,8 @@ TagManager:
   - wall
   - cat
   - chicken
+  - bluecharacter
+  - redcharacter
   layers:
   - Default
   - TransparentFX
