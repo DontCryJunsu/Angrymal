@@ -8,7 +8,7 @@ public class RandomDestination : MonoBehaviour {
     public string chaser;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == chaser || other.tag == "wall")
+        if (other.name == chaser || other.tag == "wall")
         {
             UnityEngine.Debug.Log("goal");
             

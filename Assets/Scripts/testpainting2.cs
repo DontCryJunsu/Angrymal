@@ -26,6 +26,7 @@ public class testpainting2 : MonoBehaviour
         }
         if (other.tag == "blueteam")
         {
+            //check = true;
             Destroy(other.gameObject);
         }
     }
