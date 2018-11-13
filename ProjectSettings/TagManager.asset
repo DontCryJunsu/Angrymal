@@ -11,6 +11,8 @@ TagManager:
   - chicken
   - bluecharacter
   - redcharacter
+  - Manager
+  - animal
   layers:
   - Default
   - TransparentFX
