@@ -55,7 +55,8 @@ public class testpainting2 : MonoBehaviour
 
         while (true)
         {
-            Vector3 objPosition = ob.transform.position;
+            Vector3 objPosition = new Vector3(ob.transform.position.x, ob.transform.position.y - 0.5f, ob.transform.position.z);
+
             if (check == true)
             {
                 Instantiate(baseDot, objPosition, Tf.transform.rotation);
