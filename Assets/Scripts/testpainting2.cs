@@ -11,11 +11,9 @@ public class testpainting2 : MonoBehaviour
     public int i = 2;
     public float destsec = 0.3f;
     public Transform Tf;
-
-    // Use this for initialization
     void Start()
     {
-        StartCoroutine("Makedot");
+
 
     }
     private void OnTriggerEnter(Collider other)
@@ -41,29 +39,15 @@ public class testpainting2 : MonoBehaviour
             Debug.Log("Exit");
         }
     }
-    // Update is called once per frame
+
     void Update()
     {
+        Vector3 objPosition = new Vector3(ob.transform.position.x, ob.transform.position.y - 0.5f, ob.transform.position.z);
 
-
-    }
-
-
-
-    IEnumerator Makedot()
-    {
-
-        while (true)
+        if (check == true)
         {
-            Vector3 objPosition = new Vector3(ob.transform.position.x, ob.transform.position.y - 0.5f, ob.transform.position.z);
-
-            if (check == true)
-            {
-                Instantiate(baseDot, objPosition, Tf.transform.rotation);
-            }
-            yield return null;
+            Instantiate(baseDot, objPosition, Tf.transform.rotation);
         }
+
     }
-
-
 }
