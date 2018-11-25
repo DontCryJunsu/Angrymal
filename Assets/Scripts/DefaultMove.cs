@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class DefaultMove : MonoBehaviour {
 
-    public float runSpeed;
     public GameObject goal;
     NavMeshAgent nav;
     bool JustWalk_isrunning;
@@ -15,9 +14,9 @@ public class DefaultMove : MonoBehaviour {
 
     void Awake()
     {
+        var stat = GetComponent<stat>();
         nav = GetComponent<NavMeshAgent>();
-        nav.speed = runSpeed;
-
+        nav.speed = stat.SPEED;
     }
 
 
