@@ -36,7 +36,6 @@ public class testpainting2 : MonoBehaviour
         if (other.tag == "redteam")
         {
             check = true;
-            Debug.Log("Exit");
         }
     }
 

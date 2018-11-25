@@ -40,12 +40,18 @@ public class DefaultMove : MonoBehaviour {
         
         switch (command[0])  //command[0]에는 조건의 이름, command[1]에는 행동의 이름이 저장되어 있다.
         {
-            case "Always":
+            case "Always": //항상
                 if (JustWalk_isrunning)  // 조건이 Always일 경우에는 JustWalk()가 실행 중인지 파악하고  JustWalk()를 종료시킨 후 동작한다. Always 외에 다른 이동 조건들도 그에 맞는 조건을 검사한 후에 JustWalk를 종료시킨 뒤 알맞는 행동을 실행시킨다.
                 {
                     StopCoroutine("JustWalk");
                     JustWalk_isrunning = false;
                     StartCoroutine(command[1]);  //행동에 해당하는 이동명령(코루틴) 실행
+                }
+                break;
+            case "HPMoreThanHalf":  //체력이 절반 이상일 때
+                if(stat.HP >= (stat.FULLHP)/2) 
+                {
+                    
                 }
                 break;
         }

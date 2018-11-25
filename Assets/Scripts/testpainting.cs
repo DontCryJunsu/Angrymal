@@ -34,7 +34,6 @@ public class testpainting : MonoBehaviour
         if (other.tag == "blueteam")
         {
             check = true;
-            Debug.Log("Exit");
         }
     }
     // Update is called once per frame
