@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class stat : MonoBehaviour {
 
-    public float FULLHP;
-    public float SPEED;
-    public float POWER;
-    float HP;
+    public static float FULLHP;
+    public static float SPEED;
+    public static float POWER;
+    public static float HP;
 
 	// Use this for initialization
 	void Start () {
