@@ -14,38 +14,41 @@ public class DefaultMove : MonoBehaviour {
     string[,] command = new string[4, 2];  //4행 2열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개.
     private Transform target;
     private float dist;
-    string runningcommand;
+    string runningact;
     int i = -1;
-   
+    bool checkcommand = true;
+    public float hp;
+    public float fullhp;
+    public float speed;
+    public float power;
 
     void Awake()
     {
-        var stat = GetComponent<stat>();
-        nav = GetComponent<NavMeshAgent>();
-        nav.speed = stat.SPEED;
+       
     }
 
 
 	// Use this for initialization
 	void Start () {
-        StartCoroutine("JustWalk");
         GetCommand();  //캐릭터에 맞는 command를 가져오는 함수
-         
+        var stat = GetComponent<stat>();
+        nav = GetComponent<NavMeshAgent>();
+        fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
+        nav.speed = speed;
+        StartCoroutine("JustWalk");
+        StartCoroutine("CheckCommand");
+        
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-        // Invoke(command[0,0], 0);   -> 조건 호출 방법.
-
-        i++;  //
-
-        Invoke(command[i, 0],0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
         
-        if (i >= 3) i = -1;  // 각 명령어를 반복해 검사하기 위함.
+         
 
+    
 
-
+        // Invoke(command[0,0], 0);   -> 조건 호출 방법.
 
 
         //////  RedDirector에 저장돼있는 조건이 만족할 때 RedDirector에 저장돼있는 행동과 같은 이름을 가진 코루틴을 실행한다.  ->  조건과 행동의 이름은 Start 함수에 있는 if문에 의해 string[] command 변수에 저장돼있음  //////
@@ -76,11 +79,111 @@ public class DefaultMove : MonoBehaviour {
 
     }
 
+    IEnumerator CheckCommand()
+    {
+        while (true)
+        {
+            yield return null;
+            checkcommand = true;
+            while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
+            {
+                
+                i++;  //
+
+                Invoke(command[i, 0], 0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
+
+                if (i >= 3)
+                {
+                    i = -1;  // 각 명령어를 반복해 검사하기 위함.
+                }
+
+                yield return null;
+            }
+           
+        }
+    }
+  
+  
+
+
+   
+
+    void GetCommand()
+    {
+        if (name == "chicken")       //자신이 chicken이면 RedDirector의 command 중 chicken을 복사해 온다.
+        {
+            command[0,0] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[0,0];
+            command[0,1] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[0,1];
+            command[1, 0] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[1, 0];
+            command[1, 1] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[1, 1];
+
+        }
+        else if (name == "cat")     
+        {
+            command[0, 0] = GameObject.Find("RedDirector").GetComponent<Command>().cat[0, 0];
+            command[0, 1] = GameObject.Find("RedDirector").GetComponent<Command>().cat[0, 1];
+        }
+    }
+
+
+
+    // 여기서부터 조건
+
+    void Always()
+    {
+        Debug.Log("Always");
+         
+        checkcommand = false;
+        
+        if (runningact != command[i,1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+        {
+            StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
+            StartCoroutine(command[i,1]);  //지금 실행해야 할 행동 시작
+            i = -1;
+        }
+     
+        
+    }
+
+    void HPMoreThanHalf()
+    {
+       
+
+
+        if (hp >= (fullhp / 2))
+        {
+            Debug.Log("HPMoreThanHalf");
+            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+
+
+            /*  이 부분은 Always() 메서드에서 참고해서 만들 것. 좀 더 테스트해보고 넣으려고 아직 안넣었음.
+            
+            runningact에 해당하는 행동 종료.
+
+            해당하는 행동을 실행하는 코드를 만들어 넣을 것 (  ex) command[i,1]).
+
+             */
+
+            if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+            {
+                StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
+                StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
+                i = -1;
+            }
+        }
+        return;
+    }
+
+    // 여기서까지 조건
+
+
+    // 여기서부터 행동
+
     IEnumerator JustWalk()
     {
         JustWalk_isrunning = true;
-        runningcommand = "JustWalk";
-        //Debug.Log("runningcommand is JustWalk");
+        runningact = "JustWalk";
+        //Debug.Log("runningact is JustWalk");
         while (true)
         {
             yield return null;
@@ -88,16 +191,14 @@ public class DefaultMove : MonoBehaviour {
         }
     }
 
-
     IEnumerator ChaseClosestEnemy()
     {
-      
+
 
         while (true)
         {
-            runningcommand = "ChaseClosestEnemy";
             yield return null;
-            
+            runningact = "ChaseClosestEnemy";
 
             GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("bluecharacter");  //bluecharacter 태그의 모든 오브젝트를 찾는다.
             float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
@@ -118,26 +219,6 @@ public class DefaultMove : MonoBehaviour {
         }
     }
 
-    void GetCommand()
-    {
-        if (name == "chicken")       //자신이 chicken이면 RedDirector의 command 중 chicken을 복사해 온다.
-        {
-            command[0,0] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[0,0];
-            command[0,1] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[0,1];
-        }
-    }
 
-    void HPMoreThanHalf()
-    {
-        if (stat.HP >= (stat.FULLHP) / 2)
-        {
-            /*
-            running command에 해당하든 행동 종료.
-
-            해당하는 행동을 실행하는 코드를 만들어 넣을 것 (  ex) command[i,1]).
-             */
-        }
-        return;
-    }
-
+    // 여기까지 행동
 }
