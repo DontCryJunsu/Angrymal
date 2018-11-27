@@ -65,7 +65,7 @@ public class LobbyManager : MonoBehaviour
         esc = true;
     }
 
-    public void SelectATK()
+    public void SelectATK() // 공격 명령 버튼누를시
     {
         if (btnInt == 0)
         {
@@ -73,18 +73,18 @@ public class LobbyManager : MonoBehaviour
             StartCoroutine(atkUp());
         }
     }
-    public void anySelectATK()
+    public void anySelectATK() // 공격 조건선택시
     {
         StartCoroutine(atkDown());
         StartCoroutine(atkUp2());
     }
-    public void anySelectATK2()
+    public void anySelectATK2() // 공격 행동선택시
     {
         StartCoroutine(atkDown2());
         btnInt = 0;
     }
 
-    public void SelectMV()
+    public void SelectMV() // 이동 명령 버튼누를시
     {
         if (btnInt == 0)
         {
@@ -92,17 +92,17 @@ public class LobbyManager : MonoBehaviour
             StartCoroutine(mvUp());
         }
     }
-    public void anySelectMV()
+    public void anySelectMV() // 이동 조건선택시
     {
         StartCoroutine(mvDown());
         StartCoroutine(mvUp2());
     }
-    public void anySelectMV2()
+    public void anySelectMV2() // 이동 행동 선택시
     {
         StartCoroutine(mvDown2());
         btnInt = 0;
     }
-    public void StartBtn()
+    public void StartBtn() // 날으는 배 애니메이션
     {
         ship.GetComponent<Animator>().enabled = true;
     }

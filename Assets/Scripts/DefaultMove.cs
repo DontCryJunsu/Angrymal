@@ -48,12 +48,12 @@ public class DefaultMove : MonoBehaviour {
                     StartCoroutine(command[1]);  //행동에 해당하는 이동명령(코루틴) 실행
                 }
                 break;
-            case "HPMoreThanHalf":  //체력이 절반 이상일 때
-                if(stat.HP >= (stat.FULLHP)/2) 
-                {
+            //case "HPMoreThanHalf":  //체력이 절반 이상일 때
+            //    if(stat.HP >= (stat.FULLHP)/2) 
+            //    {
                     
-                }
-                break;
+            //    }
+            //    break;
         }
         
 	}

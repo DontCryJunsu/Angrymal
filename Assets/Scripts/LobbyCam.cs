@@ -28,6 +28,7 @@ public class LobbyCam : MonoBehaviour
     {
         if (LobbyManager.swit == 0)
         {
+            LobbyData.Lobbyanimal = name;
             ZoomVC.GetComponent<CinemachineVirtualCamera>().LookAt = transform;
             ZoomVC.GetComponent<CinemachineVirtualCamera>().Priority = 11;
             LobbyManager.swit = 1;
