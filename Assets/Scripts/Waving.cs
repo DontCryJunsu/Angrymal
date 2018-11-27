@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Waving : MonoBehaviour
 {
+    public float waving = 0.05f;
+    public float waving2 = 0.1f;
 
     // Use this for initialization
     void Start()
@@ -23,23 +25,23 @@ public class Waving : MonoBehaviour
             for (int i = 0; i < 25; i++)
             {
                 yield return new WaitForSeconds(0.05f);
-                transform.Translate(0, 0.1f, 0);
+                transform.Translate(0, waving2, 0);
             }
 
             for (int i = 0; i < 10; i++)
             {
                 yield return new WaitForSeconds(0.05f);
-                transform.Translate(0, 0.05f, 0);
+                transform.Translate(0, waving, 0);
             }
             for (int i = 0; i < 25; i++)
             {
                 yield return new WaitForSeconds(0.05f);
-                transform.Translate(0, -0.1f, 0);
+                transform.Translate(0, -waving2, 0);
             }
             for (int i = 0; i < 10; i++)
             {
                 yield return new WaitForSeconds(0.05f);
-                transform.Translate(0, -0.05f, 0);
+                transform.Translate(0, -waving, 0);
             }
 
         }
