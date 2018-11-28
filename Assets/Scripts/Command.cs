@@ -12,8 +12,20 @@ ChaseClosestEnemy - 가까운 적 추적
 */
 
 public class Command : MonoBehaviour {
-    public string[,] chicken = new string[4,2];
-    public string[,] cat = new string[4, 2];
+    public static string[,] cat = new string[4, 2];
+    public static string[,] chicken = new string[4, 2];
+    public static string[,] bchicken = new string[4, 2];
+    public static string[,] bufalo = new string[4, 2];
+    public static string[,] dog = new string[4, 2];
+    public static string[,] elephant = new string[4, 2];
+    public static string[,] giraffe = new string[4,2];
+    public static string[,] kangaroo = new string[4, 2];
+    public static string[,] lion = new string[4, 2];
+    public static string[,] mouse = new string[4, 2];
+    public static string[,] pig = new string[4, 2];
+    public static string[,] sheep = new string[4, 2];
+    public static string[,] snake = new string[4, 2];
+    public static string[,] wolf = new string[4, 2];
 
     // Use this for initialization
 

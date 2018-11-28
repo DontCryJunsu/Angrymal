@@ -112,16 +112,16 @@ public class DefaultMove : MonoBehaviour {
     {
         if (name == "chicken")       //자신이 chicken이면 RedDirector의 command 중 chicken을 복사해 온다.
         {
-            command[0,0] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[0,0];
-            command[0,1] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[0,1];
-            command[1, 0] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[1, 0];
-            command[1, 1] = GameObject.Find("RedDirector").GetComponent<Command>().chicken[1, 1];
+            command[0,0] = Command.chicken[0,0];
+            command[0,1] = Command.chicken[0,1];
+            command[1, 0] = Command.chicken[1, 0];
+            command[1, 1] = Command.chicken[1, 1];
 
         }
         else if (name == "cat")     
         {
-            command[0, 0] = GameObject.Find("RedDirector").GetComponent<Command>().cat[0, 0];
-            command[0, 1] = GameObject.Find("RedDirector").GetComponent<Command>().cat[0, 1];
+            command[0, 0] = Command .cat[0, 0];
+            command[0, 1] = Command .cat[0, 1];
         }
     }
 

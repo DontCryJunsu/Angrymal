@@ -29,17 +29,17 @@ public class LoadAnimal : MonoBehaviour {
             StartCoroutine(sizeUp());
             if(C1 == false)
             {
-                animalUI.transform.position = new Vector3(c1.transform.position.x, c1.transform.position.y + 8, c1.transform.position.z);
+                animalUI.transform.position = new Vector3(c1.transform.position.x, c1.transform.position.y + 10f, c1.transform.position.z);
                 C1 = true;
             }
             else if(C2 == false)
             {
-                animalUI.transform.position = new Vector3(c2.transform.position.x, c2.transform.position.y + 8, c2.transform.position.z);
+                animalUI.transform.position = new Vector3(c2.transform.position.x, c2.transform.position.y + 10f, c2.transform.position.z);
                 C2 = true;
             }
             else if (C3 == false)
             {
-                animalUI.transform.position = new Vector3(c3.transform.position.x, c3.transform.position.y + 8, c3.transform.position.z);
+                animalUI.transform.position = new Vector3(c3.transform.position.x, c3.transform.position.y + 10f, c3.transform.position.z);
                 C3 = true;
             }
         }
