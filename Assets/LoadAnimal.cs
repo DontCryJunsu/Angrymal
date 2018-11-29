@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
  
 public class LoadAnimal : MonoBehaviour {
 
@@ -43,7 +42,6 @@ public class LoadAnimal : MonoBehaviour {
             {
                 animalUI.transform.position = new Vector3(c3.transform.position.x, c3.transform.position.y + 20f, c3.transform.position.z);
                 C3 = true;
-                SceneManager.LoadScene(1);
             }
         }
     }

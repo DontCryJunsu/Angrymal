@@ -1,17 +1,16 @@
 fileFormatVersion: 2
-guid: 4c51676f1f9463e4aaac1020f2ca64bf
+guid: 625da222713f8244d9b2127600f2a51b
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: baby_chicken
+    100000: MAP2
     100002: //RootNode
-    400000: baby_chicken
+    400000: MAP2
     400002: //RootNode
     2100000: palette
-    2100002: baby_chickenMat
-    2300000: baby_chicken
-    3300000: baby_chicken
-    4300000: baby_chicken
+    2300000: MAP2
+    3300000: MAP2
+    4300000: MAP2
   externalObjects: {}
   materials:
     importMaterials: 1
