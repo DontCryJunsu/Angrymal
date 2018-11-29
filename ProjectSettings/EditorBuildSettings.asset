@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Lobby.unity
     guid: 891c2b9bd1782534789d6390bbda651f
+  - enabled: 1
+    path: Assets/MapTest/hexScene.unity
+    guid: 699266f9d39faa54bba081b02a6110be
   m_configObjects: {}

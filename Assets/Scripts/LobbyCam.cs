@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.AI;
 
 public class LobbyCam : MonoBehaviour
 {
@@ -9,15 +10,25 @@ public class LobbyCam : MonoBehaviour
     public GameObject ZoomVC;
     public Transform Downbar;
     public Transform Sidebar;
-    public string name;
+    NavMeshAgent nav;
+    public Transform loadZone;
+    public int aniNum;
+    public void Select()
+    {
+        nav = gameObject.GetComponentInParent<NavMeshAgent>();
+        nav.SetDestination(loadZone.transform.position);
+        LobbyManager.esc = true;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if((Input.GetKeyDown("escape") && LobbyManager.swit == 1 && LobbyManager.btnInt ==0)||LobbyManager.esc)
+        // swit == 1인 상태 즉 캐릭터 선택 줌 상태일때 esc를 누르면
+        if (Input.GetKeyDown("escape") && LobbyManager.aniNum == aniNum || LobbyManager.esc && LobbyManager.aniNum == aniNum)
         {
             ZoomVC.GetComponent<CinemachineVirtualCamera>().LookAt = null;
             ZoomVC.GetComponent<CinemachineVirtualCamera>().Priority = 9;
-            LobbyManager.swit = 0;
+            LobbyManager.aniNum = 0;
             StartCoroutine(dUp());
             StartCoroutine(sDown());
             LobbyManager.esc = false;
@@ -26,12 +37,12 @@ public class LobbyCam : MonoBehaviour
 
     void OnMouseUp()
     {
-        if (LobbyManager.swit == 0)
+        // 캐릭터 선택할시
+        if (LobbyManager.aniNum == 0)
         {
             ZoomVC.GetComponent<CinemachineVirtualCamera>().LookAt = transform;
             ZoomVC.GetComponent<CinemachineVirtualCamera>().Priority = 11;
-            LobbyManager.swit = 1;
-            LobbyManager.name = name;
+            LobbyManager.aniNum = aniNum;
             StartCoroutine(dDown());
             StartCoroutine(sUp());
         }
@@ -39,20 +50,20 @@ public class LobbyCam : MonoBehaviour
 
     IEnumerator dDown()
     {
-        for (int i = 0; i < 17; i++)
+        for (int i = 0; i < 20; i++)
         {
             yield return new WaitForSeconds(0.01f);
-            Downbar.Translate(0, -4f, 0);
+            Downbar.Translate(0, -7f, 0);
         }
         yield return null;
     }
 
     IEnumerator dUp()
     {
-        for (int i = 0; i < 17; i++)
+        for (int i = 0; i < 20; i++)
         {
             yield return new WaitForSeconds(0.01f);
-            Downbar.Translate(0, 4f, 0);
+            Downbar.Translate(0, 7f, 0);
         }
         yield return null;
     }
@@ -62,7 +73,7 @@ public class LobbyCam : MonoBehaviour
         for (int i = 0; i < 30; i++)
         {
             yield return new WaitForSeconds(0.01f);
-            Sidebar.Translate(8f, 0, 0);
+            Sidebar.Translate(16f, 0, 0);
         }
         yield return null;
     }
@@ -72,7 +83,7 @@ public class LobbyCam : MonoBehaviour
         for (int i = 0; i < 30; i++)
         {
             yield return new WaitForSeconds(0.01f);
-            Sidebar.Translate(-8f, 0, 0);
+            Sidebar.Translate(-16f, 0, 0);
         }
         yield return null;
     }
