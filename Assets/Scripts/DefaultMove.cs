@@ -156,7 +156,7 @@ public class DefaultMove : MonoBehaviour {
             checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
-            /*  이 부분은 Always() 메서드에서 참고해서 만들 것. 좀 더 테스트해보고 넣으려고 아직 안넣었음.
+            /*   
             
             runningact에 해당하는 행동 종료.
 
@@ -174,7 +174,25 @@ public class DefaultMove : MonoBehaviour {
         return;
     }
 
-    // 여기서까지 조건
+    void EnemyInNear()   //테스트
+    {
+        Collider[] colls = Physics.OverlapSphere(this.transform.position, 1.0f);
+        foreach(Collider coll in colls)
+        {
+            if (coll.tag == "bluecharacter") ;
+            {
+                checkcommand = false;
+                StopCoroutine(runningact);
+                Debug.Log("A bluecharacter is detected in radius");
+                
+                 
+            }
+        }
+        
+        
+    }
+
+    // 여기까지 조건
 
 
     // 여기서부터 행동

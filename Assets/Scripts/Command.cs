@@ -30,8 +30,8 @@ public class Command : MonoBehaviour {
     // Use this for initialization
 
     void Start () {
-     
-        chicken[0,0] = "HPMoreThanHalf";           // 0번은 조건
+        chicken[0, 0] = "EnemyInNear";          //테스트 (테스트 후 "HPMoreThanHalf"로 돌려놔야 함)
+        // chicken[0,0] = "HPMoreThanHalf";           // 0번은 조건
         chicken[0,1] = "JustWalk";     // 1번은 행동
         chicken[1, 0] = "Always";           // 0번은 조건
         chicken[1, 1] = "ChaseClosestEnemy";     // 1번은 행동
