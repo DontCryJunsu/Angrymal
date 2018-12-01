@@ -17,6 +17,7 @@ public class DefaultMove : MonoBehaviour {
     string runningact;
     int i = -1;
     bool checkcommand = true;
+    bool checkattackcommand = true;
     public float hp;
     public float fullhp;
     public float speed;
@@ -36,8 +37,9 @@ public class DefaultMove : MonoBehaviour {
         nav = GetComponent<NavMeshAgent>();
         fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
-        StartCoroutine("JustWalk");
-        StartCoroutine("CheckCommand");
+       StartCoroutine("JustWalk");
+       StartCoroutine("CheckCommand");
+       StartCoroutine("CheckAttackCommand");
 
 
     }
@@ -73,9 +75,38 @@ public class DefaultMove : MonoBehaviour {
     }
   
   
+    IEnumerator CheckAttackCommand()  // 공격 명령 기본 틀 미완성
+    {
+        while (true)
+        {
+            //checkattackcommand = true;
+            yield return null;
+            
+            if (tag == "redcharacter")
+            {
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
+                foreach (Collider coll in colls)
+                {
+                    if (coll != null)
+                    {
+                        if (coll.gameObject.tag == "bluecharacter")
+                        {
+                            nav.speed = 0;
+                            Debug.Log("Just Attack");
+                            yield return new WaitForSeconds(1.5f);
+                            nav.speed = speed;
+                        }
+                    }
+                }
+            }
+        }
+
+       
+    }
 
 
-   
+
+
 
     void GetCommand()
     {
@@ -171,7 +202,7 @@ public class DefaultMove : MonoBehaviour {
 
                         StopCoroutine(runningact);
                         StartCoroutine(command[i, 1]);
-                        Debug.Log("A bluecharacter is detected in radius");
+                        //Debug.Log("A bluecharacter is detected in radius");
                         i = -1;
                         break;
                     }
@@ -192,7 +223,7 @@ public class DefaultMove : MonoBehaviour {
 
                         StopCoroutine(runningact);
                         StartCoroutine(command[i, 1]);
-                        Debug.Log("A redcharacter is detected in radius");
+                       // Debug.Log("A redcharacter is detected in radius");
                         i = -1;
                         break;
                     }
@@ -215,7 +246,7 @@ public class DefaultMove : MonoBehaviour {
             {
                 if (coll.gameObject.tag == "bluecharacter")
                 {
-                    Debug.Log("Enemy is in Near");
+                    //Debug.Log("Enemy is in Near");
                     nearenemy++;
                 }
             }
@@ -227,7 +258,7 @@ public class DefaultMove : MonoBehaviour {
 
                     StopCoroutine(runningact);
                     StartCoroutine(command[i, 1]);
-                    Debug.Log("No Enemys in Near");
+                   // Debug.Log("No Enemys in Near");
                     i = -1;
 
                 }
@@ -261,6 +292,7 @@ public class DefaultMove : MonoBehaviour {
 
     // 여기까지 이동 조건
 
+    
 
     // 여기서부터 이동 행동
 
