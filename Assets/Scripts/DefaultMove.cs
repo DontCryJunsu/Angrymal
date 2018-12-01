@@ -23,6 +23,7 @@ public class DefaultMove : MonoBehaviour {
     public float fullhp;
     public float speed;
     public float power;
+    Collider akcoll;
    
 
     void Awake()
@@ -93,8 +94,10 @@ public class DefaultMove : MonoBehaviour {
                         if (coll.gameObject.tag == "bluecharacter")
                         {
                             j++;
-                            //Invoke(command[j,2], 0);
-                            AlwaysAttack(coll);
+                            akcoll = coll;
+                            Invoke(command[j,2], 0);
+                            //AlwaysAttack(coll);
+                             
                             yield return new WaitForSeconds(1.5f);
                             nav.speed = speed;
                         }
@@ -123,6 +126,7 @@ public class DefaultMove : MonoBehaviour {
             command[1, 0] = Command.chicken[1, 0];
             command[1, 1] = Command.chicken[1, 1];
             command[0, 2] = Command.chicken[0, 2];
+            command[1, 2] = Command.chicken[1, 2];
 
         }
         else if (name == "cat")     
@@ -134,10 +138,10 @@ public class DefaultMove : MonoBehaviour {
 
     // 여기서부터 공격 조건
 
-    void AlwaysAttack(Collider coll)
+    void AlwaysAttack()
     {
         nav.speed = 0;
-        transform.LookAt(coll.transform);  // 공격할 상대를 바라봄
+        transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
         Debug.Log("Always Attack");
         checkattackcommand = false;
     }
