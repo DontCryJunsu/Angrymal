@@ -93,20 +93,24 @@ public class DefaultMove : MonoBehaviour {
                     {
                         if (coll.gameObject.tag == "bluecharacter")
                         {
+                            while (checkattackcommand == true)
+                            {
+                                yield return null;
                             j++;
                             akcoll = coll;
                             Invoke(command[j,2], 0);
-                            //AlwaysAttack(coll);
-                             
-                            yield return new WaitForSeconds(1.5f);
+                                if (command[j,2] != null) {
+                                    yield return new WaitForSeconds(1.5f);
+                                }
                             nav.speed = speed;
+                                if (j>=2 || checkattackcommand ==false)
+                                {
+                                    j = -1;
+                                }
+                             }
                         }
                     }
                 }
-            }
-            if (j >= 3 || checkattackcommand == false)
-            {
-                j = -1;
             }
         }
 
@@ -140,12 +144,23 @@ public class DefaultMove : MonoBehaviour {
 
     void AlwaysAttack()
     {
-        nav.speed = 0;
+        nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
         Debug.Log("Always Attack");
         checkattackcommand = false;
     }
 
+
+    void HPMoreThanHalfAttack()
+    {
+        if (hp >= (fullhp / 2))
+        {
+            nav.speed = 0;
+            transform.LookAt(akcoll.transform);
+            Debug.Log("HP more than half attack");
+            checkattackcommand = false;
+        }
+    }
 
     // 여기까지 공격 조건
 

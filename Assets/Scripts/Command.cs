@@ -39,12 +39,13 @@ public class Command : MonoBehaviour {
         chicken[1, 0] = "Always";               // 0번은 조건
         chicken[1, 1] = "ChaseClosestEnemy";             // 1번은 행동
         chicken[3, 0] = "Always";    // [3,0]과 [3,1]은 고정
-        chicken[0, 2] = "AlwaysAttack";    // 2번은 공격 조건
+        chicken[0, 2] = "HPMoreThanHalfAttack";    // 2번은 공격 조건
         chicken[3, 1] = "JustWalk";
         cat[0, 0] = "Always";        
         cat[0, 1] = "JustWalk";
         cat[3, 0] = "Always";
         cat[3, 1] = "JustWalk";
+        chicken[1, 2] = "AlwaysAttack";
 
 
     }
