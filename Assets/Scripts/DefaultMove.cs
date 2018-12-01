@@ -96,7 +96,7 @@ public class DefaultMove : MonoBehaviour {
 
 
 
-    // 여기서부터 조건
+    // 여기서부터 이동 조건
 
     void Always()
     {
@@ -259,10 +259,10 @@ public class DefaultMove : MonoBehaviour {
         }
     }
 
-    // 여기까지 조건
+    // 여기까지 이동 조건
 
 
-    // 여기서부터 행동
+    // 여기서부터 이동 행동
 
     IEnumerator JustWalk()
     {
@@ -284,7 +284,7 @@ public class DefaultMove : MonoBehaviour {
         {
             yield return null;
             runningact = "ChaseClosestEnemy";
-            if (tag == redcharacter)
+            if (tag == "redcharacter")
             {
                 GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("bluecharacter");  //bluecharacter 태그의 모든 오브젝트를 찾는다.
                 float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
@@ -303,7 +303,7 @@ public class DefaultMove : MonoBehaviour {
 
                 nav.SetDestination(target.position);  //target을 향해 이동
             }
-            else if (tag == bluecharacter)
+            else if (tag == "bluecharacter")
             {
                 GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("redcharacter");  //redcharacter 태그의 모든 오브젝트를 찾는다.
                 float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
@@ -326,5 +326,5 @@ public class DefaultMove : MonoBehaviour {
     }
 
 
-    // 여기까지 행동
+    // 여기까지 이동 행동
 }
