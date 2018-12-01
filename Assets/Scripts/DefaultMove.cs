@@ -79,6 +79,8 @@ public class DefaultMove : MonoBehaviour {
   
     IEnumerator CheckAttackCommand()  // 공격 명령 기본 틀 미완성
     {
+     
+        
         while (true)
         {
             checkattackcommand = true;
@@ -98,19 +100,20 @@ public class DefaultMove : MonoBehaviour {
                                 yield return null;
                             j++;
                             akcoll = coll;
-                            Invoke(command[j,2], 0);
-                                if (command[j,2] != null) {
-                                    yield return new WaitForSeconds(1.5f);
+                                if (command[j, 2] != null)
+                                {
+                                    yield return StartCoroutine(command[j, 2]);
                                 }
                             nav.speed = speed;
-                                if (j>=2 || checkattackcommand ==false)
-                                {
-                                    j = -1;
-                                }
+                               
                              }
                         }
                     }
                 }
+            }
+            if (j >= 2 || checkattackcommand == false)
+            {
+                j = -1;
             }
         }
 
@@ -142,16 +145,17 @@ public class DefaultMove : MonoBehaviour {
 
     // 여기서부터 공격 조건
 
-    void AlwaysAttack()
+    IEnumerator AlwaysAttack()
     {
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
         Debug.Log("Always Attack");
         checkattackcommand = false;
+        yield return new WaitForSeconds(1.5f);
     }
 
 
-    void HPMoreThanHalfAttack()
+    IEnumerator HPMoreThanHalfAttack()
     {
         if (hp >= (fullhp / 2))
         {
@@ -159,6 +163,7 @@ public class DefaultMove : MonoBehaviour {
             transform.LookAt(akcoll.transform);
             Debug.Log("HP more than half attack");
             checkattackcommand = false;
+            yield return new WaitForSeconds(1.5f);
         }
     }
 
