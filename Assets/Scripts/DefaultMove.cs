@@ -21,6 +21,7 @@ public class DefaultMove : MonoBehaviour {
     public float fullhp;
     public float speed;
     public float power;
+   
 
     void Awake()
     {
@@ -37,7 +38,7 @@ public class DefaultMove : MonoBehaviour {
         nav.speed = speed;
         StartCoroutine("JustWalk");
         StartCoroutine("CheckCommand");
-        
+
 
     }
 	
@@ -45,7 +46,6 @@ public class DefaultMove : MonoBehaviour {
 	void Update () {
         
          
-
     
 
         // Invoke(command[0,0], 0);   -> 조건 호출 방법.
@@ -174,18 +174,50 @@ public class DefaultMove : MonoBehaviour {
         return;
     }
 
-    void EnemyInNear()   //테스트
+    void EnemyInNear()   
     {
-        Collider[] colls = Physics.OverlapSphere(this.transform.position, 1.0f);
-        foreach(Collider coll in colls)
+        
+        Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+        if (tag == "redcharacter")
         {
-            if (coll.tag == "bluecharacter") ;
+            foreach (Collider coll in colls)
             {
-                checkcommand = false;
-                StopCoroutine(runningact);
-                Debug.Log("A bluecharacter is detected in radius");
-                
-                 
+                if (coll.gameObject.tag == "bluecharacter")
+                {
+                    checkcommand = false;
+                    if (runningact != command[i, 1])
+                    {
+
+                        StopCoroutine(runningact);
+                        StartCoroutine(command[i, 1]);
+                        Debug.Log("A bluecharacter is detected in radius");
+                        i = -1;
+                        break;
+                    }
+                }
+
+
+            }
+        }
+        else if (tag == "bluecharacter")
+        {
+            foreach (Collider coll in colls)
+            {
+                if (coll.gameObject.tag == "redcharacter")
+                {
+                    checkcommand = false;
+                    if (runningact != command[i, 1])
+                    {
+
+                        StopCoroutine(runningact);
+                        StartCoroutine(command[i, 1]);
+                        Debug.Log("A redcharacter is detected in radius");
+                        i = -1;
+                        break;
+                    }
+                }
+
+
             }
         }
         
