@@ -16,8 +16,8 @@ ChaseClosestEnemy - 가까운 적 추적
 */
 
 public class Command : MonoBehaviour {
-    public static string[,] cat = new string[4, 2];
-    public static string[,] chicken = new string[4, 2];
+    public static string[,] cat = new string[4, 3];
+    public static string[,] chicken = new string[4, 3];
     public static string[,] bchicken = new string[4, 2];
     public static string[,] bufalo = new string[4, 2];
     public static string[,] dog = new string[4, 2];
@@ -39,6 +39,7 @@ public class Command : MonoBehaviour {
         chicken[1, 0] = "Always";               // 0번은 조건
         chicken[1, 1] = "ChaseClosestEnemy";             // 1번은 행동
         chicken[3, 0] = "Always";    // [3,0]과 [3,1]은 고정
+        chicken[0, 2] = "AlwaysAttack";    // 2번은 공격 조건
         chicken[3, 1] = "JustWalk";
         cat[0, 0] = "Always";        
         cat[0, 1] = "JustWalk";

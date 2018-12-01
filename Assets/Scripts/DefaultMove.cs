@@ -11,11 +11,12 @@ public class DefaultMove : MonoBehaviour {
     NavMeshAgent nav;
     bool JustWalk_isrunning;
     //string[] command = new string[2];
-    string[,] command = new string[4, 2];  //4행 2열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개.
+    string[,] command = new string[4, 3];  //4행 2열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개.
     private Transform target;
     private float dist;
     string runningact;
     int i = -1;
+    int j = -1;
     bool checkcommand = true;
     bool checkattackcommand = true;
     public float hp;
@@ -79,7 +80,7 @@ public class DefaultMove : MonoBehaviour {
     {
         while (true)
         {
-            //checkattackcommand = true;
+            checkattackcommand = true;
             yield return null;
             
             if (tag == "redcharacter")
@@ -91,13 +92,18 @@ public class DefaultMove : MonoBehaviour {
                     {
                         if (coll.gameObject.tag == "bluecharacter")
                         {
-                            nav.speed = 0;
-                            Debug.Log("Just Attack");
+                            j++;
+                            //Invoke(command[j,2], 0);
+                            AlwaysAttack(coll);
                             yield return new WaitForSeconds(1.5f);
                             nav.speed = speed;
                         }
                     }
                 }
+            }
+            if (j >= 3 || checkattackcommand == false)
+            {
+                j = -1;
             }
         }
 
@@ -116,6 +122,7 @@ public class DefaultMove : MonoBehaviour {
             command[0,1] = Command.chicken[0,1];
             command[1, 0] = Command.chicken[1, 0];
             command[1, 1] = Command.chicken[1, 1];
+            command[0, 2] = Command.chicken[0, 2];
 
         }
         else if (name == "cat")     
@@ -125,6 +132,18 @@ public class DefaultMove : MonoBehaviour {
         }
     }
 
+    // 여기서부터 공격 조건
+
+    void AlwaysAttack(Collider coll)
+    {
+        nav.speed = 0;
+        transform.LookAt(coll.transform);  // 공격할 상대를 바라봄
+        Debug.Log("Always Attack");
+        checkattackcommand = false;
+    }
+
+
+    // 여기까지 공격 조건
 
 
     // 여기서부터 이동 조건
