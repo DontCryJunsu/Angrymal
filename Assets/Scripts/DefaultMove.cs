@@ -284,23 +284,44 @@ public class DefaultMove : MonoBehaviour {
         {
             yield return null;
             runningact = "ChaseClosestEnemy";
-
-            GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("bluecharacter");  //bluecharacter 태그의 모든 오브젝트를 찾는다.
-            float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
-            Transform closestEnemy = null;
-            foreach (GameObject taggedEnemy in taggedEnemys)
+            if (tag == redcharacter)
             {
-                Vector3 objectPos = taggedEnemy.transform.position;
-                dist = (objectPos - transform.position).sqrMagnitude;
-                if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+                GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("bluecharacter");  //bluecharacter 태그의 모든 오브젝트를 찾는다.
+                float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
+                Transform closestEnemy = null;
+                foreach (GameObject taggedEnemy in taggedEnemys)
                 {
-                    closestDistSqr = dist;
-                    closestEnemy = taggedEnemy.transform;
+                    Vector3 objectPos = taggedEnemy.transform.position;
+                    dist = (objectPos - transform.position).sqrMagnitude;
+                    if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+                    {
+                        closestDistSqr = dist;
+                        closestEnemy = taggedEnemy.transform;
+                    }
                 }
-            }
-            target = closestEnemy;  //가장 가까운 적을 target으로 설정
+                target = closestEnemy;  //가장 가까운 적을 target으로 설정
 
-            nav.SetDestination(target.position);  //target을 향해 이동
+                nav.SetDestination(target.position);  //target을 향해 이동
+            }
+            else if (tag == bluecharacter)
+            {
+                GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("redcharacter");  //redcharacter 태그의 모든 오브젝트를 찾는다.
+                float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
+                Transform closestEnemy = null;
+                foreach (GameObject taggedEnemy in taggedEnemys)
+                {
+                    Vector3 objectPos = taggedEnemy.transform.position;
+                    dist = (objectPos - transform.position).sqrMagnitude;
+                    if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+                    {
+                        closestDistSqr = dist;
+                        closestEnemy = taggedEnemy.transform;
+                    }
+                }
+                target = closestEnemy;  //가장 가까운 적을 target으로 설정
+
+                nav.SetDestination(target.position);  //target을 향해 이동
+            }
         }
     }
 
