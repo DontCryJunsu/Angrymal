@@ -8,7 +8,7 @@ Always - 항상
 HPMoreThanHalf - 체력이 절반 이상일 때
 HPLessThanHalf - 체력이 절반 미만일 때
 EnemyInNear - 주변에 적이 있을 때 
-NoEnemyInNear - 주변에 적이 있을 때 
+NoEnemyInNear - 주변에 적이 없을 때 
 
 명령어 목록
 JustWalk - 무작위 이동
