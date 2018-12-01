@@ -45,37 +45,6 @@ public class DefaultMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-         
-    
-
-        // Invoke(command[0,0], 0);   -> 조건 호출 방법.
-
-
-        //////  RedDirector에 저장돼있는 조건이 만족할 때 RedDirector에 저장돼있는 행동과 같은 이름을 가진 코루틴을 실행한다.  ->  조건과 행동의 이름은 Start 함수에 있는 if문에 의해 string[] command 변수에 저장돼있음  //////
-
-        /*  switch case 문
-        
-        switch (command[0,0])  //command[0]에는 조건의 이름, command[1]에는 행동의 이름이 저장되어 있다.
-        {
-            case "Always": //항상
-                if (JustWalk_isrunning)  // 조건이 Always일 경우에는 JustWalk()가 실행 중인지 파악하고  JustWalk()를 종료시킨 후 동작한다. Always 외에 다른 이동 조건들도 그에 맞는 조건을 검사한 후에 JustWalk를 종료시킨 뒤 알맞는 행동을 실행시킨다.
-                {
-                    StopCoroutine("JustWalk");
-                    JustWalk_isrunning = false;
-                    StartCoroutine(command[0,1]);  //행동에 해당하는 이동명령(코루틴) 실행
-                }
-                break;
-                
-            // case "HPMoreThanHalf":  //체력이 절반 이상일 때
-                //if(stat.HP >= (stat.FULLHP)/2) 
-                //{
-                    
-                //}
-                //break;
-                
-        }
-
-    */  //  switch case 문
 
     }
 
@@ -156,13 +125,25 @@ public class DefaultMove : MonoBehaviour {
             checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
-            /*   
-            
-            runningact에 해당하는 행동 종료.
+            if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+            {
+                StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
+                StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
+                i = -1;
+            }
+        }
+        return;
+    }
 
-            해당하는 행동을 실행하는 코드를 만들어 넣을 것 (  ex) command[i,1]).
+    void HPLessThanHalf()
+    {
 
-             */
+
+        if (hp < (fullhp / 2))
+        {
+            Debug.Log("HPLessThanHalf");
+            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+
 
             if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
             {
@@ -220,8 +201,62 @@ public class DefaultMove : MonoBehaviour {
 
             }
         }
-        
-        
+    }
+
+
+    void NoEnemyInNear()
+    {
+
+        Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+        int nearenemy = 0;
+        if (tag == "redcharacter")
+        {
+            foreach (Collider coll in colls)
+            {
+                if (coll.gameObject.tag == "bluecharacter")
+                {
+                    Debug.Log("Enemy is in Near");
+                    nearenemy++;
+                }
+            }
+            if (nearenemy == 0)
+            {
+                checkcommand = false;
+                if (runningact != command[i, 1])
+                {
+
+                    StopCoroutine(runningact);
+                    StartCoroutine(command[i, 1]);
+                    Debug.Log("No Enemys in Near");
+                    i = -1;
+
+                }
+            }
+        }
+        else if (tag == "bluecharacter")
+        {
+            foreach (Collider coll in colls)
+            {
+                if (coll.gameObject.tag == "redcharacter")
+                {
+                    Debug.Log("Enemy is in Near");
+                    nearenemy++;
+                }
+            }
+            if (nearenemy == 0)
+            {
+                checkcommand = false;
+                if (runningact != command[i, 1])
+                {
+
+                    StopCoroutine(runningact);
+                    StartCoroutine(command[i, 1]);
+                    Debug.Log("No Enemys in Near");
+                    i = -1;
+
+                }
+            }
+        }
     }
 
     // 여기까지 조건
