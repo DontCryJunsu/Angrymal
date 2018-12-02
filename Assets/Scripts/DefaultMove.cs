@@ -39,7 +39,7 @@ public class DefaultMove : MonoBehaviour
         GetCommand();  //캐릭터에 맞는 command를 가져오는 함수
         var stat = GetComponent<stat>();
         nav = GetComponent<NavMeshAgent>();
-        fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
+        //fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
         StartCoroutine("JustWalk");
         StartCoroutine("CheckCommand");
@@ -140,6 +140,11 @@ public class DefaultMove : MonoBehaviour
 
         }
         else if (name == "cat")
+        {
+            command[0, 0] = Command.cat[0, 0];
+            command[0, 1] = Command.cat[0, 1];
+        }
+        else if (name == "sheep")
         {
             command[0, 0] = Command.cat[0, 0];
             command[0, 1] = Command.cat[0, 1];

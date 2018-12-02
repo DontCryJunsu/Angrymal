@@ -27,7 +27,7 @@ public class RandomDestination : MonoBehaviour
         {
             //  UnityEngine.Debug.Log("goal");
             Debug.Log(rand);
-           // transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y+0.4f, tile2[rand].position.z);
+            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y+1.0f, tile2[rand].position.z);
 
         }
 
@@ -37,6 +37,15 @@ public class RandomDestination : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        int rand = Random.RandomRange(1, 276);
+        if (other.name == chaser)
+        {
+            //  UnityEngine.Debug.Log("goal");
+            Debug.Log(rand);
+            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.0f, tile2[rand].position.z);
+
+        }
+        /*
         if (other.tag == chaser || other.tag == "wall")
         {
             // UnityEngine.Debug.Log("goal");
@@ -45,7 +54,7 @@ public class RandomDestination : MonoBehaviour
 
 
         }
-
+        */
 
 
 

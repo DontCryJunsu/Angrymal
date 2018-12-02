@@ -27,7 +27,7 @@ public class Command : MonoBehaviour {
     public static string[,] lion = new string[4, 2];
     public static string[,] mouse = new string[4, 2];
     public static string[,] pig = new string[4, 2];
-    public static string[,] sheep = new string[4, 2];
+    public static string[,] sheep = new string[4, 3];
     public static string[,] snake = new string[4, 2];
     public static string[,] wolf = new string[4, 2];
 
