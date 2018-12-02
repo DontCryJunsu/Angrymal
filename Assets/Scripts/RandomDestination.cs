@@ -29,7 +29,7 @@ public class RandomDestination : MonoBehaviour
         if (other.name == chaser)
         {
             //  UnityEngine.Debug.Log("goal");
-            Debug.Log(rand);
+            //Debug.Log(rand);
             transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y+1.3f, tile2[rand].position.z);
 
         }
@@ -44,7 +44,7 @@ public class RandomDestination : MonoBehaviour
         if (other.name == chaser)
         {
             //  UnityEngine.Debug.Log("goal");
-            Debug.Log(rand);
+            //Debug.Log(rand);
             transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 2f, tile2[rand].position.z);
 
         }

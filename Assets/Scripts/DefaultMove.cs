@@ -24,7 +24,7 @@ public class DefaultMove : MonoBehaviour
     public float fullhp;
     public float speed;
     public float power;
-    Collider akcoll;
+    Collider akcoll = null;
 
 
      
@@ -286,7 +286,7 @@ public class DefaultMove : MonoBehaviour
     void NoEnemyInNear()
     {
 
-        Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
+        Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
         int nearenemy = 0;
         if (tag == "redcharacter")
         {
