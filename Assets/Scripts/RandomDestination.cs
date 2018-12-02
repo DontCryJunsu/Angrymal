@@ -9,44 +9,37 @@ public class RandomDestination : MonoBehaviour
     public string chaser;
     GameObject[] tile;
     public Transform[] tile2;
+    int rand;
 
-    
     void Start()
     {
-        tile = new GameObject[277];
-        tile2 = new Transform[277];
-        for(int i=1;i<=276;i++)
+        rand = Random.RandomRange(1, 275);
+        tile = new GameObject[276];
+        tile2 = new Transform[276];
+        for (int i = 1; i <= 275; i++)
         {
             tile[i] = GameObject.Find(i.ToString());
             tile2[i] = tile[i].transform;
         }
     }
-    
+
 
     private void OnTriggerEnter(Collider other)
     {
-        int rand = Random.RandomRange(1, 276);
         if (other.name == chaser)
         {
-            //  UnityEngine.Debug.Log("goal");
-            //Debug.Log(rand);
-            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y+1.3f, tile2[rand].position.z);
+            //transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
 
+            shuffle();
         }
-
-
-
-
     }
     private void OnTriggerStay(Collider other)
     {
-        int rand = Random.RandomRange(1, 276);
         if (other.name == chaser)
         {
-            //  UnityEngine.Debug.Log("goal");
-            //Debug.Log(rand);
-            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 2f, tile2[rand].position.z);
+            //transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
 
+            shuffle();
         }
         /*
         if (other.tag == chaser || other.tag == "wall")
@@ -54,12 +47,29 @@ public class RandomDestination : MonoBehaviour
             // UnityEngine.Debug.Log("goal");
 
             transform.position = new Vector3(Random.Range(-19, 19), 5, Random.Range(-30, 30));
-
-
         }
         */
+    }
 
 
-
+    // 동물destination 게임오브젝트의 tag를 각팀 색깔로 지정해놓으면 이제 상대 또는 태그안달린곳으로 이동가능
+    public void shuffle()
+    {
+        while (true)
+        {
+            if (transform.tag == "blueteam" && tile2[rand].tag == "blueteam")
+            {
+                rand = Random.RandomRange(1, 275);
+            }
+            else if (transform.tag == "redteam" && tile2[rand].tag == "redteam")
+            {
+                rand = Random.RandomRange(1, 275);
+            }
+            else
+            {
+                break;
+            }
+        }
+        transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
     }
 }

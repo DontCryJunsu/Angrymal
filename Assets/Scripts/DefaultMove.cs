@@ -25,9 +25,10 @@ public class DefaultMove : MonoBehaviour
     public float speed;
     public float power;
     Collider akcoll = null;
+    RandomDestination RD;
 
 
-     
+
 
 
     // Use this for initialization
@@ -41,12 +42,13 @@ public class DefaultMove : MonoBehaviour
         StartCoroutine("JustWalk");
         StartCoroutine("CheckCommand");
         StartCoroutine("CheckAttackCommand");
+        RD = goal.GetComponent<RandomDestination>();
 
 
     }
 
     // Update is called once per frame
-     
+
 
     IEnumerator CheckCommand()
     {
