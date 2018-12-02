@@ -27,10 +27,7 @@ public class DefaultMove : MonoBehaviour
     Collider akcoll;
 
 
-    void Awake()
-    {
-
-    }
+     
 
 
     // Use this for initialization
@@ -49,11 +46,7 @@ public class DefaultMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-
-
-    }
+     
 
     IEnumerator CheckCommand()
     {
@@ -146,8 +139,10 @@ public class DefaultMove : MonoBehaviour
         }
         else if (name == "sheep")
         {
-            command[0, 0] = Command.cat[0, 0];
-            command[0, 1] = Command.cat[0, 1];
+            command[0, 0] = Command.sheep[0, 0];
+            command[0, 1] = Command.sheep[0, 1];
+            command[1, 0] = Command.sheep[1, 0];
+            command[1, 1] = Command.sheep[1, 1];
         }
     }
 
@@ -190,9 +185,9 @@ public class DefaultMove : MonoBehaviour
         {
             StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
             StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-            i = -1;
+        
         }
-
+        i = -1;
 
     }
 
@@ -257,6 +252,7 @@ public class DefaultMove : MonoBehaviour
                         i = -1;
                         break;
                     }
+                    i = -1;
                 }
 
 
@@ -278,6 +274,7 @@ public class DefaultMove : MonoBehaviour
                         i = -1;
                         break;
                     }
+                    i = -1;
                 }
 
 
@@ -289,7 +286,7 @@ public class DefaultMove : MonoBehaviour
     void NoEnemyInNear()
     {
 
-        Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+        Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
         int nearenemy = 0;
         if (tag == "redcharacter")
         {
@@ -310,9 +307,10 @@ public class DefaultMove : MonoBehaviour
                     StopCoroutine(runningact);
                     StartCoroutine(command[i, 1]);
                     // Debug.Log("No Enemys in Near");
-                    i = -1;
+                    //i = -1;  //다시 쓸지도 모름
 
                 }
+                i = -1;
             }
         }
         else if (tag == "bluecharacter")
@@ -334,9 +332,10 @@ public class DefaultMove : MonoBehaviour
                     StopCoroutine(runningact);
                     StartCoroutine(command[i, 1]);
                     Debug.Log("No Enemys in Near");
-                    i = -1;
+                    //i = -1;
 
                 }
+                i = -1;
             }
         }
     }
@@ -370,40 +369,48 @@ public class DefaultMove : MonoBehaviour
             if (tag == "redcharacter")
             {
                 GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("bluecharacter");  //bluecharacter 태그의 모든 오브젝트를 찾는다.
-                float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
-                Transform closestEnemy = null;
-                foreach (GameObject taggedEnemy in taggedEnemys)
+                if (taggedEnemys != null)
                 {
-                    Vector3 objectPos = taggedEnemy.transform.position;
-                    dist = (objectPos - transform.position).sqrMagnitude;
-                    if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+                    float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
+                    Transform closestEnemy = null;
+                    foreach (GameObject taggedEnemy in taggedEnemys)
                     {
-                        closestDistSqr = dist;
-                        closestEnemy = taggedEnemy.transform;
+                        Vector3 objectPos = taggedEnemy.transform.position;
+                        dist = (objectPos - transform.position).sqrMagnitude;
+                        if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+                        {
+                            closestDistSqr = dist;
+                            closestEnemy = taggedEnemy.transform;
+                        }
                     }
-                }
-                target = closestEnemy;  //가장 가까운 적을 target으로 설정
+                    target = closestEnemy;  //가장 가까운 적을 target으로 설정
 
-                nav.SetDestination(target.position);  //target을 향해 이동
+                    nav.SetDestination(target.position);  //target을 향해 이동
+                }
+             
             }
             else if (tag == "bluecharacter")
             {
                 GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("redcharacter");  //redcharacter 태그의 모든 오브젝트를 찾는다.
-                float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
-                Transform closestEnemy = null;
-                foreach (GameObject taggedEnemy in taggedEnemys)
+                if (taggedEnemys != null)
                 {
-                    Vector3 objectPos = taggedEnemy.transform.position;
-                    dist = (objectPos - transform.position).sqrMagnitude;
-                    if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+                    float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
+                    Transform closestEnemy = null;
+                    foreach (GameObject taggedEnemy in taggedEnemys)
                     {
-                        closestDistSqr = dist;
-                        closestEnemy = taggedEnemy.transform;
+                        Vector3 objectPos = taggedEnemy.transform.position;
+                        dist = (objectPos - transform.position).sqrMagnitude;
+                        if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+                        {
+                            closestDistSqr = dist;
+                            closestEnemy = taggedEnemy.transform;
+                        }
                     }
-                }
-                target = closestEnemy;  //가장 가까운 적을 target으로 설정
+                    target = closestEnemy;  //가장 가까운 적을 target으로 설정
 
-                nav.SetDestination(target.position);  //target을 향해 이동
+                    nav.SetDestination(target.position);  //target을 향해 이동
+                }
+             
             }
         }
     }

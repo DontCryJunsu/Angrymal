@@ -13,23 +13,27 @@ NoEnemyInNear - 주변에 적이 없을 때
 행동 목록
 JustWalk - 무작위 이동
 ChaseClosestEnemy - 가까운 적 추적
+
+공격 조건 목록
+AlwaysAttack - 항상 공격
+HPMoreThanHalfAttack - 자신의 체력이 절반 이상일 때 공격
 */
 
 public class Command : MonoBehaviour {
     public static string[,] cat = new string[4, 3];
     public static string[,] chicken = new string[4, 3];
-    public static string[,] bchicken = new string[4, 2];
-    public static string[,] bufalo = new string[4, 2];
-    public static string[,] dog = new string[4, 2];
-    public static string[,] elephant = new string[4, 2];
-    public static string[,] giraffe = new string[4,2];
-    public static string[,] kangaroo = new string[4, 2];
-    public static string[,] lion = new string[4, 2];
-    public static string[,] mouse = new string[4, 2];
-    public static string[,] pig = new string[4, 2];
+    public static string[,] bchicken = new string[4, 3];
+    public static string[,] bufalo = new string[4, 3];
+    public static string[,] dog = new string[4, 3];
+    public static string[,] elephant = new string[4, 3];
+    public static string[,] giraffe = new string[4,3];
+    public static string[,] kangaroo = new string[4, 3];
+    public static string[,] lion = new string[4, 3];
+    public static string[,] mouse = new string[4, 3];
+    public static string[,] pig = new string[4, 3];
     public static string[,] sheep = new string[4, 3];
-    public static string[,] snake = new string[4, 2];
-    public static string[,] wolf = new string[4, 2];
+    public static string[,] snake = new string[4, 3];
+    public static string[,] wolf = new string[4, 3];
 
     // Use this for initialization
 
@@ -46,6 +50,10 @@ public class Command : MonoBehaviour {
         cat[3, 0] = "Always";
         cat[3, 1] = "JustWalk";
         chicken[1, 2] = "AlwaysAttack";
+        sheep[0, 0] = "EnemyInNear";
+        sheep[0, 1] = "ChaseClosestEnemy";
+        sheep[1, 0] = "Always";
+        sheep[1, 1] = "JustWalk";
 
 
     }

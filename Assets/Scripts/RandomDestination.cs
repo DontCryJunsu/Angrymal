@@ -7,18 +7,21 @@ public class RandomDestination : MonoBehaviour
 
     //public GameObject chase;
     public string chaser;
-    //GameObject[] tile;
+    GameObject[] tile;
     public Transform[] tile2;
+
+    
     void Start()
     {
-        //tile = new GameObject[277];
-        //tile2 = new Transform[277];
-        //for(int i=1;i<=276;i++)
-        //{
-        //    tile[i] = GameObject.Find(i.ToString());
-        //    tile2[i] = tile[i].transform;
-        //}
+        tile = new GameObject[277];
+        tile2 = new Transform[277];
+        for(int i=1;i<=276;i++)
+        {
+            tile[i] = GameObject.Find(i.ToString());
+            tile2[i] = tile[i].transform;
+        }
     }
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -27,7 +30,7 @@ public class RandomDestination : MonoBehaviour
         {
             //  UnityEngine.Debug.Log("goal");
             Debug.Log(rand);
-            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y+1.0f, tile2[rand].position.z);
+            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y+1.3f, tile2[rand].position.z);
 
         }
 
@@ -42,7 +45,7 @@ public class RandomDestination : MonoBehaviour
         {
             //  UnityEngine.Debug.Log("goal");
             Debug.Log(rand);
-            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.0f, tile2[rand].position.z);
+            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 2f, tile2[rand].position.z);
 
         }
         /*
