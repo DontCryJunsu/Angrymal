@@ -5,7 +5,8 @@ using UnityEngine.AI;
 
 using System.Reflection;  //문자열로 실행 시험
 
-public class DefaultMove : MonoBehaviour {
+public class DefaultMove : MonoBehaviour
+{
 
     public GameObject goal;
     NavMeshAgent nav;
@@ -24,31 +25,33 @@ public class DefaultMove : MonoBehaviour {
     public float speed;
     public float power;
     Collider akcoll;
-   
+
 
     void Awake()
     {
-       
+
     }
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         GetCommand();  //캐릭터에 맞는 command를 가져오는 함수
         var stat = GetComponent<stat>();
         nav = GetComponent<NavMeshAgent>();
         fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
-       StartCoroutine("JustWalk");
-       StartCoroutine("CheckCommand");
-       StartCoroutine("CheckAttackCommand");
+        StartCoroutine("JustWalk");
+        StartCoroutine("CheckCommand");
+        StartCoroutine("CheckAttackCommand");
 
 
     }
-	
-	// Update is called once per frame
-	void Update () {
-        
+
+    // Update is called once per frame
+    void Update()
+    {
+
 
     }
 
@@ -60,7 +63,7 @@ public class DefaultMove : MonoBehaviour {
             checkcommand = true;
             while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
             {
-                
+
                 i++;  //
 
                 Invoke(command[i, 0], 0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
@@ -72,20 +75,20 @@ public class DefaultMove : MonoBehaviour {
 
                 yield return null;
             }
-           
+
         }
     }
-  
-  
+
+
     IEnumerator CheckAttackCommand()  // 공격 명령 기본 틀 미완성
     {
-     
-        
+
+
         while (true)
         {
             checkattackcommand = true;
             yield return null;
-            
+
             if (tag == "redcharacter")
             {
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
@@ -98,15 +101,15 @@ public class DefaultMove : MonoBehaviour {
                             while (checkattackcommand == true)
                             {
                                 yield return null;
-                            j++;
-                            akcoll = coll;
+                                j++;
+                                akcoll = coll;
                                 if (command[j, 2] != null)
                                 {
                                     yield return StartCoroutine(command[j, 2]);
                                 }
-                            nav.speed = speed;
-                               
-                             }
+                                nav.speed = speed;
+
+                            }
                         }
                     }
                 }
@@ -117,7 +120,7 @@ public class DefaultMove : MonoBehaviour {
             }
         }
 
-       
+
     }
 
 
@@ -128,18 +131,18 @@ public class DefaultMove : MonoBehaviour {
     {
         if (name == "chicken")       //자신이 chicken이면 RedDirector의 command 중 chicken을 복사해 온다.
         {
-            command[0,0] = Command.chicken[0,0];
-            command[0,1] = Command.chicken[0,1];
+            command[0, 0] = Command.chicken[0, 0];
+            command[0, 1] = Command.chicken[0, 1];
             command[1, 0] = Command.chicken[1, 0];
             command[1, 1] = Command.chicken[1, 1];
             command[0, 2] = Command.chicken[0, 2];
             command[1, 2] = Command.chicken[1, 2];
 
         }
-        else if (name == "cat")     
+        else if (name == "cat")
         {
-            command[0, 0] = Command .cat[0, 0];
-            command[0, 1] = Command .cat[0, 1];
+            command[0, 0] = Command.cat[0, 0];
+            command[0, 1] = Command.cat[0, 1];
         }
     }
 
@@ -175,22 +178,22 @@ public class DefaultMove : MonoBehaviour {
     void Always()
     {
         Debug.Log("Always");
-         
+
         checkcommand = false;
-        
-        if (runningact != command[i,1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+
+        if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
         {
             StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-            StartCoroutine(command[i,1]);  //지금 실행해야 할 행동 시작
+            StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
             i = -1;
         }
-     
-        
+
+
     }
 
     void HPMoreThanHalf()
     {
-       
+
 
 
         if (hp >= (fullhp / 2))
@@ -229,9 +232,9 @@ public class DefaultMove : MonoBehaviour {
         return;
     }
 
-    void EnemyInNear()   
+    void EnemyInNear()
     {
-        
+
         Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
         if (tag == "redcharacter")
         {
@@ -266,7 +269,7 @@ public class DefaultMove : MonoBehaviour {
 
                         StopCoroutine(runningact);
                         StartCoroutine(command[i, 1]);
-                       // Debug.Log("A redcharacter is detected in radius");
+                        // Debug.Log("A redcharacter is detected in radius");
                         i = -1;
                         break;
                     }
@@ -301,7 +304,7 @@ public class DefaultMove : MonoBehaviour {
 
                     StopCoroutine(runningact);
                     StartCoroutine(command[i, 1]);
-                   // Debug.Log("No Enemys in Near");
+                    // Debug.Log("No Enemys in Near");
                     i = -1;
 
                 }
@@ -335,7 +338,7 @@ public class DefaultMove : MonoBehaviour {
 
     // 여기까지 이동 조건
 
-    
+
 
     // 여기서부터 이동 행동
 
