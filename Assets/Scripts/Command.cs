@@ -17,6 +17,7 @@ ChaseClosestEnemy - 가까운 적 추적
 공격 조건 목록
 AlwaysAttack - 항상 공격
 HPMoreThanHalfAttack - 자신의 체력이 절반 이상일 때 공격
+HPLessThanHalfAttack - 자신의 체력이 절반 미만일 때 공격
 */
 
 public class Command : MonoBehaviour {
@@ -38,12 +39,18 @@ public class Command : MonoBehaviour {
     // Use this for initialization
 
     void Start () {
+        /*
         chicken[0, 0] = "NoEnemyInNear";          // 0번은 조건
         chicken[0,1] = "JustWalk";     // 1번은 행동
         chicken[1, 0] = "Always";               // 0번은 조건
         chicken[1, 1] = "ChaseClosestEnemy";             // 1번은 행동
         chicken[3, 0] = "Always";    // [3,0]과 [3,1]은 고정
-        chicken[0, 2] = "HPMoreThanHalfAttack";    // 2번은 공격 조건
+        */
+        chicken[0, 0] = "EnemyInNear";
+        chicken[0, 1] = "ChaseClosestEnemy";
+        chicken[1, 0] = "Always";
+        chicken[1, 1] = "JustWalk";
+        chicken[0, 2] = "AlwaysAttack";    // 2번은 공격 조건
         chicken[3, 1] = "JustWalk";
         cat[0, 0] = "Always";        
         cat[0, 1] = "JustWalk";
@@ -54,6 +61,7 @@ public class Command : MonoBehaviour {
         sheep[0, 1] = "ChaseClosestEnemy";
         sheep[1, 0] = "Always";
         sheep[1, 1] = "JustWalk";
+        sheep[0, 2] = "AlwaysAttack";
 
 
     }

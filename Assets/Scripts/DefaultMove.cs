@@ -107,6 +107,31 @@ public class DefaultMove : MonoBehaviour
                     }
                 }
             }
+            else if (tag == "bluecharacter")
+            {
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
+                foreach (Collider coll in colls)
+                {
+                    if (coll != null)
+                    {
+                        if (coll.gameObject.tag == "redcharacter")
+                        {
+                            while (checkattackcommand == true)
+                            {
+                                yield return null;
+                                j++;
+                                akcoll = coll;
+                                if (command[j, 2] != null)
+                                {
+                                    yield return StartCoroutine(command[j, 2]);
+                                }
+                                nav.speed = speed;
+
+                            }
+                        }
+                    }
+                }
+            }
             if (j >= 2 || checkattackcommand == false)
             {
                 j = -1;
@@ -143,6 +168,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 1] = Command.sheep[0, 1];
             command[1, 0] = Command.sheep[1, 0];
             command[1, 1] = Command.sheep[1, 1];
+            command[0, 2] = Command.sheep[0, 2];
         }
     }
 
@@ -165,6 +191,19 @@ public class DefaultMove : MonoBehaviour
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
             Debug.Log("HP more than half attack");
+            checkattackcommand = false;
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
+
+
+    IEnumerator HPLessThanHalfAttack()
+    {
+        if (hp < (fullhp / 2))
+        {
+            nav.speed = 0;
+            transform.LookAt(akcoll.transform);
+            Debug.Log("HP less than half attack");
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
         }
