@@ -13,6 +13,8 @@ TagManager:
   - redcharacter
   - Manager
   - animal
+  - reddestination
+  - bluedestination
   layers:
   - Default
   - TransparentFX

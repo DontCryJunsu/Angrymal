@@ -28,18 +28,20 @@ public class RandomDestination : MonoBehaviour
     {
         if (other.name == chaser)
         {
-            //transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
+            rand = Random.RandomRange(1, 275);
+            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
 
-            shuffle();
+            //shuffle();
         }
     }
     private void OnTriggerStay(Collider other)
     {
         if (other.name == chaser)
         {
-            //transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
+            rand = Random.RandomRange(1, 275);
+            transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
 
-            shuffle();
+            //shuffle();
         }
         /*
         if (other.tag == chaser || other.tag == "wall")
@@ -57,11 +59,11 @@ public class RandomDestination : MonoBehaviour
     {
         while (true)
         {
-            if (transform.tag == "blueteam" && tile2[rand].tag == "blueteam")
+            if ((transform.tag == "bluedestination" && tile2[rand].tag == "Untagged")||(transform.tag == "bluedestination" && tile2[rand].tag == "blueteam"))
             {
                 rand = Random.RandomRange(1, 275);
             }
-            else if (transform.tag == "redteam" && tile2[rand].tag == "redteam")
+            else if ((transform.tag == "reddestination" && tile2[rand].tag == "Untagged") || (transform.tag == "reddestination" && tile2[rand].tag == "redteam"))
             {
                 rand = Random.RandomRange(1, 275);
             }

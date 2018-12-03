@@ -457,5 +457,64 @@ public class DefaultMove : MonoBehaviour
     }
 
 
+    IEnumerator GoToEnemyTile()  
+    {
+        runningact = "GoToEnemyTile";
+        bool gototile = false;
+        //Debug.Log("Going to enemy tile");
+        if (tag == "bluecharacter")
+        {
+            while (true)
+            {
+                yield return null;
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+                foreach (Collider coll in colls)
+                {
+                    // yield return null;
+                    if (coll.gameObject.tag == "redteam")
+                    {
+                        nav.SetDestination(coll.gameObject.transform.position);
+                        gototile = true;
+                        break;
+                    }
+                    gototile = false;
+                }
+                if (gototile == false)
+                {
+                    RD.shuffle();
+                    nav.SetDestination(goal.transform.position);
+                }
+
+
+            }
+        }
+        else if (tag =="redcharacter")
+        {
+            while (true)
+            {
+                yield return null;
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+                foreach (Collider coll in colls)
+                {
+                    // yield return null;
+                    if (coll.gameObject.tag == "blueteam")
+                    {
+                        nav.SetDestination(coll.gameObject.transform.position);
+                        gototile = true;
+                        break;
+                    }
+                    gototile = false;
+                }
+                if (gototile == false)
+                {
+                    RD.shuffle();
+                    nav.SetDestination(goal.transform.position);
+                }
+
+
+            }
+        }
+    }
+
     // 여기까지 이동 행동
 }

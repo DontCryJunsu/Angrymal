@@ -28,4 +28,18 @@ public class HexColor : MonoBehaviour
             transform.tag = "blueteam";
         }
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "redcharacter")
+        {
+            rend.sharedMaterial = mt[1];
+            transform.tag = "redteam";
+        }
+        else if (other.gameObject.tag == "bluecharacter")
+        {
+            rend.sharedMaterial = mt[2];
+            transform.tag = "blueteam";
+        }
+    }
 }
