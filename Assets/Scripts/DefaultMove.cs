@@ -467,7 +467,7 @@ public class DefaultMove : MonoBehaviour
             while (true)
             {
                 yield return null;
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
                 foreach (Collider coll in colls)
                 {
                     // yield return null;
@@ -493,7 +493,7 @@ public class DefaultMove : MonoBehaviour
             while (true)
             {
                 yield return null;
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
                 foreach (Collider coll in colls)
                 {
                     // yield return null;
