@@ -211,6 +211,20 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
+    IEnumerator EnemyHPLessThanHalfAttack()  // 상대 체력 절반 이하일 때 공격
+    {
+        var enemyhp = akcoll.GetComponent<DefaultMove>();
+        if (enemyhp.hp < (enemyhp.fullhp / 2))
+        {
+             
+            nav.speed = 0;
+            transform.LookAt(akcoll.transform);
+            Debug.Log("Enemy HP less than half attack");
+            checkattackcommand = false;
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
+
     // 여기까지 공격 조건
 
 

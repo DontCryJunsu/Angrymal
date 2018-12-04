@@ -19,6 +19,7 @@ GoToEnemyTile - 적의 땅으로 이동
 AlwaysAttack - 항상 공격
 HPMoreThanHalfAttack - 자신의 체력이 절반 이상일 때 공격
 HPLessThanHalfAttack - 자신의 체력이 절반 미만일 때 공격
+EnemyHPLessThanHalfAttack - 상대 체력이 절반 미만일 때 공격
 */
 
 public class Command : MonoBehaviour {
@@ -64,7 +65,7 @@ public class Command : MonoBehaviour {
         sheep[0, 1] = "GoToEnemyTile";
         sheep[1, 0] = "Always";
         sheep[1, 1] = "JustWalk";
-        sheep[0, 2] = "HPLessThanHalfAttack";
+        sheep[0, 2] = "EnemyHPLessThanHalfAttack";
 
 
     }
