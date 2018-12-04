@@ -35,7 +35,7 @@ public class DefaultMove : MonoBehaviour
     void Start()
     {
         GetCommand();  //캐릭터에 맞는 command를 가져오는 함수
-        var stat = GetComponent<stat>();
+        //var stat = GetComponent<stat>();
         nav = GetComponent<NavMeshAgent>();
         //fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
@@ -481,7 +481,10 @@ public class DefaultMove : MonoBehaviour
                 }
                 if (gototile == false)
                 {
-                    RD.shuffle();
+                    if (Command.redtile != 0)
+                    {
+                        RD.shuffle();
+                    }
                     nav.SetDestination(goal.transform.position);
                 }
 
@@ -507,7 +510,10 @@ public class DefaultMove : MonoBehaviour
                 }
                 if (gototile == false)
                 {
-                    RD.shuffle();
+                    if (Command.bluetile != 0)
+                    {
+                        RD.shuffle();
+                    }
                     nav.SetDestination(goal.transform.position);
                 }
 

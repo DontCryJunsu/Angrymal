@@ -6,6 +6,7 @@ public class HexColor : MonoBehaviour
 {
     public Material[] mt;
     Renderer rend;
+   
 
     // Use this for initialization
     void Start()
@@ -13,19 +14,46 @@ public class HexColor : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.enabled = true;
         rend.sharedMaterial = mt[0];
+         
+        
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "redcharacter")
         {
-            rend.sharedMaterial = mt[1];
-            transform.tag = "redteam";
+            if (tag == "Untagged")
+            {
+                Command.redtile++;
+                rend.sharedMaterial = mt[1];
+                transform.tag = "redteam";
+            }
+            else if (tag == "blueteam")
+            {
+                Command.redtile++;
+                Command.bluetile--;
+                rend.sharedMaterial = mt[1];
+                transform.tag = "redteam";
+            }
+            //rend.sharedMaterial = mt[1];
+            //transform.tag = "redteam";
+
         }
         else if (other.gameObject.tag == "bluecharacter")
         {
-            rend.sharedMaterial = mt[2];
-            transform.tag = "blueteam";
+            if (tag == "Untagged")
+            {
+                Command.bluetile++;
+                rend.sharedMaterial = mt[2];
+                transform.tag = "blueteam";
+            }
+            else if (tag == "redteam")
+            {
+                Command.bluetile++;
+                Command.redtile--;
+                rend.sharedMaterial = mt[2];
+                transform.tag = "blueteam";
+            }
         }
     }
 
@@ -33,13 +61,35 @@ public class HexColor : MonoBehaviour
     {
         if (other.gameObject.tag == "redcharacter")
         {
-            rend.sharedMaterial = mt[1];
-            transform.tag = "redteam";
+            if (tag == "Untagged")
+            {
+                Command.redtile++;
+                rend.sharedMaterial = mt[1];
+                transform.tag = "redteam";
+            }
+            else if (tag == "blueteam")
+            {
+                Command.redtile++;
+                Command.bluetile--;
+                rend.sharedMaterial = mt[1];
+                transform.tag = "redteam";
+            }
         }
         else if (other.gameObject.tag == "bluecharacter")
         {
-            rend.sharedMaterial = mt[2];
-            transform.tag = "blueteam";
+            if (tag == "Untagged")
+            {
+                Command.bluetile++;
+                rend.sharedMaterial = mt[2];
+                transform.tag = "blueteam";
+            }
+            else if (tag == "redteam")
+            {
+                Command.bluetile++;
+                Command.redtile--;
+                rend.sharedMaterial = mt[2];
+                transform.tag = "blueteam";
+            }
         }
     }
 }
