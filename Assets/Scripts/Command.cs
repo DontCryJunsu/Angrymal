@@ -65,7 +65,7 @@ public class Command : MonoBehaviour {
         sheep[0, 1] = "GoToEnemyTile";
         sheep[1, 0] = "Always";
         sheep[1, 1] = "JustWalk";
-        sheep[0, 2] = "EnemyHPLessThanHalfAttack";
+        sheep[0, 2] = "MyHPIsMoreAttack";
 
 
     }

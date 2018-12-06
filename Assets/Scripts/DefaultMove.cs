@@ -75,7 +75,7 @@ public class DefaultMove : MonoBehaviour
     }
 
 
-    IEnumerator CheckAttackCommand()  // 공격 명령 기본 틀 미완성
+    IEnumerator CheckAttackCommand()  // 공격 명령 기본 틀
     {
 
 
@@ -103,7 +103,10 @@ public class DefaultMove : MonoBehaviour
                                     yield return StartCoroutine(command[j, 2]);
                                 }
                                 nav.speed = speed;
-
+                                if (j >= 2 || checkattackcommand == false)
+                                {
+                                    j = -1;
+                                }
                             }
                         }
                     }
@@ -128,16 +131,16 @@ public class DefaultMove : MonoBehaviour
                                     yield return StartCoroutine(command[j, 2]);
                                 }
                                 nav.speed = speed;
-
+                                if (j >= 2 || checkattackcommand == false)
+                                {
+                                    j = -1;
+                                }
                             }
                         }
                     }
                 }
             }
-            if (j >= 2 || checkattackcommand == false)
-            {
-                j = -1;
-            }
+         
         }
 
 
@@ -174,7 +177,7 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    // 여기서부터 공격 조건
+    // 여기서부터 공격 조건 ----------------------------------------------------------------------------------
 
     IEnumerator AlwaysAttack()
     {
@@ -225,14 +228,27 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    // 여기까지 공격 조건
+    IEnumerator MyHPIsMoreAttack()
+    {
+        var enemyhp = akcoll.GetComponent<DefaultMove>();
+        if (enemyhp.hp < hp)
+        {
+            nav.speed = 0;
+            transform.LookAt(akcoll.transform);
+            Debug.Log("My HP is more than enemy's HP Attack");
+            checkattackcommand = false;
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
+
+    // 여기까지 공격 조건 --------------------------------------------------------------------------------------
 
 
-    // 여기서부터 이동 조건
+    // 여기서부터 이동 조건 -----------------------------------------------------------------------------------
 
     void Always()
     {
-        Debug.Log("Always");
+       // Debug.Log("Always");
 
         checkcommand = false;
 
@@ -253,7 +269,7 @@ public class DefaultMove : MonoBehaviour
 
         if (hp >= (fullhp / 2))
         {
-            Debug.Log("HPMoreThanHalf");
+          //  Debug.Log("HPMoreThanHalf");
             checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
@@ -273,7 +289,7 @@ public class DefaultMove : MonoBehaviour
 
         if (hp < (fullhp / 2))
         {
-            Debug.Log("HPLessThanHalf");
+          //  Debug.Log("HPLessThanHalf");
             checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
@@ -374,7 +390,7 @@ public class DefaultMove : MonoBehaviour
             {
                 if (coll.gameObject.tag == "redcharacter")
                 {
-                    Debug.Log("Enemy is in Near");
+                 //   Debug.Log("Enemy is in Near");
                     nearenemy++;
                 }
             }
@@ -386,7 +402,7 @@ public class DefaultMove : MonoBehaviour
 
                     StopCoroutine(runningact);
                     StartCoroutine(command[i, 1]);
-                    Debug.Log("No Enemys in Near");
+                 //   Debug.Log("No Enemys in Near");
                     //i = -1;
 
                 }
@@ -395,11 +411,11 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    // 여기까지 이동 조건
+    // 여기까지 이동 조건 -----------------------------------------------------------------------------------------
 
 
-
-    // 여기서부터 이동 행동
+         
+    // 여기서부터 이동 행동 ----------------------------------------------------------------------------------------
 
     IEnumerator JustWalk()
     {
@@ -536,5 +552,5 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    // 여기까지 이동 행동
+    // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
 }
