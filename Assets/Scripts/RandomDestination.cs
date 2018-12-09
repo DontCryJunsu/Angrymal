@@ -74,4 +74,21 @@ public class RandomDestination : MonoBehaviour
         }
         transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
     }
+
+
+    public void shuffleempty()
+    {
+        while (true)
+        {
+            if (tile2[rand].tag == "redteam" || tile2[rand].tag == "blueteam")
+            {
+                rand = Random.RandomRange(1, 275);
+            }
+            else
+            {
+                break;
+            }
+        }
+        transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
+    }
 }

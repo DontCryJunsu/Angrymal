@@ -24,6 +24,7 @@ public class DefaultMove : MonoBehaviour
     public float fullhp;
     public float speed;
     public float power;
+    public int num_of_tile = 275; //총 땅의 개수
     Collider akcoll = null;
     RandomDestination RD;
 
@@ -316,6 +317,19 @@ public class DefaultMove : MonoBehaviour
         yield return null;
     }
 
+    IEnumerator NoEmptyTileAttack()   // 빈 땅이 없을 때 공격
+    {
+       
+            if ((Command.redtile + Command.bluetile) >= num_of_tile)
+            {
+                nav.speed = 0;   // 멈추고
+                transform.LookAt(akcoll.transform);  //적 바라봄
+                Debug.Log("There are no empty tile Attack");  // 공격
+                checkattackcommand = false;
+                yield return new WaitForSeconds(1.5f);
+            }
+    }
+
     // 여기까지 공격 조건 --------------------------------------------------------------------------------------
 
 
@@ -564,6 +578,25 @@ public class DefaultMove : MonoBehaviour
         return;
     }
 
+
+
+    void NoEmptyTile()  // 빈 땅이 없을 때
+    {
+        if ((Command.redtile + Command.bluetile) >= num_of_tile)
+        {
+            //  Debug.Log("OurTileIsLess");
+            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+
+
+            if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+            {
+                StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
+                StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
+                i = -1;
+            }
+        }
+        return;
+    }
     // 여기까지 이동 조건 -----------------------------------------------------------------------------------------
 
 
@@ -726,11 +759,12 @@ public class DefaultMove : MonoBehaviour
                 }
                 if (gototile == false)
                 {
-                    if (Command.redtile != 0)
+                    if (Command.redtile != 0)  //적 땅이 존재할 경우에만
                     {
                         RD.shuffle();
+                        nav.SetDestination(goal.transform.position);
                     }
-                    nav.SetDestination(goal.transform.position);
+                    
                 }
 
 
@@ -758,8 +792,8 @@ public class DefaultMove : MonoBehaviour
                     if (Command.bluetile != 0)
                     {
                         RD.shuffle();
+                        nav.SetDestination(goal.transform.position);
                     }
-                    nav.SetDestination(goal.transform.position);
                 }
 
 
@@ -767,8 +801,40 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
+    
+    IEnumerator GoToEmptyTile()  // 빈 땅으로 이동
+    {
+        runningact = "GoToEmptyTile";
+        bool gototile = false;
+        //Debug.Log("Going to enemy tile");
+        
+            while (true)
+            {
+                yield return null;
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
+                foreach (Collider coll in colls)
+                {
+                    // yield return null;
+                    if (coll.gameObject.tag == "Untagged")
+                    {
+                        nav.SetDestination(coll.gameObject.transform.position);
+                        gototile = true;
+                        break;
+                    }
+                    gototile = false;
+                }
+                if (gototile == false)
+                {
+                    if ((Command.redtile + Command.bluetile) < num_of_tile)  //빈 땅이 존재할 경우에만
+                    {
+                        RD.shuffleempty();
+                        nav.SetDestination(goal.transform.position);
+                    }
 
-
+                }
+            }
+    }
+    
 
     // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
 }
