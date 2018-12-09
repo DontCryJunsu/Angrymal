@@ -12,7 +12,7 @@ public class DefaultMove : MonoBehaviour
     NavMeshAgent nav;
     bool JustWalk_isrunning;
     //string[] command = new string[2];
-    string[,] command = new string[4, 3];  //4행 2열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개.
+    string[,] command = new string[4, 3];  //4행 3열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개. 3열은 공격명령.
     private Transform target;
     private float dist;
     string runningact;
@@ -640,6 +640,68 @@ public class DefaultMove : MonoBehaviour
     }
 
 
+    IEnumerator ChaseClosestAlly()
+    {
+
+
+        while (true)
+        {
+            yield return null;
+            runningact = "ChaseClosestAlly";
+            if (tag == "redcharacter")
+            {
+                GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("redcharacter");  //bluecharacter 태그의 모든 오브젝트를 찾는다.
+                if (taggedEnemys != null)
+                {
+                    float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
+                    Transform closestEnemy = null;
+                    foreach (GameObject taggedEnemy in taggedEnemys)
+                    {
+                        Vector3 objectPos = taggedEnemy.transform.position;
+                        dist = (objectPos - transform.position).sqrMagnitude;
+                        if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+                        {
+                            closestDistSqr = dist;
+                            closestEnemy = taggedEnemy.transform;
+                        }
+                    }
+                    if (closestEnemy != null)
+                    {
+                        target = closestEnemy;  //가장 가까운 아군을 target으로 설정
+                        nav.SetDestination(target.position);  //target을 향해 이동
+                    }
+                }
+
+            }
+            else if (tag == "bluecharacter")
+            {
+                GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("bluecharacter");  //redcharacter 태그의 모든 오브젝트를 찾는다.
+                if (taggedEnemys != null)
+                {
+                    float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
+                    Transform closestEnemy = null;
+                    foreach (GameObject taggedEnemy in taggedEnemys)
+                    {
+                        Vector3 objectPos = taggedEnemy.transform.position;
+                        dist = (objectPos - transform.position).sqrMagnitude;
+                        if (dist < closestDistSqr && dist!=0)   // 거리가 제곱한 최단 거리보다 작으면
+                        {
+                            closestDistSqr = dist;
+                            closestEnemy = taggedEnemy.transform;
+                        }
+                    }
+                    if (closestEnemy != null)
+                    {
+                        target = closestEnemy;  //가장 가까운 아군을 target으로 설정
+                        nav.SetDestination(target.position);  //target을 향해 이동
+                    }
+                }
+
+            }
+        }
+    }
+
+
     IEnumerator GoToEnemyTile()  
     {
         runningact = "GoToEnemyTile";
@@ -704,6 +766,9 @@ public class DefaultMove : MonoBehaviour
             }
         }
     }
+
+
+
 
     // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
 }

@@ -16,6 +16,7 @@ OurTileIsLess - 땅이 더 적을 때
 JustWalk - 무작위 이동
 ChaseClosestEnemy - 가까운 적 추적
 GoToEnemyTile - 적의 땅으로 이동
+ChaseClosestAlly - 가까운 아군에게 이동
 
 공격 조건 목록
 AlwaysAttack - 항상 공격
@@ -25,6 +26,7 @@ EnemyHPMoreThanHalfAttack - 상대 체력이 절반 이상일 때 공격
 EnemyHPLessThanHalfAttack - 상대 체력이 절반 미만일 때 공격
 OurTileIsMoreAttack - 땅이 더 많을 때 공격
 OurTileIsLessAttack - 땅이 더 적을 때 공격
+MyHPIsMoreAttack - 내 체력이 더 많을 때 공격
 */
 
 public class Command : MonoBehaviour {
@@ -66,8 +68,8 @@ public class Command : MonoBehaviour {
         cat[3, 0] = "Always";
         cat[3, 1] = "JustWalk";
          
-        sheep[0, 0] = "OurTileIsMore";
-        sheep[0, 1] = "ChaseClosestEnemy";
+        sheep[0, 0] = "Always";
+        sheep[0, 1] = "ChaseClosestAlly";
         sheep[1, 0] = "Always";
         sheep[1, 1] = "JustWalk";
         sheep[0, 2] = "HPMoreThanHalfAttack";
