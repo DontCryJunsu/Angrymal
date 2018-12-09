@@ -7,7 +7,7 @@ using System.Reflection;  //문자열로 실행 시험
 
 public class DefaultMove : MonoBehaviour
 {
-
+    
     public GameObject goal;
     NavMeshAgent nav;
     bool JustWalk_isrunning;
@@ -129,6 +129,7 @@ public class DefaultMove : MonoBehaviour
                                 if (command[j, 2] != null)
                                 {
                                     yield return StartCoroutine(command[j, 2]);
+                                    //Debug.Log("J = " + j);
                                 }
                                 nav.speed = speed;
                                 if (j >= 2 || checkattackcommand == false)
@@ -174,6 +175,8 @@ public class DefaultMove : MonoBehaviour
             command[1, 0] = Command.sheep[1, 0];
             command[1, 1] = Command.sheep[1, 1];
             command[0, 2] = Command.sheep[0, 2];
+            command[1, 2] = Command.sheep[1, 2];
+            command[2, 2] = Command.sheep[2, 2];
         }
     }
 
@@ -191,6 +194,7 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator HPMoreThanHalfAttack()
     {
+       
         if (hp >= (fullhp / 2))
         {
             nav.speed = 0;
@@ -199,6 +203,7 @@ public class DefaultMove : MonoBehaviour
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
         }
+       
     }
 
 
@@ -214,7 +219,22 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    IEnumerator EnemyHPLessThanHalfAttack()  // 상대 체력 절반 이하일 때 공격
+    IEnumerator EnemyHPMoreThanHalfAttack()  // 상대 체력 절반 이상일 때 공격
+    {
+        var enemyhp = akcoll.GetComponent<DefaultMove>();
+        if (enemyhp.hp >= (enemyhp.fullhp / 2))
+        {
+
+            nav.speed = 0;
+            transform.LookAt(akcoll.transform);
+            Debug.Log("Enemy HP more than half attack");
+            checkattackcommand = false;
+            yield return new WaitForSeconds(1.5f);
+        }
+    }
+
+
+    IEnumerator EnemyHPLessThanHalfAttack()  // 상대 체력 절반 미만일 때 공격
     {
         var enemyhp = akcoll.GetComponent<DefaultMove>();
         if (enemyhp.hp < (enemyhp.fullhp / 2))
@@ -228,7 +248,7 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    IEnumerator MyHPIsMoreAttack()
+    IEnumerator MyHPIsMoreAttack()  // 내 체력이 더 많을 때 공격
     {
         var enemyhp = akcoll.GetComponent<DefaultMove>();
         if (enemyhp.hp < hp)
@@ -239,6 +259,61 @@ public class DefaultMove : MonoBehaviour
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
         }
+        yield return null;
+    }
+
+    IEnumerator OurTileIsMoreAttack()   // 땅이 더 많을 때 공격
+    {
+        if (tag == "redcharacter")
+        {
+            if (Command.redtile > Command.bluetile)
+            {
+                nav.speed = 0;   // 멈추고
+                transform.LookAt(akcoll.transform);  //적 바라봄
+                Debug.Log("Our tile is more than enemy's tile Attack");  // 공격
+                checkattackcommand = false;
+                yield return new WaitForSeconds(1.5f);
+            }
+        }
+        else if (tag == "bluecharacter")
+        {
+            if (Command.bluetile > Command.redtile)
+            {
+                nav.speed = 0;
+                transform.LookAt(akcoll.transform);
+                Debug.Log("My tile is more than enemy's tile Attack");
+                checkattackcommand = false;
+                yield return new WaitForSeconds(1.5f);
+            }
+        }
+        yield return null;
+    }
+
+    IEnumerator OurTileIsLessAttack()
+    {
+        if (tag == "redcharacter")
+        {
+            if (Command.redtile < Command.bluetile)
+            {
+                nav.speed = 0;   // 멈추고
+                transform.LookAt(akcoll.transform);  //적 바라봄
+                Debug.Log("Our tile is less than enemy's tile Attack");  // 공격
+                checkattackcommand = false;
+                yield return new WaitForSeconds(1.5f);
+            }
+        }
+        else if (tag == "bluecharacter")
+        {
+            if (Command.bluetile < Command.redtile)
+            {
+                nav.speed = 0;
+                transform.LookAt(akcoll.transform);
+                Debug.Log("My tile is less than enemy's tile Attack");
+                checkattackcommand = false;
+                yield return new WaitForSeconds(1.5f);
+            }
+        }
+        yield return null;
     }
 
     // 여기까지 공격 조건 --------------------------------------------------------------------------------------
@@ -411,10 +486,88 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
+    void OurTileIsMore()  //땅이 더 많을 때
+    {
+
+
+        if (tag == "redcharacter")
+        {
+            if (Command.redtile > Command.bluetile)
+            {
+                //  Debug.Log("OurTileIsMore");
+                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+
+
+                if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+                {
+                    StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
+                    StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
+                    i = -1;
+                }
+            }
+        }
+        else if (tag =="bluecharacter")
+        {
+            if (Command.bluetile > Command.redtile)
+            {
+                //  Debug.Log("OurTileIsMore");
+                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+
+
+                if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+                {
+                    StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
+                    StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
+                    i = -1;
+                }
+            }
+        }
+        return;
+    }
+
+    void OurTileIsLess()  //땅이 더 적을 때
+    {
+
+
+        if (tag == "redcharacter")
+        {
+            if (Command.redtile < Command.bluetile)
+            {
+                //  Debug.Log("OurTileIsLess");
+                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+
+
+                if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+                {
+                    StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
+                    StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
+                    i = -1;
+                }
+            }
+        }
+        else if (tag == "bluecharacter")
+        {
+            if (Command.bluetile < Command.redtile)
+            {
+                //  Debug.Log("OurTileIsMoreLess");
+                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+
+
+                if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+                {
+                    StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
+                    StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
+                    i = -1;
+                }
+            }
+        }
+        return;
+    }
+
     // 여기까지 이동 조건 -----------------------------------------------------------------------------------------
 
 
-         
+
     // 여기서부터 이동 행동 ----------------------------------------------------------------------------------------
 
     IEnumerator JustWalk()

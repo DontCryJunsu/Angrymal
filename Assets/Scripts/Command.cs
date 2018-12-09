@@ -9,6 +9,8 @@ HPMoreThanHalf - 체력이 절반 이상일 때
 HPLessThanHalf - 체력이 절반 미만일 때
 EnemyInNear - 주변에 적이 있을 때 
 NoEnemyInNear - 주변에 적이 없을 때 
+OurTileIsMore - 땅이 더 많을 때
+OurTileIsLess - 땅이 더 적을 때
 
 행동 목록
 JustWalk - 무작위 이동
@@ -19,7 +21,10 @@ GoToEnemyTile - 적의 땅으로 이동
 AlwaysAttack - 항상 공격
 HPMoreThanHalfAttack - 자신의 체력이 절반 이상일 때 공격
 HPLessThanHalfAttack - 자신의 체력이 절반 미만일 때 공격
+EnemyHPMoreThanHalfAttack - 상대 체력이 절반 이상일 때 공격
 EnemyHPLessThanHalfAttack - 상대 체력이 절반 미만일 때 공격
+OurTileIsMoreAttack - 땅이 더 많을 때 공격
+OurTileIsLessAttack - 땅이 더 적을 때 공격
 */
 
 public class Command : MonoBehaviour {
@@ -61,11 +66,12 @@ public class Command : MonoBehaviour {
         cat[3, 0] = "Always";
         cat[3, 1] = "JustWalk";
          
-        sheep[0, 0] = "Always";
-        sheep[0, 1] = "GoToEnemyTile";
+        sheep[0, 0] = "OurTileIsMore";
+        sheep[0, 1] = "ChaseClosestEnemy";
         sheep[1, 0] = "Always";
         sheep[1, 1] = "JustWalk";
-        sheep[0, 2] = "MyHPIsMoreAttack";
+        sheep[0, 2] = "HPMoreThanHalfAttack";
+        sheep[1, 2] = "OurTileIsMoreAttack";
 
 
     }
