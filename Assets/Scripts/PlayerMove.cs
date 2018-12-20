@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-
     int[,] Animal = new int[7, 10];
     int x, y;
     float Move_Delay = 0.0f;

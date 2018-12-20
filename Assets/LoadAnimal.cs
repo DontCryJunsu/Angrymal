@@ -7,10 +7,11 @@ public class LoadAnimal : MonoBehaviour {
     public GameObject c1;
     public GameObject c2;
     public GameObject c3;
-    bool C1 = false;
-    bool C2 = false;
-    bool C3 = false;
+    public static bool C1 = false;
+    public static bool C2 = false;
+    public static bool C3 = false;
     GameObject animalUI;
+    bool act = true;
     // Use this for initialization
     void Start () {
 		
@@ -20,12 +21,15 @@ public class LoadAnimal : MonoBehaviour {
 	void Update () {
 		
 	}
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "animal")
+        if(other.gameObject.tag == "animal" && act == true)
         {
+            act = false;
+            other.GetComponent<LobbyCam>().nav.enabled = false;
             string NAME = other.gameObject.name + "UI";
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
+            other.GetComponentInParent<Transform>().transform.position = new Vector3(Random.Range(-20f, 40f), 7f, Random.Range(-60f, 40));
             animalUI = GameObject.Find(NAME);
             StartCoroutine(sizeUp());
             if(C1 == false)
@@ -63,6 +67,7 @@ public class LoadAnimal : MonoBehaviour {
             yield return new WaitForSeconds(0.02f);
             animalUI.transform.localScale += new Vector3(0.1f, 0.1f, 0);
         }
+        act = true;
         yield return null;
     }
 

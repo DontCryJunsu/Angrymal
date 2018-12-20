@@ -6,18 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
-    path: Assets/Start_scene.unity
-    guid: 7753a586adbdfd5479c2b427d946d1e3
-  - enabled: 0
-    path: Assets/Team_scene.unity
+    path: Assets/Scenes/Team_scene.unity
     guid: 11d9e3cdb9b9c614a99e5acee6ff0d4d
   - enabled: 0
-    path: Assets/Main_scene.unity
+    path: Assets/Scenes/Main_scene.unity
     guid: 612e3a74bbca1c7498f193a8551741ec
   - enabled: 1
-    path: Assets/Lobby.unity
+    path: Assets/Scenes/Start_scene.unity
+    guid: 7753a586adbdfd5479c2b427d946d1e3
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
     guid: 891c2b9bd1782534789d6390bbda651f
   - enabled: 1
-    path: Assets/MapTest/hexScene.unity
+    path: Assets/Scenes/hexScene.unity
     guid: 699266f9d39faa54bba081b02a6110be
   m_configObjects: {}

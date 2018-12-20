@@ -10,14 +10,19 @@ public class LobbyCam : MonoBehaviour
     public GameObject ZoomVC;
     public Transform Downbar;
     public Transform Sidebar;
-    NavMeshAgent nav;
+    public NavMeshAgent nav;
     public Transform loadZone;
     public int aniNum;
+    public bool act = true;
+
     public void Select()
     {
+        LobbyManager.loadAni++;
         nav = gameObject.GetComponentInParent<NavMeshAgent>();
+        nav.enabled = true;
         nav.SetDestination(loadZone.transform.position);
         LobbyManager.esc = true;
+        act = false;
     }
 
     // Update is called once per frame
@@ -38,7 +43,7 @@ public class LobbyCam : MonoBehaviour
     void OnMouseUp()
     {
         // 캐릭터 선택할시
-        if (LobbyManager.aniNum == 0)
+        if (LobbyManager.aniNum == 0 && LobbyManager.loadAni < 3 && act == true)
         {
             ZoomVC.GetComponent<CinemachineVirtualCamera>().LookAt = transform;
             ZoomVC.GetComponent<CinemachineVirtualCamera>().Priority = 11;
