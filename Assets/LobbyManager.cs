@@ -6,10 +6,11 @@ using UnityEngine.AI;
 public class LobbyManager : MonoBehaviour
 {   
     //1.고양이 2.병아리 3.물소 4.닭 5.개 6.코끼리 7.기린 8.캥거루 9.사자 10.쥐 11.돼지 12.양 13.뱀 14.늑대
-    public static int aniNum = 0;
+    public static string aniNum = null;
+    public static int cNum = 0;
     public static bool esc = false;
     public static int loadAni = 0;
-    public static GameObject ship;
+    public GameObject ship;
 
     public void ESC()
     {
@@ -19,5 +20,10 @@ public class LobbyManager : MonoBehaviour
     public void StartBtn()
     {
         ship.GetComponent<Animator>().enabled = true;
+    }
+
+    public void Update()
+    {
+        //Debug.Log("선택된 동물의 이름은 " + aniNum + " / 선택된 명령은 " + cNum);
     }
 }

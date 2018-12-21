@@ -12,28 +12,30 @@ public class LobbyCam : MonoBehaviour
     public Transform Sidebar;
     public NavMeshAgent nav;
     public Transform loadZone;
-    public int aniNum;
     public bool act = true;
 
     public void Select()
     {
-        LobbyManager.loadAni++;
-        nav = gameObject.GetComponentInParent<NavMeshAgent>();
-        nav.enabled = true;
-        nav.SetDestination(loadZone.transform.position);
-        LobbyManager.esc = true;
-        act = false;
+        if (LobbyManager.aniNum != null && LobbyManager.cNum ==0)
+        {
+            LobbyManager.loadAni++;
+            nav = gameObject.GetComponentInParent<NavMeshAgent>();
+            nav.enabled = true;
+            nav.SetDestination(loadZone.transform.position);
+            LobbyManager.esc = true;
+            act = false;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         // swit == 1인 상태 즉 캐릭터 선택 줌 상태일때 esc를 누르면
-        if (Input.GetKeyDown("escape") && LobbyManager.aniNum == aniNum || LobbyManager.esc && LobbyManager.aniNum == aniNum)
+        if (LobbyManager.cNum == 0 && Input.GetKeyDown("escape") && LobbyManager.aniNum == gameObject.name || LobbyManager.esc && LobbyManager.aniNum == gameObject.name )
         {
             ZoomVC.GetComponent<CinemachineVirtualCamera>().LookAt = null;
             ZoomVC.GetComponent<CinemachineVirtualCamera>().Priority = 9;
-            LobbyManager.aniNum = 0;
+            LobbyManager.aniNum = null;
             StartCoroutine(dUp());
             StartCoroutine(sDown());
             LobbyManager.esc = false;
@@ -43,11 +45,11 @@ public class LobbyCam : MonoBehaviour
     void OnMouseUp()
     {
         // 캐릭터 선택할시
-        if (LobbyManager.aniNum == 0 && LobbyManager.loadAni < 3 && act == true)
+        if (LobbyManager.aniNum == null && LobbyManager.loadAni < 3 && act == true)
         {
             ZoomVC.GetComponent<CinemachineVirtualCamera>().LookAt = transform;
             ZoomVC.GetComponent<CinemachineVirtualCamera>().Priority = 11;
-            LobbyManager.aniNum = aniNum;
+            LobbyManager.aniNum = gameObject.name;
             StartCoroutine(dDown());
             StartCoroutine(sUp());
         }

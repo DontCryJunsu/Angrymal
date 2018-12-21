@@ -144,8 +144,6 @@ public class DefaultMove : MonoBehaviour
             }
          
         }
-
-
     }
 
 

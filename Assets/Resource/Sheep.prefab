@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4271596328411490}
   - component: {fileID: 54580487067821836}
-  - component: {fileID: 65480757969041162}
   - component: {fileID: 135453855409708078}
   - component: {fileID: 195966071720304068}
   - component: {fileID: 114692995961836476}
@@ -102,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1072730504058222}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.1917725, y: -0.66904926, z: 0.6660538}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 4583693847745876}
@@ -192,18 +191,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &65480757969041162
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072730504058222}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 19, y: 19, z: 20}
-  m_Center: {x: 0, y: 9.499992, z: -0.49998474}
 --- !u!65 &65708285302018432
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -522,6 +509,7 @@ MonoBehaviour:
   fullhp: 50
   speed: 8
   power: 1
+  num_of_tile: 275
 --- !u!135 &135453855409708078
 SphereCollider:
   m_ObjectHideFlags: 1
