@@ -60,21 +60,21 @@ public class Command : MonoBehaviour {
         chicken[1, 1] = "ChaseClosestEnemy";             // 1번은 행동
         chicken[3, 0] = "Always";    // [3,0]과 [3,1]은 고정
         */
-        chicken[0, 0] = "Always";
-        chicken[0, 1] = "JustWalk";
-        chicken[1, 0] = "Always";
-        chicken[1, 1] = "JustWalk";
+        //chicken[0, 0] = "Always";
+        //chicken[0, 1] = "JustWalk";
+        //chicken[1, 0] = "Always";
+        //chicken[1, 1] = "JustWalk";
         //chicken[0, 2] = "AlwaysAttack";    // 2번은 공격 조건
-        chicken[3, 1] = "JustWalk";
-        cat[0, 0] = "Always";        
-        cat[0, 1] = "JustWalk";
+        //chicken[3, 1] = "JustWalk";
+        //cat[0, 0] = "Always";        
+        //cat[0, 1] = "JustWalk";
          
-        sheep[0, 0] = "NoEmptyTile";
-        sheep[0, 1] = "JustWalk";
-        sheep[1, 0] = "Always";
-        sheep[1, 1] = "GoToEmptyTile";
-        sheep[0, 2] = "HPMoreThanHalfAttack";
-        sheep[1, 2] = "OurTileIsMoreAttack";
+        //sheep[0, 0] = "NoEmptyTile";
+        //sheep[0, 1] = "JustWalk";
+        //sheep[1, 0] = "Always";
+        //sheep[1, 1] = "GoToEmptyTile";
+        //sheep[0, 2] = "HPMoreThanHalfAttack";
+        //sheep[1, 2] = "OurTileIsMoreAttack";
 
         cat[3, 0] = "Always";
         cat[3, 1] = "JustWalk";
@@ -103,6 +103,19 @@ public class Command : MonoBehaviour {
         mouse[3, 0] = "Always";
         mouse[3, 1] = "JustWalk";
 
+        snakeGo();
+        mouseGo();
+        catGo();
+        dogGo();
+        wolfGo();
+        sheepGo();
+        buffaloGo();
+        jiraffeGo();
+        kangarooGo();
+        chickenGo();
+        lionGo();
+        elephantGo();
+        pigGo();
     }
 
     //PlayerPrefs.GetInt("snake1CMD") = 1이면 이동 2이면 공격
@@ -235,6 +248,18 @@ public class Command : MonoBehaviour {
         sheep[2, 0] = PlayerPrefs.GetString("sheep3A");
         sheep[2, 1] = PlayerPrefs.GetString("sheep3B");
         sheep[2, 2] = PlayerPrefs.GetString("sheep3C");
+        Debug.Log(sheep[0, 0]);
+        Debug.Log(sheep[0, 1]);
+        Debug.Log(sheep[0, 2]);
+        Debug.Log(sheep[1, 0]);
+        Debug.Log(sheep[1, 1]);
+        Debug.Log(sheep[1, 2]);
+        Debug.Log(sheep[2, 0]);
+        Debug.Log(sheep[2, 1]);
+        Debug.Log(sheep[2, 2]);
+        Debug.Log(sheep[3, 0]);
+        Debug.Log(sheep[3, 1]);
+        Debug.Log(sheep[3, 2]);
     }
 
     public void wolfGo()

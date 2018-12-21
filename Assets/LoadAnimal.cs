@@ -12,9 +12,17 @@ public class LoadAnimal : MonoBehaviour {
     public static bool C3 = false;
     GameObject animalUI;
     bool act = true;
+    public GameObject X;
 
 	void Update () {
-		
+		if(C1 == true && C2==true && C3==true)
+        {
+            X.SetActive(false);
+        }
+        else
+        {
+            X.SetActive(true);
+        }
 	}
     void OnTriggerStay(Collider other)
     {
