@@ -70,6 +70,6 @@ public class StartMgr : MonoBehaviour
             yield return null;
         }
         isPlaying = false;
-        SceneManager.LoadSceneAsync("Lobby");
+        SceneManager.LoadSceneAsync("LobbyScene");
     }
 }

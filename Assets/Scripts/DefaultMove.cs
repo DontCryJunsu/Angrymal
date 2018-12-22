@@ -7,7 +7,7 @@ using System.Reflection;  //문자열로 실행 시험
 
 public class DefaultMove : MonoBehaviour
 {
-    
+
     public GameObject goal;
     NavMeshAgent nav;
     bool JustWalk_isrunning;
@@ -28,13 +28,22 @@ public class DefaultMove : MonoBehaviour
     Collider akcoll = null;
     RandomDestination RD;
 
+    Rigidbody rgdy;
+    Transform tr;
+    PhotonView pv = null;
 
+    private Vector3 currPos = Vector3.zero;
+    private Quaternion currRot = Quaternion.identity;
 
-
-
-    // Use this for initialization
-    void Start()
+    void Awake()
     {
+        rgdy = GetComponent<Rigidbody>();
+        tr = GetComponent<Transform>();
+        pv = GetComponent<PhotonView>();
+
+        pv.synchronization = ViewSynchronization.UnreliableOnChange;
+        pv.ObservedComponents[0] = this;
+
         GetCommand();  //캐릭터에 맞는 command를 가져오는 함수
         //var stat = GetComponent<stat>();
         nav = GetComponent<NavMeshAgent>();
@@ -45,11 +54,39 @@ public class DefaultMove : MonoBehaviour
         StartCoroutine("CheckAttackCommand");
         RD = goal.GetComponent<RandomDestination>();
 
-
+        if (!pv.isMine)
+        {
+            rgdy.isKinematic = true;
+            nav.enabled = false;
+        }
+        currPos = tr.position;
+        currRot = tr.rotation;
     }
 
-    // Update is called once per frame
+    void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        // 로컬 플레이어의 위치 정보 송신
+        if (stream.isWriting)
+        {
+            stream.SendNext(tr.position);
+            stream.SendNext(tr.rotation);
+        }
+        // 원격 플레이어의 위치 정보 수신
+        else
+        {
+            currPos = (Vector3)stream.ReceiveNext();
+            currRot = (Quaternion)stream.ReceiveNext();
+        }
+    }
 
+    void FixedUpdate()
+    {
+        if (!pv.isMine)
+        {
+            tr.position = Vector3.Lerp(tr.position, currPos, Time.deltaTime * 3.0f);
+            tr.rotation = Quaternion.Slerp(tr.rotation, currRot, Time.deltaTime * 3.0f);
+        }
+    }
 
     IEnumerator CheckCommand()
     {
@@ -142,7 +179,7 @@ public class DefaultMove : MonoBehaviour
                     }
                 }
             }
-         
+
         }
     }
 
@@ -193,7 +230,7 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator HPMoreThanHalfAttack()
     {
-       
+
         if (hp >= (fullhp / 2))
         {
             nav.speed = 0;
@@ -202,7 +239,7 @@ public class DefaultMove : MonoBehaviour
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
         }
-       
+
     }
 
 
@@ -238,7 +275,7 @@ public class DefaultMove : MonoBehaviour
         var enemyhp = akcoll.GetComponent<DefaultMove>();
         if (enemyhp.hp < (enemyhp.fullhp / 2))
         {
-             
+
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
             Debug.Log("Enemy HP less than half attack");
@@ -317,15 +354,15 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator NoEmptyTileAttack()   // 빈 땅이 없을 때 공격
     {
-       
-            if ((Command.redtile + Command.bluetile) >= num_of_tile)
-            {
-                nav.speed = 0;   // 멈추고
-                transform.LookAt(akcoll.transform);  //적 바라봄
-                Debug.Log("There are no empty tile Attack");  // 공격
-                checkattackcommand = false;
-                yield return new WaitForSeconds(1.5f);
-            }
+
+        if ((Command.redtile + Command.bluetile) >= num_of_tile)
+        {
+            nav.speed = 0;   // 멈추고
+            transform.LookAt(akcoll.transform);  //적 바라봄
+            Debug.Log("There are no empty tile Attack");  // 공격
+            checkattackcommand = false;
+            yield return new WaitForSeconds(1.5f);
+        }
     }
 
     // 여기까지 공격 조건 --------------------------------------------------------------------------------------
@@ -335,7 +372,7 @@ public class DefaultMove : MonoBehaviour
 
     void Always()
     {
-       // Debug.Log("Always");
+        // Debug.Log("Always");
 
         checkcommand = false;
 
@@ -343,7 +380,7 @@ public class DefaultMove : MonoBehaviour
         {
             StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
             StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-        
+
         }
         i = -1;
 
@@ -356,7 +393,7 @@ public class DefaultMove : MonoBehaviour
 
         if (hp >= (fullhp / 2))
         {
-          //  Debug.Log("HPMoreThanHalf");
+            //  Debug.Log("HPMoreThanHalf");
             checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
@@ -376,7 +413,7 @@ public class DefaultMove : MonoBehaviour
 
         if (hp < (fullhp / 2))
         {
-          //  Debug.Log("HPLessThanHalf");
+            //  Debug.Log("HPLessThanHalf");
             checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
@@ -477,7 +514,7 @@ public class DefaultMove : MonoBehaviour
             {
                 if (coll.gameObject.tag == "redcharacter")
                 {
-                 //   Debug.Log("Enemy is in Near");
+                    //   Debug.Log("Enemy is in Near");
                     nearenemy++;
                 }
             }
@@ -489,7 +526,7 @@ public class DefaultMove : MonoBehaviour
 
                     StopCoroutine(runningact);
                     StartCoroutine(command[i, 1]);
-                 //   Debug.Log("No Enemys in Near");
+                    //   Debug.Log("No Enemys in Near");
                     //i = -1;
 
                 }
@@ -518,7 +555,7 @@ public class DefaultMove : MonoBehaviour
                 }
             }
         }
-        else if (tag =="bluecharacter")
+        else if (tag == "bluecharacter")
         {
             if (Command.bluetile > Command.redtile)
             {
@@ -642,7 +679,7 @@ public class DefaultMove : MonoBehaviour
 
                     nav.SetDestination(target.position);  //target을 향해 이동
                 }
-             
+
             }
             else if (tag == "bluecharacter")
             {
@@ -665,7 +702,7 @@ public class DefaultMove : MonoBehaviour
 
                     nav.SetDestination(target.position);  //target을 향해 이동
                 }
-             
+
             }
         }
     }
@@ -715,7 +752,7 @@ public class DefaultMove : MonoBehaviour
                     {
                         Vector3 objectPos = taggedEnemy.transform.position;
                         dist = (objectPos - transform.position).sqrMagnitude;
-                        if (dist < closestDistSqr && dist!=0)   // 거리가 제곱한 최단 거리보다 작으면
+                        if (dist < closestDistSqr && dist != 0)   // 거리가 제곱한 최단 거리보다 작으면
                         {
                             closestDistSqr = dist;
                             closestEnemy = taggedEnemy.transform;
@@ -733,7 +770,7 @@ public class DefaultMove : MonoBehaviour
     }
 
 
-    IEnumerator GoToEnemyTile()  
+    IEnumerator GoToEnemyTile()
     {
         runningact = "GoToEnemyTile";
         bool gototile = false;
@@ -762,13 +799,13 @@ public class DefaultMove : MonoBehaviour
                         RD.shuffle();
                         nav.SetDestination(goal.transform.position);
                     }
-                    
+
                 }
 
 
             }
         }
-        else if (tag =="redcharacter")
+        else if (tag == "redcharacter")
         {
             while (true)
             {
@@ -799,40 +836,40 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    
+
     IEnumerator GoToEmptyTile()  // 빈 땅으로 이동
     {
         runningact = "GoToEmptyTile";
         bool gototile = false;
         //Debug.Log("Going to enemy tile");
-        
-            while (true)
-            {
-                yield return null;
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
-                foreach (Collider coll in colls)
-                {
-                    // yield return null;
-                    if (coll.gameObject.tag == "Untagged")
-                    {
-                        nav.SetDestination(coll.gameObject.transform.position);
-                        gototile = true;
-                        break;
-                    }
-                    gototile = false;
-                }
-                if (gototile == false)
-                {
-                    if ((Command.redtile + Command.bluetile) < num_of_tile)  //빈 땅이 존재할 경우에만
-                    {
-                        RD.shuffleempty();
-                        nav.SetDestination(goal.transform.position);
-                    }
 
+        while (true)
+        {
+            yield return null;
+            Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
+            foreach (Collider coll in colls)
+            {
+                // yield return null;
+                if (coll.gameObject.tag == "Untagged")
+                {
+                    nav.SetDestination(coll.gameObject.transform.position);
+                    gototile = true;
+                    break;
                 }
+                gototile = false;
             }
+            if (gototile == false)
+            {
+                if ((Command.redtile + Command.bluetile) < num_of_tile)  //빈 땅이 존재할 경우에만
+                {
+                    RD.shuffleempty();
+                    nav.SetDestination(goal.transform.position);
+                }
+
+            }
+        }
     }
-    
+
 
     // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
 }

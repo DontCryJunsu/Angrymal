@@ -248,18 +248,6 @@ public class Command : MonoBehaviour {
         sheep[2, 0] = PlayerPrefs.GetString("sheep3A");
         sheep[2, 1] = PlayerPrefs.GetString("sheep3B");
         sheep[2, 2] = PlayerPrefs.GetString("sheep3C");
-        Debug.Log(sheep[0, 0]);
-        Debug.Log(sheep[0, 1]);
-        Debug.Log(sheep[0, 2]);
-        Debug.Log(sheep[1, 0]);
-        Debug.Log(sheep[1, 1]);
-        Debug.Log(sheep[1, 2]);
-        Debug.Log(sheep[2, 0]);
-        Debug.Log(sheep[2, 1]);
-        Debug.Log(sheep[2, 2]);
-        Debug.Log(sheep[3, 0]);
-        Debug.Log(sheep[3, 1]);
-        Debug.Log(sheep[3, 2]);
     }
 
     public void wolfGo()

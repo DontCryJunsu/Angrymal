@@ -15,6 +15,7 @@ TagManager:
   - animal
   - reddestination
   - bluedestination
+  - ship
   layers:
   - Default
   - TransparentFX
