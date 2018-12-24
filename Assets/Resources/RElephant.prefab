@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 195414800995993744}
   - component: {fileID: 114274783014263730}
   - component: {fileID: 114735917737082454}
+  - component: {fileID: 114153852697651848}
   m_Layer: 0
   m_Name: elephant
   m_TagString: redcharacter
@@ -206,6 +207,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114153852697651848
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1943542850381834}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247ea0ad2fefe845820c25e07496f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+  ship: {fileID: 0}
 --- !u!114 &114227450811571608
 MonoBehaviour:
   m_ObjectHideFlags: 1

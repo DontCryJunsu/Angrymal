@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 195622580318236960}
   - component: {fileID: 114462675049032064}
   - component: {fileID: 114271745572634270}
+  - component: {fileID: 114930928527804402}
   m_Layer: 0
   m_Name: cat
   m_TagString: redcharacter
@@ -582,6 +583,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114930928527804402
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1222931367616380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247ea0ad2fefe845820c25e07496f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+  ship: {fileID: 0}
 --- !u!135 &135665097875197526
 SphereCollider:
   m_ObjectHideFlags: 1

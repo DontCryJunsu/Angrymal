@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 195367749565748820}
   - component: {fileID: 114463918900961124}
   - component: {fileID: 114592686260131988}
+  - component: {fileID: 114258835309408204}
   m_Layer: 0
   m_Name: jiraffe
   m_TagString: redcharacter
@@ -223,6 +224,21 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &114258835309408204
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901564069829072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247ea0ad2fefe845820c25e07496f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+  ship: {fileID: 0}
 --- !u!114 &114463918900961124
 MonoBehaviour:
   m_ObjectHideFlags: 1

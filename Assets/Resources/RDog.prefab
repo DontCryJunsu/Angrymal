@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 195280767486047028}
   - component: {fileID: 114688657820247860}
   - component: {fileID: 114626654217243462}
+  - component: {fileID: 114222878404277488}
   m_Layer: 0
   m_Name: dog
   m_TagString: redcharacter
@@ -496,6 +497,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+--- !u!114 &114222878404277488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1661218444461440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247ea0ad2fefe845820c25e07496f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+  ship: {fileID: 0}
 --- !u!114 &114589215877553328
 MonoBehaviour:
   m_ObjectHideFlags: 1

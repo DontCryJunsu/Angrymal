@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 195120311297108330}
   - component: {fileID: 114047088424919800}
   - component: {fileID: 114841267557732376}
+  - component: {fileID: 114428941479646366}
   m_Layer: 0
   m_Name: snake
   m_TagString: bluecharacter
@@ -223,6 +224,20 @@ MonoBehaviour:
   speed: 12
   power: 10
   num_of_tile: 275
+--- !u!114 &114428941479646366
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1436464572077660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23dac16674760347bed88369d0d222c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
 --- !u!114 &114468125726883838
 MonoBehaviour:
   m_ObjectHideFlags: 1

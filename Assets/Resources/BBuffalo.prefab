@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 195720597491900346}
   - component: {fileID: 114516192525913402}
   - component: {fileID: 114710041189739202}
+  - component: {fileID: 114274968773087760}
   m_Layer: 0
   m_Name: buffalo
   m_TagString: bluecharacter
@@ -206,6 +207,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114274968773087760
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1169145198717368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23dac16674760347bed88369d0d222c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
 --- !u!114 &114516192525913402
 MonoBehaviour:
   m_ObjectHideFlags: 1

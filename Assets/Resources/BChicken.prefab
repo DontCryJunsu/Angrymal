@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 195645941111687708}
   - component: {fileID: 114596759045881790}
   - component: {fileID: 114134164916906530}
+  - component: {fileID: 114889183568637804}
   m_Layer: 0
   m_Name: chicken
   m_TagString: bluecharacter
@@ -272,7 +273,7 @@ MonoBehaviour:
   goal: {fileID: 1014273974802404}
   hp: 50
   fullhp: 50
-  speed: 12
+  speed: 4
   power: 10
   num_of_tile: 275
 --- !u!114 &114626850251360580
@@ -582,6 +583,20 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &114889183568637804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1707854983199276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23dac16674760347bed88369d0d222c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
 --- !u!135 &135158706970412564
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -4,32 +4,39 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ShipCheck : MonoBehaviour {
 
-    int num=0;
+
+    PhotonView pv;
     public Transform ready;
     public Text txt;
+
+    void Awake()
+    {
+        pv = GetComponent<PhotonView>();
+        ready = GameObject.Find("RPCPan").transform;
+        GameObject.Find("RPCText").GetComponent<Text>().text = "플레이어를 기다리는 중입니다.";
+    }
+
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag=="ship")
+        if(pv.isMine && PlayerPrefs.GetString("Team").Equals("B") && other.transform.name.Equals("sea"))
         {
-            num++;
-        }
-        if(num==2)
-        {
-            StartCoroutine(dDown());
+            RPCDown();
+            pv.RPC("RPCDown", PhotonTargets.Others, null);
         }
     }
+
     IEnumerator dDown()
     {
-        txt.text = "게임이 곧 시작됩니다.";
+        GameObject.Find("RPCText").GetComponent<Text>().text = "게임이 곧 시작됩니다.";
         yield return new WaitForSeconds(2f);
 
-        txt.text = " 3 ";
+        GameObject.Find("RPCText").GetComponent<Text>().text = " 3 ";
         yield return new WaitForSeconds(1f);
 
-        txt.text = " 2 ";
+        GameObject.Find("RPCText").GetComponent<Text>().text = " 2 ";
         yield return new WaitForSeconds(1f);
 
-        txt.text = " 1 ";
+        GameObject.Find("RPCText").GetComponent<Text>().text = " 1 ";
         yield return new WaitForSeconds(1f);
 
 
@@ -39,5 +46,11 @@ public class ShipCheck : MonoBehaviour {
             ready.Translate(0, -7f, 0);
         }
         yield return null;
+    }
+
+    [PunRPC]
+    void RPCDown()
+    {
+        StartCoroutine(dDown());
     }
 }

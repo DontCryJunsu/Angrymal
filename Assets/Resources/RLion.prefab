@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 195737848341597336}
   - component: {fileID: 114188077605807574}
   - component: {fileID: 114630126923036428}
+  - component: {fileID: 114961479589240650}
   m_Layer: 0
   m_Name: lion
   m_TagString: redcharacter
@@ -582,6 +583,21 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114961479589240650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1301685245295538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247ea0ad2fefe845820c25e07496f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+  ship: {fileID: 0}
 --- !u!135 &135819788877695806
 SphereCollider:
   m_ObjectHideFlags: 1

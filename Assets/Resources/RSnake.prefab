@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 195343905297893924}
   - component: {fileID: 114047713964035668}
   - component: {fileID: 114348920097059772}
+  - component: {fileID: 114916868750840682}
   m_Layer: 0
   m_Name: snake
   m_TagString: redcharacter
@@ -292,6 +293,21 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!114 &114916868750840682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1980829638329690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247ea0ad2fefe845820c25e07496f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+  ship: {fileID: 0}
 --- !u!114 &114997778192018774
 MonoBehaviour:
   m_ObjectHideFlags: 1

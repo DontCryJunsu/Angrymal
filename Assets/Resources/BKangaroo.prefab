@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 195637460468029224}
   - component: {fileID: 114236737875725472}
   - component: {fileID: 114474504733076316}
+  - component: {fileID: 114146883368601212}
   m_Layer: 0
   m_Name: kangaroo
   m_TagString: bluecharacter
@@ -522,6 +523,20 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114146883368601212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1664406325018510}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23dac16674760347bed88369d0d222c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
 --- !u!114 &114236737875725472
 MonoBehaviour:
   m_ObjectHideFlags: 1

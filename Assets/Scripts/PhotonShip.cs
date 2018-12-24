@@ -12,6 +12,56 @@ public class PhotonShip : MonoBehaviour
     private Vector3 currPos = Vector3.zero;
     private Quaternion currRot = Quaternion.identity;
 
+    public GameObject[] tile;
+
+    public Material[] mt;
+    Renderer wallRend;
+
+    void Start()
+    {
+        tile = new GameObject[276];
+        for (int i = 1; i <= 275; i++)
+        {
+            tile[i] = GameObject.Find(i.ToString());
+        }
+    }
+
+
+    public void ServerRed(int num)
+    {
+        wallRend = tile[num].GetComponent<Renderer>();
+        if (tile[num].transform.tag == "Untagged")
+        {
+            Command.redtile++;
+            wallRend.sharedMaterial = mt[0];
+            tile[num].transform.tag = "redteam";
+        }
+        else if (tile[num].transform.tag == "blueteam")
+        {
+            Command.redtile++;
+            Command.bluetile--;
+            wallRend.sharedMaterial = mt[0];
+            tile[num].transform.tag = "redteam";
+        }
+    }
+    public void ServerBlue(int num)
+    {
+        wallRend = tile[num].GetComponent<Renderer>();
+        if (tile[num].transform.tag == "Untagged")
+        {
+            Command.bluetile++;
+            wallRend.sharedMaterial = mt[1];
+            tile[num].transform.tag = "blueteam";
+        }
+        else if (tile[num].transform.tag == "redteam")
+        {
+            Command.bluetile++;
+            Command.redtile--;
+            wallRend.sharedMaterial = mt[1];
+            tile[num].transform.tag = "blueteam";
+        }
+    }
+
     // Use this for initialization
     void Awake()
     {
@@ -22,6 +72,16 @@ public class PhotonShip : MonoBehaviour
         pv.synchronization = ViewSynchronization.UnreliableOnChange;
         pv.ObservedComponents[0] = this;
 
+        if(PlayerPrefs.GetString("Team").Equals("R"))
+        {
+            ot.OutlineColor = new Color(1f, 0.3f, 0.3f, 1f);
+
+        }
+        else if (PlayerPrefs.GetString("Team").Equals("B"))
+        {
+            ot.OutlineColor = new Color(0.3f, 0.3f, 1f, 1f);
+
+        }
         if (!pv.isMine)
         {
             rgdy.isKinematic = true;

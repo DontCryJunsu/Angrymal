@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 195137901004440882}
   - component: {fileID: 114183600564825670}
   - component: {fileID: 114613875429781856}
+  - component: {fileID: 114106377131654554}
   m_Layer: 0
   m_Name: chicken
   m_TagString: redcharacter
@@ -206,6 +207,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114106377131654554
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1770935127704038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247ea0ad2fefe845820c25e07496f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+  ship: {fileID: 1144024093839378, guid: e45f84734276bb248843628143b30daa, type: 2}
 --- !u!114 &114183600564825670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,7 +236,7 @@ MonoBehaviour:
   goal: {fileID: 1419662774768676}
   hp: 50
   fullhp: 50
-  speed: 12
+  speed: 4
   power: 10
   num_of_tile: 275
 --- !u!114 &114232119367632284

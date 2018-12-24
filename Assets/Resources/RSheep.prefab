@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 195966071720304068}
   - component: {fileID: 114692995961836476}
   - component: {fileID: 114233380820262848}
+  - component: {fileID: 114481354741399236}
   m_Layer: 0
   m_Name: sheep
   m_TagString: redcharacter
@@ -232,6 +233,21 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114481354741399236
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1072730504058222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7247ea0ad2fefe845820c25e07496f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+  ship: {fileID: 0}
 --- !u!114 &114604013688650998
 MonoBehaviour:
   m_ObjectHideFlags: 1

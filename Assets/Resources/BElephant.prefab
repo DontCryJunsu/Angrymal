@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 195524677169773694}
   - component: {fileID: 114700118329078262}
   - component: {fileID: 114440550990183494}
+  - component: {fileID: 114974966422147972}
   m_Layer: 0
   m_Name: elephant
   m_TagString: bluecharacter
@@ -556,6 +557,20 @@ MonoBehaviour:
   speed: 12
   power: 10
   num_of_tile: 275
+--- !u!114 &114974966422147972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1776931576211770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23dac16674760347bed88369d0d222c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
 --- !u!114 &114995909571949614
 MonoBehaviour:
   m_ObjectHideFlags: 1

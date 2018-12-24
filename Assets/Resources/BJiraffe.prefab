@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 195536923680394986}
   - component: {fileID: 114157845000306490}
   - component: {fileID: 114315227230004440}
+  - component: {fileID: 114806438777842460}
   m_Layer: 0
   m_Name: jiraffe
   m_TagString: bluecharacter
@@ -582,6 +583,20 @@ MonoBehaviour:
   instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
+--- !u!114 &114806438777842460
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1510937378456916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f23dac16674760347bed88369d0d222c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mt:
+  - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
+  - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
 --- !u!135 &135038246838284080
 SphereCollider:
   m_ObjectHideFlags: 1
