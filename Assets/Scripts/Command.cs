@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 /*
 조건 목록 <8개>
 Always - 항상
@@ -50,6 +50,13 @@ public class Command : MonoBehaviour {
     public static int bluetile = 0;
     public static int redtile = 0;
 
+
+    public Text RB;
+
+    private void Update()
+    {
+        RB.text = Command.redtile + "개 / " + Command.bluetile + "개";
+    }
     // Use this for initialization
 
     void Start () {

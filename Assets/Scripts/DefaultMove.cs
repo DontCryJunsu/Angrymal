@@ -189,30 +189,187 @@ public class DefaultMove : MonoBehaviour
 
     void GetCommand()
     {
-        if (name == "chicken")       //자신이 chicken이면 RedDirector의 command 중 chicken을 복사해 온다.
+        if (name == "chicken")
         {
             command[0, 0] = Command.chicken[0, 0];
             command[0, 1] = Command.chicken[0, 1];
+            command[0, 2] = Command.chicken[0, 2];
             command[1, 0] = Command.chicken[1, 0];
             command[1, 1] = Command.chicken[1, 1];
-            command[0, 2] = Command.chicken[0, 2];
             command[1, 2] = Command.chicken[1, 2];
-
+            command[2, 0] = Command.chicken[2, 0];
+            command[2, 1] = Command.chicken[2, 1];
+            command[2, 2] = Command.chicken[2, 2];
+            command[2, 0] = Command.chicken[3, 0];
+            command[2, 1] = Command.chicken[3, 1];
         }
-        else if (name == "cat")
+        else if (name == "snake")
         {
-            command[0, 0] = Command.cat[0, 0];
-            command[0, 1] = Command.cat[0, 1];
+            command[0, 0] = Command.snake[0, 0];
+            command[0, 1] = Command.snake[0, 1];
+            command[0, 2] = Command.snake[0, 2];
+            command[1, 0] = Command.snake[1, 0];
+            command[1, 1] = Command.snake[1, 1];
+            command[1, 2] = Command.snake[1, 2];
+            command[2, 0] = Command.snake[2, 0];
+            command[2, 1] = Command.snake[2, 1];
+            command[2, 2] = Command.snake[2, 2];
+            command[2, 0] = Command.snake[3, 0];
+            command[2, 1] = Command.snake[3, 1];
+        }
+        else if (name == "mouse")
+        {
+            command[0, 0] = Command.mouse[0, 0];
+            command[0, 1] = Command.mouse[0, 1];
+            command[0, 2] = Command.mouse[0, 2];
+            command[1, 0] = Command.mouse[1, 0];
+            command[1, 1] = Command.mouse[1, 1];
+            command[1, 2] = Command.mouse[1, 2];
+            command[2, 0] = Command.mouse[2, 0];
+            command[2, 1] = Command.mouse[2, 1];
+            command[2, 2] = Command.mouse[2, 2];
+            command[2, 0] = Command.mouse[3, 0];
+            command[2, 1] = Command.mouse[3, 1];
+        }
+        else if (name == "pig")
+        {
+            command[0, 0] = Command.pig[0, 0];
+            command[0, 1] = Command.pig[0, 1];
+            command[0, 2] = Command.pig[0, 2];
+            command[1, 0] = Command.pig[1, 0];
+            command[1, 1] = Command.pig[1, 1];
+            command[1, 2] = Command.pig[1, 2];
+            command[2, 0] = Command.pig[2, 0];
+            command[2, 1] = Command.pig[2, 1];
+            command[2, 2] = Command.pig[2, 2];
+            command[2, 0] = Command.pig[3, 0];
+            command[2, 1] = Command.pig[3, 1];
+        }
+        else if (name == "elephant")
+        {
+            command[0, 0] = Command.elephant[0, 0];
+            command[0, 1] = Command.elephant[0, 1];
+            command[0, 2] = Command.elephant[0, 2];
+            command[1, 0] = Command.elephant[1, 0];
+            command[1, 1] = Command.elephant[1, 1];
+            command[1, 2] = Command.elephant[1, 2];
+            command[2, 0] = Command.elephant[2, 0];
+            command[2, 1] = Command.elephant[2, 1];
+            command[2, 2] = Command.elephant[2, 2];
+            command[2, 0] = Command.elephant[3, 0];
+            command[2, 1] = Command.elephant[3, 1];
+        }
+        else if (name == "lion")
+        {
+            command[0, 0] = Command.lion[0, 0];
+            command[0, 1] = Command.lion[0, 1];
+            command[0, 2] = Command.lion[0, 2];
+            command[1, 0] = Command.lion[1, 0];
+            command[1, 1] = Command.lion[1, 1];
+            command[1, 2] = Command.lion[1, 2];
+            command[2, 0] = Command.lion[2, 0];
+            command[2, 1] = Command.lion[2, 1];
+            command[2, 2] = Command.lion[2, 2];
+            command[2, 0] = Command.lion[3, 0];
+            command[2, 1] = Command.lion[3, 1];
+        }
+        else if (name == "kangaroo")
+        {
+            command[0, 0] = Command.kangaroo[0, 0];
+            command[0, 1] = Command.kangaroo[0, 1];
+            command[0, 2] = Command.kangaroo[0, 2];
+            command[1, 0] = Command.kangaroo[1, 0];
+            command[1, 1] = Command.kangaroo[1, 1];
+            command[1, 2] = Command.kangaroo[1, 2];
+            command[2, 0] = Command.kangaroo[2, 0];
+            command[2, 1] = Command.kangaroo[2, 1];
+            command[2, 2] = Command.kangaroo[2, 2];
+            command[2, 0] = Command.kangaroo[3, 0];
+            command[2, 1] = Command.kangaroo[3, 1];
+        }
+        else if (name == "jiraffe")
+        {
+            command[0, 0] = Command.jiraffe[0, 0];
+            command[0, 1] = Command.jiraffe[0, 1];
+            command[0, 2] = Command.jiraffe[0, 2];
+            command[1, 0] = Command.jiraffe[1, 0];
+            command[1, 1] = Command.jiraffe[1, 1];
+            command[1, 2] = Command.jiraffe[1, 2];
+            command[2, 0] = Command.jiraffe[2, 0];
+            command[2, 1] = Command.jiraffe[2, 1];
+            command[2, 2] = Command.jiraffe[2, 2];
+            command[2, 0] = Command.jiraffe[3, 0];
+            command[2, 1] = Command.jiraffe[3, 1];
+        }
+        else if (name == "buffalo")
+        {
+            command[0, 0] = Command.buffalo[0, 0];
+            command[0, 1] = Command.buffalo[0, 1];
+            command[0, 2] = Command.buffalo[0, 2];
+            command[1, 0] = Command.buffalo[1, 0];
+            command[1, 1] = Command.buffalo[1, 1];
+            command[1, 2] = Command.buffalo[1, 2];
+            command[2, 0] = Command.buffalo[2, 0];
+            command[2, 1] = Command.buffalo[2, 1];
+            command[2, 2] = Command.buffalo[2, 2];
+            command[2, 0] = Command.buffalo[3, 0];
+            command[2, 1] = Command.buffalo[3, 1];
         }
         else if (name == "sheep")
         {
             command[0, 0] = Command.sheep[0, 0];
             command[0, 1] = Command.sheep[0, 1];
+            command[0, 2] = Command.sheep[0, 2];
             command[1, 0] = Command.sheep[1, 0];
             command[1, 1] = Command.sheep[1, 1];
-            command[0, 2] = Command.sheep[0, 2];
             command[1, 2] = Command.sheep[1, 2];
+            command[2, 0] = Command.sheep[2, 0];
+            command[2, 1] = Command.sheep[2, 1];
             command[2, 2] = Command.sheep[2, 2];
+            command[2, 0] = Command.sheep[3, 0];
+            command[2, 1] = Command.sheep[3, 1];
+        }
+        else if (name == "wolf")
+        {
+            command[0, 0] = Command.wolf[0, 0];
+            command[0, 1] = Command.wolf[0, 1];
+            command[0, 2] = Command.wolf[0, 2];
+            command[1, 0] = Command.wolf[1, 0];
+            command[1, 1] = Command.wolf[1, 1];
+            command[1, 2] = Command.wolf[1, 2];
+            command[2, 0] = Command.wolf[2, 0];
+            command[2, 1] = Command.wolf[2, 1];
+            command[2, 2] = Command.wolf[2, 2];
+            command[2, 0] = Command.wolf[3, 0];
+            command[2, 1] = Command.wolf[3, 1];
+        }
+        else if (name == "dog")
+        {
+            command[0, 0] = Command.dog[0, 0];
+            command[0, 1] = Command.dog[0, 1];
+            command[0, 2] = Command.dog[0, 2];
+            command[1, 0] = Command.dog[1, 0];
+            command[1, 1] = Command.dog[1, 1];
+            command[1, 2] = Command.dog[1, 2];
+            command[2, 0] = Command.dog[2, 0];
+            command[2, 1] = Command.dog[2, 1];
+            command[2, 2] = Command.dog[2, 2];
+            command[2, 0] = Command.dog[3, 0];
+            command[2, 1] = Command.dog[3, 1];
+        }
+        else if (name == "cat")
+        {
+            command[0, 0] = Command.cat[0, 0];
+            command[0, 1] = Command.cat[0, 1];
+            command[0, 2] = Command.cat[0, 2];
+            command[1, 0] = Command.cat[1, 0];
+            command[1, 1] = Command.cat[1, 1];
+            command[1, 2] = Command.cat[1, 2];
+            command[2, 0] = Command.cat[2, 0];
+            command[2, 1] = Command.cat[2, 1];
+            command[2, 2] = Command.cat[2, 2];
+            command[2, 0] = Command.cat[3, 0];
+            command[2, 1] = Command.cat[3, 1];
         }
     }
 
@@ -410,7 +567,6 @@ public class DefaultMove : MonoBehaviour
     void HPLessThanHalf()
     {
 
-
         if (hp < (fullhp / 2))
         {
             //  Debug.Log("HPLessThanHalf");
@@ -582,7 +738,7 @@ public class DefaultMove : MonoBehaviour
         {
             if (Command.redtile < Command.bluetile)
             {
-                //  Debug.Log("OurTileIsLess");
+                Debug.Log("레드땅이 더 적음");
                 checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
@@ -642,9 +798,9 @@ public class DefaultMove : MonoBehaviour
     {
         JustWalk_isrunning = true;
         runningact = "JustWalk";
-        //Debug.Log("runningact is JustWalk");
         while (true)
         {
+            Debug.Log("runningact is JustWalk");
             yield return null;
             nav.SetDestination(goal.transform.position);  //goal 오브젝트를 향해 이동
         }
@@ -725,13 +881,18 @@ public class DefaultMove : MonoBehaviour
                     Transform closestEnemy = null;
                     foreach (GameObject taggedEnemy in taggedEnemys)
                     {
+                        // if (taggedEnemy.transform.name != transform.name)      //같은동물끼리는 안쫓아감
+                        //{
                         Vector3 objectPos = taggedEnemy.transform.position;
                         dist = (objectPos - transform.position).sqrMagnitude;
-                        if (dist < closestDistSqr)   // 거리가 제곱한 최단 거리보다 작으면
+
+                        if (dist < closestDistSqr && dist != 0)   // 거리가 제곱한 최단 거리보다 작으면
                         {
                             closestDistSqr = dist;
                             closestEnemy = taggedEnemy.transform;
                         }
+                        // }
+
                     }
                     if (closestEnemy != null)
                     {
@@ -783,7 +944,7 @@ public class DefaultMove : MonoBehaviour
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
                 foreach (Collider coll in colls)
                 {
-                    // yield return null;
+                    yield return null;
                     if (coll.gameObject.tag == "redteam")
                     {
                         nav.SetDestination(coll.gameObject.transform.position);
@@ -813,7 +974,7 @@ public class DefaultMove : MonoBehaviour
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
                 foreach (Collider coll in colls)
                 {
-                    // yield return null;
+                    yield return null;
                     if (coll.gameObject.tag == "blueteam")
                     {
                         nav.SetDestination(coll.gameObject.transform.position);
@@ -837,7 +998,7 @@ public class DefaultMove : MonoBehaviour
     }
 
 
-    IEnumerator GoToEmptyTile()  // 빈 땅으로 이동
+    IEnumerator GoToEmtyTile()  // 빈 땅으로 이동
     {
         runningact = "GoToEmptyTile";
         bool gototile = false;
@@ -846,10 +1007,10 @@ public class DefaultMove : MonoBehaviour
         while (true)
         {
             yield return null;
-            Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
+            Collider[] colls = Physics.OverlapSphere(this.transform.position, 4.0f);
             foreach (Collider coll in colls)
             {
-                // yield return null;
+                yield return null;
                 if (coll.gameObject.tag == "Untagged")
                 {
                     nav.SetDestination(coll.gameObject.transform.position);
