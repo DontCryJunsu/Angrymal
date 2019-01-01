@@ -1000,7 +1000,7 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator GoToEmtyTile()  // 빈 땅으로 이동
     {
-        runningact = "GoToEmptyTile";
+        runningact = "GoToEmtyTile";
         bool gototile = false;
         //Debug.Log("Going to enemy tile");
 
