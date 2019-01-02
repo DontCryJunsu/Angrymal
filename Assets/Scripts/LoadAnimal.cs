@@ -11,7 +11,7 @@ public class LoadAnimal : MonoBehaviour {
     public static bool C2 = false;
     public static bool C3 = false;
     GameObject animalUI;
-    bool act = true;
+    public static bool act = true;
     public GameObject X;
 
 	void Update () {

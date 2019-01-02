@@ -50,6 +50,7 @@ public class DefaultMove : MonoBehaviour
         //fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
         StartCoroutine("JustWalk");
+
         StartCoroutine("CheckCommand");
         StartCoroutine("CheckAttackCommand");
         RD = goal.GetComponent<RandomDestination>();
@@ -100,6 +101,7 @@ public class DefaultMove : MonoBehaviour
                 i++;  //
 
                 Invoke(command[i, 0], 0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
+
 
                 if (i >= 3)
                 {
