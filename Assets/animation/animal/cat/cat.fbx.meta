@@ -1,59 +1,17 @@
 fileFormatVersion: 2
-guid: 5475d41caa7aa95498b8dd9677cf9c62
+guid: fecc26cb694c7614f925a63096ecca2e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: body
-    100002: //RootNode
-    100004: cat_sep
-    100006: cat_sep.001
-    100008: cat_sep.002
-    100010: cat_sep.003
-    100012: cat_sep.004
-    100014: lb1
-    100016: lb2
-    100018: left1
-    100020: left2
-    100022: rb1
-    100024: rb2
-    100026: right1
-    100028: right2
-    400000: body
-    400002: //RootNode
-    400004: cat_sep
-    400006: cat_sep.001
-    400008: cat_sep.002
-    400010: cat_sep.003
-    400012: cat_sep.004
-    400014: lb1
-    400016: lb2
-    400018: left1
-    400020: left2
-    400022: rb1
-    400024: rb2
-    400026: right1
-    400028: right2
+    100000: //RootNode
+    400000: //RootNode
     2100000: palette
-    2300000: cat_sep
-    2300002: cat_sep.001
-    2300004: cat_sep.002
-    2300006: cat_sep.003
-    2300008: cat_sep.004
-    3300000: cat_sep
-    3300002: cat_sep.001
-    3300004: cat_sep.002
-    3300006: cat_sep.003
-    3300008: cat_sep.004
-    4300000: cat_sep.001
-    4300002: cat_sep.002
-    4300004: cat_sep
-    4300006: cat_sep.003
-    4300008: cat_sep.004
-    7400000: Armature|ArmatureAction
-    7400002: Armature|Walkmotion
-    7400004: Armature|walkmotion22
-    7400006: cat_sep.001|ArmatureAction
-    7400008: cat_sep.001|Walkmotion
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: cat
+    7400000: cat|catattackmotion
+    7400002: cat|cathittedmotion
+    7400004: cat|catwalkmotion
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -84,66 +42,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|ArmatureAction
-      takeName: Armature|ArmatureAction
+      name: cat|catattackmotion
+      takeName: cat|catattackmotion
       firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|Walkmotion
-      takeName: Armature|Walkmotion
-      firstFrame: 0
-      lastFrame: 1
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 0
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Armature|walkmotion22
-      takeName: Armature|walkmotion22
-      firstFrame: 0
-      lastFrame: 40
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -168,17 +70,17 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: cat_sep.001|ArmatureAction
-      takeName: cat_sep.001|ArmatureAction
+      name: cat|cathittedmotion
+      takeName: cat|cathittedmotion
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -196,17 +98,17 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: cat_sep.001|Walkmotion
-      takeName: cat_sep.001|Walkmotion
+      name: cat|catwalkmotion
+      takeName: cat|catwalkmotion
       firstFrame: 0
-      lastFrame: 1
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -218,7 +120,21 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0
+        functionName: walk
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0
+        functionName: NewEvent
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
