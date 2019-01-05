@@ -5,7 +5,6 @@ using UnityEngine;
 public class testforwalk : MonoBehaviour {
     public enum a_state {
         walk=0
-
     }
     public Animator ani;
     public a_state state = a_state.walk;
@@ -14,6 +13,7 @@ public class testforwalk : MonoBehaviour {
     private void Update()
     {
         transform.Translate(speed * Time.deltaTime, 0.0f, 0.0f);
+
         if (ani != null) {
             ani.SetInteger("a_state", (int)state);
         }

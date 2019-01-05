@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7dce62004effe62438e26aa50c82104b
+guid: 6e2a825906313bf44a2bfec8ad38b0c3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,12 +8,11 @@ ModelImporter:
     2100000: palette
     2300000: //RootNode
     3300000: //RootNode
-    4300000: cat
-    7400000: cat|00dile
-    7400002: cat|01walk
-    7400004: cat|02attack
-    7400006: cat|03hitted
-    7400008: cat|LampAction
+    4300000: jiraffe
+    7400000: jiraffe|00idle
+    7400002: jiraffe|01walk
+    7400004: jiraffe|02attack
+    7400006: jiraffe|03hitted
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -44,8 +43,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: cat|00dile
-      takeName: cat|00dile
+      name: jiraffe|00idle
+      takeName: jiraffe|00idle
       firstFrame: 0
       lastFrame: 30
       wrapMode: 0
@@ -72,10 +71,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: cat|01walk
-      takeName: cat|01walk
+      name: jiraffe|01walk
+      takeName: jiraffe|01walk
       firstFrame: 0
-      lastFrame: 32
+      lastFrame: 40
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -100,10 +99,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: cat|02attack
-      takeName: cat|02attack
+      name: jiraffe|02attack
+      takeName: jiraffe|02attack
       firstFrame: 0
-      lastFrame: 22
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -128,10 +127,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: cat|03hitted
-      takeName: cat|03hitted
+      name: jiraffe|03hitted
+      takeName: jiraffe|03hitted
       firstFrame: 0
-      lastFrame: 22
+      lastFrame: 30
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

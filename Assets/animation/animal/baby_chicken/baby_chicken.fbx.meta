@@ -1,19 +1,18 @@
 fileFormatVersion: 2
-guid: 7dce62004effe62438e26aa50c82104b
+guid: 1640d98066ee41e4ca3109f38830357e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: palette
+    2100000: palette.001
     2300000: //RootNode
     3300000: //RootNode
-    4300000: cat
-    7400000: cat|00dile
-    7400002: cat|01walk
-    7400004: cat|02attack
-    7400006: cat|03hitted
-    7400008: cat|LampAction
+    4300000: baby_chicken
+    7400000: baby_chicken|00idle
+    7400002: baby_chicken|01walk
+    7400004: baby_chicken|02attack
+    7400006: baby_chicken|03hitted
     9500000: //RootNode
   externalObjects: {}
   materials:
@@ -44,10 +43,10 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: cat|00dile
-      takeName: cat|00dile
+      name: baby_chicken|00idle
+      takeName: baby_chicken|00idle
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -72,10 +71,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: cat|01walk
-      takeName: cat|01walk
+      name: baby_chicken|01walk
+      takeName: baby_chicken|01walk
       firstFrame: 0
-      lastFrame: 32
+      lastFrame: 20
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -100,10 +99,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: cat|02attack
-      takeName: cat|02attack
+      name: baby_chicken|02attack
+      takeName: baby_chicken|02attack
       firstFrame: 0
-      lastFrame: 22
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -128,10 +127,10 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: cat|03hitted
-      takeName: cat|03hitted
+      name: baby_chicken|03hitted
+      takeName: baby_chicken|03hitted
       firstFrame: 0
-      lastFrame: 22
+      lastFrame: 15
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
