@@ -15,7 +15,6 @@ public class DownAnimalBtn : MonoBehaviour {
         C2.gameObject.transform.position = new Vector3(640f, 29f, 0f);
         C3 = GameObject.Find(PlayerPrefs.GetString("C3"));
         C3.gameObject.transform.position = new Vector3(760f, 29f, 0f);
-
     }
 
     // Update is called once per frame

@@ -18,10 +18,10 @@ public class PhotonInit : MonoBehaviour {
         Debug.Log("Entered Lobby");
     }
 
-    private void OnGUI()
-    {
-        GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-    }
+    //private void OnGUI()
+    //{
+    //    GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+    //}
 
     public void OnClickJoinRandomRoom()
     {

@@ -1,19 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+//using UnityEngine.UI;
 
 public class BattleManager : MonoBehaviour
 {
     GameObject ship;
     int baseNum;
 
-    public GameObject fade;
-    Image fadeImg;
-    float start = 1f;
-    float end = 0f;
-    float time = 0f;
-    public float aniTime = 2f;
+    //public GameObject fade;
+    //Image fadeImg;
+    //float start = 1f;
+    //float end = 0f;
+    //float time = 0f;
+    //public float aniTime = 2f;
+
     Vector3 vec;
     Quaternion qua;
 
@@ -37,11 +38,11 @@ public class BattleManager : MonoBehaviour
         CreatePlayer();
     }
 
-    void Start()
-    {
-        fadeImg = fade.GetComponent<Image>();
-        StartCoroutine("PlayFadein");
-    }
+    //void Start()
+    //{
+    //    fadeImg = fade.GetComponent<Image>();
+    //    StartCoroutine("PlayFadein");
+    //}
 
     void CreatePlayer()
     {
@@ -106,19 +107,19 @@ public class BattleManager : MonoBehaviour
         yield return null;
     }
 
-    IEnumerator PlayFadein()
-    {
-        Color color = fadeImg.color;
-        time = 0f;
-        while (color.a > 0f)
-        {
-            time += Time.deltaTime / aniTime;
-            color.a = Mathf.Lerp(start, end, time);
-            fadeImg.color = color;
-            yield return null;
-        }
-        fade.SetActive(false);
-    }
+    //IEnumerator PlayFadein()
+    //{
+    //    Color color = fadeImg.color;
+    //    time = 0f;
+    //    while (color.a > 0f)
+    //    {
+    //        time += Time.deltaTime / aniTime;
+    //        color.a = Mathf.Lerp(start, end, time);
+    //        fadeImg.color = color;
+    //        yield return null;
+    //    }
+    //    fade.SetActive(false);
+    //}
 
     public void chicken()
     {

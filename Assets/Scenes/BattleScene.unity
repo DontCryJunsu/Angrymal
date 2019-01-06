@@ -722,13 +722,14 @@ GameObject:
   - component: {fileID: 39042737}
   - component: {fileID: 39042739}
   - component: {fileID: 39042738}
+  - component: {fileID: 39042740}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &39042737
 RectTransform:
   m_ObjectHideFlags: 0
@@ -781,6 +782,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 39042736}
   m_CullTransparentMesh: 0
+--- !u!114 &39042740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 39042736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c0ff6ae13f6c7449c4a95fd1ac3b82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aniTime: 2
 --- !u!1 &42089145
 GameObject:
   m_ObjectHideFlags: 0
@@ -3420,7 +3433,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4170,9 +4183,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &168059877
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4990,9 +5001,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &202051503
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6009,9 +6018,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &245419119
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8740,8 +8747,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7bf3df224db224da72e81f0ba32326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fade: {fileID: 39042736}
-  aniTime: 2
   Angrymal: {fileID: 761172401}
 --- !u!4 &377816288
 Transform:
@@ -10980,7 +10985,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -13227,7 +13232,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -15459,7 +15464,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -16527,9 +16532,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &750615649
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18741,7 +18744,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -19831,9 +19834,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &884311368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -21485,7 +21486,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -21808,7 +21809,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -22189,7 +22190,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -25193,6 +25194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IMG: {fileID: 0}
+  plus: 0
   tx: {fileID: 2081412330}
   chicUI: {fileID: 2044470169}
   dogUI: {fileID: 717405745}
@@ -25207,19 +25209,19 @@ MonoBehaviour:
   snakUI: {fileID: 1642945481}
   catUI: {fileID: 142738818}
   kanUI: {fileID: 844956025}
-  costchicUI: 10
-  costdogUI: 10
-  costbufUI: 10
-  costjirUI: 10
-  costlionUI: 10
-  costelepUI: 10
-  costmouUI: 10
-  costwolfUI: 10
-  costsheepUI: 10
-  costpigUI: 10
-  costsnakUI: 10
-  costcatUI: 10
-  costkanUI: 10
+  costchicUI: 20
+  costdogUI: 20
+  costbufUI: 20
+  costjirUI: 20
+  costlionUI: 20
+  costelepUI: 20
+  costmouUI: 20
+  costwolfUI: 20
+  costsheepUI: 20
+  costpigUI: 20
+  costsnakUI: 20
+  costcatUI: 20
+  costkanUI: 20
 --- !u!1 &1112841454
 GameObject:
   m_ObjectHideFlags: 0
@@ -25601,9 +25603,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &1122488979
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -27221,9 +27221,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &1176421165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29699,7 +29697,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -33587,7 +33585,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -35324,9 +35322,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &1551738025
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36199,9 +36195,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &1581583927
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36730,7 +36724,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -37336,9 +37330,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &1642917088
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37443,7 +37435,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -41125,9 +41117,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &1882991897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -42934,9 +42924,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &1968072877
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -44896,7 +44884,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 10
+          m_FloatArgument: 20
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -46744,9 +46732,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 20
 --- !u!222 &2140010127
 CanvasRenderer:
   m_ObjectHideFlags: 0

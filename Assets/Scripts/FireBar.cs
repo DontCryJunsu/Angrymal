@@ -6,8 +6,8 @@ public class FireBar : MonoBehaviour
 {
 
     public Image IMG;
-    float totalHp;
-    float minusHp;
+    float total;
+    public float plus;
     public Text tx;
 
     public GameObject chicUI;
@@ -58,8 +58,8 @@ public class FireBar : MonoBehaviour
     void Start()
     {
         IMG = GetComponent<Image>();
-        totalHp = 100;
-        minusHp = 0.08f;
+        total = 100;
+        plus = 0.05f;
 
         bchicUI = chicUI.GetComponent<Button>();
         bdogUI = dogUI.GetComponent<Button>();
@@ -80,7 +80,7 @@ public class FireBar : MonoBehaviour
     void Update()
     {
 
-        IMG.fillAmount += minusHp / totalHp;
+        IMG.fillAmount += plus / total;
         tx.text = ((int)(IMG.fillAmount * 100f)).ToString();
 
         if (IMG.fillAmount * 100 < costchicUI && bchicUI.interactable)
