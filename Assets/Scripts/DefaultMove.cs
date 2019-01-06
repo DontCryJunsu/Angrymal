@@ -814,13 +814,20 @@ public class DefaultMove : MonoBehaviour
 
         while (true)
         {
+            Debug.Log("가까운적 코루틴 실행");
             yield return null;
             runningact = "ChaseClosestEnemy";
             if (tag == "redcharacter")
             {
+                //Debug.Log("이것은 레드캐릭터");
+
                 GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("bluecharacter");  //bluecharacter 태그의 모든 오브젝트를 찾는다.
-                if (taggedEnemys != null)
+               // Debug.Log("Find 끝");
+                //Debug.Log("길이 " + taggedEnemys.Length);
+                
+                if (taggedEnemys != null && taggedEnemys.Length>0)
                 {
+                   // Debug.Log("null 아닐때 진입");
                     float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
                     Transform closestEnemy = null;
                     foreach (GameObject taggedEnemy in taggedEnemys)
@@ -836,13 +843,16 @@ public class DefaultMove : MonoBehaviour
                     target = closestEnemy;  //가장 가까운 적을 target으로 설정
 
                     nav.SetDestination(target.position);  //target을 향해 이동
+                   // Debug.Log("적을향해");
                 }
+              
+               // Debug.Log("if문 else문 통과");
 
             }
             else if (tag == "bluecharacter")
             {
                 GameObject[] taggedEnemys = GameObject.FindGameObjectsWithTag("redcharacter");  //redcharacter 태그의 모든 오브젝트를 찾는다.
-                if (taggedEnemys != null)
+                if (taggedEnemys != null && taggedEnemys.Length > 0)
                 {
                     float closestDistSqr = Mathf.Infinity;  //가장 가까운 거리의 기본값.
                     Transform closestEnemy = null;
@@ -860,6 +870,7 @@ public class DefaultMove : MonoBehaviour
 
                     nav.SetDestination(target.position);  //target을 향해 이동
                 }
+              
 
             }
         }
