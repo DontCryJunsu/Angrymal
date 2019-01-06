@@ -38,19 +38,19 @@ public class LoadAnimal : MonoBehaviour {
             if(C1 == false)
             {
                 PlayerPrefs.SetString("C1", NAME);
-                animalUI.transform.position = new Vector3(c1.transform.position.x, c1.transform.position.y + 20f, c1.transform.position.z);
+                animalUI.transform.position = new Vector3(c1.transform.position.x, c1.transform.position.y-34f, c1.transform.position.z);
                 C1 = true;
             }
             else if(C2 == false)
             {
                 PlayerPrefs.SetString("C2", NAME);
-                animalUI.transform.position = new Vector3(c2.transform.position.x, c2.transform.position.y + 20f, c2.transform.position.z);
+                animalUI.transform.position = new Vector3(c2.transform.position.x, c2.transform.position.y-34f, c2.transform.position.z);
                 C2 = true;
             }
             else if (C3 == false)
             {
                 PlayerPrefs.SetString("C3", NAME);
-                animalUI.transform.position = new Vector3(c3.transform.position.x, c3.transform.position.y + 20f, c3.transform.position.z);
+                animalUI.transform.position = new Vector3(c3.transform.position.x, c3.transform.position.y-34f, c3.transform.position.z);
                 C3 = true;
             }
         }
