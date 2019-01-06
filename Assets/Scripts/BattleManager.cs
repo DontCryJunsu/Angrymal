@@ -16,8 +16,13 @@ public class BattleManager : MonoBehaviour
     public float aniTime = 2f;
     Vector3 vec;
     Quaternion qua;
+
+    public static bool ST;
+    public GameObject Angrymal;
+
     void Awake()
     {
+        ST = false;
         PhotonNetwork.isMessageQueueRunning = true;
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
@@ -83,10 +88,13 @@ public class BattleManager : MonoBehaviour
             StartCoroutine("shipDown");
         }
     }
-    //void Update()
-    //{
-    //    Debug.Log(PlayerPrefs.GetString("userName") + "님의 팀은 " + PlayerPrefs.GetString("Team") + " 입니다.");
-    //}
+    void Update()
+    {
+        if(ST)
+        {
+            Angrymal.SetActive(true);
+        }
+    }
 
     IEnumerator shipDown()
     {

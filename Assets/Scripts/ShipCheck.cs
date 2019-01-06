@@ -8,9 +8,12 @@ public class ShipCheck : MonoBehaviour {
     PhotonView pv;
     public Transform ready;
     public Text txt;
+    GameObject angrymal;
 
     void Awake()
     {
+        //angrymal = GameObject.Find("Angrymal");
+        //angrymal.SetActive(false);
         pv = GetComponent<PhotonView>();
         ready = GameObject.Find("RPCPan").transform;
         GameObject.Find("RPCText").GetComponent<Text>().text = "플레이어를 기다리는 중입니다.";
@@ -46,6 +49,8 @@ public class ShipCheck : MonoBehaviour {
             ready.Translate(0, -7f, 0);
         }
         yield return null;
+        BattleManager.ST = true;
+        //angrymal.SetActive(true);
     }
 
     [PunRPC]
