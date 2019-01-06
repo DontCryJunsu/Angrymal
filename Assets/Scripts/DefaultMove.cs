@@ -7,10 +7,10 @@ using System.Reflection;  //문자열로 실행 시험
 
 public class DefaultMove : MonoBehaviour
 {
-
+    Animator animator;
     public GameObject goal;
     NavMeshAgent nav;
-    bool JustWalk_isrunning;
+    //bool JustWalk_isrunning;
     //string[] command = new string[2];
     string[,] command = new string[4, 3];  //4행 3열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개. 3열은 공격명령.
     private Transform target;
@@ -50,7 +50,6 @@ public class DefaultMove : MonoBehaviour
         //fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
         StartCoroutine("JustWalk");
-
         StartCoroutine("CheckCommand");
         StartCoroutine("CheckAttackCommand");
         RD = goal.GetComponent<RandomDestination>();
@@ -93,6 +92,7 @@ public class DefaultMove : MonoBehaviour
     {
         while (true)
         {
+            animator.SetBool("isWalk", false); //애니메이션 변수 초기화
             yield return null;
             checkcommand = true;
             while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
@@ -186,13 +186,11 @@ public class DefaultMove : MonoBehaviour
     }
 
 
-
-
-
     void GetCommand()
     {
         if (name == "chicken")
         {
+
             command[0, 0] = Command.chicken[0, 0];
             command[0, 1] = Command.chicken[0, 1];
             command[0, 2] = Command.chicken[0, 2];
@@ -798,7 +796,8 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator JustWalk()
     {
-        JustWalk_isrunning = true;
+        //JustWalk_isrunning = true;
+        animator.SetBool("isWalk",true);
         runningact = "JustWalk";
         while (true)
         {
