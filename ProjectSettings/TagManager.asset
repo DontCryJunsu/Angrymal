@@ -16,6 +16,8 @@ TagManager:
   - reddestination
   - bluedestination
   - ship
+  - redattack
+  - blueattack
   layers:
   - Default
   - TransparentFX

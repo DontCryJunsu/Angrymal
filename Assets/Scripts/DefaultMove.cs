@@ -5,6 +5,12 @@ using UnityEngine.AI;
 
 using System.Reflection;  //문자열로 실행 시험
 
+enum TARGET
+{
+    MASTER = 0,
+    CLIENT = 1,
+}
+
 public class DefaultMove : MonoBehaviour
 {
 
@@ -88,6 +94,61 @@ public class DefaultMove : MonoBehaviour
             tr.rotation = Quaternion.Slerp(tr.rotation, currRot, Time.deltaTime * 3.0f);
         }
     }
+
+    public void NetAttackDamage(float damage)
+    {
+        // 공격시의 데미지를 상대에게 전달함.
+        int attackTarget = 0;
+
+        if (PhotonNetwork.isMasterClient)
+        {
+            attackTarget = (int)TARGET.CLIENT;
+            // 공격하는 대상이 방원일 때
+        }
+        else
+        {
+            attackTarget = (int)TARGET.MASTER;
+            // 공격하는 대상이 방장일 때
+        }
+
+        akcoll.gameObject.GetComponent<PhotonView>().RPC("AttackInfo", PhotonTargets.Others, attackTarget, damage);
+
+        // AttackInfo 는 함수이름입니다.
+         //PhotonTargets.Others 자신을 제외한 다른 유저에게 정보를 전송합니다.damage 는 전달하려고 하는 값입니다.
+}
+
+
+    public void AttackProcess(int attackTarget, float damage)
+    {
+
+       hp -= damage;
+        // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
+        
+        if (hp <= 0) // HP가 0 이 되서 죽었을 때 
+        {          
+            GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(tr);
+        }
+        
+        /*
+        if (attackTarget == (int)TARGET.MASTER)
+        {
+            hpGaugeMaster.fillAmount = (float)communicators[attackTarget].GetComponent<PlayerPhoton>().iHp / iMyHpBase;
+
+            clientChar.playerChar.GetComponent<PlayerFSM>().SetState(CHARCTERSTATE.Attack);   // 캐릭터 공격 애니
+            StartCoroutine(RotateChar(clientChar.playerChar, false));
+            StartCoroutine(HitChar(masterChar.playerChar, true, damage));
+        }
+        else
+        {
+            hpGaugeClient.fillAmount = (float)communicators[attackTarget].GetComponent<PlayerPhoton>().iHp / iMyHpBase;
+
+            masterChar.playerChar.GetComponent<PlayerFSM>().SetState(CHARCTERSTATE.Attack);   // 캐릭터 공격 애니
+            StartCoroutine(RotateChar(masterChar.playerChar, true));
+            StartCoroutine(HitChar(clientChar.playerChar, false, damage));
+        }
+        */
+    }
+
 
     IEnumerator CheckCommand()
     {
@@ -377,13 +438,20 @@ public class DefaultMove : MonoBehaviour
 
     // 여기서부터 공격 조건 ----------------------------------------------------------------------------------
 
-    IEnumerator AlwaysAttack()
+    IEnumerator AlwaysAttck()
     {
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
+
+        transform.GetChild(1).gameObject.SetActive(true);  //공격 
+        
+        NetAttackDamage(power);
         Debug.Log("Always Attack");
+        transform.GetChild(1).gameObject.SetActive(false);
+
         checkattackcommand = false;
         yield return new WaitForSeconds(1.5f);
+       
     }
 
 
@@ -1044,6 +1112,10 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-
+    [PunRPC]
+    public void AttackInfo(int attackTarget, float damage)
+    {
+        AttackProcess(attackTarget, damage);
+    }
     // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
 }

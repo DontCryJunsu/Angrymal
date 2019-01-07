@@ -40,4 +40,5 @@ MonoBehaviour:
   - Red
   - dDown
   - RPCDown
+  - AttackInfo
   DisableAutoOpenWizard: 1
