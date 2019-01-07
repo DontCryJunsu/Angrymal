@@ -2,182 +2,106 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DownAnimalBtn2 : MonoBehaviour {
+public class DownAnimalBtn2 : MonoBehaviour
+{
+
+    public GameObject c1;
+    public GameObject c2;
+    public GameObject c3;
 
     public GameObject cat;
     public GameObject dog;
-    public GameObject kan;
+    public GameObject kangaroo;
     public GameObject lion;
     public GameObject wolf;
-    public GameObject chic;
-    public GameObject buf;
-    public GameObject mous;
-    public GameObject snak;
+    public GameObject chicken;
+    public GameObject buffalo;
+    public GameObject mouse;
+    public GameObject snake;
     public GameObject pig;
     public GameObject sheep;
-    public GameObject elep;
-    public GameObject jir;
+    public GameObject elephant;
+    public GameObject jiraffe;
 
 
     // Use this for initialization
-    void Start () {
-		if(PlayerPrefs.GetString("C1").Equals("catUI"))
+    void Start()
+    {
+
+        GameObject temp;
+
+        if(PlayerPrefs.GetString("C1", "1") != "1" && PlayerPrefs.GetString("C1", "2") != "1" && PlayerPrefs.GetString("C3", "1") != "1")
         {
-            cat.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("dogUI"))
-        {
-            dog.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("kangarooUI"))
-        {
-            kan.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("lionUI"))
-        {
-            lion.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("wolfUI"))
-        {
-            wolf.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("chickenUI"))
-        {
-            chic.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("buffaloUI"))
-        {
-            buf.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("mouseUI"))
-        {
-            mous.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("snakeUI"))
-        {
-            snak.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("pigUI"))
-        {
-            pig.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("sheepUI"))
-        {
-            sheep.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("elephantUI"))
-        {
-            elep.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C1").Equals("jiraffeUI"))
-        {
-            jir.transform.position = transform.position;
+            temp = GameObject.Find(PlayerPrefs.GetString("C1"));
+            LobbyManager.loadAni++;
+            LoadAnimal.C1 = true;
+            temp.transform.position = new Vector3(c1.transform.position.x, c1.transform.position.y - 34f, c1.transform.position.z);
+            temp.transform.localScale = new Vector3(1.9f, 1.9f, 1f);
+
+            temp = GameObject.Find(PlayerPrefs.GetString("C2"));
+            LobbyManager.loadAni++;
+            LoadAnimal.C2 = true;
+            temp.transform.position = new Vector3(c2.transform.position.x, c2.transform.position.y - 34f, c2.transform.position.z);
+            temp.transform.localScale = new Vector3(1.9f, 1.9f, 1f);
+
+            temp = GameObject.Find(PlayerPrefs.GetString("C3"));
+            LobbyManager.loadAni++;
+            LoadAnimal.C3 = true;
+            temp.transform.position = new Vector3(c3.transform.position.x, c3.transform.position.y - 34f, c3.transform.position.z);
+            temp.transform.localScale = new Vector3(1.9f, 1.9f, 1f);
         }
 
-        if (PlayerPrefs.GetString("C2").Equals("catUI"))
+        if (PlayerPrefs.GetString("C1").Equals("catUI") || PlayerPrefs.GetString("C2").Equals("catUI") || PlayerPrefs.GetString("C3").Equals("catUI"))
         {
-            cat.transform.position = transform.position;
+            cat.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("dogUI"))
+        if (PlayerPrefs.GetString("C1").Equals("dogUI") || PlayerPrefs.GetString("C2").Equals("dogUI") || PlayerPrefs.GetString("C3").Equals("dogUI"))
         {
-            dog.transform.position = transform.position;
+            dog.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("kangarooUI"))
+        if (PlayerPrefs.GetString("C1").Equals("kangarooUI") || PlayerPrefs.GetString("C2").Equals("kangarooUI") || PlayerPrefs.GetString("C3").Equals("kangarooUI"))
         {
-            kan.transform.position = transform.position;
+            kangaroo.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("lionUI"))
+        if (PlayerPrefs.GetString("C1").Equals("lionUI") || PlayerPrefs.GetString("C2").Equals("lionUI") || PlayerPrefs.GetString("C3").Equals("lionUI"))
         {
-            lion.transform.position = transform.position;
+            lion.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("wolfUI"))
+        if (PlayerPrefs.GetString("C1").Equals("wolfUI") || PlayerPrefs.GetString("C2").Equals("wolfUI") || PlayerPrefs.GetString("C3").Equals("wolfUI"))
         {
-            wolf.transform.position = transform.position;
+            wolf.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("chickenUI"))
+        if (PlayerPrefs.GetString("C1").Equals("chickenUI") || PlayerPrefs.GetString("C2").Equals("chickenUI") || PlayerPrefs.GetString("C3").Equals("chickenUI"))
         {
-            chic.transform.position = transform.position;
+            chicken.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("buffaloUI"))
+        if (PlayerPrefs.GetString("C1").Equals("buffaloUI") || PlayerPrefs.GetString("C2").Equals("buffaloUI") || PlayerPrefs.GetString("C3").Equals("buffaloUI"))
         {
-            buf.transform.position = transform.position;
+            buffalo.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("mouseUI"))
+        if (PlayerPrefs.GetString("C1").Equals("mouseUI") || PlayerPrefs.GetString("C2").Equals("mouseUI") || PlayerPrefs.GetString("C3").Equals("mouseUI"))
         {
-            mous.transform.position = transform.position;
+            mouse.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("snakeUI"))
+        if (PlayerPrefs.GetString("C1").Equals("snakeUI") || PlayerPrefs.GetString("C2").Equals("snakeUI") || PlayerPrefs.GetString("C3").Equals("snakeUI"))
         {
-            snak.transform.position = transform.position;
+            snake.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("pigUI"))
+        if (PlayerPrefs.GetString("C1").Equals("pigUI") || PlayerPrefs.GetString("C2").Equals("pigUI") || PlayerPrefs.GetString("C3").Equals("pigUI"))
         {
-            pig.transform.position = transform.position;
+            pig.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("sheepUI"))
+        if (PlayerPrefs.GetString("C1").Equals("sheepUI") || PlayerPrefs.GetString("C2").Equals("sheepUI") || PlayerPrefs.GetString("C3").Equals("sheepUI"))
         {
-            sheep.transform.position = transform.position;
+            sheep.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("elephantUI"))
+        if (PlayerPrefs.GetString("C1").Equals("elephantUI") || PlayerPrefs.GetString("C2").Equals("elephantUI") || PlayerPrefs.GetString("C3").Equals("elephantUI"))
         {
-            elep.transform.position = transform.position;
+            elephant.SetActive(false);
         }
-        else if (PlayerPrefs.GetString("C2").Equals("jiraffeUI"))
+        if (PlayerPrefs.GetString("C1").Equals("jiraffeUI") || PlayerPrefs.GetString("C2").Equals("jiraffeUI") || PlayerPrefs.GetString("C3").Equals("jiraffeUI"))
         {
-            jir.transform.position = transform.position;
-        }
-
-        if (PlayerPrefs.GetString("C3").Equals("catUI"))
-        {
-            cat.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("dogUI"))
-        {
-            dog.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("kangarooUI"))
-        {
-            kan.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("lionUI"))
-        {
-            lion.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("wolfUI"))
-        {
-            wolf.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("chickenUI"))
-        {
-            chic.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("buffaloUI"))
-        {
-            buf.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("mouseUI"))
-        {
-            mous.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("snakeUI"))
-        {
-            snak.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("pigUI"))
-        {
-            pig.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("sheepUI"))
-        {
-            sheep.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("elephantUI"))
-        {
-            elep.transform.position = transform.position;
-        }
-        else if (PlayerPrefs.GetString("C3").Equals("jiraffeUI"))
-        {
-            jir.transform.position = transform.position;
+            jiraffe.SetActive(false);
         }
     }
 }
