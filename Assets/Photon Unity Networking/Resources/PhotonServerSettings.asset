@@ -41,4 +41,5 @@ MonoBehaviour:
   - dDown
   - RPCDown
   - AttackInfo
+  - PreventDoubleAttack
   DisableAutoOpenWizard: 1
