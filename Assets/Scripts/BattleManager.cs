@@ -264,13 +264,9 @@ public class BattleManager : MonoBehaviour
             PhotonNetwork.Instantiate("BKangaroo", vec, qua, 0);
         }
     }
-    public void Die(Transform iskilled)
+    public void Die(GameObject iskilled)
     {
         PhotonNetwork.Destroy(iskilled.gameObject);
-    }
-    public void asd()
-    {
-        Debug.Log("asd");
     }
 }
 

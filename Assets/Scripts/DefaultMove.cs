@@ -108,7 +108,7 @@ public class DefaultMove : MonoBehaviour
         
         if (hp <= 0) // HP가 0 이 되서 죽었을 때 
         {          
-            GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(tr);
+            GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
         }
         
         /*
@@ -169,7 +169,7 @@ public class DefaultMove : MonoBehaviour
 
             if (tag == "redcharacter")
             {
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 2.0f);
                 foreach (Collider coll in colls)
                 {
                     if (coll != null)
