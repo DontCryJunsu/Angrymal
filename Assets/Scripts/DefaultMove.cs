@@ -425,7 +425,6 @@ public class DefaultMove : MonoBehaviour
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
         akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-
         transform.GetChild(1).gameObject.SetActive(true);  //공격 
         yield return null;
         //NetAttackDamage(power);
@@ -446,9 +445,16 @@ public class DefaultMove : MonoBehaviour
         {
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+
+            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+            yield return null;
+
             Debug.Log("HP more than half attack");
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
+
+            transform.GetChild(1).gameObject.SetActive(false);
         }
 
     }
@@ -460,9 +466,16 @@ public class DefaultMove : MonoBehaviour
         {
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+
+            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+            yield return null;
+
             Debug.Log("HP less than half attack");
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
+
+            transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -474,9 +487,17 @@ public class DefaultMove : MonoBehaviour
 
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+
+            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+            yield return null;
+
             Debug.Log("Enemy HP more than half attack");
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
+
+            transform.GetChild(1).gameObject.SetActive(false);
+
         }
     }
 
@@ -489,9 +510,17 @@ public class DefaultMove : MonoBehaviour
 
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+
+            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+            yield return null;
+
             Debug.Log("Enemy HP less than half attack");
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
+
+            transform.GetChild(1).gameObject.SetActive(false);
+
         }
     }
 
@@ -502,9 +531,17 @@ public class DefaultMove : MonoBehaviour
         {
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+
+            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+            yield return null;
+
             Debug.Log("My HP is more than enemy's HP Attack");
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
+
+            transform.GetChild(1).gameObject.SetActive(false);
+
         }
         yield return null;
     }
@@ -517,9 +554,17 @@ public class DefaultMove : MonoBehaviour
             {
                 nav.speed = 0;   // 멈추고
                 transform.LookAt(akcoll.transform);  //적 바라봄
+
+                akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+                transform.GetChild(1).gameObject.SetActive(true);  //공격 
+                yield return null;
+
                 Debug.Log("Our tile is more than enemy's tile Attack");  // 공격
                 checkattackcommand = false;
                 yield return new WaitForSeconds(1.5f);
+
+                transform.GetChild(1).gameObject.SetActive(false);
+
             }
         }
         else if (tag == "bluecharacter")
@@ -528,9 +573,17 @@ public class DefaultMove : MonoBehaviour
             {
                 nav.speed = 0;
                 transform.LookAt(akcoll.transform);
+
+                akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+                transform.GetChild(1).gameObject.SetActive(true);  //공격 
+                yield return null;
+
                 Debug.Log("My tile is more than enemy's tile Attack");
                 checkattackcommand = false;
                 yield return new WaitForSeconds(1.5f);
+
+                transform.GetChild(1).gameObject.SetActive(false);
+
             }
         }
         yield return null;
@@ -544,9 +597,16 @@ public class DefaultMove : MonoBehaviour
             {
                 nav.speed = 0;   // 멈추고
                 transform.LookAt(akcoll.transform);  //적 바라봄
+
+                akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+                transform.GetChild(1).gameObject.SetActive(true);  //공격 
+                yield return null;
+
                 Debug.Log("Our tile is less than enemy's tile Attack");  // 공격
                 checkattackcommand = false;
                 yield return new WaitForSeconds(1.5f);
+
+                transform.GetChild(1).gameObject.SetActive(false);
             }
         }
         else if (tag == "bluecharacter")
@@ -555,9 +615,16 @@ public class DefaultMove : MonoBehaviour
             {
                 nav.speed = 0;
                 transform.LookAt(akcoll.transform);
+
+                akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+                transform.GetChild(1).gameObject.SetActive(true);  //공격 
+                yield return null;
+
                 Debug.Log("My tile is less than enemy's tile Attack");
                 checkattackcommand = false;
                 yield return new WaitForSeconds(1.5f);
+
+                transform.GetChild(1).gameObject.SetActive(false);
             }
         }
         yield return null;
@@ -570,9 +637,16 @@ public class DefaultMove : MonoBehaviour
         {
             nav.speed = 0;   // 멈추고
             transform.LookAt(akcoll.transform);  //적 바라봄
+
+            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+            yield return null;
             Debug.Log("There are no empty tile Attack");  // 공격
             checkattackcommand = false;
             yield return new WaitForSeconds(1.5f);
+
+            transform.GetChild(1).gameObject.SetActive(false);
+
         }
     }
 
