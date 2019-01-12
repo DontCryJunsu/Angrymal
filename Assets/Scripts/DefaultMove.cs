@@ -420,7 +420,7 @@ public class DefaultMove : MonoBehaviour
 
     // 여기서부터 공격 조건 ----------------------------------------------------------------------------------
 
-    IEnumerator AlwaysAttck()
+    IEnumerator AlwaysAttack()
     {
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄

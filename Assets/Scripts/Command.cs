@@ -9,8 +9,8 @@ EnemyInNear -    주변에 적이 있을 때
 HPMoreThanHalf - 체력이 절반 이상일 때
 HPLessThanHalf - 체력이 절반 미만일 때
 NoEnemyInNear - 주변에 적이 없을 때 
-OurTileIsMore - 땅이 더 많을 때
-OurTileIsLess - 땅이 더 적을 때
+OurTileIsMore - 내 땅이 더 많을 때
+OurTileIsLess - 내 땅이 더 적을 때
 NoEmptyTile - 빈 땅이 없을 때
 
 행동 목록 <5개>
