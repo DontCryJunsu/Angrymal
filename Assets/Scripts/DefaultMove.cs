@@ -94,9 +94,6 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    
-
-
     public void AttackProcess(int attackTarget, float damage)
     {
         if (time != comparetime)
