@@ -9,6 +9,6 @@ public class DeleteBtn : MonoBehaviour
         PlayerPrefs.SetString(LobbyManager.aniNum + LobbyManager.cNum + "A", "0");
         PlayerPrefs.SetString(LobbyManager.aniNum + LobbyManager.cNum + "B", "0");
         PlayerPrefs.SetString(LobbyManager.aniNum + LobbyManager.cNum + "C", "0");
-        GameObject.Find(LobbyManager.aniNum + LobbyManager.cNum).GetComponent<Text1>().SelectCmd();
+        GameObject.Find(LobbyManager.aniNum + LobbyManager.cNum).GetComponent<TextMgr>().SelectCmd();
     }
 }

@@ -19,7 +19,8 @@ public class FindAnimal : MonoBehaviour {
     public GameObject mouse;
 
     void Start () {
-		if(PlayerPrefs.GetString("C1").Equals("chickenUI"))
+        Debug.Log("asd");
+        if (PlayerPrefs.GetString("C1").Equals("chickenUI"))
         {
             LoadAnimal.act = true;
             chicken.transform.position = gameObject.transform.position;
@@ -80,6 +81,138 @@ public class FindAnimal : MonoBehaviour {
             lion.transform.position = gameObject.transform.position;
         }
         else if (PlayerPrefs.GetString("C1").Equals("mouseUI"))
+        {
+            LoadAnimal.act = true;
+            mouse.transform.position = gameObject.transform.position;
+        }
+
+        if (PlayerPrefs.GetString("C2").Equals("chickenUI"))
+        {
+            LoadAnimal.act = true;
+            chicken.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("dogUI"))
+        {
+            LoadAnimal.act = true;
+            dog.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("elephantUI"))
+        {
+            LoadAnimal.act = true;
+            elephant.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("catUI"))
+        {
+            LoadAnimal.act = true;
+            cat.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("buffaloUI"))
+        {
+            LoadAnimal.act = true;
+            buffalo.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("jiraffeUI"))
+        {
+            LoadAnimal.act = true;
+            jiraffe.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("sheepUI"))
+        {
+            LoadAnimal.act = true;
+            sheep.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("wolfUI"))
+        {
+            LoadAnimal.act = true;
+            wolf.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("pigUI"))
+        {
+            LoadAnimal.act = true;
+            pig.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("kangarooUI"))
+        {
+            LoadAnimal.act = true;
+            kangaroo.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("snakeUI"))
+        {
+            LoadAnimal.act = true;
+            snake.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("lionUI"))
+        {
+            LoadAnimal.act = true;
+            lion.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("mouseUI"))
+        {
+            LoadAnimal.act = true;
+            mouse.transform.position = gameObject.transform.position;
+        }
+
+        if (PlayerPrefs.GetString("C2").Equals("chickenUI"))
+        {
+            LoadAnimal.act = true;
+            chicken.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("dogUI"))
+        {
+            LoadAnimal.act = true;
+            dog.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("elephantUI"))
+        {
+            LoadAnimal.act = true;
+            elephant.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("catUI"))
+        {
+            LoadAnimal.act = true;
+            cat.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("buffaloUI"))
+        {
+            LoadAnimal.act = true;
+            buffalo.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("jiraffeUI"))
+        {
+            LoadAnimal.act = true;
+            jiraffe.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("sheepUI"))
+        {
+            LoadAnimal.act = true;
+            sheep.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("wolfUI"))
+        {
+            LoadAnimal.act = true;
+            wolf.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("pigUI"))
+        {
+            LoadAnimal.act = true;
+            pig.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("kangarooUI"))
+        {
+            LoadAnimal.act = true;
+            kangaroo.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("snakeUI"))
+        {
+            LoadAnimal.act = true;
+            snake.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("lionUI"))
+        {
+            LoadAnimal.act = true;
+            lion.transform.position = gameObject.transform.position;
+        }
+        else if (PlayerPrefs.GetString("C2").Equals("mouseUI"))
         {
             LoadAnimal.act = true;
             mouse.transform.position = gameObject.transform.position;

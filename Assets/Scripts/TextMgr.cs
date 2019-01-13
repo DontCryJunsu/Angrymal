@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Text1 : MonoBehaviour
+public class TextMgr : MonoBehaviour
 {
     //PlayerPrefs.GetInt("snake1CMD") = 1이면 이동 2이면 공격
     //명령어 PlayerPrefs.GetInt("snake1A")랑 PlayerPrefs.GetInt("snake1B")

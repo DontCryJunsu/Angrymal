@@ -33,22 +33,26 @@ public class LoadAnimal : MonoBehaviour {
 
         GameObject temp;
 
-        if (PlayerPrefs.GetString("C1", "1") != "1" && PlayerPrefs.GetString("C1", "2") != "1" && PlayerPrefs.GetString("C3", "1") != "1")
+        if (PlayerPrefs.GetString("C1", "1") != "1")
         {
             temp = GameObject.Find(PlayerPrefs.GetString("C1"));
             LobbyManager.loadAni++;
-
             LoadAnimal.C1 = true;
             aniaml(temp, c1);
-
             StartCoroutine(sizeUp(temp));
+        }
 
+        if (PlayerPrefs.GetString("C2", "1") != "1")
+        {
             temp = GameObject.Find(PlayerPrefs.GetString("C2"));
             LobbyManager.loadAni++;
             LoadAnimal.C2 = true;
             aniaml(temp, c2);
             StartCoroutine(sizeUp(temp));
+        }
 
+        if (PlayerPrefs.GetString("C3", "1") != "1")
+        {
             temp = GameObject.Find(PlayerPrefs.GetString("C3"));
             LobbyManager.loadAni++;
             LoadAnimal.C3 = true;

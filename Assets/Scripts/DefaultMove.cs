@@ -172,6 +172,7 @@ public class DefaultMove : MonoBehaviour
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 2.0f);
                 foreach (Collider coll in colls)
                 {
+                    yield return null; //렉 걸리는지 확인 중
                     if (coll != null)
                     {
                         if (coll.gameObject.tag == "bluecharacter")
@@ -200,6 +201,7 @@ public class DefaultMove : MonoBehaviour
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
                 foreach (Collider coll in colls)
                 {
+                    yield return null; //렉 걸리는지 확인 중
                     if (coll != null)
                     {
                         if (coll.gameObject.tag == "redcharacter")
