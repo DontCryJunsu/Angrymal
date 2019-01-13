@@ -69,9 +69,10 @@ public class Text1 : MonoBehaviour
             {
                 B = "빈 땅으로 이동";
             }
-
-
-
+            else if (A.Equals("0"))
+            {
+                A = "명령어를 선택 해주세요.";
+            }
             txt.text = A + B;
         }
         else if (PlayerPrefs.GetInt(transform.name + "CMD").Equals(2))
@@ -113,6 +114,10 @@ public class Text1 : MonoBehaviour
             {
                 C = "빈 땅이 없을 때 공격";
             }
+            else if(C.Equals("0"))
+            {
+                C = "명령어를 선택 해주세요.";
+            }
             txt.text = C;
         }
         else
@@ -120,5 +125,8 @@ public class Text1 : MonoBehaviour
             txt.text = "명령어를 선택 해주세요.";
         }
     }
-
+    public void SelectCmd()
+    {
+        txt.text = "명령어를 선택 해주세요.";
+    }
 }
