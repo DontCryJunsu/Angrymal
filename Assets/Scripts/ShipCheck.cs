@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class ShipCheck : MonoBehaviour {
 
+    bool isStart = false;
 
     PhotonView pv;
     public Transform ready;
@@ -23,6 +24,7 @@ public class ShipCheck : MonoBehaviour {
     {
         if(pv.isMine && PlayerPrefs.GetString("Team").Equals("B") && other.transform.name.Equals("sea"))
         {
+            isStart = true;
             RPCDown();
             pv.RPC("RPCDown", PhotonTargets.Others, null);
         }
@@ -56,6 +58,7 @@ public class ShipCheck : MonoBehaviour {
     [PunRPC]
     void RPCDown()
     {
+        isStart = true;
         StartCoroutine(dDown());
     }
 }
