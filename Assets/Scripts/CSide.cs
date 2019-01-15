@@ -84,7 +84,7 @@ public class CSide : MonoBehaviour
         tb = false;
         StartCoroutine("sDown");
         StartCoroutine("PanDown");
-        GameObject.Find(LobbyManager.aniNum + LobbyManager.cNum + "TEXT").GetComponent<Text>().text = ST1.text + ST2.text;
+        GameObject.Find(LobbyManager.aniNum + LobbyManager.cNum).GetComponent<Text>().text = ST1.text + ST2.text;
     }
 
     public void atkComplete()//공격완료버튼
@@ -93,7 +93,7 @@ public class CSide : MonoBehaviour
         tb = false;
         StartCoroutine("sDown");
         StartCoroutine("PanDown");
-        GameObject.Find(LobbyManager.aniNum + LobbyManager.cNum + "TEXT").GetComponent<Text>().text = ST0.text;
+        GameObject.Find(LobbyManager.aniNum + LobbyManager.cNum).GetComponent<Text>().text = ST0.text;
     }
 
     IEnumerator PanDown()

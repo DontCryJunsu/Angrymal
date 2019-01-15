@@ -94,9 +94,6 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
-    
-
-
     public void AttackProcess(int attackTarget, float damage)
     {
         if (time != comparetime)
@@ -172,6 +169,7 @@ public class DefaultMove : MonoBehaviour
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 2.0f);
                 foreach (Collider coll in colls)
                 {
+                    yield return null; //렉 걸리는지 확인 중
                     if (coll != null)
                     {
                         if (coll.gameObject.tag == "bluecharacter")
@@ -200,6 +198,7 @@ public class DefaultMove : MonoBehaviour
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
                 foreach (Collider coll in colls)
                 {
+                    yield return null; //렉 걸리는지 확인 중
                     if (coll != null)
                     {
                         if (coll.gameObject.tag == "redcharacter")
@@ -420,7 +419,7 @@ public class DefaultMove : MonoBehaviour
 
     // 여기서부터 공격 조건 ----------------------------------------------------------------------------------
 
-    IEnumerator AlwaysAttck()
+    IEnumerator AlwaysAttack()
     {
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄

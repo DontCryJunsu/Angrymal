@@ -38,17 +38,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (chicken2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (chicken2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         chicken2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -62,17 +64,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (cat2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (cat2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C1", "1");
         }
         LobbyManager.loadAni--;
         cat2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -86,17 +90,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (dog2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (dog2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         dog2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -110,17 +116,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (buffalo2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (buffalo2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         buffalo2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -134,17 +142,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (jiraffe2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (jiraffe2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         jiraffe2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -158,17 +168,20 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
+            PlayerPrefs.SetString("C1", "1");
 
         }
         else if (elephant2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (elephant2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         elephant2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -182,17 +195,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (wolf2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (wolf2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         wolf2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -206,17 +221,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (snake2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (snake2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C1", "1");
         }
         LobbyManager.loadAni--;
         snake2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -230,17 +247,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (sheep2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (sheep2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         sheep2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -254,17 +273,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (kangaroo2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (kangaroo2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         kangaroo2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -278,17 +299,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (lion2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (lion2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         lion2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -302,17 +325,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (mouse2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (mouse2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         mouse2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -326,17 +351,19 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("1");
             LoadAnimal.C1 = false;
-
+            PlayerPrefs.SetString("C1", "1");
         }
         else if (pig2.transform.position.x == 640f)
         {
             Debug.Log("2");
             LoadAnimal.C2 = false;
+            PlayerPrefs.SetString("C2", "1");
         }
         else if (pig2.transform.position.x == 760f)
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         pig2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);

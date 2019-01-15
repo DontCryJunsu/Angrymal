@@ -100,7 +100,7 @@ public class CmdAdd : MonoBehaviour
 
     public void Ak1()
     {
-        PlayerPrefs.SetString(LobbyManager.aniNum + LobbyManager.cNum + "C", "AlwaysAttck");
+        PlayerPrefs.SetString(LobbyManager.aniNum + LobbyManager.cNum + "C", "AlwaysAttack");
         Stext0.text = " 항상 공격";
         C = true;
     }
