@@ -2,19 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class ShipCheck : MonoBehaviour {
-
-    bool isStart = false;
+public class ShipCheck : MonoBehaviour
+{
 
     PhotonView pv;
     public Transform ready;
     public Text txt;
-    GameObject angrymal;
 
     void Awake()
     {
-        //angrymal = GameObject.Find("Angrymal");
-        //angrymal.SetActive(false);
+        PlayerPrefs.SetInt("isVictory", 0);
+
         pv = GetComponent<PhotonView>();
         ready = GameObject.Find("RPCPan").transform;
         GameObject.Find("RPCText").GetComponent<Text>().text = "플레이어를 기다리는 중입니다.";
@@ -22,9 +20,8 @@ public class ShipCheck : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if(pv.isMine && PlayerPrefs.GetString("Team").Equals("B") && other.transform.name.Equals("sea"))
+        if (pv.isMine && PlayerPrefs.GetString("Team").Equals("B") && other.transform.name.Equals("sea"))
         {
-            isStart = true;
             RPCDown();
             pv.RPC("RPCDown", PhotonTargets.Others, null);
         }
@@ -58,7 +55,10 @@ public class ShipCheck : MonoBehaviour {
     [PunRPC]
     void RPCDown()
     {
-        isStart = true;
         StartCoroutine(dDown());
+    }
+    void OnDestroy()
+    {
+        PlayerPrefs.SetInt("isVictory", 1);
     }
 }
