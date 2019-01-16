@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public Text _text;
-    float timer = 10;
+    float timer = 15;
     int min = 0;
     public GameObject upPan;
     public GameObject downPan;
@@ -26,6 +26,7 @@ public class Timer : MonoBehaviour
 
         if (min == 0 && timer < 0 && !swit)
         {
+            swit = true;
             timer = 0;
             StartCoroutine(End());
         }
@@ -37,7 +38,6 @@ public class Timer : MonoBehaviour
     }
     IEnumerator End()
     {
-        swit = true;
         for (int i = 0; i < 50; i++)
         {
             yield return new WaitForSeconds(0.01f);
