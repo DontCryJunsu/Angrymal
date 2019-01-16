@@ -28,9 +28,11 @@ public class LoadAnimal : MonoBehaviour {
     public GameObject elephant;
     public GameObject jiraffe;
 
+    AudioSource audioSource;
+
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource> ();
         GameObject temp;
 
         if (PlayerPrefs.GetString("C1", "1") != "1")
@@ -128,6 +130,9 @@ public class LoadAnimal : MonoBehaviour {
     {
         if(other.gameObject.tag == "animal" && act == true)
         {
+            Debug.Log("탔다!!");
+            audioSource.Play();
+
             act = false;
             other.GetComponent<LobbyCam>().nav.enabled = false;
             string NAME = other.gameObject.name + "UI";
