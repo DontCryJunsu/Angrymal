@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public Text _text;
-    float timer = 30;
-    int min = 2;
+    float timer = 15;
+    int min = 0;
     public GameObject upPan;
     public GameObject downPan;
     bool swit = false;
@@ -26,6 +26,7 @@ public class Timer : MonoBehaviour
 
         if (min == 0 && timer < 0 && !swit)
         {
+            swit = true;
             timer = 0;
             StartCoroutine(End());
         }
@@ -37,7 +38,6 @@ public class Timer : MonoBehaviour
     }
     IEnumerator End()
     {
-        swit = true;
         for (int i = 0; i < 50; i++)
         {
             yield return new WaitForSeconds(0.01f);
@@ -48,12 +48,12 @@ public class Timer : MonoBehaviour
         {
             if (Command.bluetile > Command.redtile)
             {
+                PhotonNetwork.LeaveRoom();
                 SceneManager.LoadScene("Win");
             }
             else
             {
-                //패배
-
+                PhotonNetwork.LeaveRoom();
                 SceneManager.LoadScene("Lose");
             }
         }
@@ -61,14 +61,12 @@ public class Timer : MonoBehaviour
         {
             if (Command.bluetile <= Command.redtile)
             {
-                //승리
-
+                PhotonNetwork.LeaveRoom();
                 SceneManager.LoadScene("Win");
             }
             else
             {
-                //패배
-
+                PhotonNetwork.LeaveRoom();
                 SceneManager.LoadScene("Lose");
             }
         }
@@ -83,6 +81,7 @@ public class Timer : MonoBehaviour
             upPan.transform.Translate(-29.3f, 0, 0);
             downPan.transform.Translate(29.3f, 0, 0);
         }
+        PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Win");
 
         yield return null;
