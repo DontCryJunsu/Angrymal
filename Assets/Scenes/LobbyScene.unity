@@ -5988,6 +5988,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: eaef08a463ee86b4482ba69ef089793a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f7b3990469041184388c13a4fb763c1e, type: 2}
     - target: {fileID: 400002, guid: eaef08a463ee86b4482ba69ef089793a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.9
@@ -6036,10 +6040,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -57
       objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: eaef08a463ee86b4482ba69ef089793a, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f7b3990469041184388c13a4fb763c1e, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eaef08a463ee86b4482ba69ef089793a, type: 3}
 --- !u!1 &369526345
@@ -21777,7 +21777,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0c1e5a752e9a14b408163e11cecd8ab5, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.6
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

@@ -130,7 +130,6 @@ public class LoadAnimal : MonoBehaviour {
     {
         if(other.gameObject.tag == "animal" && act == true)
         {
-            Debug.Log("탔다!!");
             audioSource.Play();
 
             act = false;

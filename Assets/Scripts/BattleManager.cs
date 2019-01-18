@@ -21,8 +21,11 @@ public class BattleManager : MonoBehaviour
     public static bool ST;
     public GameObject Angrymal;
 
+    AudioSource audioSource;
+
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
         ST = false;
         PhotonNetwork.isMessageQueueRunning = true;
         if (PlayerPrefs.GetString("Team").Equals("R"))
@@ -125,10 +128,12 @@ public class BattleManager : MonoBehaviour
     {
         if(PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RChicken", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BChicken", vec, qua, 0);
         }
     }
@@ -136,10 +141,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RDog", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BDog", vec, qua, 0);
         }
     }
@@ -147,10 +154,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RCat", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BCat", vec, qua, 0);
         }
     }
@@ -158,10 +167,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RSheep", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BSheep", vec, qua, 0);
         }
     }
@@ -169,10 +180,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RMouse", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BMouse", vec, qua, 0);
         }
     }
@@ -180,10 +193,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RLion", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BLion", vec, qua, 0);
         }
     }
@@ -191,10 +206,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RBuffalo", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BBuffalo", vec, qua, 0);
         }
     }
@@ -202,10 +219,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RJiraffe", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BJiraffe", vec, qua, 0);
         }
     }
@@ -213,10 +232,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RElephant", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BElephant", vec, qua, 0);
         }
     }
@@ -224,10 +245,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RWolf", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BWolf", vec, qua, 0);
         }
     }
@@ -235,10 +258,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RPig", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BPig", vec, qua, 0);
         }
     }
@@ -246,10 +271,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RSnake", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BSnake", vec, qua, 0);
         }
     }
@@ -257,10 +284,12 @@ public class BattleManager : MonoBehaviour
     {
         if (PlayerPrefs.GetString("Team").Equals("R"))
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("RKangaroo", vec, qua, 0);
         }
         else
         {
+            audioSource.Play();
             PhotonNetwork.Instantiate("BKangaroo", vec, qua, 0);
         }
     }
