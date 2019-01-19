@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public Text _text;
-    float timer = 15;
+    float timer = 99999;
     int min = 0;
     public GameObject upPan;
     public GameObject downPan;

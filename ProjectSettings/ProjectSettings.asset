@@ -679,10 +679,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 2
-  cloudProjectId: 85653475-2365-498c-9890-51cc0298c83a
+  cloudProjectId: 111d7bf6-f96b-4df1-a761-34203ffb26f5
   framebufferDepthMemorylessMode: 0
-  projectName: New Unity Project 1 (1)
-  organizationId: ggresss
+  projectName: lanimal
+  organizationId: full7002
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
