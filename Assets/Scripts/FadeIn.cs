@@ -10,6 +10,7 @@ public class FadeIn : MonoBehaviour {
     float end = 0f;
     float time = 0f;
     public float aniTime = 2f;
+    public GameObject Txt;
 
     // Use this for initialization
     void Start () {
@@ -28,5 +29,6 @@ public class FadeIn : MonoBehaviour {
             yield return null;
         }
         gameObject.SetActive(false);
+        Txt.SetActive(true);
     }
 }
