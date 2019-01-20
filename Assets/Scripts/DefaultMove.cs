@@ -30,6 +30,10 @@ public class DefaultMove : MonoBehaviour
     Collider akcoll = null;
     RandomDestination RD;
 
+    // 애니메이터
+    private int ckani;
+    private Animator animation;
+
     Rigidbody rgdy;
     Transform tr;
     PhotonView pv = null;
@@ -42,6 +46,9 @@ public class DefaultMove : MonoBehaviour
 
     public Image HPBar;
 
+    //private Vector3 destinationbuffer;  //공격에서 사용하는 위치
+    private float angularbuffer; //공격에서 사용하는 회전속도
+
     void Awake()
     {
         rgdy = GetComponent<Rigidbody>();
@@ -50,6 +57,10 @@ public class DefaultMove : MonoBehaviour
 
         pv.synchronization = ViewSynchronization.UnreliableOnChange;
         pv.ObservedComponents[0] = this;
+
+        //애니메이터 받아오기
+        animation = transform.Find("cat").gameObject.GetComponent<Animator>();
+        ckani = 0;
 
         GetCommand();  //캐릭터에 맞는 command를 가져오는 함수
         //var stat = GetComponent<stat>();
@@ -103,6 +114,7 @@ public class DefaultMove : MonoBehaviour
     {
         while (true)
         {
+            ckani = 0; //애니메이터 변수 초기화
             yield return null;
             checkcommand = true;
             while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
@@ -131,6 +143,7 @@ public class DefaultMove : MonoBehaviour
 
         while (true)
         {
+            ckani = 0; //애니메이터 변수 초기화
             checkattackcommand = true;
             yield return null;
 
@@ -391,18 +404,31 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator AlwaysAttack()
     {
+        //애니메이터
+        ckani = 1;
+        animation.SetInteger("ckani", ckani);
+
+        ///destinationbuffer = nav.destination;  //공격 끝나면 목표지점 돌려놓으려고 목표지점 저장해놓음
+
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
+        angularbuffer = nav.angularSpeed;
+        nav.angularSpeed = 0;
+
+
         akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.All, Time.deltaTime);
         transform.GetChild(1).gameObject.SetActive(true);  //공격 
         yield return null;
-        //NetAttackDamage(power);
-        Debug.Log("Always Attack");
+        //NetAttackDamage(power)destination;
+        Debug.Log("항상 공격");
      
 
         checkattackcommand = false;
         yield return new WaitForSeconds(1.5f);
         transform.GetChild(1).gameObject.SetActive(false);
+
+        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+       // nav.SetDestination(destinationbuffer); //navmesh 목표지점 원래대로 돌려놈
 
     }
 
@@ -412,8 +438,15 @@ public class DefaultMove : MonoBehaviour
 
         if (hp >= (fullhp / 2))
         {
+
+            //애니메이터
+            ckani = 1;
+            animation.SetInteger("ckani", ckani);
+
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -424,6 +457,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
         }
 
     }
@@ -433,8 +467,15 @@ public class DefaultMove : MonoBehaviour
     {
         if (hp < (fullhp / 2))
         {
+
+            //애니메이터
+            ckani = 1;
+            animation.SetInteger("ckani", ckani);
+
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -445,17 +486,24 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
         }
     }
 
     IEnumerator EnemyHPMoreThanHalfAttack()  // 상대 체력 절반 이상일 때 공격
     {
+
         var enemyhp = akcoll.GetComponent<DefaultMove>();
         if (enemyhp.hp >= (enemyhp.fullhp / 2))
         {
+            //애니메이터
+            ckani = 1;
+            animation.SetInteger("ckani", ckani);
 
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -466,6 +514,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
         }
     }
@@ -473,12 +522,19 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator EnemyHPLessThanHalfAttack()  // 상대 체력 절반 미만일 때 공격
     {
+
         var enemyhp = akcoll.GetComponent<DefaultMove>();
         if (enemyhp.hp < (enemyhp.fullhp / 2))
         {
 
+            //애니메이터
+            ckani = 1;
+            animation.SetInteger("ckani", ckani);
+            
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -489,17 +545,25 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
         }
     }
 
     IEnumerator MyHPIsMoreAttack()  // 내 체력이 더 많을 때 공격
     {
+        
         var enemyhp = akcoll.GetComponent<DefaultMove>();
         if (enemyhp.hp < hp)
         {
+            //애니메이터
+            ckani = 1;
+            animation.SetInteger("ckani", ckani);
+
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -510,6 +574,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
         }
         yield return null;
@@ -517,12 +582,19 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator OurTileIsMoreAttack()   // 땅이 더 많을 때 공격
     {
+
         if (tag == "redcharacter")
         {
             if (Command.redtile > Command.bluetile)
             {
+                //애니메이터
+                ckani = 1;
+                animation.SetInteger("ckani", ckani);
+
                 nav.speed = 0;   // 멈추고
                 transform.LookAt(akcoll.transform);  //적 바라봄
+                angularbuffer = nav.angularSpeed;
+                nav.angularSpeed = 0;
 
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -533,6 +605,7 @@ public class DefaultMove : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
 
                 transform.GetChild(1).gameObject.SetActive(false);
+                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
             }
         }
@@ -540,8 +613,14 @@ public class DefaultMove : MonoBehaviour
         {
             if (Command.bluetile > Command.redtile)
             {
+                //애니메이터
+                ckani = 1;
+                animation.SetInteger("ckani", ckani);
+
                 nav.speed = 0;
                 transform.LookAt(akcoll.transform);
+                angularbuffer = nav.angularSpeed;
+                nav.angularSpeed = 0;
 
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -552,6 +631,7 @@ public class DefaultMove : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
 
                 transform.GetChild(1).gameObject.SetActive(false);
+                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
             }
         }
@@ -560,12 +640,19 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator OurTileIsLessAttack()
     {
+
         if (tag == "redcharacter")
         {
             if (Command.redtile < Command.bluetile)
             {
+                //애니메이터
+                ckani = 1;
+                animation.SetInteger("ckani", ckani);
+
                 nav.speed = 0;   // 멈추고
                 transform.LookAt(akcoll.transform);  //적 바라봄
+                angularbuffer = nav.angularSpeed;
+                nav.angularSpeed = 0;
 
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -576,14 +663,21 @@ public class DefaultMove : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
 
                 transform.GetChild(1).gameObject.SetActive(false);
+                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
             }
         }
         else if (tag == "bluecharacter")
         {
             if (Command.bluetile < Command.redtile)
             {
+                //애니메이터
+                ckani = 1;
+                animation.SetInteger("ckani", ckani);
+
                 nav.speed = 0;
                 transform.LookAt(akcoll.transform);
+                angularbuffer = nav.angularSpeed;
+                nav.angularSpeed = 0;
 
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -594,6 +688,7 @@ public class DefaultMove : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
 
                 transform.GetChild(1).gameObject.SetActive(false);
+                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
             }
         }
         yield return null;
@@ -601,11 +696,17 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator NoEmptyTileAttack()   // 빈 땅이 없을 때 공격
     {
-
+        
         if ((Command.redtile + Command.bluetile) >= num_of_tile)
         {
+            //애니메이터
+            ckani = 1;
+            animation.SetInteger("ckani", ckani);
+
             nav.speed = 0;   // 멈추고
             transform.LookAt(akcoll.transform);  //적 바라봄
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -615,6 +716,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
         }
     }
@@ -627,6 +729,9 @@ public class DefaultMove : MonoBehaviour
     void Always()
     {
         // Debug.Log("Always");
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
         checkcommand = false;
 
@@ -642,7 +747,9 @@ public class DefaultMove : MonoBehaviour
 
     void HPMoreThanHalf()
     {
-
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
 
         if (hp >= (fullhp / 2))
@@ -663,6 +770,9 @@ public class DefaultMove : MonoBehaviour
 
     void HPLessThanHalf()
     {
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
         if (hp < (fullhp / 2))
         {
@@ -682,6 +792,9 @@ public class DefaultMove : MonoBehaviour
 
     void EnemyInNear()
     {
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
         Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
         if (tag == "redcharacter")
@@ -733,6 +846,9 @@ public class DefaultMove : MonoBehaviour
 
     void NoEnemyInNear()
     {
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
         Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
         int nearenemy = 0;
@@ -790,7 +906,9 @@ public class DefaultMove : MonoBehaviour
 
     void OurTileIsMore()  //땅이 더 많을 때
     {
-
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
         if (tag == "redcharacter")
         {
@@ -829,7 +947,9 @@ public class DefaultMove : MonoBehaviour
 
     void OurTileIsLess()  //땅이 더 적을 때
     {
-
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
         if (tag == "redcharacter")
         {
@@ -870,6 +990,10 @@ public class DefaultMove : MonoBehaviour
 
     void NoEmptyTile()  // 빈 땅이 없을 때
     {
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
+
         if ((Command.redtile + Command.bluetile) >= num_of_tile)
         {
             //  Debug.Log("OurTileIsLess");
@@ -893,6 +1017,10 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator JustWalk()
     {
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
+
         JustWalk_isrunning = true;
         runningact = "JustWalk";
         while (true)
@@ -905,7 +1033,9 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator ChaseClosestEnemy()
     {
-
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
         while (true)
         {
@@ -974,7 +1104,9 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator ChaseClosestAlly()
     {
-
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
 
         while (true)
         {
@@ -1041,6 +1173,10 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator GoToEnemyTile()
     {
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
+
         runningact = "GoToEnemyTile";
         bool gototile = false;
         //Debug.Log("Going to enemy tile");
@@ -1108,6 +1244,10 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator GoToEmtyTile()  // 빈 땅으로 이동
     {
+        //애니메이터
+        ckani = 0;
+        animation.SetInteger("ckani", ckani);
+
         runningact = "GoToEmtyTile";
         bool gototile = false;
         //Debug.Log("Going to enemy tile");
@@ -1156,6 +1296,10 @@ public class DefaultMove : MonoBehaviour
             hp -= damage;
             time = comparetime;
             HPBar.fillAmount = hp / fullhp;
+
+            //애니메이터
+            ckani = 2;
+            animation.SetInteger("ckani", ckani);
         }
         // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
 
