@@ -42,6 +42,9 @@ public class DefaultMove : MonoBehaviour
 
     public Image HPBar;
 
+    private Vector3 destinationbuffer;  //공격에서 사용하는 위치
+    private float angularbuffer; //공격에서 사용하는 회전속도
+
     void Awake()
     {
         rgdy = GetComponent<Rigidbody>();
@@ -391,18 +394,29 @@ public class DefaultMove : MonoBehaviour
 
     IEnumerator AlwaysAttack()
     {
+        
+        ///destinationbuffer = nav.destination;  //공격 끝나면 목표지점 돌려놓으려고 목표지점 저장해놓음
+
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
+        //nav.SetDestination(akcoll.transform.position); //공격할 상대를 바라봄
+        angularbuffer = nav.angularSpeed;
+        nav.angularSpeed = 0;
+
+
         akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.All, Time.deltaTime);
         transform.GetChild(1).gameObject.SetActive(true);  //공격 
         yield return null;
-        //NetAttackDamage(power);
-        Debug.Log("Always Attack");
+        //NetAttackDamage(power)destination;
+        Debug.Log("항상 공격");
      
 
         checkattackcommand = false;
         yield return new WaitForSeconds(1.5f);
         transform.GetChild(1).gameObject.SetActive(false);
+
+        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+       // nav.SetDestination(destinationbuffer); //navmesh 목표지점 원래대로 돌려놈
 
     }
 
