@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.38699, y: 24.66356, z: 19.325912}
-  m_Center: {x: -0.000009536743, y: 11.83178, z: 9.162956}
+  m_Size: {x: 1238, y: 2466, z: 1932}
+  m_Center: {x: 0, y: 1183, z: 916}
 --- !u!114 &114976363955404424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -451,7 +451,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 100, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1421212184401992
 GameObject:
@@ -634,8 +634,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 9.952868
-  m_Center: {x: 0, y: 9.61749, z: 0.66188574}
+  m_Radius: 900
+  m_Center: {x: 0, y: 650, z: 0.66188574}
 --- !u!195 &195119682543835072
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -645,7 +645,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1877650051664396}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 10
+  m_Radius: 1000
   m_Speed: 3.5
   m_Acceleration: 100
   avoidancePriority: 50
@@ -654,7 +654,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 200
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

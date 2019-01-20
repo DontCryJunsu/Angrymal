@@ -334,7 +334,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 100, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1299221284055986
 GameObject:
@@ -379,8 +379,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15.1802635, y: 21.1604, z: 19.855042}
-  m_Center: {x: 0.09712219, y: 10.0802, z: 9.427528}
+  m_Size: {x: 1500, y: 2100, z: 1900}
+  m_Center: {x: 0, y: 1000, z: 900}
 --- !u!114 &114383741904979728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,6 +405,7 @@ GameObject:
   - component: {fileID: 33074143828529022}
   - component: {fileID: 23045191616736594}
   - component: {fileID: 114625783522326716}
+  - component: {fileID: 1060306716500918606}
   m_Layer: 0
   m_Name: wolf
   m_TagString: Untagged
@@ -489,6 +490,25 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
+--- !u!95 &1060306716500918606
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1662750592689872}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 23137409cff7ce54d8c1bb006fe08290, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7497131c2cee244449d7f32de6de047c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1747832329130152
 GameObject:
   m_ObjectHideFlags: 0
@@ -545,8 +565,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4678459042561388}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 41
-  instantiationId: 41
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1812744213930060
@@ -614,8 +634,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 11.274304
-  m_Center: {x: 0, y: 10.818424, z: 0}
+  m_Radius: 900
+  m_Center: {x: 0, y: 650, z: 0}
 --- !u!195 &195201095568809074
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -625,7 +645,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1812744213930060}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 10
+  m_Radius: 1000
   m_Speed: 3.5
   m_Acceleration: 100
   avoidancePriority: 50
@@ -634,7 +654,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 2
+  m_Height: 200
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -679,8 +699,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4168405025989208}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 42
-  instantiationId: 42
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114062049207174100
