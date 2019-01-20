@@ -55,7 +55,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         chicken2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         chicken2.transform.position = new Vector3(-120f, -112f, 0f);
-        chicken.GetComponent<LobbyCam>().act = true;
+        chicken.GetComponent<LobbyCam>().acting();
     }
     public void CT()
     {
@@ -81,7 +81,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         cat2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         cat2.transform.position = new Vector3(-120f, -112f, 0f);
-        cat.GetComponent<LobbyCam>().act = true;
+        cat.GetComponent<LobbyCam>().acting();
     }
     public void DG()
     {
@@ -107,7 +107,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         dog2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         dog2.transform.position = new Vector3(-120f, -112f, 0f);
-        dog.GetComponent<LobbyCam>().act = true;
+        dog.GetComponent<LobbyCam>().acting();
     }
     public void BFL()
     {
@@ -133,7 +133,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         buffalo2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         buffalo2.transform.position = new Vector3(-120f, -112f, 0f);
-        buffalo.GetComponent<LobbyCam>().act = true;
+        buffalo.GetComponent<LobbyCam>().acting();
     }
     public void JRF()
     {
@@ -159,7 +159,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         jiraffe2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         jiraffe2.transform.position = new Vector3(-120f, -112f, 0f);
-        jiraffe.GetComponent<LobbyCam>().act = true;
+        jiraffe.GetComponent<LobbyCam>().acting();
     }
     public void ELP()
     {
@@ -186,7 +186,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         elephant2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         elephant2.transform.position = new Vector3(-120f, -112f, 0f);
-        elephant.GetComponent<LobbyCam>().act = true;
+        elephant.GetComponent<LobbyCam>().acting();
     }
     public void WF()
     {
@@ -212,7 +212,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         wolf2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         wolf2.transform.position = new Vector3(-120f, -112f, 0f);
-        wolf.GetComponent<LobbyCam>().act = true;
+        wolf.GetComponent<LobbyCam>().acting();
     }
     public void SNK()
     {
@@ -238,7 +238,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         snake2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         snake2.transform.position = new Vector3(-120f, -112f, 0f);
-        snake.GetComponent<LobbyCam>().act = true;
+        snake.GetComponent<LobbyCam>().acting();
     }
     public void SH()
     {
@@ -264,7 +264,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         sheep2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         sheep2.transform.position = new Vector3(-120f, -112f, 0f);
-        sheep.GetComponent<LobbyCam>().act = true;
+        sheep.GetComponent<LobbyCam>().acting();
     }
     public void KG()
     {
@@ -290,7 +290,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         kangaroo2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         kangaroo2.transform.position = new Vector3(-120f, -112f, 0f);
-        kangaroo.GetComponent<LobbyCam>().act = true;
+        kangaroo.GetComponent<LobbyCam>().acting();
     }
     public void LN()
     {
@@ -316,7 +316,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         lion2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         lion2.transform.position = new Vector3(-120f, -112f, 0f);
-        lion.GetComponent<LobbyCam>().act = true;
+        lion.GetComponent<LobbyCam>().acting();
     }
     public void MS()
     {
@@ -342,7 +342,7 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         mouse2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         mouse2.transform.position = new Vector3(-120f, -112f, 0f);
-        mouse.GetComponent<LobbyCam>().act = true;
+        mouse.GetComponent<LobbyCam>().acting();
     }
     public void PG()
     {
@@ -368,6 +368,6 @@ public class dropAnimal : MonoBehaviour {
         LobbyManager.loadAni--;
         pig2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
         pig2.transform.position = new Vector3(-120f, -112f, 0f);
-        pig.GetComponent<LobbyCam>().act = true;
+        pig.GetComponent<LobbyCam>().acting();
     }
 }

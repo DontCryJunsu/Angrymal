@@ -13,11 +13,26 @@ public class LobbyCam : MonoBehaviour
     public NavMeshAgent nav;
     public Transform loadZone;
     public bool act = true;
+    testrandommove tsdm;
+    void Start()
+    {
+        tsdm = GetComponentInParent<testrandommove>();
+        tsdm.Stst();
+    }
+
+    public void acting()
+    {
+        act = true;
+        nav.enabled = true;
+        nav.speed = 3f;
+        tsdm.Stst();
+    }
 
     public void Select()
     {
-        if (LobbyManager.aniNum != null && LobbyManager.cNum ==0)
+        if (LobbyManager.aniNum != null && LobbyManager.cNum == 0)
         {
+            nav.speed = 50f;
             LobbyManager.loadAni++;
             nav = gameObject.GetComponentInParent<NavMeshAgent>();
             nav.enabled = true;
@@ -31,7 +46,7 @@ public class LobbyCam : MonoBehaviour
     void Update()
     {
         // swit == 1인 상태 즉 캐릭터 선택 줌 상태일때 esc를 누르면
-        if (LobbyManager.cNum == 0 && Input.GetKeyDown("escape") && LobbyManager.aniNum == gameObject.name || LobbyManager.esc && LobbyManager.aniNum == gameObject.name )
+        if (LobbyManager.cNum == 0 && Input.GetKeyDown("escape") && LobbyManager.aniNum == gameObject.name || LobbyManager.esc && LobbyManager.aniNum == gameObject.name)
         {
             ZoomVC.GetComponent<CinemachineVirtualCamera>().LookAt = null;
             ZoomVC.GetComponent<CinemachineVirtualCamera>().Priority = 9;

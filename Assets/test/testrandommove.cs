@@ -8,16 +8,17 @@ public class testrandommove : MonoBehaviour
     public float speed = 2f;
     public GameObject[] obj;
     public NavMeshAgent nav;
-
+    LobbyCam LC;
     public float sec = 3f;
 
-    void Start() {
+    public void Stst()
+    {
+        LC = GetComponentInChildren<LobbyCam>();
         StartCoroutine("stst");
     }
 
-  
     IEnumerator stst() {
-        while (true)
+        while (LC.act==true)
         {
             int i = 0;
             i = Random.Range(0, 8);
@@ -26,6 +27,4 @@ public class testrandommove : MonoBehaviour
             yield return new WaitForSeconds(sec);
         }
     }
-
-  
 }
