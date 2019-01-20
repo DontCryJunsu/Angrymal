@@ -125,7 +125,7 @@ public class LoadAnimal : MonoBehaviour {
         {
             X.SetActive(true);
         }
-	}
+    }
     void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "animal" && act == true)
