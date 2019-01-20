@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5932093586883390197}
   - component: {fileID: 5932093586883390194}
   - component: {fileID: 5932093586883390195}
-  - component: {fileID: 5932093586883390192}
+  - component: {fileID: 9052604124272629968}
   m_Layer: 0
   m_Name: cat
   m_TagString: Untagged
@@ -97,7 +97,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!95 &5932093586883390192
+--- !u!95 &9052604124272629968
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0

@@ -18,6 +18,7 @@ TagManager:
   - ship
   - redattack
   - blueattack
+  - child
   layers:
   - Default
   - TransparentFX

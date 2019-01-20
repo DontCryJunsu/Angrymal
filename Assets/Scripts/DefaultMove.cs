@@ -30,6 +30,10 @@ public class DefaultMove : MonoBehaviour
     Collider akcoll = null;
     RandomDestination RD;
 
+    private bool isAttack; //애니메이션
+    private bool isHitted;
+    private Animator animation;
+
     Rigidbody rgdy;
     Transform tr;
     PhotonView pv = null;
@@ -45,6 +49,10 @@ public class DefaultMove : MonoBehaviour
         rgdy = GetComponent<Rigidbody>();
         tr = GetComponent<Transform>();
         pv = GetComponent<PhotonView>();
+
+
+        //animation = GetComponentInChildren<Animator>();
+        animation = transform.Find("cat").GetComponent<Animator>();
 
         pv.synchronization = ViewSynchronization.UnreliableOnChange;
         pv.ObservedComponents[0] = this;
@@ -100,6 +108,9 @@ public class DefaultMove : MonoBehaviour
         {
             hp -= damage;
             time = comparetime;
+            isHitted = true;
+            animation.SetBool("isHitted", isHitted);
+
         }
         // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
         
@@ -133,6 +144,10 @@ public class DefaultMove : MonoBehaviour
     {
         while (true)
         {
+            isAttack = false;
+            isHitted = false;
+            animation.SetBool("isAttack", isAttack);
+            animation.SetBool("isHitted", isHitted);
             yield return null;
             checkcommand = true;
             while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
@@ -161,6 +176,10 @@ public class DefaultMove : MonoBehaviour
 
         while (true)
         {
+            isAttack = false;
+            isHitted = false;
+            animation.SetBool("isAttack", isAttack);
+            animation.SetBool("isHitted", isHitted);
             checkattackcommand = true;
             yield return null;
 
@@ -423,6 +442,9 @@ public class DefaultMove : MonoBehaviour
     {
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
+        isAttack = true;
+        Debug.Log(isAttack);
+        animation.SetBool("isAttack", isAttack);
         akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
         transform.GetChild(1).gameObject.SetActive(true);  //공격 
         yield return null;
@@ -445,6 +467,8 @@ public class DefaultMove : MonoBehaviour
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
 
+            isAttack = true;
+            animation.SetBool("isAttack", isAttack);
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
             yield return null;
@@ -466,6 +490,8 @@ public class DefaultMove : MonoBehaviour
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
 
+            isAttack = true;
+            animation.SetBool("isAttack", isAttack);
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
             yield return null;
@@ -487,6 +513,8 @@ public class DefaultMove : MonoBehaviour
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
 
+            isAttack = true;
+            animation.SetBool("isAttack", isAttack);
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
             yield return null;
@@ -510,6 +538,8 @@ public class DefaultMove : MonoBehaviour
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
 
+            isAttack = true;
+            animation.SetBool("isAttack", isAttack);
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
             yield return null;
@@ -531,6 +561,8 @@ public class DefaultMove : MonoBehaviour
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
 
+            isAttack = true;
+            animation.SetBool("isAttack", isAttack);
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
             yield return null;
@@ -554,6 +586,8 @@ public class DefaultMove : MonoBehaviour
                 nav.speed = 0;   // 멈추고
                 transform.LookAt(akcoll.transform);  //적 바라봄
 
+                isAttack = true;
+                animation.SetBool("isAttack", isAttack);
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
                 yield return null;
@@ -573,6 +607,8 @@ public class DefaultMove : MonoBehaviour
                 nav.speed = 0;
                 transform.LookAt(akcoll.transform);
 
+                isAttack = true;
+                animation.SetBool("isAttack", isAttack);
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
                 yield return null;
@@ -597,6 +633,8 @@ public class DefaultMove : MonoBehaviour
                 nav.speed = 0;   // 멈추고
                 transform.LookAt(akcoll.transform);  //적 바라봄
 
+                isAttack = true;
+                animation.SetBool("isAttack", isAttack);
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
                 yield return null;
@@ -615,6 +653,8 @@ public class DefaultMove : MonoBehaviour
                 nav.speed = 0;
                 transform.LookAt(akcoll.transform);
 
+                isAttack = true;
+                animation.SetBool("isAttack", isAttack);
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
                 yield return null;
@@ -637,6 +677,8 @@ public class DefaultMove : MonoBehaviour
             nav.speed = 0;   // 멈추고
             transform.LookAt(akcoll.transform);  //적 바라봄
 
+            isAttack = true;
+            animation.SetBool("isAttack", isAttack);
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
             yield return null;
