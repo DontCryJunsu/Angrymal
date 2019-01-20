@@ -20,6 +20,11 @@ public class LobbyManager : MonoBehaviour
     float time = 0f;
     public float aniTime = 2f;
 
+    void Start()
+    {
+        loadAni = 0;
+    }
+
     public void ESC()
     {
         esc = true;
@@ -50,5 +55,6 @@ public class LobbyManager : MonoBehaviour
     //public void Update()
     //{
     //    //Debug.Log("선택된 동물의 이름은 " + aniNum + " / 선택된 명령은 " + cNum);
+    //    Debug.Log("<color=red>hello world</color>"+loadAni);
     //}
 }
