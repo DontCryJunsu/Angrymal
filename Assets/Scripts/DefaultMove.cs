@@ -42,7 +42,7 @@ public class DefaultMove : MonoBehaviour
 
     public Image HPBar;
 
-    private Vector3 destinationbuffer;  //공격에서 사용하는 위치
+    //private Vector3 destinationbuffer;  //공격에서 사용하는 위치
     private float angularbuffer; //공격에서 사용하는 회전속도
 
     void Awake()
@@ -399,7 +399,6 @@ public class DefaultMove : MonoBehaviour
 
         nav.speed = 0;  // 멈춰 선다.
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
-        //nav.SetDestination(akcoll.transform.position); //공격할 상대를 바라봄
         angularbuffer = nav.angularSpeed;
         nav.angularSpeed = 0;
 
@@ -428,6 +427,8 @@ public class DefaultMove : MonoBehaviour
         {
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -438,6 +439,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
         }
 
     }
@@ -449,6 +451,8 @@ public class DefaultMove : MonoBehaviour
         {
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -459,6 +463,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
         }
     }
 
@@ -470,6 +475,8 @@ public class DefaultMove : MonoBehaviour
 
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -480,6 +487,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
         }
     }
@@ -493,6 +501,8 @@ public class DefaultMove : MonoBehaviour
 
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -503,6 +513,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
         }
     }
@@ -514,6 +525,8 @@ public class DefaultMove : MonoBehaviour
         {
             nav.speed = 0;
             transform.LookAt(akcoll.transform);
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -524,6 +537,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
         }
         yield return null;
@@ -537,6 +551,8 @@ public class DefaultMove : MonoBehaviour
             {
                 nav.speed = 0;   // 멈추고
                 transform.LookAt(akcoll.transform);  //적 바라봄
+                angularbuffer = nav.angularSpeed;
+                nav.angularSpeed = 0;
 
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -547,6 +563,7 @@ public class DefaultMove : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
 
                 transform.GetChild(1).gameObject.SetActive(false);
+                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
             }
         }
@@ -556,6 +573,8 @@ public class DefaultMove : MonoBehaviour
             {
                 nav.speed = 0;
                 transform.LookAt(akcoll.transform);
+                angularbuffer = nav.angularSpeed;
+                nav.angularSpeed = 0;
 
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -566,6 +585,7 @@ public class DefaultMove : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
 
                 transform.GetChild(1).gameObject.SetActive(false);
+                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
             }
         }
@@ -580,6 +600,8 @@ public class DefaultMove : MonoBehaviour
             {
                 nav.speed = 0;   // 멈추고
                 transform.LookAt(akcoll.transform);  //적 바라봄
+                angularbuffer = nav.angularSpeed;
+                nav.angularSpeed = 0;
 
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -590,6 +612,7 @@ public class DefaultMove : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
 
                 transform.GetChild(1).gameObject.SetActive(false);
+                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
             }
         }
         else if (tag == "bluecharacter")
@@ -598,6 +621,8 @@ public class DefaultMove : MonoBehaviour
             {
                 nav.speed = 0;
                 transform.LookAt(akcoll.transform);
+                angularbuffer = nav.angularSpeed;
+                nav.angularSpeed = 0;
 
                 akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
                 transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -608,6 +633,7 @@ public class DefaultMove : MonoBehaviour
                 yield return new WaitForSeconds(1.5f);
 
                 transform.GetChild(1).gameObject.SetActive(false);
+                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
             }
         }
         yield return null;
@@ -620,6 +646,8 @@ public class DefaultMove : MonoBehaviour
         {
             nav.speed = 0;   // 멈추고
             transform.LookAt(akcoll.transform);  //적 바라봄
+            angularbuffer = nav.angularSpeed;
+            nav.angularSpeed = 0;
 
             akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
             transform.GetChild(1).gameObject.SetActive(true);  //공격 
@@ -629,6 +657,7 @@ public class DefaultMove : MonoBehaviour
             yield return new WaitForSeconds(1.5f);
 
             transform.GetChild(1).gameObject.SetActive(false);
+            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
 
         }
     }
