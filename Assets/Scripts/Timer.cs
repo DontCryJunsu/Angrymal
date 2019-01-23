@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class Timer : MonoBehaviour
 {
     public Text _text;
-    float timer = 99999;
-    int min = 0;
+    float timer = 30;
+    int min = 2;
     public GameObject upPan;
     public GameObject downPan;
     bool swit = false;

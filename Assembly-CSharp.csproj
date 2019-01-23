@@ -192,9 +192,11 @@
     <Compile Include="Assets\Scripts\DownAnimalBtn.cs" />
     <Compile Include="Assets\Scripts\DownAnimalBtn2.cs" />
     <Compile Include="Assets\Scripts\dropAnimal.cs" />
+    <Compile Include="Assets\Scripts\EndEnd.cs" />
     <Compile Include="Assets\Scripts\ending.cs" />
     <Compile Include="Assets\Scripts\Exit.cs" />
     <Compile Include="Assets\Scripts\FadeIn.cs" />
+    <Compile Include="Assets\Scripts\FadeOut.cs" />
     <Compile Include="Assets\Scripts\FindAnimal.cs" />
     <Compile Include="Assets\Scripts\FireBar.cs" />
     <Compile Include="Assets\Scripts\LoadAnimal.cs" />
