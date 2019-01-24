@@ -59,7 +59,8 @@ public class DefaultMove : MonoBehaviour
         pv.ObservedComponents[0] = this;
 
         //애니메이터 받아오기
-        animation = transform.FindChild(child).gameObject.GetComponent<Animator>();
+        //animation = transform.FindChild(child).gameObject.GetComponent<Animator>();
+        animation = transform.GetChild(0).gameObject.GetComponent<Animator>();
         ckani = 0;
 
         GetCommand();  //캐릭터에 맞는 command를 가져오는 함수
