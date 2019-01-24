@@ -285,7 +285,7 @@ MonoBehaviour:
   power: 10
   child: buffalo
   num_of_tile: 275
-  HPBar: {fileID: 0}
+  HPBar: {fileID: 337225619713317859}
 --- !u!114 &7030753103492049795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -862,3 +862,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1884239414391875164}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &337225619713317859 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: 73972a4f7ff1866479bf1729858d8ebf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1884239414391875164}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

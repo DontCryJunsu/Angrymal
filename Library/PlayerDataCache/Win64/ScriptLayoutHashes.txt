@@ -38,6 +38,7 @@ e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventH
 ee1dba1a186ac062d564e9eb73a1c56f Assembly-CSharp.dll:ExitGames.UtilityScripts.TextToggleIsOnTransition
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:ExitGames.UtilityScripts.ButtonInsideScrollList
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.NetworkCullingHandler
+42bb6f9356bb6d3c910abd6a6592748d Assembly-CSharp.dll:.FadeOut
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Command
 41a0e69e6d05a7bae0a0866f3565f931 Assembly-CSharp.dll:.PhotonInit
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:ExitGames.UtilityScripts.PlayerRoomIndexing
@@ -75,6 +76,7 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 98ad81e9f689a492509f07e75b810aaa Unity.TextMeshPro.dll:TMPro.TMP_InputField
+1c097ff7df84090c334bf63423a97626 Assembly-CSharp.dll:.EndEnd
 07d7dd9c0560fd4cffdebc7ee8ecef23 Assembly-CSharp.dll:.InputToEvent
 e06b79d606610daa69621805f4ce20b5 Assembly-CSharp.dll:.testforwalk
 64c3edf834cf572d15f8ee966ab283a3 Assembly-CSharp.dll:.Exit
@@ -111,8 +113,10 @@ fc108ce7d98c40ac0907e8ca7f500c76 UnityEngine.UI.dll:UnityEngine.UI.Text
 abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 64e54c0cbb0177c5ea26f340efb9ff85 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
 8ca7ad9feea2d30aa64dfb7929162184 Assembly-CSharp.dll:Cinemachine.CinemachineExternalCamera
+3d263c9c528a32f168d8f2c48569a691 Assembly-CSharp.dll:.UIMgr
 348bd417ed3b4ed9e81b642c727cb4bd Assembly-CSharp.dll:.Waving
 dfd7a2ae89b53ee12027e54728efd088 Assembly-CSharp.dll:.PhotonHandler
+32eea3cb643bb927fd345b7e99889605 Assembly-CSharp.dll:.testrandommove
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
 8747051d8c53856e2def93af4f2a8b08 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
@@ -216,6 +220,7 @@ ff88ee9a3f9291bdaaf1cebc9d2c430b Assembly-CSharp.dll:Cinemachine.CinemachineGrou
 e3ca9c4491580eb6551b0ae794d34210 Assembly-CSharp.dll:Cinemachine.CinemachineBlendListCamera
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PointedAtGameObjectInfo
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Attack
+af9aec7606b87d4d1890d1129fc11862 Assembly-CSharp.dll:.objmove
 510fefd6a544e16a3ffefa557ddcba39 Unity.TextMeshPro.dll:TMPro.PackageResourceImporterWindow
 e34bf7eb5f2a05dfb898c0ee92c906c5 Assembly-CSharp.dll:.FindAnimal
 1e54ff9886b636292f84af6f404c8b6d Assembly-CSharp.dll:.RedRPC
@@ -275,8 +280,3 @@ e1b8eaae6a90f88343f8be6d517488f6 Assembly-CSharp.dll:.PhotonView
 2c38da0504d94a36e68bd2308d606900 Assembly-CSharp.dll:Cinemachine.CinemachineBasicMultiChannelPerlin
 1615d3bb1db164c1672020cea49440ce Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
 e6873cc3d7cdd5ed2667727759757f39 Assembly-CSharp.dll:.BattleManager
-42bb6f9356bb6d3c910abd6a6592748d Assembly-CSharp.dll:.FadeOut
-1c097ff7df84090c334bf63423a97626 Assembly-CSharp.dll:.EndEnd
-3d263c9c528a32f168d8f2c48569a691 Assembly-CSharp.dll:.UIMgr
-32eea3cb643bb927fd345b7e99889605 Assembly-CSharp.dll:.testrandommove
-af9aec7606b87d4d1890d1129fc11862 Assembly-CSharp.dll:.objmove
