@@ -585,8 +585,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 9104569254765656144}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &9205770034432960362
@@ -717,8 +717,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 9099321932920593598}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1001 &8096679075794287481
