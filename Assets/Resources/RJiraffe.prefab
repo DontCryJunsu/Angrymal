@@ -676,6 +676,7 @@ MonoBehaviour:
   fullhp: 50
   speed: 4
   power: 10
+  child: jiraffe
   num_of_tile: 275
   HPBar: {fileID: 839435982104079406}
 --- !u!114 &114592686260131988

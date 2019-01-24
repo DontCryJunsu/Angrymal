@@ -107,6 +107,7 @@ MonoBehaviour:
   fullhp: 50
   speed: 4
   power: 10
+  child: mouse
   num_of_tile: 275
   HPBar: {fileID: 7005722817546380129}
 --- !u!114 &114760469499344498

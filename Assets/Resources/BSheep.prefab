@@ -56,8 +56,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4264888596900574}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1420923393675092
@@ -503,6 +503,7 @@ MonoBehaviour:
   fullhp: 50
   speed: 4
   power: 1
+  child: sheep
   num_of_tile: 275
   HPBar: {fileID: 5621472137312269951}
 --- !u!114 &114663831462069110
@@ -528,8 +529,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4542033891465814}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114169292218222110

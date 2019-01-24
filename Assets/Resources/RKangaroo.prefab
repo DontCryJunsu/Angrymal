@@ -340,6 +340,7 @@ MonoBehaviour:
   fullhp: 50
   speed: 4
   power: 10
+  child: kangaroo
   num_of_tile: 275
   HPBar: {fileID: 2142874182985110812}
 --- !u!114 &114751427518292006

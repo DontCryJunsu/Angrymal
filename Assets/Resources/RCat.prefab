@@ -443,6 +443,7 @@ MonoBehaviour:
   fullhp: 50
   speed: 4
   power: 10
+  child: cat
   num_of_tile: 275
   HPBar: {fileID: 3346027317120238733}
 --- !u!114 &3706786057247483362
@@ -468,8 +469,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 3706786057247483364}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &3706786057247483365
@@ -595,7 +596,7 @@ Animator:
   m_GameObject: {fileID: 3706786057639851879}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: eb6f5b431c7cbcc4a8c486058806cacb, type: 3}
-  m_Controller: {fileID: 9100000, guid: 5e5bc008c38ff67409567d73b1056aed, type: 2}
+  m_Controller: {fileID: 9100000, guid: 36dc4a6345ac72e479bbd5af62614eaf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -660,8 +661,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 3706786058096712381}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &3706786058932281949

@@ -443,6 +443,7 @@ MonoBehaviour:
   fullhp: 50
   speed: 4
   power: 10
+  child: lion
   num_of_tile: 275
   HPBar: {fileID: 6427906524879587248}
 --- !u!114 &114630126923036428
