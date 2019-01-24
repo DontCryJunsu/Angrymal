@@ -165,7 +165,7 @@ MonoBehaviour:
   goal: {fileID: 7766630047249075447}
   hp: 50
   fullhp: 50
-  speed: 12
+  speed: 4
   power: 10
   num_of_tile: 275
   HPBar: {fileID: 3751019550991050165}

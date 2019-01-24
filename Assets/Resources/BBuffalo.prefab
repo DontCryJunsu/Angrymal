@@ -557,7 +557,7 @@ MonoBehaviour:
   goal: {fileID: 9101777321617381380}
   hp: 50
   fullhp: 50
-  speed: 12
+  speed: 4
   power: 10
   num_of_tile: 275
   HPBar: {fileID: 7986315426080229062}
@@ -584,8 +584,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 9104569254765656144}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &9205770034432960362
@@ -716,8 +716,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 9099321932920593598}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1001 &8096679075794287481
