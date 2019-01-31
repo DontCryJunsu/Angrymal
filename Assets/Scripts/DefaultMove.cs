@@ -14,7 +14,7 @@ public class DefaultMove : MonoBehaviour
     NavMeshAgent nav;
     bool JustWalk_isrunning;
     //string[] command = new string[2];
-    string[,] command = new string[4, 3];  //4행 3열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개. 3열은 공격명령.
+    string[,] command = new string[2, 3];  //2행 3열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개. 3열은 공격명령.
     private Transform target;
     private float dist;
     string runningact;
@@ -128,7 +128,7 @@ public class DefaultMove : MonoBehaviour
                 Invoke(command[i, 0], 0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
 
 
-                if (i >= 3)
+                if (i >= 1)
                 {
                     i = -1;  // 각 명령어를 반복해 검사하기 위함.
                 }
@@ -172,7 +172,7 @@ public class DefaultMove : MonoBehaviour
                                     yield return StartCoroutine(command[j, 2]);
                                 }
                                 nav.speed = speed;
-                                if (j >= 2 || checkattackcommand == false)
+                                if (j >= 0 || checkattackcommand == false)
                                 {
                                     j = -1;
                                 }
@@ -202,7 +202,7 @@ public class DefaultMove : MonoBehaviour
                                     //Debug.Log("J = " + j);
                                 }
                                 nav.speed = speed;
-                                if (j >= 2 || checkattackcommand == false)
+                                if (j >= 0 || checkattackcommand == false)
                                 {
                                     j = -1;
                                 }
@@ -228,12 +228,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.chicken[0, 2];
             command[1, 0] = Command.chicken[1, 0];
             command[1, 1] = Command.chicken[1, 1];
-            command[1, 2] = Command.chicken[1, 2];
-            command[2, 0] = Command.chicken[2, 0];
-            command[2, 1] = Command.chicken[2, 1];
-            command[2, 2] = Command.chicken[2, 2];
-            command[2, 0] = Command.chicken[3, 0];
-            command[2, 1] = Command.chicken[3, 1];
+       
         }
         else if (name == "snake")
         {
@@ -242,12 +237,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.snake[0, 2];
             command[1, 0] = Command.snake[1, 0];
             command[1, 1] = Command.snake[1, 1];
-            command[1, 2] = Command.snake[1, 2];
-            command[2, 0] = Command.snake[2, 0];
-            command[2, 1] = Command.snake[2, 1];
-            command[2, 2] = Command.snake[2, 2];
-            command[2, 0] = Command.snake[3, 0];
-            command[2, 1] = Command.snake[3, 1];
+
         }
         else if (name == "mouse")
         {
@@ -256,12 +246,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.mouse[0, 2];
             command[1, 0] = Command.mouse[1, 0];
             command[1, 1] = Command.mouse[1, 1];
-            command[1, 2] = Command.mouse[1, 2];
-            command[2, 0] = Command.mouse[2, 0];
-            command[2, 1] = Command.mouse[2, 1];
-            command[2, 2] = Command.mouse[2, 2];
-            command[2, 0] = Command.mouse[3, 0];
-            command[2, 1] = Command.mouse[3, 1];
+           
         }
         else if (name == "pig")
         {
@@ -270,12 +255,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.pig[0, 2];
             command[1, 0] = Command.pig[1, 0];
             command[1, 1] = Command.pig[1, 1];
-            command[1, 2] = Command.pig[1, 2];
-            command[2, 0] = Command.pig[2, 0];
-            command[2, 1] = Command.pig[2, 1];
-            command[2, 2] = Command.pig[2, 2];
-            command[2, 0] = Command.pig[3, 0];
-            command[2, 1] = Command.pig[3, 1];
+    
         }
         else if (name == "elephant")
         {
@@ -284,12 +264,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.elephant[0, 2];
             command[1, 0] = Command.elephant[1, 0];
             command[1, 1] = Command.elephant[1, 1];
-            command[1, 2] = Command.elephant[1, 2];
-            command[2, 0] = Command.elephant[2, 0];
-            command[2, 1] = Command.elephant[2, 1];
-            command[2, 2] = Command.elephant[2, 2];
-            command[2, 0] = Command.elephant[3, 0];
-            command[2, 1] = Command.elephant[3, 1];
+        
         }
         else if (name == "lion")
         {
@@ -298,12 +273,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.lion[0, 2];
             command[1, 0] = Command.lion[1, 0];
             command[1, 1] = Command.lion[1, 1];
-            command[1, 2] = Command.lion[1, 2];
-            command[2, 0] = Command.lion[2, 0];
-            command[2, 1] = Command.lion[2, 1];
-            command[2, 2] = Command.lion[2, 2];
-            command[2, 0] = Command.lion[3, 0];
-            command[2, 1] = Command.lion[3, 1];
+    
         }
         else if (name == "kangaroo")
         {
@@ -312,12 +282,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.kangaroo[0, 2];
             command[1, 0] = Command.kangaroo[1, 0];
             command[1, 1] = Command.kangaroo[1, 1];
-            command[1, 2] = Command.kangaroo[1, 2];
-            command[2, 0] = Command.kangaroo[2, 0];
-            command[2, 1] = Command.kangaroo[2, 1];
-            command[2, 2] = Command.kangaroo[2, 2];
-            command[2, 0] = Command.kangaroo[3, 0];
-            command[2, 1] = Command.kangaroo[3, 1];
+          
         }
         else if (name == "jiraffe")
         {
@@ -326,12 +291,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.jiraffe[0, 2];
             command[1, 0] = Command.jiraffe[1, 0];
             command[1, 1] = Command.jiraffe[1, 1];
-            command[1, 2] = Command.jiraffe[1, 2];
-            command[2, 0] = Command.jiraffe[2, 0];
-            command[2, 1] = Command.jiraffe[2, 1];
-            command[2, 2] = Command.jiraffe[2, 2];
-            command[2, 0] = Command.jiraffe[3, 0];
-            command[2, 1] = Command.jiraffe[3, 1];
+       
         }
         else if (name == "buffalo")
         {
@@ -340,12 +300,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.buffalo[0, 2];
             command[1, 0] = Command.buffalo[1, 0];
             command[1, 1] = Command.buffalo[1, 1];
-            command[1, 2] = Command.buffalo[1, 2];
-            command[2, 0] = Command.buffalo[2, 0];
-            command[2, 1] = Command.buffalo[2, 1];
-            command[2, 2] = Command.buffalo[2, 2];
-            command[2, 0] = Command.buffalo[3, 0];
-            command[2, 1] = Command.buffalo[3, 1];
+
         }
         else if (name == "sheep")
         {
@@ -354,12 +309,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.sheep[0, 2];
             command[1, 0] = Command.sheep[1, 0];
             command[1, 1] = Command.sheep[1, 1];
-            command[1, 2] = Command.sheep[1, 2];
-            command[2, 0] = Command.sheep[2, 0];
-            command[2, 1] = Command.sheep[2, 1];
-            command[2, 2] = Command.sheep[2, 2];
-            command[2, 0] = Command.sheep[3, 0];
-            command[2, 1] = Command.sheep[3, 1];
+
         }
         else if (name == "wolf")
         {
@@ -368,12 +318,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.wolf[0, 2];
             command[1, 0] = Command.wolf[1, 0];
             command[1, 1] = Command.wolf[1, 1];
-            command[1, 2] = Command.wolf[1, 2];
-            command[2, 0] = Command.wolf[2, 0];
-            command[2, 1] = Command.wolf[2, 1];
-            command[2, 2] = Command.wolf[2, 2];
-            command[2, 0] = Command.wolf[3, 0];
-            command[2, 1] = Command.wolf[3, 1];
+ 
         }
         else if (name == "dog")
         {
@@ -382,12 +327,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.dog[0, 2];
             command[1, 0] = Command.dog[1, 0];
             command[1, 1] = Command.dog[1, 1];
-            command[1, 2] = Command.dog[1, 2];
-            command[2, 0] = Command.dog[2, 0];
-            command[2, 1] = Command.dog[2, 1];
-            command[2, 2] = Command.dog[2, 2];
-            command[2, 0] = Command.dog[3, 0];
-            command[2, 1] = Command.dog[3, 1];
+   
         }
         else if (name == "cat")
         {
@@ -396,12 +336,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 2] = Command.cat[0, 2];
             command[1, 0] = Command.cat[1, 0];
             command[1, 1] = Command.cat[1, 1];
-            command[1, 2] = Command.cat[1, 2];
-            command[2, 0] = Command.cat[2, 0];
-            command[2, 1] = Command.cat[2, 1];
-            command[2, 2] = Command.cat[2, 2];
-            command[2, 0] = Command.cat[3, 0];
-            command[2, 1] = Command.cat[3, 1];
+
         }
     }
 
