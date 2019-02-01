@@ -182,9 +182,8 @@
     <Compile Include="Assets\Scripts\BillboardCanvas.cs" />
     <Compile Include="Assets\Scripts\BlockColor.cs" />
     <Compile Include="Assets\Scripts\BlueRPC.cs" />
-    <Compile Include="Assets\Scripts\CmdAdd.cs" />
     <Compile Include="Assets\Scripts\Command.cs" />
-    <Compile Include="Assets\Scripts\CSide.cs" />
+    <Compile Include="Assets\Scripts\ConditionAdd.cs" />
     <Compile Include="Assets\Scripts\DefaultMove.cs" />
     <Compile Include="Assets\Scripts\DeleteBtn.cs" />
     <Compile Include="Assets\Scripts\DeletePlayerPrefs.cs" />
@@ -212,11 +211,12 @@
     <Compile Include="Assets\Scripts\StoryManager.cs" />
     <Compile Include="Assets\Scripts\StoryUp.cs" />
     <Compile Include="Assets\Scripts\testforwalk.cs" />
-    <Compile Include="Assets\Scripts\TextApply.cs" />
     <Compile Include="Assets\Scripts\TextMgr.cs" />
     <Compile Include="Assets\Scripts\Timer.cs" />
     <Compile Include="Assets\Scripts\UIMgr.cs" />
     <Compile Include="Assets\Scripts\Waving.cs" />
+    <Compile Include="Assets\Scripts\휴지통\CmdAdd.cs" />
+    <Compile Include="Assets\Scripts\휴지통\CSide.cs" />
     <Compile Include="Assets\test\objmove.cs" />
     <Compile Include="Assets\test\TestFootBlue.cs" />
     <Compile Include="Assets\test\TestFootColor.cs" />

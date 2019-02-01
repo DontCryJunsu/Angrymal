@@ -9,7 +9,7 @@ public class LobbyCam : MonoBehaviour
     public GameObject WideVC;
     public GameObject ZoomVC;
     public Transform Downbar;
-    public Transform Sidebar;
+    public GameObject Sidebar;
     public NavMeshAgent nav;
     public Transform loadZone;
     public bool act = true;
@@ -92,20 +92,22 @@ public class LobbyCam : MonoBehaviour
 
     IEnumerator sDown()
     {
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 42; i++)
         {
             yield return new WaitForSeconds(0.01f);
-            Sidebar.Translate(16f, 0, 0);
+            Sidebar.transform.Translate(16f, 0, 0);
         }
+        Sidebar.SetActive(false);
         yield return null;
     }
 
     IEnumerator sUp()
     {
-        for (int i = 0; i < 30; i++)
+        Sidebar.SetActive(true);
+        for (int i = 0; i < 42; i++)
         {
             yield return new WaitForSeconds(0.01f);
-            Sidebar.Translate(-16f, 0, 0);
+            Sidebar.transform.Translate(-16f, 0, 0);
         }
         yield return null;
     }
