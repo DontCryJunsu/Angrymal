@@ -1753,6 +1753,7 @@ MonoBehaviour:
   rePanel: {fileID: 389692855}
   inputName: {fileID: 620091431}
   fade: {fileID: 1669496884}
+  Cam: {fileID: 1682790266}
 --- !u!4 &1233900025
 Transform:
   m_ObjectHideFlags: 0
@@ -1896,7 +1897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

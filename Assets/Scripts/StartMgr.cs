@@ -15,6 +15,7 @@ public class StartMgr : MonoBehaviour
     public GameObject rePanel;
     public InputField inputName;
     public GameObject fade;
+    public GameObject Cam;
     Image fadeImg;
     string userName;
     bool isPlaying = false;
@@ -49,12 +50,12 @@ public class StartMgr : MonoBehaviour
     {
         rePanel.SetActive(false);
     }
-    
+
     void LobbyScene()
     {
         rePanel.SetActive(false);
         nPanel.SetActive(false);
-
+        StartCoroutine(CoinCam());
         StartCoroutine("PlayFadeOut");
     }
     IEnumerator PlayFadeOut()
@@ -62,7 +63,7 @@ public class StartMgr : MonoBehaviour
         isPlaying = true;
         Color color = fadeImg.color;
         time = 0f;
-        while(color.a < 1f)
+        while (color.a < 1f)
         {
             time += Time.deltaTime / aniTime;
             color.a = Mathf.Lerp(start, end, time);
@@ -71,5 +72,14 @@ public class StartMgr : MonoBehaviour
         }
         isPlaying = false;
         SceneManager.LoadSceneAsync("LobbyScene");
+    }
+
+    IEnumerator CoinCam()
+    {
+        for (int i = 0; i < 120; i++)
+        {
+            yield return new WaitForSeconds(0.01f);
+            Cam.GetComponent<Camera>().orthographicSize -= 0.3f;
+        }
     }
 }
