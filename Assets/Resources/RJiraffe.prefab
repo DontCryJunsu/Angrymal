@@ -44,7 +44,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 753, y: 2776, z: 2059}
-  m_Center: {x: -48, y: 1338, z: 1119}
+  m_Center: {x: -48, y: 1338, z: 500}
 --- !u!114 &114812960824090340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,8 +449,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4446716651094852}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 54
+  instantiationId: 54
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1685787909937612
@@ -702,8 +702,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4424147267901804}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 53
+  instantiationId: 53
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114258835309408204
