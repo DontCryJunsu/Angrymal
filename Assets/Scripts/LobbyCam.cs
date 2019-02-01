@@ -22,6 +22,7 @@ public class LobbyCam : MonoBehaviour
 
     public void acting()
     {
+        tsdm = GetComponentInParent<testrandommove>();
         act = true;
         nav.enabled = true;
         nav.speed = 3f;
