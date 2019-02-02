@@ -68,7 +68,7 @@ public class DefaultMove : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         //fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
-        //StartCoroutine("JustWalk"); <명령어 줄이기>
+        StartCoroutine("JustWalk");// <명령어 줄이기>
 
         StartCoroutine("CheckCommand");
         StartCoroutine("CheckAttackCommand");
@@ -119,24 +119,28 @@ public class DefaultMove : MonoBehaviour
             ckani = 0; //애니메이터 변수 초기화
 
             yield return null;
-            //checkcommand = true;  //<명령어 줄이기>
+            checkcommand = true;  //<명령어 줄이기>
             while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
             {
 
-                /* <명령어 줄이기>
+              
                 i++;  //
 
                 Invoke(command[i, 0], 0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
 
 
-                if (i >= 1)
+                if (i >= 0)
                 {
                     i = -1;  // 각 명령어를 반복해 검사하기 위함.
                 }
-                */
-
-                Invoke(command[0, 0], 0); 
-
+                
+                
+                 
+                    
+                    //Invoke(command[0, 0], 0);
+              
+                 
+                yield return new WaitForSeconds(0.1f);
                 yield return null;
             }
 
@@ -712,7 +716,7 @@ public class DefaultMove : MonoBehaviour
         ckani = 0;
         animation.SetInteger("ckani", ckani);
 
-        //checkcommand = false; //<명령어 줄이기>
+        checkcommand = false; //<명령어 줄이기>
 
         if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
         {
@@ -734,7 +738,7 @@ public class DefaultMove : MonoBehaviour
         if (hp >= (fullhp / 2))
         {
             //  Debug.Log("HPMoreThanHalf");
-            //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다. //<명령어 줄이기>
+            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다. //<명령어 줄이기>
 
 
             if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작 //<명령어 줄이기>[i,1]
@@ -764,7 +768,7 @@ public class DefaultMove : MonoBehaviour
         if (hp < (fullhp / 2))
         {
             //  Debug.Log("HPLessThanHalf");
-            //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
             if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
@@ -830,7 +834,7 @@ public class DefaultMove : MonoBehaviour
             {
                 if (coll.gameObject.tag == "redcharacter")
                 {
-                    //checkcommand = false;
+                    checkcommand = false;
                     if (runningact != command[0, 1])
                     {
 
@@ -878,7 +882,7 @@ public class DefaultMove : MonoBehaviour
             }
             if (nearenemy == 0)
             {
-                //checkcommand = false;
+                checkcommand = false;
                 if (runningact != command[0, 1])
                 {
 
@@ -911,7 +915,7 @@ public class DefaultMove : MonoBehaviour
             }
             if (nearenemy == 0)
             {
-                //checkcommand = false;
+                checkcommand = false;
                 if (runningact != command[0, 1])
                 {
 
@@ -945,7 +949,7 @@ public class DefaultMove : MonoBehaviour
             if (Command.redtile > Command.bluetile)
             {
                 //  Debug.Log("OurTileIsMore");
-                //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
                 if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
@@ -969,7 +973,7 @@ public class DefaultMove : MonoBehaviour
             if (Command.bluetile > Command.redtile)
             {
                 //  Debug.Log("OurTileIsMore");
-                //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
                 if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
@@ -1002,7 +1006,7 @@ public class DefaultMove : MonoBehaviour
             if (Command.redtile < Command.bluetile)
             {
                 Debug.Log("레드땅이 더 적음");
-                //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
                 if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
@@ -1026,7 +1030,7 @@ public class DefaultMove : MonoBehaviour
             if (Command.bluetile < Command.redtile)
             {
                 //  Debug.Log("OurTileIsMoreLess");
-                //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
                 if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
@@ -1059,7 +1063,7 @@ public class DefaultMove : MonoBehaviour
         if ((Command.redtile + Command.bluetile) >= num_of_tile)
         {
             //  Debug.Log("OurTileIsLess");
-            //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
             if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
