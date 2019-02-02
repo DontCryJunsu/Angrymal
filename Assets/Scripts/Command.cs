@@ -33,20 +33,20 @@ NoEmptyTileAttack - 빈 땅이 없을 때 공격
 */
 
 public class Command : MonoBehaviour {
-    public static string[,] cat = new string[2, 3];
-    public static string[,] chicken = new string[2, 3];
-    public static string[,] bchicken = new string[2, 3];
-    public static string[,] buffalo = new string[2, 3];
-    public static string[,] dog = new string[2, 3];
-    public static string[,] elephant = new string[2, 3];
-    public static string[,] jiraffe = new string[2, 3];
-    public static string[,] kangaroo = new string[2, 3];
-    public static string[,] lion = new string[2, 3];
-    public static string[,] mouse = new string[2, 3];
-    public static string[,] pig = new string[2, 3];
-    public static string[,] sheep = new string[2, 3];
-    public static string[,] snake = new string[2, 3];
-    public static string[,] wolf = new string[2, 3];
+    public static string[,] cat = new string[1, 3];
+    public static string[,] chicken = new string[1, 3];
+    public static string[,] bchicken = new string[1, 3];
+    public static string[,] buffalo = new string[1, 3];
+    public static string[,] dog = new string[1, 3];
+    public static string[,] elephant = new string[1, 3];
+    public static string[,] jiraffe = new string[1, 3];
+    public static string[,] kangaroo = new string[1, 3];
+    public static string[,] lion = new string[1, 3];
+    public static string[,] mouse = new string[1, 3];
+    public static string[,] pig = new string[1, 3];
+    public static string[,] sheep = new string[1, 3];
+    public static string[,] snake = new string[1, 3];
+    public static string[,] wolf = new string[1, 3];
     public static int bluetile = 0;
     public static int redtile = 0;
 
@@ -82,7 +82,7 @@ public class Command : MonoBehaviour {
         //sheep[1, 1] = "GoToEmptyTile";
         //sheep[0, 2] = "HPMoreThanHalfAttack";
         //sheep[1, 2] = "OurTileIsMoreAttack";
-
+        /*<명령어 줄이기>
         cat[1, 0] = "Always";
         cat[1, 1] = "JustWalk";
         dog[1, 0] = "Always";
@@ -109,6 +109,7 @@ public class Command : MonoBehaviour {
         pig[1, 1] = "JustWalk";
         mouse[1, 0] = "Always";
         mouse[1, 1] = "JustWalk";
+        */
 
         snakeGo();
         mouseGo();

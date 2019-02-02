@@ -12,7 +12,7 @@ public class Attack : MonoBehaviour
 {
      
 
-    void OnTriggerStay(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         Debug.Log("충돌");
         if (tag == "redattack")

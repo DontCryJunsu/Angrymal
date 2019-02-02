@@ -14,7 +14,7 @@ public class DefaultMove : MonoBehaviour
     NavMeshAgent nav;
     bool JustWalk_isrunning;
     //string[] command = new string[2];
-    string[,] command = new string[2, 3];  //2행 3열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개. 3열은 공격명령.
+    string[,] command = new string[1, 3];  //1행 3열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개. 3열은 공격명령.
     private Transform target;
     private float dist;
     string runningact;
@@ -68,7 +68,7 @@ public class DefaultMove : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         //fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
-        StartCoroutine("JustWalk");
+        //StartCoroutine("JustWalk"); <명령어 줄이기>
 
         StartCoroutine("CheckCommand");
         StartCoroutine("CheckAttackCommand");
@@ -119,10 +119,11 @@ public class DefaultMove : MonoBehaviour
             ckani = 0; //애니메이터 변수 초기화
 
             yield return null;
-            checkcommand = true;
+            //checkcommand = true;  //<명령어 줄이기>
             while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
             {
 
+                /* <명령어 줄이기>
                 i++;  //
 
                 Invoke(command[i, 0], 0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
@@ -132,6 +133,9 @@ public class DefaultMove : MonoBehaviour
                 {
                     i = -1;  // 각 명령어를 반복해 검사하기 위함.
                 }
+                */
+
+                Invoke(command[0, 0], 0); 
 
                 yield return null;
             }
@@ -144,17 +148,18 @@ public class DefaultMove : MonoBehaviour
     {
 
 
-        while (true)
+        while (checkattackcommand == true)   // <명령어 줄이기> while(true)
         {
 
             ckani = 0; //애니메이터 변수 초기화
 
-            checkattackcommand = true;
+            // checkattackcommand = true;  <명령어 줄이기>
             yield return null;
 
             if (tag == "redcharacter")
             {
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 2.0f);
+               
                 foreach (Collider coll in colls)
                 {
                     yield return null; //렉 걸리는지 확인 중
@@ -162,24 +167,30 @@ public class DefaultMove : MonoBehaviour
                     {
                         if (coll.gameObject.tag == "bluecharacter")
                         {
-                            while (checkattackcommand == true)
-                            {
-                                yield return null;
-                                j++;
+                            //while (checkattackcommand == true)<명령어 줄이기>
+                            //{<명령어 줄이기>
+                            yield return null;
+                                //j++; <명령어 줄이기>
                                 akcoll = coll;
+                                /*<명령어 줄이기>
                                 if (command[j, 2] != null)
                                 {
                                     yield return StartCoroutine(command[j, 2]);
                                 }
+                                */
+                                yield return StartCoroutine("AlwaysAttack");
                                 nav.speed = speed;
-                                if (j >= 0 || checkattackcommand == false)
-                                {
-                                    j = -1;
-                                }
+                            /* <명령어 줄이기>
+                            if (j >= 0 || checkattackcommand == false)
+                            {
+                                j = -1;
                             }
+                            */
+                            //}<명령어 줄이기>
                         }
                     }
                 }
+              
             }
             else if (tag == "bluecharacter")
             {
@@ -191,22 +202,27 @@ public class DefaultMove : MonoBehaviour
                     {
                         if (coll.gameObject.tag == "redcharacter")
                         {
-                            while (checkattackcommand == true)
-                            {
-                                yield return null;
-                                j++;
-                                akcoll = coll;
-                                if (command[j, 2] != null)
+                            //while (checkattackcommand == true)<명령어 줄이기>
+                            //{<명령어 줄이기>
+                            yield return null;
+                            //j++;<명령어 줄이기>
+                            akcoll = coll;
+                            /*<명령어 줄이기>
+                            if (command[j, 2] != null)
                                 {
                                     yield return StartCoroutine(command[j, 2]);
                                     //Debug.Log("J = " + j);
                                 }
-                                nav.speed = speed;
+                                */
+                            yield return StartCoroutine("AlwaysAttack");
+                            nav.speed = speed;
+                            /*<명령어 줄이기>
                                 if (j >= 0 || checkattackcommand == false)
                                 {
                                     j = -1;
                                 }
-                            }
+                                */
+                            //}<명령어 줄이기>
                         }
                     }
                 }
@@ -226,8 +242,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.chicken[0, 0];
             command[0, 1] = Command.chicken[0, 1];
             command[0, 2] = Command.chicken[0, 2];
-            command[1, 0] = Command.chicken[1, 0];
-            command[1, 1] = Command.chicken[1, 1];
+
        
         }
         else if (name == "snake")
@@ -235,8 +250,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.snake[0, 0];
             command[0, 1] = Command.snake[0, 1];
             command[0, 2] = Command.snake[0, 2];
-            command[1, 0] = Command.snake[1, 0];
-            command[1, 1] = Command.snake[1, 1];
+
 
         }
         else if (name == "mouse")
@@ -244,8 +258,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.mouse[0, 0];
             command[0, 1] = Command.mouse[0, 1];
             command[0, 2] = Command.mouse[0, 2];
-            command[1, 0] = Command.mouse[1, 0];
-            command[1, 1] = Command.mouse[1, 1];
+
            
         }
         else if (name == "pig")
@@ -253,8 +266,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.pig[0, 0];
             command[0, 1] = Command.pig[0, 1];
             command[0, 2] = Command.pig[0, 2];
-            command[1, 0] = Command.pig[1, 0];
-            command[1, 1] = Command.pig[1, 1];
+
     
         }
         else if (name == "elephant")
@@ -262,8 +274,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.elephant[0, 0];
             command[0, 1] = Command.elephant[0, 1];
             command[0, 2] = Command.elephant[0, 2];
-            command[1, 0] = Command.elephant[1, 0];
-            command[1, 1] = Command.elephant[1, 1];
+
         
         }
         else if (name == "lion")
@@ -271,8 +282,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.lion[0, 0];
             command[0, 1] = Command.lion[0, 1];
             command[0, 2] = Command.lion[0, 2];
-            command[1, 0] = Command.lion[1, 0];
-            command[1, 1] = Command.lion[1, 1];
+
     
         }
         else if (name == "kangaroo")
@@ -280,8 +290,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.kangaroo[0, 0];
             command[0, 1] = Command.kangaroo[0, 1];
             command[0, 2] = Command.kangaroo[0, 2];
-            command[1, 0] = Command.kangaroo[1, 0];
-            command[1, 1] = Command.kangaroo[1, 1];
+
           
         }
         else if (name == "jiraffe")
@@ -289,8 +298,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.jiraffe[0, 0];
             command[0, 1] = Command.jiraffe[0, 1];
             command[0, 2] = Command.jiraffe[0, 2];
-            command[1, 0] = Command.jiraffe[1, 0];
-            command[1, 1] = Command.jiraffe[1, 1];
+
        
         }
         else if (name == "buffalo")
@@ -298,8 +306,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.buffalo[0, 0];
             command[0, 1] = Command.buffalo[0, 1];
             command[0, 2] = Command.buffalo[0, 2];
-            command[1, 0] = Command.buffalo[1, 0];
-            command[1, 1] = Command.buffalo[1, 1];
+
 
         }
         else if (name == "sheep")
@@ -307,8 +314,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.sheep[0, 0];
             command[0, 1] = Command.sheep[0, 1];
             command[0, 2] = Command.sheep[0, 2];
-            command[1, 0] = Command.sheep[1, 0];
-            command[1, 1] = Command.sheep[1, 1];
+
 
         }
         else if (name == "wolf")
@@ -316,8 +322,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.wolf[0, 0];
             command[0, 1] = Command.wolf[0, 1];
             command[0, 2] = Command.wolf[0, 2];
-            command[1, 0] = Command.wolf[1, 0];
-            command[1, 1] = Command.wolf[1, 1];
+
  
         }
         else if (name == "dog")
@@ -325,8 +330,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.dog[0, 0];
             command[0, 1] = Command.dog[0, 1];
             command[0, 2] = Command.dog[0, 2];
-            command[1, 0] = Command.dog[1, 0];
-            command[1, 1] = Command.dog[1, 1];
+
    
         }
         else if (name == "cat")
@@ -334,8 +338,7 @@ public class DefaultMove : MonoBehaviour
             command[0, 0] = Command.cat[0, 0];
             command[0, 1] = Command.cat[0, 1];
             command[0, 2] = Command.cat[0, 2];
-            command[1, 0] = Command.cat[1, 0];
-            command[1, 1] = Command.cat[1, 1];
+
 
         }
     }
@@ -709,12 +712,12 @@ public class DefaultMove : MonoBehaviour
         ckani = 0;
         animation.SetInteger("ckani", ckani);
 
-        checkcommand = false;
+        //checkcommand = false; //<명령어 줄이기>
 
-        if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+        if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
         {
             StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-            StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
+            StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
 
         }
         i = -1;
@@ -731,14 +734,22 @@ public class DefaultMove : MonoBehaviour
         if (hp >= (fullhp / 2))
         {
             //  Debug.Log("HPMoreThanHalf");
-            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+            //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다. //<명령어 줄이기>
 
 
-            if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+            if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작 //<명령어 줄이기>[i,1]
             {
                 StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-                StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-                i = -1;
+                StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작  //<명령어 줄이기> [i,1]
+                // i = -1; //<명령어 줄이기>
+            }
+        }//와드
+        else  //<명령어 줄이기>
+        {
+            if (runningact != command[0, 1])
+            {
+                StopCoroutine(runningact);
+                StartCoroutine("JustWalk");
             }
         }
         return;
@@ -753,14 +764,22 @@ public class DefaultMove : MonoBehaviour
         if (hp < (fullhp / 2))
         {
             //  Debug.Log("HPLessThanHalf");
-            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+            //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
-            if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+            if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
             {
                 StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-                StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-                i = -1;
+                StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
+                //i = -1;
+            }
+            else  //<명령어 줄이기>
+            {
+                if (runningact != command[0, 1])
+                {
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
+                }
             }
         }
         return;
@@ -779,17 +798,27 @@ public class DefaultMove : MonoBehaviour
             {
                 if (coll.gameObject.tag == "bluecharacter")
                 {
-                    checkcommand = false;
-                    if (runningact != command[i, 1])
+                   // checkcommand = false;
+                    if (runningact != command[0, 1])
                     {
 
                         StopCoroutine(runningact);
-                        StartCoroutine(command[i, 1]);
+                        StartCoroutine(command[0, 1]);
                         //Debug.Log("A bluecharacter is detected in radius");
-                        i = -1;
+                        //i = -1;
                         break;
                     }
-                    i = -1;
+
+                    //i = -1;
+                }
+                else  //<명령어 줄이기>
+                {
+                    if (runningact != command[0, 1])
+                    {
+                        StopCoroutine(runningact);
+                        StartCoroutine("JustWalk");
+                        break;
+                    }
                 }
 
 
@@ -801,17 +830,26 @@ public class DefaultMove : MonoBehaviour
             {
                 if (coll.gameObject.tag == "redcharacter")
                 {
-                    checkcommand = false;
-                    if (runningact != command[i, 1])
+                    //checkcommand = false;
+                    if (runningact != command[0, 1])
                     {
 
                         StopCoroutine(runningact);
-                        StartCoroutine(command[i, 1]);
+                        StartCoroutine(command[0, 1]);
                         // Debug.Log("A redcharacter is detected in radius");
-                        i = -1;
+                        //i = -1;
                         break;
                     }
-                    i = -1;
+                    //i = -1;
+                }
+                else  //<명령어 줄이기>
+                {
+                    if (runningact != command[0, 1])
+                    {
+                        StopCoroutine(runningact);
+                        StartCoroutine("JustWalk");
+                        break;
+                    }
                 }
 
 
@@ -840,17 +878,25 @@ public class DefaultMove : MonoBehaviour
             }
             if (nearenemy == 0)
             {
-                checkcommand = false;
-                if (runningact != command[i, 1])
+                //checkcommand = false;
+                if (runningact != command[0, 1])
                 {
 
                     StopCoroutine(runningact);
-                    StartCoroutine(command[i, 1]);
+                    StartCoroutine(command[0, 1]);
                     // Debug.Log("No Enemys in Near");
-                    //i = -1;  //다시 쓸지도 모름
+                    //i = -1;  //다시 쓸지도 모름 //<이건 명령어 줄이기 아님>
 
                 }
-                i = -1;
+                //i = -1;
+            }
+            else  //<명령어 줄이기>
+            {
+                if (runningact != command[0, 1])
+                {
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
+                }
             }
         }
         else if (tag == "bluecharacter")
@@ -865,17 +911,25 @@ public class DefaultMove : MonoBehaviour
             }
             if (nearenemy == 0)
             {
-                checkcommand = false;
-                if (runningact != command[i, 1])
+                //checkcommand = false;
+                if (runningact != command[0, 1])
                 {
 
                     StopCoroutine(runningact);
-                    StartCoroutine(command[i, 1]);
+                    StartCoroutine(command[0, 1]);
                     //   Debug.Log("No Enemys in Near");
                     //i = -1;
 
                 }
-                i = -1;
+                //i = -1;
+            }
+            else  //<명령어 줄이기>
+            {
+                if (runningact != command[0, 1])
+                {
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
+                }
             }
         }
     }
@@ -891,14 +945,22 @@ public class DefaultMove : MonoBehaviour
             if (Command.redtile > Command.bluetile)
             {
                 //  Debug.Log("OurTileIsMore");
-                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+                //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
-                if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+                if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
                 {
                     StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-                    StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-                    i = -1;
+                    StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
+                    //i = -1;
+                }
+            }
+            else  //<명령어 줄이기>
+            {
+                if (runningact != command[0, 1])
+                {
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
                 }
             }
         }
@@ -907,14 +969,22 @@ public class DefaultMove : MonoBehaviour
             if (Command.bluetile > Command.redtile)
             {
                 //  Debug.Log("OurTileIsMore");
-                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+                //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
-                if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+                if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
                 {
                     StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-                    StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-                    i = -1;
+                    StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
+                    //i = -1;
+                }
+            }
+            else  //<명령어 줄이기>
+            {
+                if (runningact != command[0, 1])
+                {
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
                 }
             }
         }
@@ -932,14 +1002,22 @@ public class DefaultMove : MonoBehaviour
             if (Command.redtile < Command.bluetile)
             {
                 Debug.Log("레드땅이 더 적음");
-                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+                //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
-                if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+                if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
                 {
                     StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-                    StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-                    i = -1;
+                    StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
+                    //i = -1;
+                }
+            }
+            else  //<명령어 줄이기>
+            {
+                if (runningact != command[0, 1])
+                {
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
                 }
             }
         }
@@ -948,14 +1026,22 @@ public class DefaultMove : MonoBehaviour
             if (Command.bluetile < Command.redtile)
             {
                 //  Debug.Log("OurTileIsMoreLess");
-                checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+                //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
-                if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+                if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
                 {
                     StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-                    StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-                    i = -1;
+                    StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
+                    //i = -1;
+                }
+            }
+            else  //<명령어 줄이기>
+            {
+                if (runningact != command[0, 1])
+                {
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
                 }
             }
         }
@@ -973,14 +1059,22 @@ public class DefaultMove : MonoBehaviour
         if ((Command.redtile + Command.bluetile) >= num_of_tile)
         {
             //  Debug.Log("OurTileIsLess");
-            checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
+            //checkcommand = false;  //조건이 맞았으므로 checkcommand를 false로 바꿔서 CheckCommand() 코루틴의 반복문을 중단시켜준다.
 
 
-            if (runningact != command[i, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
+            if (runningact != command[0, 1])  //현재 실행 중인 행동과 command[i,1]에 있는 (지금 실행해야 할) 행동이 다른 경우에만 동작
             {
                 StopCoroutine(runningact);  //현재 실행 중인 행동 코루틴 종료
-                StartCoroutine(command[i, 1]);  //지금 실행해야 할 행동 시작
-                i = -1;
+                StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
+                //i = -1;
+            }
+        }
+        else  //<명령어 줄이기>
+        {
+            if (runningact != command[0, 1])
+            {
+                StopCoroutine(runningact);
+                StartCoroutine("JustWalk");
             }
         }
         return;
@@ -1301,7 +1395,7 @@ public class DefaultMove : MonoBehaviour
             StartCoroutine(HitChar(clientChar.playerChar, false, damage));
         }
         */
-    }
+                        }
     [PunRPC]
     public void PreventDoubleAttack(float pda)
     {
