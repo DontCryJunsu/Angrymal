@@ -32,7 +32,8 @@ OurTileIsLessAttack - 땅이 더 적을 때 공격
 NoEmptyTileAttack - 빈 땅이 없을 때 공격
 */
 
-public class Command : MonoBehaviour {
+public class Command : MonoBehaviour
+{
     public static string[,] cat = new string[1, 3];
     public static string[,] chicken = new string[1, 3];
     public static string[,] bchicken = new string[1, 3];
@@ -59,7 +60,8 @@ public class Command : MonoBehaviour {
     //}
     // Use this for initialization
 
-    void Start () {
+    void Start()
+    {
         /*
         chicken[0, 0] = "NoEnemyInNear";          // 0번은 조건
         chicken[0,1] = "JustWalk";     // 1번은 행동
@@ -75,7 +77,7 @@ public class Command : MonoBehaviour {
         //chicken[3, 1] = "JustWalk";
         //cat[0, 0] = "Always";        
         //cat[0, 1] = "JustWalk";
-         
+
         //sheep[0, 0] = "NoEmptyTile";
         //sheep[0, 1] = "JustWalk";
         //sheep[1, 0] = "Always";
@@ -130,238 +132,80 @@ public class Command : MonoBehaviour {
 
     public void snakeGo()
     {
-        if (PlayerPrefs.GetInt("snake1CMD").Equals(1))
-        {
-            snake[0, 0] = PlayerPrefs.GetString("snake1A");
-            snake[0, 1] = PlayerPrefs.GetString("snake1B");
-            snake[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("snake1CMD").Equals(2))
-        {
-            snake[0, 0] = null;
-            snake[0, 1] = null;
-            snake[0, 2] = PlayerPrefs.GetString("snake1C");
-        }
-
-       
+        snake[0, 0] = PlayerPrefs.GetString("snake1A");
+        snake[0, 1] = PlayerPrefs.GetString("snake1B");
     }
 
     public void mouseGo()
     {
-        if (PlayerPrefs.GetInt("mouse1CMD").Equals(1))
-        {
-            mouse[0, 0] = PlayerPrefs.GetString("mouse1A");
-            mouse[0, 1] = PlayerPrefs.GetString("mouse1B");
-            mouse[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("mouse1CMD").Equals(2))
-        {
-            mouse[0, 0] = null;
-            mouse[0, 1] = null;
-            mouse[0, 2] = PlayerPrefs.GetString("mouse1C");
-        }
-
-  
+        mouse[0, 0] = PlayerPrefs.GetString("mouse1A");
+        mouse[0, 1] = PlayerPrefs.GetString("mouse1B");
     }
 
     public void pigGo()
     {
-        if (PlayerPrefs.GetInt("pig1CMD").Equals(1))
-        {
-            pig[0, 0] = PlayerPrefs.GetString("pig1A");
-            pig[0, 1] = PlayerPrefs.GetString("pig1B");
-            pig[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("pig1CMD").Equals(2))
-        {
-            pig[0, 0] = null;
-            pig[0, 1] = null;
-            pig[0, 2] = PlayerPrefs.GetString("pig1C");
-        }
-
-
+        pig[0, 0] = PlayerPrefs.GetString("pig1A");
+        pig[0, 1] = PlayerPrefs.GetString("pig1B");
     }
 
     public void elephantGo()
     {
-        if (PlayerPrefs.GetInt("elephant1CMD").Equals(1))
-        {
-            elephant[0, 0] = PlayerPrefs.GetString("elephant1A");
-            elephant[0, 1] = PlayerPrefs.GetString("elephant1B");
-            elephant[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("elephant1CMD").Equals(2))
-        {
-            elephant[0, 0] = null;
-            elephant[0, 1] = null;
-            elephant[0, 2] = PlayerPrefs.GetString("elephant1C");
-        }
-
- 
+        elephant[0, 0] = PlayerPrefs.GetString("elephant1A");
+        elephant[0, 1] = PlayerPrefs.GetString("elephant1B");
     }
 
     public void lionGo()
     {
-        if (PlayerPrefs.GetInt("lion1CMD").Equals(1))
-        {
-            lion[0, 0] = PlayerPrefs.GetString("lion1A");
-            lion[0, 1] = PlayerPrefs.GetString("lion1B");
-            lion[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("lion1CMD").Equals(2))
-        {
-            lion[0, 0] = null;
-            lion[0, 1] = null;
-            lion[0, 2] = PlayerPrefs.GetString("lion1C");
-        }
-
- 
+        lion[0, 0] = PlayerPrefs.GetString("lion1A");
+        lion[0, 1] = PlayerPrefs.GetString("lion1B");
     }
 
     public void chickenGo()
     {
-        if (PlayerPrefs.GetInt("chicken1CMD").Equals(1))
-        {
-            chicken[0, 0] = PlayerPrefs.GetString("chicken1A");
-            chicken[0, 1] = PlayerPrefs.GetString("chicken1B");
-            chicken[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("chicken1CMD").Equals(2))
-        {
-            chicken[0, 0] = null;
-            chicken[0, 1] = null;
-            chicken[0, 2] = PlayerPrefs.GetString("chicken1C");
-        }
 
-
+        chicken[0, 0] = PlayerPrefs.GetString("chicken1A");
+        chicken[0, 1] = PlayerPrefs.GetString("chicken1B");
     }
 
     public void kangarooGo()
     {
-        if (PlayerPrefs.GetInt("kangaroo1CMD").Equals(1))
-        {
-            kangaroo[0, 0] = PlayerPrefs.GetString("kangaroo1A");
-            kangaroo[0, 1] = PlayerPrefs.GetString("kangaroo1B");
-            kangaroo[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("kangaroo1CMD").Equals(2))
-        {
-            kangaroo[0, 0] = null;
-            kangaroo[0, 1] = null;
-            kangaroo[0, 2] = PlayerPrefs.GetString("kangaroo1C");
-        }
-
-
+        kangaroo[0, 0] = PlayerPrefs.GetString("kangaroo1A");
+        kangaroo[0, 1] = PlayerPrefs.GetString("kangaroo1B");
     }
 
     public void jiraffeGo()
     {
-        if (PlayerPrefs.GetInt("jiraffe1CMD").Equals(1))
-        {
-            jiraffe[0, 0] = PlayerPrefs.GetString("jiraffe1A");
-            jiraffe[0, 1] = PlayerPrefs.GetString("jiraffe1B");
-            jiraffe[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("jiraffe1CMD").Equals(2))
-        {
-            jiraffe[0, 0] = null;
-            jiraffe[0, 1] = null;
-            jiraffe[0, 2] = PlayerPrefs.GetString("jiraffe1C");
-        }
 
-    
+        jiraffe[0, 0] = PlayerPrefs.GetString("jiraffe1A");
+        jiraffe[0, 1] = PlayerPrefs.GetString("jiraffe1B");
     }
-
     public void buffaloGo()
     {
-        if (PlayerPrefs.GetInt("buffalo1CMD").Equals(1))
-        {
-            buffalo[0, 0] = PlayerPrefs.GetString("buffalo1A");
-            buffalo[0, 1] = PlayerPrefs.GetString("buffalo1B");
-            buffalo[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("buffalo1CMD").Equals(2))
-        {
-            buffalo[0, 0] = null;
-            buffalo[0, 1] = null;
-            buffalo[0, 2] = PlayerPrefs.GetString("buffalo1C");
-        }
-
-  
+        buffalo[0, 0] = PlayerPrefs.GetString("buffalo1A");
+        buffalo[0, 1] = PlayerPrefs.GetString("buffalo1B");
     }
 
     public void sheepGo()
     {
-        if (PlayerPrefs.GetInt("sheep1CMD").Equals(1))
-        {
-            sheep[0, 0] = PlayerPrefs.GetString("sheep1A");
-            sheep[0, 1] = PlayerPrefs.GetString("sheep1B");
-            sheep[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("sheep1CMD").Equals(2))
-        {
-            sheep[0, 0] = null;
-            sheep[0, 1] = null;
-            sheep[0, 2] = PlayerPrefs.GetString("sheep1C");
-        }
-
- 
+        sheep[0, 0] = PlayerPrefs.GetString("sheep1A");
+        sheep[0, 1] = PlayerPrefs.GetString("sheep1B");
     }
 
     public void wolfGo()
     {
-        if (PlayerPrefs.GetInt("wolf1CMD").Equals(1))
-        {
-            wolf[0, 0] = PlayerPrefs.GetString("wolf1A");
-            wolf[0, 1] = PlayerPrefs.GetString("wolf1B");
-            wolf[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("wolf1CMD").Equals(2))
-        {
-            wolf[0, 0] = null;
-            wolf[0, 1] = null;
-            wolf[0, 2] = PlayerPrefs.GetString("wolf1C");
-        }
-
-      
+        wolf[0, 0] = PlayerPrefs.GetString("wolf1A");
+        wolf[0, 1] = PlayerPrefs.GetString("wolf1B");
     }
 
     public void dogGo()
     {
-        if (PlayerPrefs.GetInt("dog1CMD").Equals(1))
-        {
-            dog[0, 0] = PlayerPrefs.GetString("dog1A");
-            dog[0, 1] = PlayerPrefs.GetString("dog1B");
-            dog[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("dog1CMD").Equals(2))
-        {
-            dog[0, 0] = null;
-            dog[0, 1] = null;
-            dog[0, 2] = PlayerPrefs.GetString("dog1C");
-        }
-
-    
+        dog[0, 0] = PlayerPrefs.GetString("dog1A");
+        dog[0, 1] = PlayerPrefs.GetString("dog1B");
     }
 
     public void catGo()
     {
-        if (PlayerPrefs.GetInt("cat1CMD").Equals(1))
-        {
-            cat[0, 0] = PlayerPrefs.GetString("cat1A");
-            cat[0, 1] = PlayerPrefs.GetString("cat1B");
-            cat[0, 2] = null;
-        }
-        else if (PlayerPrefs.GetInt("cat1CMD").Equals(2))
-        {
-            cat[0, 0] = null;
-            cat[0, 1] = null;
-            cat[0, 2] = PlayerPrefs.GetString("cat1C");
-        }
-
-      
+        cat[0, 0] = PlayerPrefs.GetString("cat1A");
+        cat[0, 1] = PlayerPrefs.GetString("cat1B");
     }
 }
-
-
-
