@@ -40,6 +40,10 @@ public class LobbyCam : MonoBehaviour
             nav.SetDestination(loadZone.transform.position);
             LobbyManager.esc = true;
             act = false;
+            if (PlayerPrefs.GetInt("tuto", 0).Equals(2))
+            {
+                PlayerPrefs.SetInt("tuto", 3);
+            }
         }
     }
 
@@ -68,6 +72,10 @@ public class LobbyCam : MonoBehaviour
             LobbyManager.aniNum = gameObject.name;
             StartCoroutine(dDown());
             StartCoroutine(sUp());
+            if (PlayerPrefs.GetInt("tuto", 0).Equals(0))
+            {
+                PlayerPrefs.SetInt("tuto", 1);
+            }
         }
     }
 
