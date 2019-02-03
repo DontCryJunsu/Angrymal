@@ -1386,7 +1386,7 @@ public class DefaultMove : MonoBehaviour
         // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
         if (hp <= 0) // HP가 0 이 되서 죽었을 때 
         {
-          
+            GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer);
 
             //GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
             //GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); //동기화 테스트

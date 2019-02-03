@@ -39,7 +39,7 @@ public class Exit : MonoBehaviour
 
     public void LeaveRoom()
     {
-        PhotonNetwork.LeaveRoom();
         SceneManager.LoadSceneAsync("LobbyScene");
+        PhotonNetwork.LeaveRoom();
     }
 }

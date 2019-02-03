@@ -94,7 +94,7 @@ public class BattleManager : MonoBehaviour
     }
     void Update()
     {
-        if(ST)
+        if (ST)
         {
             Angrymal.SetActive(true);
         }
@@ -126,7 +126,7 @@ public class BattleManager : MonoBehaviour
 
     public void chicken()
     {
-        if(PlayerPrefs.GetString("Team").Equals("R"))
+        if (PlayerPrefs.GetString("Team").Equals("R"))
         {
             audioSource.Play();
             PhotonNetwork.Instantiate("RChicken", vec, qua, 0);
@@ -303,9 +303,8 @@ public class BattleManager : MonoBehaviour
                     Debug.Log("레드 치킨");
                     PhotonNetwork.Instantiate("REgg", iskilled.transform.position, iskilled.transform.rotation, 0);
                 }
-            PhotonNetwork.Destroy(iskilled.gameObject);
         }
-        
+        PhotonNetwork.Destroy(iskilled.gameObject);
     }
 }
 
