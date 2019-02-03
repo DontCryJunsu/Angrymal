@@ -92,6 +92,8 @@ public class DefaultMove : MonoBehaviour
             stream.SendNext(tr.rotation);
             //체력 정보 송신
             stream.SendNext(this.hp);
+            if (this.hp <=0)
+            { GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); }
         }
         // 원격 플레이어의 위치 정보 수신
         else
@@ -100,6 +102,8 @@ public class DefaultMove : MonoBehaviour
             currRot = (Quaternion)stream.ReceiveNext();
             //체력 정보 수신
             this.hp = (float)stream.ReceiveNext();
+            if (this.hp <= 0)
+            { GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); }
         }
     }
 
@@ -1382,17 +1386,10 @@ public class DefaultMove : MonoBehaviour
         // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
         if (hp <= 0) // HP가 0 이 되서 죽었을 때 
         {
-            /*  알 낳기 테스트
-            if (name == "chicken")
-                if (tag == "redcharacter")
-                {
-                    transform.parent.gameObject.transform.GetChild(1).gameObject.transform.position = this.transform.position;
-                    transform.parent.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-                    this.gameObject.SetActive(false);
-                }
-                */
+          
 
-            GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
+            //GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
+            //GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); //동기화 테스트
         }
 
 
@@ -1419,6 +1416,11 @@ public class DefaultMove : MonoBehaviour
     public void PreventDoubleAttack(float pda)
     {
         comparetime = pda;
+    }
+    [PunRPC]
+    public void Die()
+    {
+        GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
     }
     // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
 }

@@ -295,7 +295,17 @@ public class BattleManager : MonoBehaviour
     }
     public void Die(GameObject iskilled)
     {
-        PhotonNetwork.Destroy(iskilled.gameObject);
+        if (PhotonNetwork.isMasterClient)
+        {
+            if (iskilled.name == "chicken")
+                if (iskilled.tag == "redcharacter")
+                {
+                    Debug.Log("레드 치킨");
+                    PhotonNetwork.Instantiate("REgg", iskilled.transform.position, iskilled.transform.rotation, 0);
+                }
+            PhotonNetwork.Destroy(iskilled.gameObject);
+        }
+        
     }
 }
 

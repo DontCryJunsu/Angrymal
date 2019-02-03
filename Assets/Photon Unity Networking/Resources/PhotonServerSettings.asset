@@ -44,4 +44,5 @@ MonoBehaviour:
   - AttackInfo
   - PreventDoubleAttack
   - AttackProcess
+  - Die
   DisableAutoOpenWizard: 1
