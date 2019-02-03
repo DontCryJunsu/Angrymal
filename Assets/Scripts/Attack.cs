@@ -52,7 +52,7 @@ public class Attack : MonoBehaviour
         }
         //col.gameObject.GetComponent<DefaultMove>().AttackInfo(attackTarget,damage);
         //col.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-        col.gameObject.GetComponent<PhotonView>().RPC("AttackInfo", PhotonTargets.All, attackTarget, damage);
+        col.gameObject.GetComponent<PhotonView>().RPC("AttackInfo", PhotonTargets.Others, attackTarget, damage);
 
         // AttackInfo 는  함수이름입니다.
         //PhotonTargets.Others 자신을 제외한 다른 유저에게 정보를 전송합니다.damage 는 전달하려고 하는 값입니다.

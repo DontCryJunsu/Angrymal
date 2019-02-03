@@ -41,7 +41,7 @@ public class DefaultMove : MonoBehaviour
     private Vector3 currPos = Vector3.zero;
     private Quaternion currRot = Quaternion.identity;
 
-    float time; //PreventDoubleAttack 함수에서 사용
+    float time = -0.1f; //PreventDoubleAttack 함수에서 사용
     float comparetime;
 
     public Image HPBar;
@@ -90,12 +90,16 @@ public class DefaultMove : MonoBehaviour
         {
             stream.SendNext(tr.position);
             stream.SendNext(tr.rotation);
+            //체력 정보 송신
+            stream.SendNext(this.hp);
         }
         // 원격 플레이어의 위치 정보 수신
         else
         {
             currPos = (Vector3)stream.ReceiveNext();
             currRot = (Quaternion)stream.ReceiveNext();
+            //체력 정보 수신
+            this.hp = (float)stream.ReceiveNext();
         }
     }
 
@@ -1371,15 +1375,14 @@ public class DefaultMove : MonoBehaviour
             time = comparetime;
             HPBar.fillAmount = hp / fullhp;
 
-         
-
+            
             ckani = 2;
             animation.SetInteger("ckani", ckani);
         }
         // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
         if (hp <= 0) // HP가 0 이 되서 죽었을 때 
         {
-            /*
+            /*  알 낳기 테스트
             if (name == "chicken")
                 if (tag == "redcharacter")
                 {
@@ -1388,7 +1391,7 @@ public class DefaultMove : MonoBehaviour
                     this.gameObject.SetActive(false);
                 }
                 */
-               
+
             GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
         }
 
