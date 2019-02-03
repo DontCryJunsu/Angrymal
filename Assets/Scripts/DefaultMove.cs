@@ -380,7 +380,7 @@ public class DefaultMove : MonoBehaviour
         Debug.Log("항상 공격");
      
 
-        checkattackcommand = false;
+        //checkattackcommand = false; //<명령어 줄이기>
         yield return new WaitForSeconds(1.5f);
         transform.GetChild(1).gameObject.SetActive(false);
 
@@ -1415,7 +1415,7 @@ public class DefaultMove : MonoBehaviour
     [PunRPC]
     public void PreventDoubleAttack(float pda)
     {
-        time = pda;
+        comparetime = pda;
     }
     // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
 }
