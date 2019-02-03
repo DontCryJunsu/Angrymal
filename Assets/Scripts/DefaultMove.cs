@@ -1371,15 +1371,27 @@ public class DefaultMove : MonoBehaviour
             time = comparetime;
             HPBar.fillAmount = hp / fullhp;
 
+         
+
             ckani = 2;
             animation.SetInteger("ckani", ckani);
         }
         // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
-
         if (hp <= 0) // HP가 0 이 되서 죽었을 때 
         {
+            /*
+            if (name == "chicken")
+                if (tag == "redcharacter")
+                {
+                    transform.parent.gameObject.transform.GetChild(1).gameObject.transform.position = this.transform.position;
+                    transform.parent.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+                    this.gameObject.SetActive(false);
+                }
+                */
+               
             GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
         }
+
 
         /*
         if (attackTarget == (int)TARGET.MASTER)
@@ -1399,7 +1411,7 @@ public class DefaultMove : MonoBehaviour
             StartCoroutine(HitChar(clientChar.playerChar, false, damage));
         }
         */
-                        }
+    }
     [PunRPC]
     public void PreventDoubleAttack(float pda)
     {
