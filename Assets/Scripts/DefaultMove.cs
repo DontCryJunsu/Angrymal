@@ -353,6 +353,11 @@ public class DefaultMove : MonoBehaviour
 
 
         }
+        else if (name == "babychicken")
+        {
+            command[0, 0] = "Always";
+            command[0, 1] = "JustWalk";
+        }
     }
 
     // 여기서부터 공격 조건 ----------------------------------------------------------------------------------
