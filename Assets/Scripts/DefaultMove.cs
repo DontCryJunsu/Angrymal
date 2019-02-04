@@ -42,7 +42,7 @@ public class DefaultMove : MonoBehaviour
     private Quaternion currRot = Quaternion.identity;
 
     float time = -0.1f; //PreventDoubleAttack 함수에서 사용
-    float comparetime;
+    float comparetime = 1.0f;
 
     public Image HPBar;
 

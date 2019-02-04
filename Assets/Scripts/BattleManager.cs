@@ -303,6 +303,11 @@ public class BattleManager : MonoBehaviour
                     Debug.Log("레드 치킨");
                     PhotonNetwork.Instantiate("REgg", iskilled.transform.position, iskilled.transform.rotation, 0);
                 }
+                else if (iskilled.tag == "bluecharacter")
+                {
+                    Debug.Log("블루 치킨");
+                    PhotonNetwork.Instantiate("BEgg", iskilled.transform.position, iskilled.transform.rotation, 0);
+                }
         }
         PhotonNetwork.Destroy(iskilled.gameObject);
     }
