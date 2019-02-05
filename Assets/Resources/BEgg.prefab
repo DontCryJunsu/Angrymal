@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 4877789396967499356}
   - component: {fileID: 4379229343210183519}
   - component: {fileID: 8767424847222867163}
+  - component: {fileID: 5373723191385999568}
   m_Layer: 0
   m_Name: BEgg
   m_TagString: bluecharacter
@@ -548,10 +549,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
-  hp: 20
-  fullhp: 20
+  hp: 100
+  fullhp: 100
   speed: 0
   power: 0
   child: 
   num_of_tile: 275
   HPBar: {fileID: 1125013111257229744}
+--- !u!114 &5373723191385999568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8685264743723693871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c73a8e8ef11a43b984a96d86527be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

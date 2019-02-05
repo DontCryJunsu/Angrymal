@@ -193,6 +193,7 @@
      <Compile Include="Assets\Scripts\FadeOut.cs" />
      <Compile Include="Assets\Scripts\FindAnimal.cs" />
      <Compile Include="Assets\Scripts\FireBar.cs" />
+     <Compile Include="Assets\Scripts\Hatch.cs" />
      <Compile Include="Assets\Scripts\LoadAnimal.cs" />
      <Compile Include="Assets\Scripts\LobbyCam.cs" />
      <Compile Include="Assets\Scripts\LobbyManager.cs" />

@@ -51,6 +51,7 @@ public class DefaultMove : MonoBehaviour
 
     void Awake()
     {
+        Debug.Log("Awake 시작");
         rgdy = GetComponent<Rigidbody>();
         tr = GetComponent<Transform>();
         pv = GetComponent<PhotonView>();
@@ -102,8 +103,8 @@ public class DefaultMove : MonoBehaviour
             currRot = (Quaternion)stream.ReceiveNext();
             //체력 정보 수신
             this.hp = (float)stream.ReceiveNext();
-            if (this.hp <= 0)
-            { GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); }
+            //if (this.hp <= 0)
+            //{ GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); }
         }
     }
 
@@ -394,9 +395,9 @@ public class DefaultMove : MonoBehaviour
      
 
         //checkattackcommand = false; //<명령어 줄이기>
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         transform.GetChild(1).gameObject.SetActive(false);
-
+        yield return new WaitForSeconds(1.0f);
         nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
        // nav.SetDestination(destinationbuffer); //navmesh 목표지점 원래대로 돌려놈
 
@@ -1370,8 +1371,10 @@ public class DefaultMove : MonoBehaviour
     [PunRPC]
     public void AttackInfo(int attackTarget, float damage)
     {
-      
-        AttackProcess(attackTarget, damage);
+        if (hp > 0)
+        {
+            AttackProcess(attackTarget, damage);
+        }
        // pv.RPC("AttackProcess", PhotonTargets.All, attackTarget, damage);
     }
 
@@ -1391,7 +1394,6 @@ public class DefaultMove : MonoBehaviour
         // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
         if (hp <= 0) // HP가 0 이 되서 죽었을 때 
         {
-            GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer);
 
             //GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
             //GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); //동기화 테스트

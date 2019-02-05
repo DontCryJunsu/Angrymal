@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 2783480439470508989}
   - component: {fileID: 6473835163494905534}
   - component: {fileID: 2071002001074710842}
+  - component: {fileID: 6506352198654755954}
   m_Layer: 0
   m_Name: REgg
   m_TagString: redcharacter
@@ -287,13 +288,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
-  hp: 20
-  fullhp: 20
+  hp: 100
+  fullhp: 100
   speed: 0
   power: 0
   child: 
   num_of_tile: 275
   HPBar: {fileID: 7677883496549680209}
+--- !u!114 &6506352198654755954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132957373413104334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d91c73a8e8ef11a43b984a96d86527be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8360206437164513774
 PrefabInstance:
   m_ObjectHideFlags: 0

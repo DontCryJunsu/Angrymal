@@ -311,5 +311,21 @@ public class BattleManager : MonoBehaviour
         }
         PhotonNetwork.Destroy(iskilled.gameObject);
     }
+    public void Hatch(GameObject ishatched)
+    {
+        if (PhotonNetwork.isMasterClient)
+        {
+            GameObject objbuffer = ishatched;
+            PhotonNetwork.Destroy(ishatched.gameObject);
+            if (ishatched.tag == "redcharacter")
+            {
+                PhotonNetwork.Instantiate("RBabychicken", objbuffer.transform.position, objbuffer.transform.rotation, 0);
+            }
+            else if (ishatched.tag == "bluecharacter")
+            {
+                PhotonNetwork.Instantiate("BBabychicken", objbuffer.transform.position, objbuffer.transform.rotation, 0);
+            }
+        }
+    }
 }
 
