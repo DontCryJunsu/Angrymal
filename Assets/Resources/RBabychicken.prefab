@@ -609,7 +609,7 @@ GameObject:
   - component: {fileID: 9088383659520195296}
   - component: {fileID: 9080645287973740778}
   - component: {fileID: 9209470786813641744}
-  - component: {fileID: 7281863687219261713}
+  - component: {fileID: 3639094909567735931}
   m_Layer: 0
   m_Name: babychicken
   m_TagString: Untagged
@@ -694,7 +694,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!95 &7281863687219261713
+--- !u!95 &3639094909567735931
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -703,8 +703,8 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9101780723767606310}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 10737d6ead6351841812329726d95316, type: 3}
-  m_Controller: {fileID: 9100000, guid: 1a80707f56a05d748897482dc7bf8f7a, type: 2}
+  m_Avatar: {fileID: 9000000, guid: c492a85bda5923747b0ca72f11a52f34, type: 3}
+  m_Controller: {fileID: 9100000, guid: 1f28d9a71a9e8414b89be75df7a91b03, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -779,8 +779,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 800
-  m_Center: {x: 0, y: 650, z: -37}
+  m_Radius: 600
+  m_Center: {x: 0, y: 500, z: -37}
 --- !u!195 &8999131632391002088
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -790,7 +790,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 9102621860628111166}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1000
+  m_Radius: 600
   m_Speed: 3.5
   m_Acceleration: 100
   avoidancePriority: 50
@@ -909,8 +909,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1221, y: 1830, z: 2102}
-  m_Center: {x: -64, y: 865, z: 1001}
+  m_Size: {x: 800, y: 1000, z: 400}
+  m_Center: {x: -200, y: 500, z: 0}
 --- !u!114 &9205753965812133694
 MonoBehaviour:
   m_ObjectHideFlags: 0
