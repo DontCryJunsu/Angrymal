@@ -71,8 +71,8 @@ public class DefaultMove : MonoBehaviour
         nav.speed = speed;
         StartCoroutine("JustWalk");// <명령어 줄이기>
 
-        StartCoroutine("CheckCommand");
-        StartCoroutine("CheckAttackCommand");
+        StartCoroutine(CheckCommand());
+        StartCoroutine(CheckAttackCommand());
         RD = goal.GetComponent<RandomDestination>();
 
         if (!pv.isMine)
