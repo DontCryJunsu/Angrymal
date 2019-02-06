@@ -69,10 +69,11 @@ public class DefaultMove : MonoBehaviour
         nav = GetComponent<NavMeshAgent>();
         //fullhp = stat.FULLHP; hp = fullhp; speed = stat.SPEED; power = stat.POWER;  // 스탯 가져오기
         nav.speed = speed;
-        StartCoroutine("JustWalk");// <명령어 줄이기>
-
+        //StartCoroutine("JustWalk");// <명령어 줄이기>
+        runningact = "Nothing"; //<명령어 줄이기>
         StartCoroutine(CheckCommand());
-        StartCoroutine(CheckAttackCommand());
+        if (name != "babychicken")
+            StartCoroutine(CheckAttackCommand());
         RD = goal.GetComponent<RandomDestination>();
 
         if (!pv.isMine)

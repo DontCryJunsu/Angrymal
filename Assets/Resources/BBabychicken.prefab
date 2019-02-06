@@ -557,7 +557,7 @@ MonoBehaviour:
   goal: {fileID: 9101777321617381380}
   hp: 50
   fullhp: 50
-  speed: 4
+  speed: 3
   power: 10
   child: babychicken
   num_of_tile: 275

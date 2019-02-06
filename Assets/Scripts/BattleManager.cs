@@ -298,16 +298,29 @@ public class BattleManager : MonoBehaviour
         if (PhotonNetwork.isMasterClient)
         {
             if (iskilled.name == "chicken")
+            {
                 if (iskilled.tag == "redcharacter")
                 {
-                    Debug.Log("레드 치킨");
                     PhotonNetwork.Instantiate("REgg", iskilled.transform.position, iskilled.transform.rotation, 0);
                 }
                 else if (iskilled.tag == "bluecharacter")
                 {
-                    Debug.Log("블루 치킨");
                     PhotonNetwork.Instantiate("BEgg", iskilled.transform.position, iskilled.transform.rotation, 0);
                 }
+            }
+            else if (iskilled.name == "pig")
+            {
+                if (iskilled.tag == "redcharacter")
+                {
+                    
+                    Debug.Log("레드 돼지 사망");
+                    PhotonNetwork.Instantiate("RMeat", iskilled.transform.position, Quaternion.identity, 0);
+                }
+                else if (iskilled.tag == "bluecharacter")
+                {
+                    Debug.Log("블루 돼지 사망");
+                }
+            }
         }
         PhotonNetwork.Destroy(iskilled.gameObject);
     }
