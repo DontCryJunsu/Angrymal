@@ -90,22 +90,23 @@ public class DefaultMove : MonoBehaviour
         // 로컬 플레이어의 위치 정보 송신
         if (stream.isWriting)
         {
+            stream.SendNext(this.hp);
+            HPBar.fillAmount = hp / fullhp;
+            if (this.hp <= 0)
+            { GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); }
+            
             stream.SendNext(tr.position);
             stream.SendNext(tr.rotation);
-            //체력 정보 송신
-            stream.SendNext(this.hp);
-            if (this.hp <=0)
-            { GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); }
         }
         // 원격 플레이어의 위치 정보 수신
         else
         {
-            currPos = (Vector3)stream.ReceiveNext();
-            currRot = (Quaternion)stream.ReceiveNext();
-            //체력 정보 수신
-            this.hp = (float)stream.ReceiveNext();
+            hp = (float)stream.ReceiveNext();
             //if (this.hp <= 0)
             //{ GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); }
+            HPBar.fillAmount = hp / fullhp;
+            currPos = (Vector3)stream.ReceiveNext();
+            currRot = (Quaternion)stream.ReceiveNext();
         }
     }
 
@@ -133,7 +134,7 @@ public class DefaultMove : MonoBehaviour
             while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
             {
 
-              
+              /*  //<명령어 줄이기>
                 i++;  //
 
                 Invoke(command[i, 0], 0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
@@ -145,9 +146,9 @@ public class DefaultMove : MonoBehaviour
                 }
                 
                 
-                 
+                */ 
                     
-                    //Invoke(command[0, 0], 0);
+                    Invoke(command[0, 0], 0);
               
                  
                 yield return new WaitForSeconds(0.1f);
@@ -739,7 +740,7 @@ public class DefaultMove : MonoBehaviour
             StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
 
         }
-        i = -1;
+        //i = -1;
 
     }
 
@@ -1273,7 +1274,7 @@ public class DefaultMove : MonoBehaviour
         {
             while (true)
             {
-                yield return null;
+                //yield return null;
                 Collider[] colls = Physics.OverlapSphere(this.transform.position, 7.0f);
                 foreach (Collider coll in colls)
                 {
@@ -1386,7 +1387,7 @@ public class DefaultMove : MonoBehaviour
         {
             hp -= damage;
             time = comparetime;
-            HPBar.fillAmount = hp / fullhp;
+            
 
             
             ckani = 2;

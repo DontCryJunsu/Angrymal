@@ -319,6 +319,7 @@ public class BattleManager : MonoBehaviour
                 else if (iskilled.tag == "bluecharacter")
                 {
                     Debug.Log("블루 돼지 사망");
+                    PhotonNetwork.Instantiate("BMeat", iskilled.transform.position, Quaternion.identity, 0);
                 }
             }
         }
