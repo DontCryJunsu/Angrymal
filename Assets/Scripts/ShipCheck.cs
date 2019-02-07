@@ -12,7 +12,7 @@ public class ShipCheck : MonoBehaviour
     void Awake()
     {
         PlayerPrefs.SetInt("isVictory", 0);
-
+        PlayerPrefs.SetInt("isLose", 0);
         pv = GetComponent<PhotonView>();
         ready = GameObject.Find("RPCPan").transform;
         GameObject.Find("RPCText").GetComponent<Text>().text = "플레이어를 기다리는 중입니다.";
