@@ -615,6 +615,7 @@ GameObject:
   - component: {fileID: 9104542942924069454}
   - component: {fileID: 9133193025698717896}
   - component: {fileID: 9205753965812133694}
+  - component: {fileID: 6088996469244752124}
   m_Layer: 0
   m_Name: attackbox
   m_TagString: blueattack
@@ -661,6 +662,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c11fd9926b2a248a79d20939a2c948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6088996469244752124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102884299350479480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6ffa175cbe1e44fb7017300bcb8369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rgdy: {fileID: 9121290989378361284}
 --- !u!1 &9103332375872850280
 GameObject:
   m_ObjectHideFlags: 0

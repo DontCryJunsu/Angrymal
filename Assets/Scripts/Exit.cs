@@ -40,6 +40,7 @@ public class Exit : MonoBehaviour
     public void LeaveRoom()
     {
         SceneManager.LoadSceneAsync("LobbyScene");
+        PlayerPrefs.SetInt("isLose", 1);
         PhotonNetwork.LeaveRoom();
     }
 }

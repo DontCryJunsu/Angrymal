@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     bool swit = false;
     void Update()
     {
-        if(!swit)
+        if (!swit)
             timer -= Time.deltaTime;
         if (min > 0 && timer < 0)
         {
@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
             timer = 0;
             StartCoroutine(End());
         }
-        if (PlayerPrefs.GetInt("isVictory", 0).Equals(1))
+        if (PlayerPrefs.GetInt("isVictory", 0).Equals(1) && PlayerPrefs.GetInt("isLose").Equals(0))
         {
             PlayerPrefs.SetInt("isVictory", 0);
             StartCoroutine(End2());

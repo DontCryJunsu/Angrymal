@@ -1387,9 +1387,12 @@ public class DefaultMove : MonoBehaviour
         {
             hp -= damage;
             time = comparetime;
-            
 
-            
+            if (transform.name == "mouse")
+            {
+                GetComponent<mouseSkill>().skill();
+            }
+
             ckani = 2;
             animation.SetInteger("ckani", ckani);
         }

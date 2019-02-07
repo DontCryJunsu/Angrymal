@@ -1763,6 +1763,11 @@ PrefabInstance:
       propertyPath: instantiationId
       value: 53
       objectReference: {fileID: 0}
+    - target: {fileID: 7281863687219261713, guid: d490476838fbed24abe7eda488e25d41,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 1640d98066ee41e4ca3109f38830357e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d490476838fbed24abe7eda488e25d41, type: 3}
 --- !u!1001 &1386308366
