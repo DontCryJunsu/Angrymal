@@ -1,10 +1,11 @@
 Win64
 PlayerPath?
-<<<<<<< HEAD
+
 D:/AllProject/Angrymal/build/lanimal.exe
 =======
 C:/Users/basso/OneDrive/바탕 화면/MARIO/BuildFile/Lanimal/lanimal.exe
->>>>>>> 1bfcb02c30dfeb8715667736a7e998bed6a1aa53
+1bfcb02c30dfeb8715667736a7e998bed6a1aa53
+
 SceneListBegin?
 Assets/Scenes/StoryScene.unity
 Assets/Scenes/StartScene.unity
