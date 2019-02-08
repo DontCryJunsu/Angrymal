@@ -185,6 +185,7 @@
     <Compile Include="Assets\Scripts\buffaloSkill.cs" />
     <Compile Include="Assets\Scripts\Command.cs" />
     <Compile Include="Assets\Scripts\ConditionAdd.cs" />
+    <Compile Include="Assets\Scripts\coolTime.cs" />
     <Compile Include="Assets\Scripts\DefaultMove.cs" />
     <Compile Include="Assets\Scripts\DeleteBtn.cs" />
     <Compile Include="Assets\Scripts\DeletePlayerPrefs.cs" />

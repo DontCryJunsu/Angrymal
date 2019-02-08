@@ -9,6 +9,7 @@ public class FireBar : MonoBehaviour
     float total;
     public float plus;
     public Text tx;
+    float cool = 0f;
 
     public GameObject chicUI;
     public GameObject dogUI;
@@ -79,131 +80,131 @@ public class FireBar : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        cool += Time.deltaTime;
         IMG.fillAmount += plus / total;
         tx.text = ((int)(IMG.fillAmount * 100f)).ToString();
 
-        if (IMG.fillAmount * 100 < costchicUI && bchicUI.interactable)
+        if (IMG.fillAmount * 100 < costchicUI && bchicUI.interactable || cool < 2f)
         {
             bchicUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costchicUI && !bchicUI.interactable)
+        else if (IMG.fillAmount * 100 >= costchicUI && !bchicUI.interactable&&cool>2f)
         {
             bchicUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costdogUI && bdogUI.interactable)
+        if (IMG.fillAmount * 100 < costdogUI && bdogUI.interactable || cool < 2f)
         {
             bdogUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costdogUI && !bdogUI.interactable)
+        else if (IMG.fillAmount * 100 >= costdogUI && !bdogUI.interactable && cool > 2f)
         {
             bdogUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costbufUI && bbufUI.interactable)
+        if (IMG.fillAmount * 100 < costbufUI && bbufUI.interactable || cool < 2f)
         {
             bbufUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costbufUI && !bbufUI.interactable)
+        else if (IMG.fillAmount * 100 >= costbufUI && !bbufUI.interactable && cool > 2f)
         {
             bbufUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costjirUI && bjirUI.interactable)
+        if (IMG.fillAmount * 100 < costjirUI && bjirUI.interactable || cool < 2f)
         {
             bjirUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costjirUI && !bjirUI.interactable)
+        else if (IMG.fillAmount * 100 >= costjirUI && !bjirUI.interactable && cool > 2f)
         {
             bjirUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costlionUI && blionUI.interactable)
+        if (IMG.fillAmount * 100 < costlionUI && blionUI.interactable || cool < 2f)
         {
             blionUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costlionUI && !blionUI.interactable)
+        else if (IMG.fillAmount * 100 >= costlionUI && !blionUI.interactable && cool > 2f)
         {
             blionUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costelepUI && belepUI.interactable)
+        if (IMG.fillAmount * 100 < costelepUI && belepUI.interactable || cool < 2f)
         {
             belepUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costelepUI && !belepUI.interactable)
+        else if (IMG.fillAmount * 100 >= costelepUI && !belepUI.interactable && cool > 2f)
         {
             belepUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costmouUI && bmouUI.interactable)
+        if (IMG.fillAmount * 100 < costmouUI && bmouUI.interactable || cool < 2f)
         {
             bmouUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costmouUI && !bmouUI.interactable)
+        else if (IMG.fillAmount * 100 >= costmouUI && !bmouUI.interactable && cool > 2f)
         {
             bmouUI.interactable = true;
         }
         ///////////////////////////////////
-        if (IMG.fillAmount * 100 < costwolfUI && bwolfUI.interactable)
+        if (IMG.fillAmount * 100 < costwolfUI && bwolfUI.interactable || cool < 2f)
         {
             bwolfUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costwolfUI && !bwolfUI.interactable)
+        else if (IMG.fillAmount * 100 >= costwolfUI && !bwolfUI.interactable && cool > 2f)
         {
             bwolfUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costsheepUI && bsheepUI.interactable)
+        if (IMG.fillAmount * 100 < costsheepUI && bsheepUI.interactable || cool < 2f)
         {
             bsheepUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costsheepUI && !bsheepUI.interactable)
+        else if (IMG.fillAmount * 100 >= costsheepUI && !bsheepUI.interactable && cool > 2f)
         {
             bsheepUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costpigUI && bpigUI.interactable)
+        if (IMG.fillAmount * 100 < costpigUI && bpigUI.interactable || cool < 2f)
         {
             bpigUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costpigUI && !bpigUI.interactable)
+        else if (IMG.fillAmount * 100 >= costpigUI && !bpigUI.interactable && cool > 3f)
         {
             bpigUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costsnakUI && bsnakUI.interactable)
+        if (IMG.fillAmount * 100 < costsnakUI && bsnakUI.interactable || cool < 2f)
         {
             bsnakUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costsnakUI && !bsnakUI.interactable)
+        else if (IMG.fillAmount * 100 >= costsnakUI && !bsnakUI.interactable && cool > 3f)
         {
             bsnakUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costcatUI && bcatUI.interactable)
+        if (IMG.fillAmount * 100 < costcatUI && bcatUI.interactable || cool < 2f)
         {
             bcatUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costcatUI && !bcatUI.interactable)
+        else if (IMG.fillAmount * 100 >= costcatUI && !bcatUI.interactable && cool > 2f)
         {
             bcatUI.interactable = true;
         }
 
-        if (IMG.fillAmount * 100 < costkanUI && bkanUI.interactable)
+        if (IMG.fillAmount * 100 < costkanUI && bkanUI.interactable || cool <2f)
         {
             bkanUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costkanUI && !bkanUI.interactable)
+        else if (IMG.fillAmount * 100 >= costkanUI && !bkanUI.interactable && cool > 2f)
         {
             bkanUI.interactable = true;
         }
-
     }
 
     public void Cost(float cos)
     {
+        cool = 0f;
         IMG.fillAmount -= cos / 100f;
     }
 }

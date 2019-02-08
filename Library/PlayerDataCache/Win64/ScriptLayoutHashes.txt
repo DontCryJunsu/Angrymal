@@ -285,3 +285,4 @@ f2025f51b106c4f11dd2c8bfcc46d8db Assembly-CSharp.dll:.buffaloSkill
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Hatch
 af9aec7606b87d4d1890d1129fc11862 Assembly-CSharp.dll:.objmove
 ce4fc5d7218ff4cce906e24b712c250d Assembly-CSharp.dll:.DialogTrigger
+0d3d1d797ddf5bbb492fbb970a07ece8 Assembly-CSharp.dll:.coolTime
