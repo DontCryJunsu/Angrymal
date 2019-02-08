@@ -188,6 +188,7 @@ GameObject:
   - component: {fileID: 114175417702508230}
   - component: {fileID: 114084156459936320}
   - component: {fileID: 114805095420860628}
+  - component: {fileID: 6472221354338111020}
   m_Layer: 0
   m_Name: wolf
   m_TagString: bluecharacter
@@ -325,6 +326,22 @@ MonoBehaviour:
   mt:
   - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
   - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+--- !u!114 &6472221354338111020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537301030131900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2684a6db16a25724e8ca66f507165f5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wolfMat: {fileID: 2100000, guid: 26d0a5d3360171348b0791684aa965fc, type: 2}
+  palete: {fileID: 2100000, guid: ce954ea3943fa784b84bb65dec562ca7, type: 3}
+  wolfRen: {fileID: 23235027354297976}
+  SC: {fileID: 135721836202712870}
 --- !u!1 &1541350668549526
 GameObject:
   m_ObjectHideFlags: 0

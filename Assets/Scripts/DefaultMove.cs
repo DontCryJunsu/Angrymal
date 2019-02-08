@@ -1392,6 +1392,10 @@ public class DefaultMove : MonoBehaviour
             {
                 GetComponent<mouseSkill>().skill();
             }
+            if (transform.name == "wolf")
+            {
+                GetComponent<wolfSkill>().skill();
+            }
 
             ckani = 2;
             animation.SetInteger("ckani", ckani);
