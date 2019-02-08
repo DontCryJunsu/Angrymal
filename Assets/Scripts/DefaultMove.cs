@@ -1409,7 +1409,10 @@ public class DefaultMove : MonoBehaviour
             {
                 GetComponent<buffaloSkill>().skill();
             }
-
+            if (transform.name == "elephant")
+            {
+                GetComponent<elephantSkill>().skill();
+            }
             ckani = 2;
             animation.SetInteger("ckani", ckani);
         }

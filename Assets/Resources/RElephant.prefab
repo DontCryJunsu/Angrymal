@@ -409,6 +409,7 @@ GameObject:
   - component: {fileID: 6311673311958522929}
   - component: {fileID: 6311673311958522928}
   - component: {fileID: 4354913073983334496}
+  - component: {fileID: 4978572121122774442}
   m_Layer: 9
   m_Name: elephant
   m_TagString: redcharacter
@@ -556,10 +557,26 @@ SphereCollider:
   m_GameObject: {fileID: 6311673311958522930}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Radius: 1600
+  m_Radius: 2500
   m_Center: {x: 0, y: 650, z: 0}
+--- !u!114 &4978572121122774442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6311673311958522930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b123d5efa8f0aea46a32bb12013661b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eleMat: {fileID: 2100000, guid: 91e4a0df212abd945b1b6c8baf0bfb9f, type: 2}
+  palete: {fileID: 2100000, guid: 7218f2fd9d1e35249a34cc3850173eda, type: 3}
+  eleRen: {fileID: 6311673312616144590}
+  SC: {fileID: 4354913073983334496}
 --- !u!1 &6311673312526366787
 GameObject:
   m_ObjectHideFlags: 0

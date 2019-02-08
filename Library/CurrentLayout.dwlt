@@ -645,7 +645,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 210}
+    scrollPos: {x: 0, y: 190}
     m_SelectedIDs: 5e2c0000
     m_LastClickedID: 11358
     m_ExpandedIDs: 000000000c290000162d0000e22d0000a830000000ca9a3b
@@ -704,7 +704,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000042300000ac35010056330000062f000076280000383400004e2d00008e3f0000d835000078370100f0490100342b00007e2f0000fa300000ec3000003e2f0000a82f000010310000
+    m_ExpandedInstanceIDs: c623000042300000ac35010056330000062f000076280000383400004e2d00008e3f0000d835000078370100f0490100342b00007e2f0000fa300000ec3000003e2f0000a82f00001031000028300000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -797,7 +797,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 962101009a210100
+      m_ExpandedIDs: 0c95010018950100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -852,9 +852,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 18.526997, y: -4.485391, z: 32.7967}
+    m_Target: {x: 22.289995, y: -3.1162663, z: 33.904503}
     speed: 2
-    m_Value: {x: 18.526997, y: -4.485391, z: 32.7967}
+    m_Value: {x: 22.289995, y: -3.1162663, z: 33.904503}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -882,13 +882,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.08663565, y: 0.8264538, z: -0.13252586, w: -0.54028493}
+    m_Target: {x: -0.079381, y: 0.79555064, z: -0.10684267, w: -0.5910859}
     speed: 2
-    m_Value: {x: -0.086635545, y: 0.8264528, z: -0.1325257, w: -0.5402843}
+    m_Value: {x: -0.079381, y: 0.79555064, z: -0.10684267, w: -0.5910859}
   m_Size:
-    m_Target: 7.0570536
+    m_Target: 11.199425
     speed: 2
-    m_Value: 7.0570536
+    m_Value: 11.199425
   m_Ortho:
     m_Target: 1
     speed: 2

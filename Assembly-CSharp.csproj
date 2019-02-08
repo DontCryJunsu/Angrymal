@@ -196,6 +196,7 @@
     <Compile Include="Assets\Scripts\DownAnimalBtn.cs" />
     <Compile Include="Assets\Scripts\DownAnimalBtn2.cs" />
     <Compile Include="Assets\Scripts\dropAnimal.cs" />
+    <Compile Include="Assets\Scripts\elephantSkill.cs" />
     <Compile Include="Assets\Scripts\EndEnd.cs" />
     <Compile Include="Assets\Scripts\ending.cs" />
     <Compile Include="Assets\Scripts\Exit.cs" />
