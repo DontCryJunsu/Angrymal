@@ -1,11 +1,6 @@
 Win64
 PlayerPath?
-
-D:/AllProject/Angrymal/build/lanimal.exe
-=======
 C:/Users/basso/OneDrive/바탕 화면/MARIO/BuildFile/Lanimal/lanimal.exe
-1bfcb02c30dfeb8715667736a7e998bed6a1aa53
-
 SceneListBegin?
 Assets/Scenes/StoryScene.unity
 Assets/Scenes/StartScene.unity
@@ -281,12 +276,12 @@ e6873cc3d7cdd5ed2667727759757f39 Assembly-CSharp.dll:.BattleManager
 860d2811ba958fd5e68ebf4f1051aa2a Assembly-CSharp.dll:.CSide
 42bb6f9356bb6d3c910abd6a6592748d Assembly-CSharp.dll:.FadeOut
 1c097ff7df84090c334bf63423a97626 Assembly-CSharp.dll:.EndEnd
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.mouseSkill
 5799d54a2b11069b29cc9faba253c253 Assembly-CSharp.dll:.DialogManager
 3d263c9c528a32f168d8f2c48569a691 Assembly-CSharp.dll:.UIMgr
 32eea3cb643bb927fd345b7e99889605 Assembly-CSharp.dll:.testrandommove
 edae621e647a6f0e46c894e9af401cc7 Assembly-CSharp.dll:.CmdAdd
+f2025f51b106c4f11dd2c8bfcc46d8db Assembly-CSharp.dll:.buffaloSkill
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Hatch
 af9aec7606b87d4d1890d1129fc11862 Assembly-CSharp.dll:.objmove
 ce4fc5d7218ff4cce906e24b712c250d Assembly-CSharp.dll:.DialogTrigger
-71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.mouseSkill
-f2025f51b106c4f11dd2c8bfcc46d8db Assembly-CSharp.dll:.buffaloSkill

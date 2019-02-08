@@ -12,15 +12,22 @@ public class buffaloSkill : MonoBehaviour
             if (other.tag == "bluecharacter")
             {
                 Debug.Log("BS");
-                rgdy.AddRelativeForce(Vector3.forward * 500f);
+                rgdy.isKinematic = false;
+                for (int i = 0; i < 20; i++)
+                {
+                    rgdy.AddRelativeForce(Vector3.forward * 70f);
+                }
             }
         }
         else if (tag == "blueattack")
         {
             if (other.tag == "redcharacter")
             {
-                Debug.Log("BS");
-                rgdy.AddRelativeForce(Vector3.forward * 500f);
+                rgdy.isKinematic = false;
+                for (int i = 0; i < 20; i++)
+                {
+                    rgdy.AddRelativeForce(Vector3.forward *70f);
+                }
             }
         }
     }
