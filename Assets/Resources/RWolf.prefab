@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4154461034449134}
   - component: {fileID: 114459786673263102}
   - component: {fileID: 65184347566982480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wolfDestination
   m_TagString: reddestination
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 4588262584830434}
   - component: {fileID: 65363499006076728}
   - component: {fileID: 114383741904979728}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: attackbox
   m_TagString: redattack
   m_Icon: {fileID: 0}
@@ -379,8 +379,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1500, y: 2100, z: 1900}
-  m_Center: {x: 0, y: 1000, z: 900}
+  m_Size: {x: 1282.7496, y: 1292.345, z: 1449.99}
+  m_Center: {x: 58.737274, y: 843.6999, z: 674.995}
 --- !u!114 &114383741904979728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ GameObject:
   - component: {fileID: 23045191616736594}
   - component: {fileID: 114625783522326716}
   - component: {fileID: 1060306716500918606}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -519,7 +519,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4678459042561388}
   - component: {fileID: 114385547909347504}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -585,7 +585,7 @@ GameObject:
   - component: {fileID: 114612055607025266}
   - component: {fileID: 114062049207174100}
   - component: {fileID: 1480780294055948853}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: wolf
   m_TagString: redcharacter
   m_Icon: {fileID: 0}
@@ -738,7 +738,6 @@ MonoBehaviour:
   wolfMat: {fileID: 2100000, guid: 26d0a5d3360171348b0791684aa965fc, type: 2}
   palete: {fileID: 2100000, guid: ce954ea3943fa784b84bb65dec562ca7, type: 3}
   wolfRen: {fileID: 23045191616736594}
-  SC: {fileID: 135294675398529888}
 --- !u!1001 &5693871368799594216
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -750,6 +749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: 73972a4f7ff1866479bf1729858d8ebf,
         type: 3}
@@ -855,6 +859,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73972a4f7ff1866479bf1729858d8ebf, type: 3}

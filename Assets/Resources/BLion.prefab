@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4243879504758564}
   - component: {fileID: 114326692655520010}
   - component: {fileID: 65344673841702238}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lionDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -346,7 +346,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4151372702154790}
   - component: {fileID: 114663340114084522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BLion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   - component: {fileID: 114031796090054542}
   - component: {fileID: 114775343906386568}
   - component: {fileID: 114766637099448224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lion
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   - component: {fileID: 4845610761783100}
   - component: {fileID: 65037907726679344}
   - component: {fileID: 114526546576127332}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -591,8 +591,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1655, y: 1773, z: 2022}
-  m_Center: {x: 0, y: 836, z: 961}
+  m_Size: {x: 1655, y: 1554.0695, z: 1612.786}
+  m_Center: {x: 0, y: 726.5348, z: 756.393}
 --- !u!114 &114526546576127332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 23703957834876330}
   - component: {fileID: 114833974641205498}
   - component: {fileID: 5993548256844288522}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: lion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,6 +733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -837,6 +842,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

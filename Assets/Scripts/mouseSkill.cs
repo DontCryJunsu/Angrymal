@@ -5,6 +5,10 @@ using UnityEngine;
 public class mouseSkill : MonoBehaviour
 {
     bool isSkill = false;
+    public Material mouseMat;
+    public Material palete;
+    public Renderer mouseRen;
+
     public void skill()
     {
         if (!isSkill)
@@ -13,11 +17,14 @@ public class mouseSkill : MonoBehaviour
 
     IEnumerator CoSkill()
     {
-        isSkill = true;
         yield return null;
-        GetComponent<DefaultMove>().speed = 16f;
-        yield return new WaitForSeconds(3f);
-        GetComponent<DefaultMove>().speed = 4f;
+        isSkill = true;
+        GetComponent<DefaultMove>().speed += 12;
+        mouseRen.sharedMaterial = mouseMat;
+        yield return new WaitForSeconds(6f);
+        GetComponent<DefaultMove>().speed -= 12;
+        mouseRen.sharedMaterial = palete;
+        yield return new WaitForSeconds(6f);
         isSkill = false;
     }
 }

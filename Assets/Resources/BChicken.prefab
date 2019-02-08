@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4518750125393231721}
   - component: {fileID: 4518750125393231734}
   - component: {fileID: 4518750125393231735}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: chicken
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4518750126004367338}
   - component: {fileID: 4518750126004367339}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BChicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,7 +223,7 @@ GameObject:
   - component: {fileID: 4518750126332846247}
   - component: {fileID: 4518750126332846233}
   - component: {fileID: 4518750126332846246}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -255,8 +255,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1051, y: 1746, z: 1733}
-  m_Center: {x: 0, y: 1054, z: 816}
+  m_Size: {x: 1500, y: 1234.9894, z: 1157.788}
+  m_Center: {x: 0, y: 872.37744, z: 528.89404}
 --- !u!114 &4518750126332846246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 4518750126523503674}
   - component: {fileID: 4518750126523503676}
   - component: {fileID: 4518750126523503677}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: chickenDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   - component: {fileID: 4518750126641331543}
   - component: {fileID: 4518750126641331540}
   - component: {fileID: 4518750126641331541}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: chicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,6 +733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -837,6 +842,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

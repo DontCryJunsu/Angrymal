@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4015308604771564}
   - component: {fileID: 114267098488279566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RSnake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4246132214263630}
   - component: {fileID: 65352945607803824}
   - component: {fileID: 114963289465658148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: attackbox
   m_TagString: redattack
   m_Icon: {fileID: 0}
@@ -103,8 +103,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 694, y: 1216, z: 2000}
-  m_Center: {x: -7, y: 587, z: 950}
+  m_Size: {x: 693.9997, y: 1216, z: 1470.2537}
+  m_Center: {x: -6.999999, y: 587, z: 685.12683}
 --- !u!114 &114963289465658148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 4720347715969652}
   - component: {fileID: 114997778192018774}
   - component: {fileID: 65237068477552570}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: snakeDestination
   m_TagString: reddestination
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 23508073993232086}
   - component: {fileID: 114642930585491230}
   - component: {fileID: 1710476046683919428}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: snake
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,9 @@ GameObject:
   - component: {fileID: 114047713964035668}
   - component: {fileID: 114348920097059772}
   - component: {fileID: 114916868750840682}
-  m_Layer: 0
+  - component: {fileID: 4807905416159045833}
+  - component: {fileID: 2575229049741726883}
+  m_Layer: 9
   m_Name: snake
   m_TagString: redcharacter
   m_Icon: {fileID: 0}
@@ -722,6 +724,34 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
   - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
   ship: {fileID: 0}
+--- !u!135 &4807905416159045833
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980829638329690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2800
+  m_Center: {x: 0, y: 3000, z: 0}
+--- !u!114 &2575229049741726883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980829638329690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ad99bcd8d5957d448730c45271b0efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakeMat: {fileID: 2100000, guid: f5d8da575a42b4940987d256ecdfd04a, type: 2}
+  palete: {fileID: 2100000, guid: 43e01d8f954ce1b48bb5a87027e4195a, type: 3}
+  snakeRen: {fileID: 23508073993232086}
 --- !u!1001 &6550637806153521764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -733,6 +763,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: 73972a4f7ff1866479bf1729858d8ebf,
         type: 3}
@@ -838,6 +873,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73972a4f7ff1866479bf1729858d8ebf, type: 3}

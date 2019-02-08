@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4264888596900574}
   - component: {fileID: 114473031659407534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BSheep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,8 +56,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4264888596900574}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1420923393675092
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4073941958775846}
   - component: {fileID: 114675017443245364}
   - component: {fileID: 65383560811532034}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sheepDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   - component: {fileID: 114169292218222110}
   - component: {fileID: 3038334389346785949}
   - component: {fileID: 1861458286920776792}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sheep
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -531,8 +531,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4542033891465814}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114169292218222110
@@ -561,8 +561,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2500
-  m_Center: {x: -10, y: 650, z: 0}
+  m_Radius: 2800
+  m_Center: {x: 0, y: 3000, z: 0}
 --- !u!114 &1861458286920776792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -578,7 +578,6 @@ MonoBehaviour:
   sheepMat: {fileID: 2100000, guid: c96e5d02722ab3a4a917cebb2d401759, type: 2}
   palete: {fileID: 2100000, guid: 49e336fc3680c204bb2706c9d9e2ffa6, type: 3}
   sheepRen: {fileID: 23032842128306396}
-  SC: {fileID: 3038334389346785949}
 --- !u!1 &1642742408999872
 GameObject:
   m_ObjectHideFlags: 0
@@ -590,7 +589,7 @@ GameObject:
   - component: {fileID: 4855537502263602}
   - component: {fileID: 65457198200797092}
   - component: {fileID: 114787421388492078}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -649,7 +648,7 @@ GameObject:
   - component: {fileID: 23032842128306396}
   - component: {fileID: 114707880443540646}
   - component: {fileID: 4679491817171016213}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: sheep
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,6 +763,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -868,6 +872,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

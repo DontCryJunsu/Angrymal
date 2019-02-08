@@ -1369,6 +1369,15 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
+    [PunRPC]
+    public void Poison()
+    {
+        if (hp > 0)
+        {
+            hp -= 0.05f;
+        }
+        // pv.RPC("AttackProcess", PhotonTargets.All, attackTarget, damage);
+    }
 
     [PunRPC]
     public void AttackInfo(int attackTarget, float damage)
@@ -1395,6 +1404,10 @@ public class DefaultMove : MonoBehaviour
             if (transform.name == "wolf")
             {
                 GetComponent<wolfSkill>().skill();
+            }
+            if (transform.name == "buffalo")
+            {
+                GetComponent<buffaloSkill>().skill();
             }
 
             ckani = 2;

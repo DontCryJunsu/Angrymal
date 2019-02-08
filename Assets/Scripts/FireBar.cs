@@ -169,7 +169,7 @@ public class FireBar : MonoBehaviour
         {
             bpigUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costpigUI && !bpigUI.interactable && cool > 3f)
+        else if (IMG.fillAmount * 100 >= costpigUI && !bpigUI.interactable && cool > 2f)
         {
             bpigUI.interactable = true;
         }
@@ -178,7 +178,7 @@ public class FireBar : MonoBehaviour
         {
             bsnakUI.interactable = false;
         }
-        else if (IMG.fillAmount * 100 >= costsnakUI && !bsnakUI.interactable && cool > 3f)
+        else if (IMG.fillAmount * 100 >= costsnakUI && !bsnakUI.interactable && cool > 2f)
         {
             bsnakUI.interactable = true;
         }

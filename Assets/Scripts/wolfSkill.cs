@@ -8,7 +8,6 @@ public class wolfSkill : MonoBehaviour
     public Material wolfMat;
     public Material palete;
     public Renderer wolfRen;
-    public SphereCollider SC;
 
     public void skill()
     {
@@ -18,13 +17,14 @@ public class wolfSkill : MonoBehaviour
 
     IEnumerator CoSkill()
     {
+        float HP = GetComponent<DefaultMove>().hp;
         isSkill = true;
         yield return null;
         wolfRen.sharedMaterial = wolfMat;
-        SC.enabled = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
+        GetComponent<DefaultMove>().hp = HP;
         wolfRen.sharedMaterial = palete;
-        SC.enabled = true;
+        yield return new WaitForSeconds(4f);
         isSkill = false;
     }
 }

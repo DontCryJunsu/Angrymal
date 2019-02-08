@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5932093586883390194}
   - component: {fileID: 5932093586883390195}
   - component: {fileID: 5932093586883390192}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5932093587666864902}
   - component: {fileID: 5932093587666864903}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BCat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 5932093587727356628}
   - component: {fileID: 5932093587727356629}
   - component: {fileID: 5932093587727356626}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: cat
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 5932093588191193859}
   - component: {fileID: 5932093588191193861}
   - component: {fileID: 5932093588191193858}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: catDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 5932093588352516183}
   - component: {fileID: 5932093588352516185}
   - component: {fileID: 5932093588352516182}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -707,8 +707,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 115, y: 167, z: 129}
-  m_Center: {x: 0, y: 24, z: 68}
+  m_Size: {x: 115, y: 111.21826, z: 111.80761}
+  m_Center: {x: 0, y: 79.94995, z: 59.403812}
 --- !u!114 &5932093588352516182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
@@ -837,6 +842,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

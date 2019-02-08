@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4159632657002670}
   - component: {fileID: 65580854175813040}
   - component: {fileID: 114397967314352316}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -43,8 +43,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 481, y: 576, z: 1173}
-  m_Center: {x: 0, y: 255, z: 649}
+  m_Size: {x: 481, y: 576, z: 781.0554}
+  m_Center: {x: 0, y: 255.00002, z: 453.0277}
 --- !u!114 &114397967314352316
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4799373475090726}
   - component: {fileID: 114040565628559456}
   - component: {fileID: 65871636182903500}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mouseDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -403,7 +403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4498138301062760}
   - component: {fileID: 114974358002291946}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BMouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,8 +449,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4498138301062760}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1773402092116660
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 114354566530259510}
   - component: {fileID: 114935342523848786}
   - component: {fileID: 7047429353897175269}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mouse
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -587,8 +587,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4458207786338772}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114935342523848786
@@ -618,6 +618,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e08542e4c70b146824dffcc1ea7ffd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mouseMat: {fileID: 2100000, guid: b74d017ad29eeb842a6d3a6344adf778, type: 2}
+  palete: {fileID: 2100000, guid: a31a206cb642ce54f846588ad0a12156, type: 3}
+  mouseRen: {fileID: 23496719567176300}
 --- !u!1 &1888623727272118
 GameObject:
   m_ObjectHideFlags: 0
@@ -631,7 +634,7 @@ GameObject:
   - component: {fileID: 23496719567176300}
   - component: {fileID: 114611459554500738}
   - component: {fileID: 5022020287892008995}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: mouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,6 +749,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -850,6 +858,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

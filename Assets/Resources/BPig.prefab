@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8602769610737129512}
   - component: {fileID: 8385826715164004782}
   - component: {fileID: 5130419938313694038}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pig
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 1835496528671742980}
   - component: {fileID: 970349041582768075}
   - component: {fileID: 3853646341260631417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 4724215563271601499}
   - component: {fileID: 2560301454086358710}
   - component: {fileID: 4594771535326678232}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -311,8 +311,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1475, y: 1734, z: 1981}
-  m_Center: {x: 0, y: 817, z: 940}
+  m_Size: {x: 1474.9998, y: 1733.9999, z: 1661.8889}
+  m_Center: {x: 0, y: 817, z: 780.4446}
 --- !u!114 &4594771535326678232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,7 +335,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3535739821065855698}
   - component: {fileID: 440156442084669695}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BPig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 2199751840199050848}
   - component: {fileID: 491228286169181890}
   - component: {fileID: 3073965987284994164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pigDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -733,6 +733,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -837,6 +842,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

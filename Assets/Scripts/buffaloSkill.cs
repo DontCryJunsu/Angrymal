@@ -4,31 +4,27 @@ using UnityEngine;
 
 public class buffaloSkill : MonoBehaviour
 {
-    public Rigidbody rgdy;
-    void OnTriggerEnter(Collider other)
+    bool isSkill = false;
+    public Material bufMat;
+    public Material palete;
+    public Renderer bufRen;
+
+    public void skill()
     {
-        if (tag == "redattack")
-        {
-            if (other.tag == "bluecharacter")
-            {
-                Debug.Log("BS");
-                rgdy.isKinematic = false;
-                for (int i = 0; i < 20; i++)
-                {
-                    rgdy.AddRelativeForce(Vector3.forward * 40f);
-                }
-            }
-        }
-        else if (tag == "blueattack")
-        {
-            if (other.tag == "redcharacter")
-            {
-                rgdy.isKinematic = false;
-                for (int i = 0; i < 20; i++)
-                {
-                    rgdy.AddRelativeForce(Vector3.forward *40f);
-                }
-            }
-        }
+        if (!isSkill)
+            StartCoroutine(CoSkill());
+    }
+
+    IEnumerator CoSkill()
+    {
+        yield return null;
+        isSkill = true;
+        GetComponent<DefaultMove>().power += 20;
+        bufRen.sharedMaterial = bufMat;
+        yield return new WaitForSeconds(3f);
+        GetComponent<DefaultMove>().power -= 20;
+        bufRen.sharedMaterial = palete;
+        yield return new WaitForSeconds(6f);
+        isSkill = false;
     }
 }

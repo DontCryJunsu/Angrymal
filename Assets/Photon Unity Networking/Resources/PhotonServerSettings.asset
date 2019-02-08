@@ -45,4 +45,5 @@ MonoBehaviour:
   - PreventDoubleAttack
   - AttackProcess
   - Die
+  - Poison
   DisableAutoOpenWizard: 1

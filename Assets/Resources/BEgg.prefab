@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8205749654112109274}
   - component: {fileID: 8721571567975283555}
   - component: {fileID: 3040483286722643636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 4295891430894885100}
   - component: {fileID: 2482383658676742338}
   - component: {fileID: 6675972329265817921}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BAR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -198,7 +198,7 @@ GameObject:
   - component: {fileID: 7492473842541757759}
   - component: {fileID: 3205550952898957299}
   - component: {fileID: 1125013111257229744}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 4379229343210183519}
   - component: {fileID: 8767424847222867163}
   - component: {fileID: 5373723191385999568}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BEgg
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}

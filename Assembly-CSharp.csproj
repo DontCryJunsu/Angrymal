@@ -214,7 +214,10 @@
     <Compile Include="Assets\Scripts\RedRPC.cs" />
     <Compile Include="Assets\Scripts\ScreenSize.cs" />
     <Compile Include="Assets\Scripts\sheepSkill.cs" />
+    <Compile Include="Assets\Scripts\sheepSkill1.cs" />
     <Compile Include="Assets\Scripts\ShipCheck.cs" />
+    <Compile Include="Assets\Scripts\snakeSkill.cs" />
+    <Compile Include="Assets\Scripts\snakeSkill1.cs" />
     <Compile Include="Assets\Scripts\StartMgr.cs" />
     <Compile Include="Assets\Scripts\StoryManager.cs" />
     <Compile Include="Assets\Scripts\StoryUp.cs" />

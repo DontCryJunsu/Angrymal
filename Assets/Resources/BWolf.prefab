@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23235027354297976}
   - component: {fileID: 114334338926568544}
   - component: {fileID: 1234557058388580274}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 4415041765626526}
   - component: {fileID: 65134796656964822}
   - component: {fileID: 114634882855955030}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -159,8 +159,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1500, y: 2100, z: 1900}
-  m_Center: {x: 0, y: 1000, z: 900}
+  m_Size: {x: 1282.7496, y: 1292.345, z: 1449.99}
+  m_Center: {x: 58.737274, y: 843.6999, z: 674.995}
 --- !u!114 &114634882855955030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ GameObject:
   - component: {fileID: 114084156459936320}
   - component: {fileID: 114805095420860628}
   - component: {fileID: 6472221354338111020}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wolf
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -341,7 +341,6 @@ MonoBehaviour:
   wolfMat: {fileID: 2100000, guid: 26d0a5d3360171348b0791684aa965fc, type: 2}
   palete: {fileID: 2100000, guid: ce954ea3943fa784b84bb65dec562ca7, type: 3}
   wolfRen: {fileID: 23235027354297976}
-  SC: {fileID: 135721836202712870}
 --- !u!1 &1541350668549526
 GameObject:
   m_ObjectHideFlags: 0
@@ -352,7 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4616707391222332}
   - component: {fileID: 114878356880907856}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BWolf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +412,7 @@ GameObject:
   - component: {fileID: 4587340839547040}
   - component: {fileID: 114348799756929104}
   - component: {fileID: 65409508369374166}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wolfDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -750,6 +749,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -854,6 +858,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6311673311483392578}
   - component: {fileID: 6311673311483392576}
   - component: {fileID: 6311673311483392579}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: elephantDestination
   m_TagString: reddestination
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 6311673311773578038}
   - component: {fileID: 6311673311773578036}
   - component: {fileID: 6311673311773578039}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: attackbox
   m_TagString: redattack
   m_Icon: {fileID: 0}
@@ -379,8 +379,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1505, y: 1748, z: 2235}
-  m_Center: {x: 3, y: 824, z: 1067}
+  m_Size: {x: 1505, y: 1747.9998, z: 1583.5885}
+  m_Center: {x: 3.0000207, y: 823.99994, z: 741.2943}
 --- !u!114 &6311673311773578039
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +408,8 @@ GameObject:
   - component: {fileID: 6311673311958522934}
   - component: {fileID: 6311673311958522929}
   - component: {fileID: 6311673311958522928}
-  m_Layer: 0
+  - component: {fileID: 4354913073983334496}
+  m_Layer: 9
   m_Name: elephant
   m_TagString: redcharacter
   m_Icon: {fileID: 0}
@@ -459,7 +460,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1000
+  m_Radius: 1200
   m_Center: {x: 0, y: 650, z: 0}
 --- !u!195 &6311673311958522935
 NavMeshAgent:
@@ -546,6 +547,19 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
   - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
   ship: {fileID: 0}
+--- !u!135 &4354913073983334496
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6311673311958522930}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1600
+  m_Center: {x: 0, y: 650, z: 0}
 --- !u!1 &6311673312526366787
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,7 +570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6311673312526366785}
   - component: {fileID: 6311673312526366784}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RElephant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -619,7 +633,7 @@ GameObject:
   - component: {fileID: 6311673312616144590}
   - component: {fileID: 6311673312616144585}
   - component: {fileID: 6311673312616144584}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: elephant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -734,6 +748,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: 73972a4f7ff1866479bf1729858d8ebf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -838,6 +857,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73972a4f7ff1866479bf1729858d8ebf, type: 3}

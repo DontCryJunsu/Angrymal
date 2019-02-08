@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9099403061428118454}
   - component: {fileID: 9205571576561156588}
   - component: {fileID: 9133123522729261564}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: buffaloDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 9080645287973740778}
   - component: {fileID: 9209470786813641744}
   - component: {fileID: 7281863687219261713}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: buffalo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -467,7 +467,8 @@ GameObject:
   - component: {fileID: 9205901239559359342}
   - component: {fileID: 9209352321006489092}
   - component: {fileID: 9205770034432960362}
-  m_Layer: 0
+  - component: {fileID: 6944874669957251935}
+  m_Layer: 8
   m_Name: buffalo
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -604,6 +605,21 @@ MonoBehaviour:
   mt:
   - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
   - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
+--- !u!114 &6944874669957251935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102621860628111166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed6ffa175cbe1e44fb7017300bcb8369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bufMat: {fileID: 2100000, guid: 74872b8ddbdcdb44f9ca771e9b055695, type: 2}
+  palete: {fileID: 2100000, guid: 883b179f5c683884bb242cbd9e1c5067, type: 3}
+  bufRen: {fileID: 9080645287973740778}
 --- !u!1 &9102884299350479480
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,8 +631,7 @@ GameObject:
   - component: {fileID: 9104542942924069454}
   - component: {fileID: 9133193025698717896}
   - component: {fileID: 9205753965812133694}
-  - component: {fileID: 6088996469244752124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -648,8 +663,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1221, y: 1830, z: 2102}
-  m_Center: {x: -64, y: 865, z: 1001}
+  m_Size: {x: 1634.9991, y: 1292.345, z: 1623.2115}
+  m_Center: {x: 67.49963, y: 843.6999, z: 761.60583}
 --- !u!114 &9205753965812133694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,19 +677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c11fd9926b2a248a79d20939a2c948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6088996469244752124
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9102884299350479480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed6ffa175cbe1e44fb7017300bcb8369, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rgdy: {fileID: 9121290989378361284}
 --- !u!1 &9103332375872850280
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9099321932920593598}
   - component: {fileID: 9206435458478186698}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BBuffalo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,6 +748,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
@@ -851,6 +858,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

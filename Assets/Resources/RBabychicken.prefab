@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 482821551348214345}
   - component: {fileID: 5563539266395299973}
   - component: {fileID: 7986315426080229062}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: HP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 6545943133895178138}
   - component: {fileID: 4844461627047774132}
   - component: {fileID: 4461976041461712439}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: BAR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 1200599843726945708}
   - component: {fileID: 1747662488591717397}
   - component: {fileID: 5438159872514681282}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 9099403061428118454}
   - component: {fileID: 9205571576561156588}
   - component: {fileID: 9133123522729261564}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: babychickenDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -610,7 +610,7 @@ GameObject:
   - component: {fileID: 9080645287973740778}
   - component: {fileID: 9209470786813641744}
   - component: {fileID: 3639094909567735931}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: babychicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   - component: {fileID: 9205901239559359342}
   - component: {fileID: 9209352321006489092}
   - component: {fileID: 7871500982767981868}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: babychicken
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -779,7 +779,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 600
+  m_Radius: 700
   m_Center: {x: 0, y: 500, z: -37}
 --- !u!195 &8999131632391002088
 NavMeshAgent:
@@ -877,7 +877,7 @@ GameObject:
   - component: {fileID: 9104542942924069454}
   - component: {fileID: 9133193025698717896}
   - component: {fileID: 9205753965812133694}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -933,7 +933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9099321932920593598}
   - component: {fileID: 9206435458478186698}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RBabychicken
   m_TagString: Untagged
   m_Icon: {fileID: 0}

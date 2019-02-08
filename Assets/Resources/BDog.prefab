@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3102243210639878700}
   - component: {fileID: 3102243210639878698}
   - component: {fileID: 3102243210639878699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dogDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 3102243211024082542}
   - component: {fileID: 3102243211024082543}
   - component: {fileID: 3102243211024082528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dog
   m_TagString: bluecharacter
   m_Icon: {fileID: 0}
@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 3102243211059351825}
   - component: {fileID: 3102243211059351826}
   - component: {fileID: 3102243211059351827}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: dog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +614,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3102243211742606506}
   - component: {fileID: 3102243211742606507}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BDog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +675,7 @@ GameObject:
   - component: {fileID: 3102243212010193299}
   - component: {fileID: 3102243212010193297}
   - component: {fileID: 3102243212010193298}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: attackbox
   m_TagString: blueattack
   m_Icon: {fileID: 0}
@@ -707,8 +707,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1513, y: 1802, z: 1862}
-  m_Center: {x: 7, y: 851, z: 881}
+  m_Size: {x: 1513, y: 1801.9998, z: 1539.6239}
+  m_Center: {x: 7.0000286, y: 850.9999, z: 719.812}
 --- !u!114 &3102243212010193298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -732,6 +732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
         type: 3}
@@ -837,6 +842,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}

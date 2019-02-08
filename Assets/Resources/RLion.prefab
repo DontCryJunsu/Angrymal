@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4341354861171374}
   - component: {fileID: 114162167706718930}
   - component: {fileID: 65769824430432586}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lionDestination
   m_TagString: reddestination
   m_Icon: {fileID: 0}
@@ -351,7 +351,7 @@ GameObject:
   - component: {fileID: 114188077605807574}
   - component: {fileID: 114630126923036428}
   - component: {fileID: 114961479589240650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lion
   m_TagString: redcharacter
   m_Icon: {fileID: 0}
@@ -499,7 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4734015335484428}
   - component: {fileID: 114807495784382760}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: RLion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -562,7 +562,7 @@ GameObject:
   - component: {fileID: 23527417461901070}
   - component: {fileID: 114496284202029630}
   - component: {fileID: 1642369140611366171}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: lion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   - component: {fileID: 4945918169429704}
   - component: {fileID: 65474900005549460}
   - component: {fileID: 114875617961461126}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: attackbox
   m_TagString: redattack
   m_Icon: {fileID: 0}
@@ -708,8 +708,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1655, y: 1773, z: 2022}
-  m_Center: {x: 0, y: 836, z: 961}
+  m_Size: {x: 1655, y: 1554.0695, z: 1612.786}
+  m_Center: {x: 0, y: 726.5348, z: 756.393}
 --- !u!114 &114875617961461126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -733,6 +733,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 4332737132968851606, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3726963521936614866, guid: 73972a4f7ff1866479bf1729858d8ebf,
         type: 3}
@@ -838,6 +843,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5320335874754454059, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 9008707674746675020, guid: 73972a4f7ff1866479bf1729858d8ebf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73972a4f7ff1866479bf1729858d8ebf, type: 3}
