@@ -15,7 +15,7 @@ public class buffaloSkill : MonoBehaviour
                 rgdy.isKinematic = false;
                 for (int i = 0; i < 20; i++)
                 {
-                    rgdy.AddRelativeForce(Vector3.forward * 70f);
+                    rgdy.AddRelativeForce(Vector3.forward * 40f);
                 }
             }
         }
@@ -26,7 +26,7 @@ public class buffaloSkill : MonoBehaviour
                 rgdy.isKinematic = false;
                 for (int i = 0; i < 20; i++)
                 {
-                    rgdy.AddRelativeForce(Vector3.forward *70f);
+                    rgdy.AddRelativeForce(Vector3.forward *40f);
                 }
             }
         }

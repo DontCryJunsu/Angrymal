@@ -287,3 +287,4 @@ e1b8eaae6a90f88343f8be6d517488f6 Assembly-CSharp.dll:.PhotonView
 1615d3bb1db164c1672020cea49440ce Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
 e6873cc3d7cdd5ed2667727759757f39 Assembly-CSharp.dll:.BattleManager
 5fed98eb74b91c4c59fa88328dc9c0c3 Assembly-CSharp.dll:.wolfSkill
+3bf82038b8b4a2c9c5729c03dbaf5d8a Assembly-CSharp.dll:.sheepSkill
