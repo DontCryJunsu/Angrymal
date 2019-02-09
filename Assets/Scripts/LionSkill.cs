@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class LionSkill : MonoBehaviour
 {
-    public Material LionMat;
-    public Material palete;
-    public Renderer LionRen;
+    public GameObject part;
     bool isheal = false;
     IEnumerator Start()
     {
         while (true)
         {
             yield return new WaitForSeconds(6f);
-            LionRen.sharedMaterial = palete;
+            part.SetActive(false);
             isheal = false;
             yield return new WaitForSeconds(3f);
-            LionRen.sharedMaterial = LionMat;
+            part.SetActive(true);
             isheal = true;
         }
     }

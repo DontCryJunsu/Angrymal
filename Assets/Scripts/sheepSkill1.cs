@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class sheepSkill1 : MonoBehaviour
 {
-    public Material sheepMat;
-    public Material palete;
-    public Renderer sheepRen;
+
+    public GameObject part;
     bool isheal = false;
     DefaultMove DM;
     IEnumerator Start()
@@ -14,17 +13,17 @@ public class sheepSkill1 : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2.5f);
-            sheepRen.sharedMaterial = palete;
+            part.SetActive(false);
             isheal = false;
             yield return new WaitForSeconds(2.5f);
-            sheepRen.sharedMaterial = sheepMat;
+            part.SetActive(true);
             isheal = true;
         }
     }
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "redcharacter"&& isheal)
+        if (other.tag == "redcharacter" && isheal)
         {
             DM = other.GetComponent<DefaultMove>();
             if (DM.fullhp > DM.hp)

@@ -14,7 +14,6 @@ public class Attack : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("충돌");
         if (tag == "redattack")
         {
             if (other.tag == "bluecharacter")

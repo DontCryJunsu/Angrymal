@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class sheepSkill : MonoBehaviour
 {
-    public Material sheepMat;
-    public Material palete;
-    public Renderer sheepRen;
+    public GameObject part;
     bool isheal = false;
     DefaultMove DM;
     IEnumerator Start()
@@ -14,10 +12,10 @@ public class sheepSkill : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(2.5f);
-            sheepRen.sharedMaterial = palete;
+            part.SetActive(false);
             isheal = false;
             yield return new WaitForSeconds(2.5f);
-            sheepRen.sharedMaterial = sheepMat;
+            part.SetActive(true);
             isheal = true;
         }
     }
