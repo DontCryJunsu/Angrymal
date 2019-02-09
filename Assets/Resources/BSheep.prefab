@@ -504,6 +504,7 @@ MonoBehaviour:
   hp: 50
   fullhp: 50
   speed: 4
+  Orispeed: 0
   power: 1
   child: sheep
   num_of_tile: 275
@@ -575,9 +576,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94db3e9d265d66842aaff558e686d370, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheepMat: {fileID: 2100000, guid: c96e5d02722ab3a4a917cebb2d401759, type: 2}
+  LionMat: {fileID: 0}
   palete: {fileID: 2100000, guid: 49e336fc3680c204bb2706c9d9e2ffa6, type: 3}
-  sheepRen: {fileID: 23032842128306396}
+  LionRen: {fileID: 0}
 --- !u!1 &1642742408999872
 GameObject:
   m_ObjectHideFlags: 0

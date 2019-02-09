@@ -25,6 +25,7 @@ public class DefaultMove : MonoBehaviour
     public float hp;
     public float fullhp;
     public float speed;
+    public float Orispeed;
     public float power;
     public string child;
     public int num_of_tile = 275; //총 땅의 개수
@@ -55,7 +56,7 @@ public class DefaultMove : MonoBehaviour
         rgdy = GetComponent<Rigidbody>();
         tr = GetComponent<Transform>();
         pv = GetComponent<PhotonView>();
-
+        Orispeed = speed;
         pv.synchronization = ViewSynchronization.UnreliableOnChange;
         pv.ObservedComponents[0] = this;
 
@@ -116,6 +117,12 @@ public class DefaultMove : MonoBehaviour
         {
             tr.position = Vector3.Lerp(tr.position, currPos, Time.deltaTime * 3.0f);
             tr.rotation = Quaternion.Slerp(tr.rotation, currRot, Time.deltaTime * 3.0f);
+        }
+
+        if (Orispeed > speed)
+        {
+            speed += 0.01f;
+            nav.speed = speed;
         }
     }
 

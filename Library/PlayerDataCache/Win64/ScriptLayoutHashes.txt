@@ -32,7 +32,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 3ba023cd67d72cace33969ab863e0fd4 Assembly-CSharp.dll:.PhotonStatsGui
-c9c57b3af83a927b1e5dc117ea211adc Assembly-CSharp.dll:.DefaultMove
+7366121a40699287c48fb2fef5279e13 Assembly-CSharp.dll:.DefaultMove
 860d2811ba958fd5e68ebf4f1051aa2a Assembly-CSharp.dll:.CSide
 a2113831d3323f931007e1b3812dc814 Assembly-CSharp.dll:Cinemachine.CinemachineFollowZoom
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
@@ -276,7 +276,7 @@ b33aece3d81f0dcd0cee9ba2f0fb53fa Assembly-CSharp.dll:.PickupItemSimple
 9cd379909502a00ab02231e9b5b23f09 Assembly-CSharp.dll:.ending
 034726260f2f2cabf39b9cc2edad8c2a Assembly-CSharp.dll:.ManualPhotonViewAllocator
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TestFootScale
-5af48b30818953a25b4951afb34efcd7 Assembly-CSharp.dll:.sheepSkill
+48f35cd8ca065254b3a4d741d1ff8978 Assembly-CSharp.dll:.LionSkill
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
 6fb70a961061e090be3aead3db0f1561 Assembly-CSharp.dll:.snakeSkill1
 2b53d93770b9036b2fd1c7854560bc69 Assembly-CSharp.dll:.MoveByKeys
@@ -292,3 +292,4 @@ e1b8eaae6a90f88343f8be6d517488f6 Assembly-CSharp.dll:.PhotonView
 1615d3bb1db164c1672020cea49440ce Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
 e6873cc3d7cdd5ed2667727759757f39 Assembly-CSharp.dll:.BattleManager
 f8479fffa21ecb80e1287501cf6ee891 Assembly-CSharp.dll:.elephantSkill
+48f35cd8ca065254b3a4d741d1ff8978 Assembly-CSharp.dll:.LionSkill1

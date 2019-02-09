@@ -351,6 +351,8 @@ GameObject:
   - component: {fileID: 114188077605807574}
   - component: {fileID: 114630126923036428}
   - component: {fileID: 114961479589240650}
+  - component: {fileID: 804314059578561454}
+  - component: {fileID: 6480239350817313439}
   m_Layer: 9
   m_Name: lion
   m_TagString: redcharacter
@@ -442,6 +444,7 @@ MonoBehaviour:
   hp: 50
   fullhp: 50
   speed: 4
+  Orispeed: 0
   power: 10
   child: lion
   num_of_tile: 275
@@ -489,6 +492,34 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
   - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
   ship: {fileID: 0}
+--- !u!135 &804314059578561454
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301685245295538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3000
+  m_Center: {x: 0, y: 3200, z: 0}
+--- !u!114 &6480239350817313439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301685245295538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd99839cd8085714ba89203998edc350, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LionMat: {fileID: 2100000, guid: 60d822b966cf1b64c91044de297eaf34, type: 2}
+  palete: {fileID: 2100000, guid: 7b6ef03a6380f494d963aa38ccf4b672, type: 3}
+  LionRen: {fileID: 23527417461901070}
 --- !u!1 &1634720959825226
 GameObject:
   m_ObjectHideFlags: 0

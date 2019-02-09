@@ -107,6 +107,7 @@ MonoBehaviour:
   hp: 50
   fullhp: 50
   speed: 4
+  Orispeed: 4
   power: 10
   child: mouse
   num_of_tile: 275
@@ -272,8 +273,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 481, y: 576, z: 781.0554}
-  m_Center: {x: 0, y: 255.00002, z: 453.0277}
+  m_Size: {x: 481, y: 576, z: 1094.3564}
+  m_Center: {x: 0, y: 255.00002, z: 609.6782}
 --- !u!114 &114177252692447214
 MonoBehaviour:
   m_ObjectHideFlags: 0
