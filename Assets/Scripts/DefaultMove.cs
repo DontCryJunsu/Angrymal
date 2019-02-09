@@ -468,8 +468,7 @@ public class DefaultMove : MonoBehaviour
     {
         if (hp < (fullhp / 2))
         {
-
-
+                       
             //애니메이터
             ckani = 1;
             animation.SetInteger("ckani", ckani);

@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 33814401038321454}
   - component: {fileID: 23145645850068078}
   - component: {fileID: 114702032049170794}
-  - component: {fileID: 793328887203329840}
+  - component: {fileID: 5518846001685038015}
   m_Layer: 8
   m_Name: jiraffe
   m_TagString: Untagged
@@ -433,7 +433,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!95 &793328887203329840
+--- !u!95 &5518846001685038015
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -442,7 +442,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1262436332086964}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 21f9f7c9930812f40b92b7458826eb4c, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 48a1cd7be0409cc4f8a549b97cef5414, type: 3}
   m_Controller: {fileID: 9100000, guid: 8b068929cc9bbd64db14bdb3cffea94b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -518,8 +518,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 600
-  m_Center: {x: -86, y: 650, z: 59}
+  m_Radius: 800
+  m_Center: {x: -86, y: 500, z: 59}
 --- !u!195 &195760170103658616
 NavMeshAgent:
   m_ObjectHideFlags: 0

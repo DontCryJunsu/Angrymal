@@ -449,8 +449,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4446716651094852}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 58
+  instantiationId: 58
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1685787909937612
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 33877298230799688}
   - component: {fileID: 23961128241555236}
   - component: {fileID: 114009768105408984}
-  - component: {fileID: 3472230298962390140}
+  - component: {fileID: 4715900791256722180}
   m_Layer: 9
   m_Name: jiraffe
   m_TagString: Untagged
@@ -550,7 +550,7 @@ MonoBehaviour:
   precomputeOutline: 0
   bakeKeys: []
   bakeValues: []
---- !u!95 &3472230298962390140
+--- !u!95 &4715900791256722180
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685787909937612}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 21f9f7c9930812f40b92b7458826eb4c, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 48a1cd7be0409cc4f8a549b97cef5414, type: 3}
   m_Controller: {fileID: 9100000, guid: 8b068929cc9bbd64db14bdb3cffea94b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
@@ -635,8 +635,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 600
-  m_Center: {x: -86, y: 650, z: 59}
+  m_Radius: 800
+  m_Center: {x: -86, y: 500, z: 59}
 --- !u!195 &195367749565748820
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -704,8 +704,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4424147267901804}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 57
+  instantiationId: 57
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114258835309408204
