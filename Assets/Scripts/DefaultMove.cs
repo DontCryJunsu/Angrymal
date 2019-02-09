@@ -124,6 +124,11 @@ public class DefaultMove : MonoBehaviour
             speed += 0.01f;
             nav.speed = speed;
         }
+        else if (Orispeed +0.5f < speed)
+        {
+            speed -= 0.05f;
+            nav.speed = speed;
+        }
     }
 
    

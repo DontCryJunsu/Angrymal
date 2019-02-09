@@ -22,7 +22,6 @@ public class mouseSkill : MonoBehaviour
         GetComponent<DefaultMove>().speed += 12f;
         mouseRen.sharedMaterial = mouseMat;
         yield return new WaitForSeconds(6f);
-        GetComponent<DefaultMove>().speed = 4f;
         mouseRen.sharedMaterial = palete;
         yield return new WaitForSeconds(6f);
         isSkill = false;
