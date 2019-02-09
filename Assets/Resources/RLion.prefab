@@ -472,8 +472,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4909108111765402}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114961479589240650
@@ -574,8 +574,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4734015335484428}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1881472235651108
@@ -836,12 +836,17 @@ PrefabInstance:
     - target: {fileID: 9131363310009364974, guid: 7e4ad37bd02c80d45a02f5e6cdea55bc,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 7
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 9131363310009364974, guid: 7e4ad37bd02c80d45a02f5e6cdea55bc,
         type: 3}
       propertyPath: moveWithTransform
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9131363310009364974, guid: 7e4ad37bd02c80d45a02f5e6cdea55bc,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e4ad37bd02c80d45a02f5e6cdea55bc, type: 3}

@@ -10,10 +10,10 @@ public class LionSkill1 : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(4f);
             part.SetActive(false);
             isheal = false;
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(10f);
             part.SetActive(true);
             isheal = true;
         }
@@ -24,6 +24,7 @@ public class LionSkill1 : MonoBehaviour
         if (other.tag == "bluecharacter" && isheal)
         {
             other.GetComponent<DefaultMove>().speed = 0f;
+            other.GetComponent<DefaultMove>().power = 1f;
         }
     }
 }

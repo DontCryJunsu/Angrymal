@@ -11,7 +11,7 @@ public class snakeSkill1 : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(3.8f);
             part.SetActive(false);
             isPoision = false;
             yield return new WaitForSeconds(3f);

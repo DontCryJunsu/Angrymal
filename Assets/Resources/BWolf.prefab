@@ -308,8 +308,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4047879519867418}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114805095420860628
@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2684a6db16a25724e8ca66f507165f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  part: {fileID: 7569649108222610243}
   wolfMat: {fileID: 2100000, guid: 26d0a5d3360171348b0791684aa965fc, type: 2}
   palete: {fileID: 2100000, guid: ce954ea3943fa784b84bb65dec562ca7, type: 3}
   wolfRen: {fileID: 23235027354297976}
@@ -398,8 +399,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4616707391222332}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1847999838066724
@@ -890,3 +891,93 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &8433145447580001475
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8423791907518789760}
+    m_Modifications:
+    - target: {fileID: 2018816428907655040, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_Name
+      value: wolfPar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907655040, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2916.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428907942168, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428893790512, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2018816428893790512, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 14
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 449f6df8ef2647449900a8141d4f0650, type: 3}
+--- !u!1 &7569649108222610243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2018816428907655040, guid: 449f6df8ef2647449900a8141d4f0650,
+    type: 3}
+  m_PrefabInstance: {fileID: 8433145447580001475}
+  m_PrefabAsset: {fileID: 0}

@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 32
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -266,7 +266,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 2.5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1390,11 +1390,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     speedRange: {x: 0, y: 1}
-    tilesX: 8
+    tilesX: 4
     tilesY: 4
     animationType: 0
     rowIndex: 0
-    cycles: 32
+    cycles: 16
     uvChannelMask: -1
     randomRow: 1
     sprites:
@@ -4519,7 +4519,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 61a20d6da3e7647918a37a1bbecf1947, type: 2}
+  - {fileID: 2100000, guid: c910c2bf341634b54b35a9d45d7c607c, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4573,7 +4573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9131363310024577810}
   m_Layer: 0
-  m_Name: FireBall_01_8x4-32
+  m_Name: lionPar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

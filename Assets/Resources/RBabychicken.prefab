@@ -779,8 +779,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 700
-  m_Center: {x: 0, y: 500, z: -37}
+  m_Radius: 900
+  m_Center: {x: 0, y: 800, z: -37}
 --- !u!195 &8999131632391002088
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -819,7 +819,9 @@ MonoBehaviour:
   hp: 50
   fullhp: 50
   speed: 3
+  Orispeed: 0
   power: 10
+  OriPower: 0
   child: babychicken
   num_of_tile: 275
   HPBar: {fileID: 7986315426080229062}

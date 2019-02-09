@@ -27,6 +27,7 @@ public class DefaultMove : MonoBehaviour
     public float speed;
     public float Orispeed;
     public float power;
+    public float OriPower;
     public string child;
     public int num_of_tile = 275; //총 땅의 개수
     Collider akcoll = null;
@@ -57,6 +58,8 @@ public class DefaultMove : MonoBehaviour
         tr = GetComponent<Transform>();
         pv = GetComponent<PhotonView>();
         Orispeed = speed;
+        OriPower = power;
+
         pv.synchronization = ViewSynchronization.UnreliableOnChange;
         pv.ObservedComponents[0] = this;
 
@@ -128,6 +131,11 @@ public class DefaultMove : MonoBehaviour
         {
             speed -= 0.05f;
             nav.speed = speed;
+        }
+
+        if (OriPower > power)
+        {
+            power += 0.01f;
         }
     }
 
