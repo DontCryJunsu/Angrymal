@@ -11,10 +11,10 @@ public class sheepSkill : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(3.5f);
+            yield return new WaitForSeconds(4f);
             part.SetActive(false);
             isheal = false;
-            yield return new WaitForSeconds(2.5f);
+            yield return new WaitForSeconds(2f);
             part.SetActive(true);
             isheal = true;
         }
@@ -26,7 +26,7 @@ public class sheepSkill : MonoBehaviour
         {
             DM = other.GetComponent<DefaultMove>();
             if (DM.fullhp > DM.hp)
-                DM.hp += 0.04f;
+                DM.hp += 0.09f;
         }
     }
 }

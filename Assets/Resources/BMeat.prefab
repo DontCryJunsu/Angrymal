@@ -171,10 +171,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 0}
-  hp: 100
-  fullhp: 100
+  hp: 80
+  fullhp: 80
   speed: 0
+  Orispeed: 0
   power: 0
+  OriPower: 0
   child: 
   num_of_tile: 275
   HPBar: {fileID: 8396516465936753354}

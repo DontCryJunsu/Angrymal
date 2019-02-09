@@ -277,11 +277,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 1847999838066724}
-  hp: 50
-  fullhp: 50
-  speed: 4
-  Orispeed: 4
-  power: 10
+  hp: 80
+  fullhp: 80
+  speed: 6
+  Orispeed: 6
+  power: 15
+  OriPower: 15
   child: wolf
   num_of_tile: 275
   HPBar: {fileID: 6473852591357501677}

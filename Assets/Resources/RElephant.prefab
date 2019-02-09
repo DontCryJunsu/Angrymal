@@ -498,11 +498,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 6311673311483392605}
-  hp: 50
-  fullhp: 50
+  hp: 120
+  fullhp: 120
   speed: 4
-  Orispeed: 0
-  power: 10
+  Orispeed: 4
+  power: 20
+  OriPower: 20
   child: elephant
   num_of_tile: 275
   HPBar: {fileID: 1237832140539748114}

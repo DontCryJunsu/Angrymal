@@ -9,7 +9,7 @@ public class testrandommove : MonoBehaviour
     public GameObject[] obj;
     public NavMeshAgent nav;
     LobbyCam LC;
-    public float sec = 3f;
+    public float sec = 4f;
 
     public void Stst()
     {

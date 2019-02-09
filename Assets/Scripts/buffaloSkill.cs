@@ -19,10 +19,10 @@ public class buffaloSkill : MonoBehaviour
     {
         yield return null;
         isSkill = true;
-        GetComponent<DefaultMove>().power += 20;
+        GetComponent<DefaultMove>().power = 30;
         bufRen.sharedMaterial = bufMat;
         yield return new WaitForSeconds(3f);
-        GetComponent<DefaultMove>().power -= 20;
+        GetComponent<DefaultMove>().power = 10;
         bufRen.sharedMaterial = palete;
         yield return new WaitForSeconds(6f);
         isSkill = false;

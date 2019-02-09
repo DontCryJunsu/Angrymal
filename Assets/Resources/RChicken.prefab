@@ -160,10 +160,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 280920948776725771}
-  hp: 50
-  fullhp: 50
+  hp: 40
+  fullhp: 40
   speed: 4
-  power: 10
+  Orispeed: 4
+  power: 8
+  OriPower: 8
   child: chicken
   num_of_tile: 275
   HPBar: {fileID: 3668647415331888165}

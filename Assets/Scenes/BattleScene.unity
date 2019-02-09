@@ -3857,7 +3857,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 15
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -4658,7 +4658,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 55
 --- !u!222 &168059877
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5529,7 +5529,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 25
 --- !u!222 &202051503
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6687,7 +6687,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 45
 --- !u!222 &245419119
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12246,7 +12246,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 60
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -14644,7 +14644,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 55
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -17021,7 +17021,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 15
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -18160,7 +18160,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 35
 --- !u!222 &750615649
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -20535,7 +20535,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 35
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -21762,7 +21762,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 50
 --- !u!222 &884311368
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -23689,7 +23689,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 50
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -24030,7 +24030,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 45
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -24513,7 +24513,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 25
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -27924,19 +27924,19 @@ MonoBehaviour:
   snakUI: {fileID: 1642945481}
   catUI: {fileID: 142738818}
   kanUI: {fileID: 844956025}
-  costchicUI: 20
-  costdogUI: 20
-  costbufUI: 20
-  costjirUI: 20
-  costlionUI: 20
-  costelepUI: 20
-  costmouUI: 20
-  costwolfUI: 20
-  costsheepUI: 20
+  costchicUI: 18
+  costdogUI: 15
+  costbufUI: 50
+  costjirUI: 50
+  costlionUI: 55
+  costelepUI: 60
+  costmouUI: 25
+  costwolfUI: 45
+  costsheepUI: 30
   costpigUI: 20
-  costsnakUI: 20
-  costcatUI: 20
-  costkanUI: 20
+  costsnakUI: 30
+  costcatUI: 15
+  costkanUI: 35
 --- !u!1 &1112841454
 GameObject:
   m_ObjectHideFlags: 0
@@ -28343,7 +28343,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 30
 --- !u!222 &1122488979
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -30067,7 +30067,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 18
 --- !u!222 &1176421165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -37062,7 +37062,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -38917,7 +38917,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 30
 --- !u!222 &1551738025
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -40405,7 +40405,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 50
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -41052,7 +41052,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 15
 --- !u!222 &1642917088
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -41161,7 +41161,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 30
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -45233,7 +45233,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 60
 --- !u!222 &1882991897
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -47159,7 +47159,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 50
 --- !u!222 &1968072877
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -49328,7 +49328,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 20
+          m_FloatArgument: 18
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -51300,7 +51300,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 15
 --- !u!222 &2140010127
 CanvasRenderer:
   m_ObjectHideFlags: 0

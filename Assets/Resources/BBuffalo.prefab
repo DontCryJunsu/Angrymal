@@ -556,10 +556,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 9101777321617381380}
-  hp: 50
-  fullhp: 50
-  speed: 4
-  power: 10
+  hp: 90
+  fullhp: 90
+  speed: 6
+  Orispeed: 6
+  power: 15
+  OriPower: 15
   child: buffalo
   num_of_tile: 275
   HPBar: {fileID: 7986315426080229062}

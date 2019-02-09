@@ -104,11 +104,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 1705625840408896}
-  hp: 50
-  fullhp: 50
-  speed: 4
-  Orispeed: 4
-  power: 10
+  hp: 30
+  fullhp: 30
+  speed: 5
+  Orispeed: 5
+  power: 5
+  OriPower: 5
   child: mouse
   num_of_tile: 275
   HPBar: {fileID: 7005722817546380129}

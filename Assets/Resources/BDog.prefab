@@ -442,7 +442,9 @@ MonoBehaviour:
   hp: 50
   fullhp: 50
   speed: 4
+  Orispeed: 4
   power: 10
+  OriPower: 10
   child: dog
   num_of_tile: 275
   HPBar: {fileID: 4191228795514252713}

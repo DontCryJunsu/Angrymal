@@ -19,7 +19,7 @@ public class elephantSkill : MonoBehaviour
         yield return null;
         SC.enabled = true;
         part.SetActive(true);
-        yield return new WaitForSeconds(8f);
+        yield return new WaitForSeconds(10f);
         part.SetActive(false);
         SC.enabled = false;
         yield return new WaitForSeconds(4f);

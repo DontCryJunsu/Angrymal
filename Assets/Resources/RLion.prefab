@@ -441,11 +441,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 1235477879417130}
-  hp: 50
-  fullhp: 50
-  speed: 4
-  Orispeed: 0
-  power: 10
+  hp: 95
+  fullhp: 95
+  speed: 6
+  Orispeed: 6
+  power: 25
+  OriPower: 25
   child: lion
   num_of_tile: 275
   HPBar: {fileID: 6427906524879587248}

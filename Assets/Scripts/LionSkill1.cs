@@ -10,10 +10,10 @@ public class LionSkill1 : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(6f);
             part.SetActive(false);
             isheal = false;
-            yield return new WaitForSeconds(10f);
+            yield return new WaitForSeconds(8f);
             part.SetActive(true);
             isheal = true;
         }
