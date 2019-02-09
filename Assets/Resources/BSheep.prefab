@@ -576,9 +576,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db64f7286220d614bbd63a93a261b227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sheepMat: {fileID: 2100000, guid: c96e5d02722ab3a4a917cebb2d401759, type: 2}
-  palete: {fileID: 2100000, guid: 49e336fc3680c204bb2706c9d9e2ffa6, type: 3}
-  sheepRen: {fileID: 23032842128306396}
   part: {fileID: 4433695684732970156}
 --- !u!1 &1642742408999872
 GameObject:
@@ -764,6 +761,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: shePar
+      objectReference: {fileID: 0}
+    - target: {fileID: 854550929055106110, guid: d101dda0e2b5d0a47aa6def0bc7737f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 854550929054853906, guid: d101dda0e2b5d0a47aa6def0bc7737f1,
         type: 3}

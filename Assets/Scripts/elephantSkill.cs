@@ -5,9 +5,7 @@ using UnityEngine;
 public class elephantSkill : MonoBehaviour
 {
     bool isSkill = false;
-    public Material eleMat;
-    public Material palete;
-    public Renderer eleRen;
+    public GameObject part;
     public SphereCollider SC;
     public void skill()
     {
@@ -20,9 +18,9 @@ public class elephantSkill : MonoBehaviour
         isSkill = true;
         yield return null;
         SC.enabled = true;
-        eleRen.sharedMaterial = eleMat;
+        part.SetActive(true);
         yield return new WaitForSeconds(8f);
-        eleRen.sharedMaterial = palete;
+        part.SetActive(false);
         SC.enabled = false;
         yield return new WaitForSeconds(4f);
         isSkill = false;

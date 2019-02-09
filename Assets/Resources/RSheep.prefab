@@ -136,8 +136,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4271596328411490}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114481354741399236
@@ -747,8 +747,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4110706390596592}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1001 &1442799188658030780
@@ -914,6 +914,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: shePar
+      objectReference: {fileID: 0}
+    - target: {fileID: 854550929055106110, guid: d101dda0e2b5d0a47aa6def0bc7737f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 854550929054853906, guid: d101dda0e2b5d0a47aa6def0bc7737f1,
         type: 3}
