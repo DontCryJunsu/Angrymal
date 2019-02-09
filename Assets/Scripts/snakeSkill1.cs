@@ -25,7 +25,7 @@ public class snakeSkill1 : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if (other.tag == "bluecharacter" && isPoision)
+        if (other.tag == "redcharacter" && isPoision)
         {
             other.gameObject.GetComponent<PhotonView>().RPC("Poison", PhotonTargets.Others);
         }

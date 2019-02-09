@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 114663831462069110}
   - component: {fileID: 114169292218222110}
   - component: {fileID: 3038334389346785949}
-  - component: {fileID: 1861458286920776792}
+  - component: {fileID: 7083465793780981387}
   m_Layer: 8
   m_Name: sheep
   m_TagString: bluecharacter
@@ -564,7 +564,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2800
   m_Center: {x: 0, y: 3000, z: 0}
---- !u!114 &1861458286920776792
+--- !u!114 &7083465793780981387
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -573,12 +573,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1460266840268572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94db3e9d265d66842aaff558e686d370, type: 3}
+  m_Script: {fileID: 11500000, guid: db64f7286220d614bbd63a93a261b227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LionMat: {fileID: 0}
+  sheepMat: {fileID: 2100000, guid: c96e5d02722ab3a4a917cebb2d401759, type: 2}
   palete: {fileID: 2100000, guid: 49e336fc3680c204bb2706c9d9e2ffa6, type: 3}
-  LionRen: {fileID: 0}
+  sheepRen: {fileID: 23032842128306396}
 --- !u!1 &1642742408999872
 GameObject:
   m_ObjectHideFlags: 0

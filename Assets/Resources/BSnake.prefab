@@ -108,6 +108,7 @@ MonoBehaviour:
   hp: 50
   fullhp: 50
   speed: 4
+  Orispeed: 0
   power: 10
   child: snake
   num_of_tile: 275

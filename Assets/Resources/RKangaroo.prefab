@@ -56,8 +56,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4626499861126806}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &1043095547604496
@@ -339,6 +339,7 @@ MonoBehaviour:
   hp: 50
   fullhp: 50
   speed: 4
+  Orispeed: 0
   power: 10
   child: kangaroo
   num_of_tile: 275
@@ -366,8 +367,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 4417386414070746}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114959873632757832

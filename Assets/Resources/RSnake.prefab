@@ -584,8 +584,8 @@ GameObject:
   - component: {fileID: 114047713964035668}
   - component: {fileID: 114348920097059772}
   - component: {fileID: 114916868750840682}
+  - component: {fileID: 282706805947377417}
   - component: {fileID: 4807905416159045833}
-  - component: {fileID: 2575229049741726883}
   m_Layer: 9
   m_Name: snake
   m_TagString: redcharacter
@@ -677,6 +677,7 @@ MonoBehaviour:
   hp: 50
   fullhp: 50
   speed: 4
+  Orispeed: 0
   power: 10
   child: snake
   num_of_tile: 275
@@ -724,6 +725,21 @@ MonoBehaviour:
   - {fileID: 2100000, guid: ae61552134f92fa41b00b46a1d475244, type: 2}
   - {fileID: 2100000, guid: 312e8c9491ddaf840a3db2b3a18fae4b, type: 2}
   ship: {fileID: 0}
+--- !u!114 &282706805947377417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980829638329690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffee175495d97354392f65b4c1448ecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snakeMat: {fileID: 2100000, guid: f5d8da575a42b4940987d256ecdfd04a, type: 2}
+  palete: {fileID: 2100000, guid: 43e01d8f954ce1b48bb5a87027e4195a, type: 3}
+  snakeRen: {fileID: 23508073993232086}
 --- !u!135 &4807905416159045833
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -737,21 +753,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 2800
   m_Center: {x: 0, y: 3000, z: 0}
---- !u!114 &2575229049741726883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1980829638329690}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ad99bcd8d5957d448730c45271b0efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snakeMat: {fileID: 2100000, guid: f5d8da575a42b4940987d256ecdfd04a, type: 2}
-  palete: {fileID: 2100000, guid: 43e01d8f954ce1b48bb5a87027e4195a, type: 3}
-  snakeRen: {fileID: 23508073993232086}
 --- !u!1001 &6550637806153521764
 PrefabInstance:
   m_ObjectHideFlags: 0

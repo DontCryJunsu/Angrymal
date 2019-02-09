@@ -190,6 +190,7 @@ e54ee5fc8428e31e722c25e3dee25f1c Assembly-CSharp.dll:.buffaloSkill
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:Cinemachine.CinemachinePipeline
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DeleteX
 17c6b61ef664ddb751d783bf4c747c64 Assembly-CSharp.dll:.OnClickDestroy
+5af48b30818953a25b4951afb34efcd7 Assembly-CSharp.dll:.sheepSkill
 694d20920c0e41f567e119f7159a3644 Assembly-CSharp.dll:Cinemachine.CinemachinePath
 4fd8bf02e3089425d3502e26c44ba31a Unity.TextMeshPro.dll:TMPro.TextContainer
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.StoryManager
@@ -279,7 +280,6 @@ b33aece3d81f0dcd0cee9ba2f0fb53fa Assembly-CSharp.dll:.PickupItemSimple
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TestFootScale
 48f35cd8ca065254b3a4d741d1ff8978 Assembly-CSharp.dll:.LionSkill
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
-6fb70a961061e090be3aead3db0f1561 Assembly-CSharp.dll:.snakeSkill1
 2b53d93770b9036b2fd1c7854560bc69 Assembly-CSharp.dll:.MoveByKeys
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.QuitOnEscapeOrBack
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
@@ -293,3 +293,4 @@ e1b8eaae6a90f88343f8be6d517488f6 Assembly-CSharp.dll:.PhotonView
 1615d3bb1db164c1672020cea49440ce Assembly-CSharp.dll:Cinemachine.CinemachineClearShot
 e6873cc3d7cdd5ed2667727759757f39 Assembly-CSharp.dll:.BattleManager
 f8479fffa21ecb80e1287501cf6ee891 Assembly-CSharp.dll:.elephantSkill
+6fb70a961061e090be3aead3db0f1561 Assembly-CSharp.dll:.snakeSkill1
