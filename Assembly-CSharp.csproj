@@ -205,6 +205,7 @@
     <Compile Include="Assets\Scripts\FindAnimal.cs" />
     <Compile Include="Assets\Scripts\FireBar.cs" />
     <Compile Include="Assets\Scripts\Hatch.cs" />
+    <Compile Include="Assets\Scripts\kangarooSkill.cs" />
     <Compile Include="Assets\Scripts\LionSkill.cs" />
     <Compile Include="Assets\Scripts\LionSkill1.cs" />
     <Compile Include="Assets\Scripts\LoadAnimal.cs" />

@@ -280,6 +280,7 @@ b33aece3d81f0dcd0cee9ba2f0fb53fa Assembly-CSharp.dll:.PickupItemSimple
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.TestFootScale
 48f35cd8ca065254b3a4d741d1ff8978 Assembly-CSharp.dll:.LionSkill
 d791aa6007fa3640be1164ea75bb087d Unity.TextMeshPro.dll:TMPro.TMP_StyleSheet
+ffde4860abff25d1580a37ae99e6ff1a Assembly-CSharp.dll:.kangarooSkill
 2b53d93770b9036b2fd1c7854560bc69 Assembly-CSharp.dll:.MoveByKeys
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.QuitOnEscapeOrBack
 c6666661329916e218bee7f5e79e60f5 Unity.TextMeshPro.dll:TMPro.TextMeshPro
