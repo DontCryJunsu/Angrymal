@@ -10,7 +10,7 @@ enum TARGET
 
 public class Attack : MonoBehaviour
 {
-     
+    public AudioSource AS;
 
     void OnTriggerEnter(Collider other)
     {
@@ -28,7 +28,7 @@ public class Attack : MonoBehaviour
                 NetAttackDamage(other, gameObject.transform.parent.GetComponent<DefaultMove>().power);
             }
         }
-
+        AS.Play();
     }
 
 

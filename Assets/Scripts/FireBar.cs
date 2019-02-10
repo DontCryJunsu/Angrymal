@@ -9,7 +9,7 @@ public class FireBar : MonoBehaviour
     float total;
     public float plus;
     public Text tx;
-    float cool = 0f;
+    float cool = 2f;
 
     public GameObject chicUI;
     public GameObject dogUI;

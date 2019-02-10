@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class StoryManager : MonoBehaviour
 {
+    public AudioSource AS;
+
+    private void Start()
+    {
+         Invoke("Sound", 1f);
+    }
+
     public void SceneChange()
     {
         Debug.Log("씬 체인지");
     }
-    // Start is called before the first frame update
-    void Start()
+    
+    void Sound()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        AS.Play();
     }
 }
