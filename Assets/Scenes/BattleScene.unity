@@ -27884,7 +27884,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 0
+  m_FillAmount: 0.2
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -27909,7 +27909,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IMG: {fileID: 0}
-  plus: 0
+  plus: 0.07
   tx: {fileID: 2081412330}
   chicUI: {fileID: 2044470169}
   dogUI: {fileID: 717405745}

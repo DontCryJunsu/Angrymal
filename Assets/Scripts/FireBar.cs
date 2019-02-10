@@ -60,7 +60,7 @@ public class FireBar : MonoBehaviour
     {
         IMG = GetComponent<Image>();
         total = 100;
-        plus = 0.05f;
+        plus = 0.07f;
 
         bchicUI = chicUI.GetComponent<Button>();
         bdogUI = dogUI.GetComponent<Button>();
