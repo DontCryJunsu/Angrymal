@@ -76,7 +76,7 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
-            PlayerPrefs.SetString("C1", "1");
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         cat2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
@@ -233,7 +233,7 @@ public class dropAnimal : MonoBehaviour {
         {
             Debug.Log("3");
             LoadAnimal.C3 = false;
-            PlayerPrefs.SetString("C1", "1");
+            PlayerPrefs.SetString("C3", "1");
         }
         LobbyManager.loadAni--;
         snake2.transform.localScale = new Vector3(0.1f, 0.1f, 1f);
