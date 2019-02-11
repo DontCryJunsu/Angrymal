@@ -979,7 +979,7 @@ GameObject:
   - component: {fileID: 9205753965812133694}
   m_Layer: 9
   m_Name: attackbox
-  m_TagString: blueattack
+  m_TagString: redattack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
