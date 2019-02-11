@@ -564,7 +564,7 @@ MonoBehaviour:
   power: 10
   OriPower: 10
   child: dog
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 1627362816661480560}
   AS: {fileID: 1237312075234082679}
 --- !u!114 &873267239499899991

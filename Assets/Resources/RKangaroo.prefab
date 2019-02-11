@@ -359,7 +359,7 @@ MonoBehaviour:
   power: 10
   OriPower: 10
   child: kangaroo
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 2142874182985110812}
   AS: {fileID: 7123754696713193874}
 --- !u!114 &114751427518292006

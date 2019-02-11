@@ -19,8 +19,8 @@ public class PhotonShip : MonoBehaviour
 
     void Start()
     {
-        tile = new GameObject[276];
-        for (int i = 1; i <= 275; i++)
+        tile = new GameObject[281];
+        for (int i = 1; i <= 280; i++)
         {
             tile[i] = GameObject.Find(i.ToString());
         }

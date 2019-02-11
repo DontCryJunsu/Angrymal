@@ -563,7 +563,7 @@ MonoBehaviour:
   power: 18
   OriPower: 18
   child: jiraffe
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 2283821094655979451}
   AS: {fileID: 2509839479389367881}
 --- !u!114 &114077617389692326

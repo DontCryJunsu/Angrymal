@@ -173,7 +173,7 @@ MonoBehaviour:
   power: 20
   OriPower: 20
   child: elephant
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 3751019550991050165}
   AS: {fileID: 8867724738240636621}
 --- !u!114 &7766630046226285829

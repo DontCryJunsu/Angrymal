@@ -29,7 +29,7 @@ public class DefaultMove : MonoBehaviour
     public float power;
     public float OriPower;
     public string child;
-    public int num_of_tile = 275; //총 땅의 개수
+    public int num_of_tile; //총 땅의 개수
     Collider akcoll = null;
     RandomDestination RD;
 
@@ -55,6 +55,7 @@ public class DefaultMove : MonoBehaviour
 
     void Awake()
     {
+        num_of_tile = 280;
         Debug.Log("Awake 시작");
         rgdy = GetComponent<Rigidbody>();
         tr = GetComponent<Transform>();

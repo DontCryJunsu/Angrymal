@@ -111,7 +111,7 @@ MonoBehaviour:
   power: 10
   OriPower: 10
   child: pig
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 8800646048953637236}
   AS: {fileID: 6028492410863733612}
 --- !u!114 &8385826715164004782

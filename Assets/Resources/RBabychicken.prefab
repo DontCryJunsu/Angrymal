@@ -824,7 +824,7 @@ MonoBehaviour:
   power: 5
   OriPower: 5
   child: babychicken
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 7986315426080229062}
   AS: {fileID: 8646058363477158983}
 --- !u!114 &9209352321006489092

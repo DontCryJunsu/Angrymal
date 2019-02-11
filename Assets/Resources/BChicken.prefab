@@ -112,7 +112,7 @@ MonoBehaviour:
   power: 8
   OriPower: 8
   child: chicken
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 4895141007397126614}
   AS: {fileID: 7794865908812198369}
 --- !u!114 &4518750125393231734

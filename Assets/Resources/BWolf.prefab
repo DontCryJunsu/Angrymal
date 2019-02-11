@@ -285,7 +285,7 @@ MonoBehaviour:
   power: 15
   OriPower: 15
   child: wolf
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 6473852591357501677}
   AS: {fileID: 6375325581386939990}
 --- !u!114 &114084156459936320

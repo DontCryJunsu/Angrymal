@@ -509,7 +509,7 @@ MonoBehaviour:
   power: 25
   OriPower: 25
   child: lion
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 3747455986958100048}
   AS: {fileID: 7873606510042322798}
 --- !u!114 &114775343906386568
