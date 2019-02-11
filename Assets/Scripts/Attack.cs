@@ -10,25 +10,33 @@ enum TARGET
 
 public class Attack : MonoBehaviour
 {
-    public AudioSource AS;
+    //public AudioSource AS;
 
     void OnTriggerEnter(Collider other)
     {
-        if (tag == "redattack")
+        if (PhotonNetwork.isMasterClient)
         {
-            if (other.tag == "bluecharacter")
+            if (tag == "redattack")
             {
-                NetAttackDamage(other, gameObject.transform.parent.GetComponent<DefaultMove>().power);
+                if (other.tag == "bluecharacter")
+                {
+                    NetAttackDamage(other, gameObject.transform.parent.GetComponent<DefaultMove>().power);
+                }
             }
         }
-        else if (tag == "blueattack")
+        else
         {
-            if (other.tag == "redcharacter")
+            if (tag == "blueattack")
             {
-                NetAttackDamage(other, gameObject.transform.parent.GetComponent<DefaultMove>().power);
+                if (other.tag == "redcharacter")
+                {
+                    NetAttackDamage(other, gameObject.transform.parent.GetComponent<DefaultMove>().power);
+                }
             }
         }
-        AS.Play();
+            
+        
+       // AS.Play();
     }
 
 

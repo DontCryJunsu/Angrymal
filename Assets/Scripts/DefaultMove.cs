@@ -51,6 +51,8 @@ public class DefaultMove : MonoBehaviour
     //private Vector3 destinationbuffer;  //공격에서 사용하는 위치
     private float angularbuffer; //공격에서 사용하는 회전속도
 
+    public AudioSource AS; //공격 소리
+
     void Awake()
     {
         Debug.Log("Awake 시작");
@@ -812,13 +814,14 @@ public class DefaultMove : MonoBehaviour
                 StartCoroutine(command[0, 1]);  //지금 실행해야 할 행동 시작
                 //i = -1;
             }
-            else  //<명령어 줄이기>
+            
+        }
+        else  //<명령어 줄이기>
+        {
+            if (runningact != command[0, 1])
             {
-                if (runningact != command[0, 1])
-                {
-                    StopCoroutine(runningact);
-                    StartCoroutine("JustWalk");
-                }
+                StopCoroutine(runningact);
+                StartCoroutine("JustWalk");
             }
         }
         return;
@@ -1413,6 +1416,7 @@ public class DefaultMove : MonoBehaviour
     {
         if (time != comparetime)
         {
+            GetComponent<PhotonView>().RPC("AttackSound", PhotonTargets.All); //맞을때 나는 소리
             hp -= damage;
             time = comparetime;
 
@@ -1436,12 +1440,12 @@ public class DefaultMove : MonoBehaviour
             animation.SetInteger("ckani", ckani);
         }
         // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
-        if (hp <= 0) // HP가 0 이 되서 죽었을 때 
-        {
-
-            //GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
-            //GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); //동기화 테스트
-        }
+      //  if (hp <= 0) // HP가 0 이 되서 죽었을 때 
+      //  {
+      //
+      //      //GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
+      //      //GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); //동기화 테스트
+      //  }
 
 
         /*
@@ -1472,6 +1476,11 @@ public class DefaultMove : MonoBehaviour
     public void Die()
     {
         GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
+    }
+    [PunRPC]
+    public void AttackSound()
+    {
+        AS.Play();
     }
     // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
 }
