@@ -44,6 +44,8 @@ public class Timer : MonoBehaviour
             upPan.transform.Translate(-29.3f, 0, 0);
             downPan.transform.Translate(29.3f, 0, 0);
         }
+        upPan = null;
+        downPan = null;
         if (PlayerPrefs.GetString("Team").Equals("B"))
         {
             if (Command.bluetile > Command.redtile)
@@ -81,6 +83,8 @@ public class Timer : MonoBehaviour
             upPan.transform.Translate(-29.3f, 0, 0);
             downPan.transform.Translate(29.3f, 0, 0);
         }
+        upPan = null;
+        downPan = null;
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Win");
 

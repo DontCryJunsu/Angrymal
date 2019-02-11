@@ -682,7 +682,7 @@ MonoBehaviour:
   power: 20
   OriPower: 20
   child: snake
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 4927135120583043035}
   AS: {fileID: 4324910854294759017}
 --- !u!114 &114348920097059772

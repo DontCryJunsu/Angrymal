@@ -13,10 +13,10 @@ public class RandomDestination : MonoBehaviour
 
     void Start()
     {
-        rand = Random.Range(1, 276);
-        tile = new GameObject[276];
-        tile2 = new Transform[276];
-        for (int i = 1; i <= 275; i++)
+        rand = Random.Range(1, 281);
+        tile = new GameObject[281];
+        tile2 = new Transform[281];
+        for (int i = 1; i <= 280; i++)
         {
             tile[i] = GameObject.Find(i.ToString());
             tile2[i] = tile[i].transform;
@@ -28,7 +28,7 @@ public class RandomDestination : MonoBehaviour
     {
         if (other.name == chaser)
         {
-            rand = Random.Range(1, 276);
+            rand = Random.Range(1, 281);
             transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
 
             //shuffle();
@@ -38,7 +38,7 @@ public class RandomDestination : MonoBehaviour
     {
         if (other.name == chaser)
         {
-            rand = Random.Range(1, 276);
+            rand = Random.Range(1, 281);
             transform.position = new Vector3(tile2[rand].position.x, tile2[rand].position.y + 1.3f, tile2[rand].position.z);
 
             //shuffle();
@@ -61,11 +61,11 @@ public class RandomDestination : MonoBehaviour
         {
             if ((transform.tag == "bluedestination" && tile2[rand].tag == "Untagged")||(transform.tag == "bluedestination" && tile2[rand].tag == "blueteam"))
             {
-                rand = Random.Range(1, 276);
+                rand = Random.Range(1, 281);
             }
             else if ((transform.tag == "reddestination" && tile2[rand].tag == "Untagged") || (transform.tag == "reddestination" && tile2[rand].tag == "redteam"))
             {
-                rand = Random.Range(1, 276);
+                rand = Random.Range(1, 281);
             }
             else
             {
@@ -82,7 +82,7 @@ public class RandomDestination : MonoBehaviour
         {
             if (tile2[rand].tag == "redteam" || tile2[rand].tag == "blueteam")
             {
-                rand = Random.Range(1, 276);
+                rand = Random.Range(1, 281);
             }
             else
             {

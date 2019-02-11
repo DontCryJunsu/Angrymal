@@ -509,7 +509,7 @@ MonoBehaviour:
   power: 5
   OriPower: 5
   child: sheep
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 5621472137312269951}
   AS: {fileID: 4397980350361014383}
 --- !u!114 &114663831462069110

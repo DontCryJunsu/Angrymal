@@ -287,7 +287,7 @@ MonoBehaviour:
   power: 10
   OriPower: 10
   child: cat
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 7309075330098199879}
   AS: {fileID: 6489800918461172507}
 --- !u!114 &5932093587727356629

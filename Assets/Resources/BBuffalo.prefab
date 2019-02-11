@@ -564,7 +564,7 @@ MonoBehaviour:
   power: 15
   OriPower: 15
   child: buffalo
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 7986315426080229062}
   AS: {fileID: 261400704886153318}
 --- !u!114 &9209352321006489092

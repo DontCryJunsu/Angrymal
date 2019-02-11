@@ -565,7 +565,7 @@ MonoBehaviour:
   power: 5
   OriPower: 5
   child: mouse
-  num_of_tile: 275
+  num_of_tile: 276
   HPBar: {fileID: 3888716545746304951}
   AS: {fileID: 8937475322749517367}
 --- !u!114 &114354566530259510
