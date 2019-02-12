@@ -48,6 +48,8 @@ public class DefaultMove : MonoBehaviour
 
     public Image HPBar;
 
+    bool enemyinnear = false;
+
     //private Vector3 destinationbuffer;  //공격에서 사용하는 위치
     private float angularbuffer; //공격에서 사용하는 회전속도
 
@@ -172,7 +174,13 @@ public class DefaultMove : MonoBehaviour
                 */ 
                     
                     Invoke(command[0, 0], 0);
-              
+                
+                if (enemyinnear==true)
+                {
+                    yield return new WaitForSeconds(3.0f);
+                    enemyinnear = false;
+                }
+                
                  
                 yield return new WaitForSeconds(0.1f);
                 yield return null;
@@ -788,7 +796,7 @@ public class DefaultMove : MonoBehaviour
         }//와드
         else  //<명령어 줄이기>
         {
-            if (runningact != command[0, 1])
+            if (runningact != "JustWalk")
             {
                 StopCoroutine(runningact);
                 StartCoroutine("JustWalk");
@@ -819,7 +827,7 @@ public class DefaultMove : MonoBehaviour
         }
         else  //<명령어 줄이기>
         {
-            if (runningact != command[0, 1])
+            if (runningact != "JustWalk")
             {
                 StopCoroutine(runningact);
                 StartCoroutine("JustWalk");
@@ -830,41 +838,41 @@ public class DefaultMove : MonoBehaviour
 
     void EnemyInNear()
     {
-
+        //enemyinnear = false;
         ckani = 0;
         animation.SetInteger("ckani", ckani);
 
-        Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+        Collider[] colls = Physics.OverlapSphere(this.transform.position, 10.0f);
         if (tag == "redcharacter")
         {
             foreach (Collider coll in colls)
             {
                 if (coll.gameObject.tag == "bluecharacter")
                 {
-                   // checkcommand = false;
+                    // checkcommand = false;
+                  
                     if (runningact != command[0, 1])
                     {
-
+                       
                         StopCoroutine(runningact);
                         StartCoroutine(command[0, 1]);
                         //Debug.Log("A bluecharacter is detected in radius");
                         //i = -1;
+                        enemyinnear = true;
                         break;
                     }
 
                     //i = -1;
                 }
-                else  //<명령어 줄이기>
+            }
+            if (enemyinnear == false)
+            {
+                if (runningact != "JustWalk")
                 {
-                    if (runningact != command[0, 1])
-                    {
-                        StopCoroutine(runningact);
-                        StartCoroutine("JustWalk");
-                        break;
-                    }
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
+                     
                 }
-
-
             }
         }
         else if (tag == "bluecharacter")
@@ -881,21 +889,20 @@ public class DefaultMove : MonoBehaviour
                         StartCoroutine(command[0, 1]);
                         // Debug.Log("A redcharacter is detected in radius");
                         //i = -1;
+                        enemyinnear = true;
                         break;
                     }
                     //i = -1;
                 }
-                else  //<명령어 줄이기>
+            }
+            if (enemyinnear == false)
+            {
+                if (runningact != "JustWalk")
                 {
-                    if (runningact != command[0, 1])
-                    {
-                        StopCoroutine(runningact);
-                        StartCoroutine("JustWalk");
-                        break;
-                    }
+                    StopCoroutine(runningact);
+                    StartCoroutine("JustWalk");
+
                 }
-
-
             }
         }
     }
@@ -907,7 +914,7 @@ public class DefaultMove : MonoBehaviour
         ckani = 0;
         animation.SetInteger("ckani", ckani);
 
-        Collider[] colls = Physics.OverlapSphere(this.transform.position, 15.0f);
+        Collider[] colls = Physics.OverlapSphere(this.transform.position, 10.0f);
         int nearenemy = 0;
         if (tag == "redcharacter")
         {
@@ -935,7 +942,7 @@ public class DefaultMove : MonoBehaviour
             }
             else  //<명령어 줄이기>
             {
-                if (runningact != command[0, 1])
+                if (runningact != "JustWalk")
                 {
                     StopCoroutine(runningact);
                     StartCoroutine("JustWalk");
@@ -968,7 +975,7 @@ public class DefaultMove : MonoBehaviour
             }
             else  //<명령어 줄이기>
             {
-                if (runningact != command[0, 1])
+                if (runningact != "JustWalk")
                 {
                     StopCoroutine(runningact);
                     StartCoroutine("JustWalk");
@@ -1000,7 +1007,7 @@ public class DefaultMove : MonoBehaviour
             }
             else  //<명령어 줄이기>
             {
-                if (runningact != command[0, 1])
+                if (runningact != "JustWalk")
                 {
                     StopCoroutine(runningact);
                     StartCoroutine("JustWalk");
@@ -1024,7 +1031,7 @@ public class DefaultMove : MonoBehaviour
             }
             else  //<명령어 줄이기>
             {
-                if (runningact != command[0, 1])
+                if (runningact != "JustWalk")
                 {
                     StopCoroutine(runningact);
                     StartCoroutine("JustWalk");
@@ -1057,7 +1064,7 @@ public class DefaultMove : MonoBehaviour
             }
             else  //<명령어 줄이기>
             {
-                if (runningact != command[0, 1])
+                if (runningact != "JustWalk")
                 {
                     StopCoroutine(runningact);
                     StartCoroutine("JustWalk");
@@ -1081,7 +1088,7 @@ public class DefaultMove : MonoBehaviour
             }
             else  //<명령어 줄이기>
             {
-                if (runningact != command[0, 1])
+                if (runningact != "JustWalk")
                 {
                     StopCoroutine(runningact);
                     StartCoroutine("JustWalk");
@@ -1114,7 +1121,7 @@ public class DefaultMove : MonoBehaviour
         }
         else  //<명령어 줄이기>
         {
-            if (runningact != command[0, 1])
+            if (runningact != "JustWalk")
             {
                 StopCoroutine(runningact);
                 StartCoroutine("JustWalk");
