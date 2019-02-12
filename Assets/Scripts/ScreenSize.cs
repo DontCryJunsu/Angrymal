@@ -9,13 +9,6 @@ public class ScreenSize : MonoBehaviour
     void Start()
     {
         Screen.SetResolution(1280, 720, true);
-
+        PlayerPrefs.DeleteAll();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
 }

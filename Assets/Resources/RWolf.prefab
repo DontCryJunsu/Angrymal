@@ -936,6 +936,11 @@ PrefabInstance:
       propertyPath: InitialModule.startLifetime.scalar
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 2018816428893790512, guid: 449f6df8ef2647449900a8141d4f0650,
+        type: 3}
+      propertyPath: moveWithTransform
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449f6df8ef2647449900a8141d4f0650, type: 3}
 --- !u!1 &350518015875155606 stripped
