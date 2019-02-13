@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2021003308840544608
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8377100467996405837}
+  - component: {fileID: 1621608909041334383}
+  m_Layer: 0
+  m_Name: SPH
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8377100467996405837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021003308840544608}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5932093587727356627}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1621608909041334383
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021003308840544608}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 300
+  m_Center: {x: 0, y: 650, z: 0}
 --- !u!1 &5932093586883390190
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,7 +256,8 @@ Transform:
   m_Children:
   - {fileID: 5932093586883390193}
   - {fileID: 5932093588352516183}
-  - {fileID: 5215135329702274346}
+  - {fileID: 8928162373770970249}
+  - {fileID: 8377100467996405837}
   m_Father: {fileID: 5932093587666864902}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -288,7 +333,7 @@ MonoBehaviour:
   OriPower: 10
   child: cat
   num_of_tile: 276
-  HPBar: {fileID: 7309075330098199879}
+  HPBar: {fileID: 8928162373770970539}
   AS: {fileID: 6489800918461172507}
 --- !u!114 &5932093587727356629
 MonoBehaviour:
@@ -439,7 +484,7 @@ GameObject:
   - component: {fileID: 5932093588191193859}
   - component: {fileID: 5932093588191193861}
   - component: {fileID: 5932093588191193858}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: catDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -955,13 +1000,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &5215135329702274346 stripped
+--- !u!224 &8928162373770970249 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
   m_PrefabInstance: {fileID: 8928162373770969336}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7309075330098199879 stripped
+--- !u!114 &8928162373770970539 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}

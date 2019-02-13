@@ -36,7 +36,8 @@ Transform:
   m_Children:
   - {fileID: 6570231570704431269}
   - {fileID: 4724215563271601499}
-  - {fileID: 6274288673005437209}
+  - {fileID: 7253634191372443834}
+  - {fileID: 1460121719782840240}
   m_Father: {fileID: 3535739821065855698}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -112,7 +113,7 @@ MonoBehaviour:
   OriPower: 10
   child: pig
   num_of_tile: 276
-  HPBar: {fileID: 8800646048953637236}
+  HPBar: {fileID: 7253634191372444056}
   AS: {fileID: 6028492410863733612}
 --- !u!114 &8385826715164004782
 MonoBehaviour:
@@ -496,7 +497,7 @@ GameObject:
   - component: {fileID: 2199751840199050848}
   - component: {fileID: 491228286169181890}
   - component: {fileID: 3073965987284994164}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: pigDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -821,6 +822,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 100, y: 100, z: 100}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &7296097760309955454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1460121719782840240}
+  - component: {fileID: 3948853698843189144}
+  m_Layer: 0
+  m_Name: SPH
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1460121719782840240
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296097760309955454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2766122937342849940}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3948853698843189144
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296097760309955454}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 300
+  m_Center: {x: 0, y: 650, z: 0}
 --- !u!1001 &7253634191372444875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -955,13 +1000,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &6274288673005437209 stripped
+--- !u!224 &7253634191372443834 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
   m_PrefabInstance: {fileID: 7253634191372444875}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8800646048953637236 stripped
+--- !u!114 &7253634191372444056 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}

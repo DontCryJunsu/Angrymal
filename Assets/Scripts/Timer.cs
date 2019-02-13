@@ -12,6 +12,7 @@ public class Timer : MonoBehaviour
     public GameObject upPan;
     public GameObject downPan;
     bool swit = false;
+    int money;
     void Update()
     {
         if (!swit)
@@ -50,11 +51,17 @@ public class Timer : MonoBehaviour
         {
             if (Command.bluetile > Command.redtile)
             {
+                money = PlayerPrefs.GetInt("Money", 0);
+                money += 20;
+                PlayerPrefs.SetInt("Money", money);
                 PhotonNetwork.LeaveRoom();
                 SceneManager.LoadScene("Win");
             }
             else
             {
+                money = PlayerPrefs.GetInt("Money", 0);
+                money += 10;
+                PlayerPrefs.SetInt("Money", money);
                 PhotonNetwork.LeaveRoom();
                 SceneManager.LoadScene("Lose");
             }
@@ -63,11 +70,17 @@ public class Timer : MonoBehaviour
         {
             if (Command.bluetile <= Command.redtile)
             {
+                money = PlayerPrefs.GetInt("Money", 0);
+                money += 20;
+                PlayerPrefs.SetInt("Money", money);
                 PhotonNetwork.LeaveRoom();
                 SceneManager.LoadScene("Win");
             }
             else
             {
+                money = PlayerPrefs.GetInt("Money", 0);
+                money += 10;
+                PlayerPrefs.SetInt("Money", money);
                 PhotonNetwork.LeaveRoom();
                 SceneManager.LoadScene("Lose");
             }
@@ -85,6 +98,9 @@ public class Timer : MonoBehaviour
         }
         upPan = null;
         downPan = null;
+        money = PlayerPrefs.GetInt("Money", 0);
+        money += 20;
+        PlayerPrefs.SetInt("Money", money);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Win");
 

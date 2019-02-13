@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8236639017525915201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 910469304484011639}
+  - component: {fileID: 3583099327842429578}
+  m_Layer: 0
+  m_Name: SPH
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &910469304484011639
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236639017525915201}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9104569254765656144}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3583099327842429578
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8236639017525915201}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 300
+  m_Center: {x: 0, y: 650, z: 0}
 --- !u!1 &9101777321617381380
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +55,7 @@ GameObject:
   - component: {fileID: 9099403061428118454}
   - component: {fileID: 9205571576561156588}
   - component: {fileID: 9133123522729261564}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: babychickenDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -488,7 +532,8 @@ Transform:
   m_Children:
   - {fileID: 9099396727287530884}
   - {fileID: 9104542942924069454}
-  - {fileID: 4892592732357303979}
+  - {fileID: 8096679075794288392}
+  - {fileID: 910469304484011639}
   m_Father: {fileID: 9099321932920593598}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -564,7 +609,7 @@ MonoBehaviour:
   OriPower: 5
   child: babychicken
   num_of_tile: 276
-  HPBar: {fileID: 7986315426080229062}
+  HPBar: {fileID: 8096679075794288170}
   AS: {fileID: 255529611416221406}
 --- !u!114 &9209352321006489092
 MonoBehaviour:
@@ -589,8 +634,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 9104569254765656144}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &9205770034432960362
@@ -817,8 +862,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 9099321932920593598}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1001 &8096679075794287481
@@ -955,13 +1000,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &4892592732357303979 stripped
+--- !u!224 &8096679075794288392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
   m_PrefabInstance: {fileID: 8096679075794287481}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7986315426080229062 stripped
+--- !u!114 &8096679075794288170 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}

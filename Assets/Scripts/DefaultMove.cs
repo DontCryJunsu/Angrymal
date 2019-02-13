@@ -204,7 +204,7 @@ public class DefaultMove : MonoBehaviour
 
             if (tag == "redcharacter")
             {
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 1.0f);
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
                
                 foreach (Collider coll in colls)
                 {

@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2926986589282207669
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5500741978516667696}
+  - component: {fileID: 3685420932124853553}
+  m_Layer: 0
+  m_Name: SPH
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5500741978516667696
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926986589282207669}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9104569254765656144}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3685420932124853553
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2926986589282207669}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 300
+  m_Center: {x: 0, y: 650, z: 0}
 --- !u!1 &9101777321617381380
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,7 +55,7 @@ GameObject:
   - component: {fileID: 9099403061428118454}
   - component: {fileID: 9205571576561156588}
   - component: {fileID: 9133123522729261564}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: buffaloDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -489,7 +533,8 @@ Transform:
   m_Children:
   - {fileID: 9099396727287530884}
   - {fileID: 9104542942924069454}
-  - {fileID: 4892592732357303979}
+  - {fileID: 8096679075794288392}
+  - {fileID: 5500741978516667696}
   m_Father: {fileID: 9099321932920593598}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -565,7 +610,7 @@ MonoBehaviour:
   OriPower: 15
   child: buffalo
   num_of_tile: 276
-  HPBar: {fileID: 7986315426080229062}
+  HPBar: {fileID: 8096679075794288170}
   AS: {fileID: 261400704886153318}
 --- !u!114 &9209352321006489092
 MonoBehaviour:
@@ -971,13 +1016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &4892592732357303979 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 8096679075794287481}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7986315426080229062 stripped
+--- !u!114 &8096679075794288170 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
@@ -989,3 +1028,9 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &8096679075794288392 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 8096679075794287481}
+  m_PrefabAsset: {fileID: 0}

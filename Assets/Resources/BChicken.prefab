@@ -1,5 +1,49 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1094174532923165269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6158705872647272417}
+  - component: {fileID: 1320982065347873421}
+  m_Layer: 0
+  m_Name: SPH
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6158705872647272417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094174532923165269}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4518750125393231732}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &1320982065347873421
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1094174532923165269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 300
+  m_Center: {x: 0, y: 650, z: 0}
 --- !u!1 &4518750125393231733
 GameObject:
   m_ObjectHideFlags: 0
@@ -37,7 +81,8 @@ Transform:
   m_Children:
   - {fileID: 4518750126641331538}
   - {fileID: 4518750126332846247}
-  - {fileID: 7989355457660983739}
+  - {fileID: 6730403033012303896}
+  - {fileID: 6158705872647272417}
   m_Father: {fileID: 4518750126004367338}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,7 +158,7 @@ MonoBehaviour:
   OriPower: 8
   child: chicken
   num_of_tile: 276
-  HPBar: {fileID: 4895141007397126614}
+  HPBar: {fileID: 6730403033012304186}
   AS: {fileID: 7794865908812198369}
 --- !u!114 &4518750125393231734
 MonoBehaviour:
@@ -477,7 +522,7 @@ GameObject:
   - component: {fileID: 4518750126523503674}
   - component: {fileID: 4518750126523503676}
   - component: {fileID: 4518750126523503677}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: chickenDestination
   m_TagString: bluedestination
   m_Icon: {fileID: 0}
@@ -1052,13 +1097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &7989355457660983739 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 6730403033012305001}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4895141007397126614 stripped
+--- !u!114 &6730403033012304186 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
@@ -1070,3 +1109,9 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6730403033012303896 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 6730403033012305001}
+  m_PrefabAsset: {fileID: 0}
