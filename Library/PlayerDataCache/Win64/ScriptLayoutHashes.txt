@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/basso/OneDrive/바탕 화면/MARIO/BuildFile/Lain/lanimal.exe
+C:/Users/basso/OneDrive/바탕 화면/MARIO/BuildFile/인디스타즈/lanimal.exe
 SceneListBegin?
 Assets/Scenes/StoryScene.unity
 Assets/Scenes/StartScene.unity

@@ -204,7 +204,7 @@ public class DefaultMove : MonoBehaviour
 
             if (tag == "redcharacter")
             {
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 2.5f);
                
                 foreach (Collider coll in colls)
                 {
@@ -240,7 +240,7 @@ public class DefaultMove : MonoBehaviour
             }
             else if (tag == "bluecharacter")
             {
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 5.0f);
+                Collider[] colls = Physics.OverlapSphere(this.transform.position, 2.5f);
                 foreach (Collider coll in colls)
                 {
                     yield return null; //렉 걸리는지 확인 중
