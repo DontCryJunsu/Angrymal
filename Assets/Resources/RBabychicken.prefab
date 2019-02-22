@@ -773,6 +773,7 @@ GameObject:
   - component: {fileID: 9209352321006489092}
   - component: {fileID: 7871500982767981868}
   - component: {fileID: 8646058363477158983}
+  - component: {fileID: 2608835096020192528}
   m_Layer: 9
   m_Name: babychicken
   m_TagString: redcharacter
@@ -870,8 +871,8 @@ MonoBehaviour:
   OriPower: 5
   child: babychicken
   num_of_tile: 276
+  animation: {fileID: 0}
   HPBar: {fileID: 7986315426080229062}
-  AS: {fileID: 8646058363477158983}
 --- !u!114 &9209352321006489092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1011,6 +1012,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2608835096020192528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102621860628111166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 8646058363477158983}
 --- !u!1 &9102884299350479480
 GameObject:
   m_ObjectHideFlags: 0

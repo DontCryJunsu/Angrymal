@@ -558,8 +558,8 @@ MonoBehaviour:
   OriPower: 0
   child: 
   num_of_tile: 275
+  animation: {fileID: 0}
   HPBar: {fileID: 1125013111257229744}
-  AS: {fileID: 8092476279205244338}
 --- !u!114 &5373723191385999568
 MonoBehaviour:
   m_ObjectHideFlags: 0

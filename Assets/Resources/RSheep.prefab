@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5665990916999763003}
   - component: {fileID: 5876263915278436423}
   - component: {fileID: 809840834795752659}
+  - component: {fileID: 4215000825021128436}
   m_Layer: 9
   m_Name: sheep
   m_TagString: redcharacter
@@ -115,8 +116,8 @@ MonoBehaviour:
   OriPower: 5
   child: sheep
   num_of_tile: 276
+  animation: {fileID: 0}
   HPBar: {fileID: 760513632174699779}
-  AS: {fileID: 809840834795752659}
 --- !u!114 &114233380820262848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,6 +283,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4215000825021128436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072730504058222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 809840834795752659}
 --- !u!1 &1235212612082180
 GameObject:
   m_ObjectHideFlags: 0

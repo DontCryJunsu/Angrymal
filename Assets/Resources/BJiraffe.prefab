@@ -468,6 +468,7 @@ GameObject:
   - component: {fileID: 114077617389692326}
   - component: {fileID: 114789327473095216}
   - component: {fileID: 2509839479389367881}
+  - component: {fileID: 1750791256278722818}
   m_Layer: 8
   m_Name: jiraffe
   m_TagString: bluecharacter
@@ -565,8 +566,8 @@ MonoBehaviour:
   OriPower: 18
   child: jiraffe
   num_of_tile: 276
+  animation: {fileID: 0}
   HPBar: {fileID: 2283821094655979451}
-  AS: {fileID: 2509839479389367881}
 --- !u!114 &114077617389692326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,6 +706,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1750791256278722818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797221857655992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 2509839479389367881}
 --- !u!1 &1911684890596382
 GameObject:
   m_ObjectHideFlags: 0

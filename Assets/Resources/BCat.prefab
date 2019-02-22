@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 5932093587727356629}
   - component: {fileID: 5932093587727356626}
   - component: {fileID: 6489800918461172507}
+  - component: {fileID: 879325147339269431}
   m_Layer: 8
   m_Name: cat
   m_TagString: bluecharacter
@@ -256,7 +257,7 @@ Transform:
   m_Children:
   - {fileID: 5932093586883390193}
   - {fileID: 5932093588352516183}
-  - {fileID: 8928162373770970249}
+  - {fileID: 5215135329702274346}
   - {fileID: 8377100467996405837}
   m_Father: {fileID: 5932093587666864902}
   m_RootOrder: 0
@@ -333,8 +334,8 @@ MonoBehaviour:
   OriPower: 10
   child: cat
   num_of_tile: 276
-  HPBar: {fileID: 8928162373770970539}
-  AS: {fileID: 6489800918461172507}
+  animation: {fileID: 0}
+  HPBar: {fileID: 7309075330098199879}
 --- !u!114 &5932093587727356629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -473,6 +474,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &879325147339269431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5932093587727356624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 6489800918461172507}
 --- !u!1 &5932093588191193856
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,13 +1014,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &8928162373770970249 stripped
+--- !u!224 &5215135329702274346 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
   m_PrefabInstance: {fileID: 8928162373770969336}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8928162373770970539 stripped
+--- !u!114 &7309075330098199879 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}

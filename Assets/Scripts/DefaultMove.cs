@@ -13,7 +13,6 @@ public class DefaultMove : MonoBehaviour
     public GameObject goal;
     NavMeshAgent nav;
     bool JustWalk_isrunning;
-    //string[] command = new string[2];
     string[,] command = new string[1, 3];  //1행 3열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개. 3열은 공격명령.
     private Transform target;
     private float dist;
@@ -21,7 +20,7 @@ public class DefaultMove : MonoBehaviour
     int i = -1;
     int j = -1;
     bool checkcommand = true;
-    bool checkattackcommand = true;
+    
     public float hp;
     public float fullhp;
     public float speed;
@@ -30,11 +29,11 @@ public class DefaultMove : MonoBehaviour
     public float OriPower;
     public string child;
     public int num_of_tile; //총 땅의 개수
-    Collider akcoll = null;
+ 
     RandomDestination RD;
 
-    private int ckani;
-    private Animator animation;
+    private int ckani;  
+    public Animator animation;  //AlwaysAtk 스크립트에서 쓰려고 private->public으로 바꿈
 
     Rigidbody rgdy;
     Transform tr;
@@ -43,17 +42,10 @@ public class DefaultMove : MonoBehaviour
     private Vector3 currPos = Vector3.zero;
     private Quaternion currRot = Quaternion.identity;
 
-    float time = -0.1f; //PreventDoubleAttack 함수에서 사용
-    float comparetime = 1.0f;
-
     public Image HPBar;
-
     bool enemyinnear = false;
 
-    //private Vector3 destinationbuffer;  //공격에서 사용하는 위치
-    private float angularbuffer; //공격에서 사용하는 회전속도
-
-    public AudioSource AS; //공격 소리
+   
 
     void Awake()
     {
@@ -81,8 +73,8 @@ public class DefaultMove : MonoBehaviour
         //StartCoroutine("JustWalk");// <명령어 줄이기>
         runningact = "Nothing"; //<명령어 줄이기>
         StartCoroutine(CheckCommand());
-        if (name != "babychicken")
-            StartCoroutine(CheckAttackCommand());
+        //if (name != "babychicken")
+        //    StartCoroutine(CheckAttackCommand());
         RD = goal.GetComponent<RandomDestination>();
 
         if (!pv.isMine)
@@ -159,19 +151,7 @@ public class DefaultMove : MonoBehaviour
             while (checkcommand == true)  // 조건에 맞는 명령어를 찾을때까지만 반복.
             {
 
-              /*  //<명령어 줄이기>
-                i++;  //
-
-                Invoke(command[i, 0], 0);  // command[i,0]에는 각 명령어의 조건이 들어있다. 각 조건은 이 스크립트의 맨 아래쪽에 메서드로 구현해놓는다.
-
-
-                if (i >= 0)
-                {
-                    i = -1;  // 각 명령어를 반복해 검사하기 위함.
-                }
-                
-                
-                */ 
+         
                     
                     Invoke(command[0, 0], 0);
                 
@@ -190,95 +170,7 @@ public class DefaultMove : MonoBehaviour
     }
 
 
-    IEnumerator CheckAttackCommand()  // 공격 명령 기본 틀
-    {
-
-
-        while (checkattackcommand == true)   // <명령어 줄이기> while(true)
-        {
-
-            ckani = 0; //애니메이터 변수 초기화
-
-            // checkattackcommand = true;  <명령어 줄이기>
-            yield return null;
-
-            if (tag == "redcharacter")
-            {
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 2.5f);
-               
-                foreach (Collider coll in colls)
-                {
-                    yield return null; //렉 걸리는지 확인 중
-                    if (coll != null)
-                    {
-                        if (coll.gameObject.tag == "bluecharacter")
-                        {
-                            //while (checkattackcommand == true)<명령어 줄이기>
-                            //{<명령어 줄이기>
-                            yield return null;
-                                //j++; <명령어 줄이기>
-                                akcoll = coll;
-                                /*<명령어 줄이기>
-                                if (command[j, 2] != null)
-                                {
-                                    yield return StartCoroutine(command[j, 2]);
-                                }
-                                */
-                                yield return StartCoroutine("AlwaysAttack");
-                                nav.speed = speed;
-                            /* <명령어 줄이기>
-                            if (j >= 0 || checkattackcommand == false)
-                            {
-                                j = -1;
-                            }
-                            */
-                            //}<명령어 줄이기>
-                        }
-                    }
-                }
-              
-            }
-            else if (tag == "bluecharacter")
-            {
-                Collider[] colls = Physics.OverlapSphere(this.transform.position, 2.5f);
-                foreach (Collider coll in colls)
-                {
-                    yield return null; //렉 걸리는지 확인 중
-                    if (coll != null)
-                    {
-                        if (coll.gameObject.tag == "redcharacter")
-                        {
-                            //while (checkattackcommand == true)<명령어 줄이기>
-                            //{<명령어 줄이기>
-                            yield return null;
-                            //j++;<명령어 줄이기>
-                            akcoll = coll;
-                            /*<명령어 줄이기>
-                            if (command[j, 2] != null)
-                                {
-                                    yield return StartCoroutine(command[j, 2]);
-                                    //Debug.Log("J = " + j);
-                                }
-                                */
-                            yield return StartCoroutine("AlwaysAttack");
-                            nav.speed = speed;
-                            /*<명령어 줄이기>
-                                if (j >= 0 || checkattackcommand == false)
-                                {
-                                    j = -1;
-                                }
-                                */
-                            //}<명령어 줄이기>
-                        }
-                    }
-                }
-            }
-
-        }
-    }
-
-
-
+    
 
 
     void GetCommand()
@@ -287,7 +179,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.chicken[0, 0];
             command[0, 1] = Command.chicken[0, 1];
-            command[0, 2] = Command.chicken[0, 2];
+            //command[0, 2] = Command.chicken[0, 2];
 
        
         }
@@ -295,7 +187,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.snake[0, 0];
             command[0, 1] = Command.snake[0, 1];
-            command[0, 2] = Command.snake[0, 2];
+            //command[0, 2] = Command.snake[0, 2];
 
 
         }
@@ -303,7 +195,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.mouse[0, 0];
             command[0, 1] = Command.mouse[0, 1];
-            command[0, 2] = Command.mouse[0, 2];
+            //command[0, 2] = Command.mouse[0, 2];
 
            
         }
@@ -311,7 +203,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.pig[0, 0];
             command[0, 1] = Command.pig[0, 1];
-            command[0, 2] = Command.pig[0, 2];
+           // command[0, 2] = Command.pig[0, 2];
 
     
         }
@@ -319,7 +211,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.elephant[0, 0];
             command[0, 1] = Command.elephant[0, 1];
-            command[0, 2] = Command.elephant[0, 2];
+           // command[0, 2] = Command.elephant[0, 2];
 
         
         }
@@ -327,7 +219,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.lion[0, 0];
             command[0, 1] = Command.lion[0, 1];
-            command[0, 2] = Command.lion[0, 2];
+           // command[0, 2] = Command.lion[0, 2];
 
     
         }
@@ -335,7 +227,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.kangaroo[0, 0];
             command[0, 1] = Command.kangaroo[0, 1];
-            command[0, 2] = Command.kangaroo[0, 2];
+          //  command[0, 2] = Command.kangaroo[0, 2];
 
           
         }
@@ -343,7 +235,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.jiraffe[0, 0];
             command[0, 1] = Command.jiraffe[0, 1];
-            command[0, 2] = Command.jiraffe[0, 2];
+          //  command[0, 2] = Command.jiraffe[0, 2];
 
        
         }
@@ -351,7 +243,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.buffalo[0, 0];
             command[0, 1] = Command.buffalo[0, 1];
-            command[0, 2] = Command.buffalo[0, 2];
+           // command[0, 2] = Command.buffalo[0, 2];
 
 
         }
@@ -359,7 +251,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.sheep[0, 0];
             command[0, 1] = Command.sheep[0, 1];
-            command[0, 2] = Command.sheep[0, 2];
+           // command[0, 2] = Command.sheep[0, 2];
 
 
         }
@@ -367,7 +259,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.wolf[0, 0];
             command[0, 1] = Command.wolf[0, 1];
-            command[0, 2] = Command.wolf[0, 2];
+           // command[0, 2] = Command.wolf[0, 2];
 
  
         }
@@ -375,7 +267,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.dog[0, 0];
             command[0, 1] = Command.dog[0, 1];
-            command[0, 2] = Command.dog[0, 2];
+           // command[0, 2] = Command.dog[0, 2];
 
    
         }
@@ -383,7 +275,7 @@ public class DefaultMove : MonoBehaviour
         {
             command[0, 0] = Command.cat[0, 0];
             command[0, 1] = Command.cat[0, 1];
-            command[0, 2] = Command.cat[0, 2];
+           // command[0, 2] = Command.cat[0, 2];
 
 
         }
@@ -396,360 +288,7 @@ public class DefaultMove : MonoBehaviour
 
     // 여기서부터 공격 조건 ----------------------------------------------------------------------------------
 
-    IEnumerator AlwaysAttack()
-    {
-        //애니메이터
-        ckani = 1;
-        animation.SetInteger("ckani", ckani);
-
-        ///destinationbuffer = nav.destination;  //공격 끝나면 목표지점 돌려놓으려고 목표지점 저장해놓음
-
-        nav.speed = 0;  // 멈춰 선다.
-        transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
-        angularbuffer = nav.angularSpeed;
-        nav.angularSpeed = 0;
-
-
-        Debug.Log("항상공격");
-        //isAttack = true;
-        // animation.SetBool("isAttack", isAttack); //애니메이션세팅
-        ckani = 1;
-        animation.SetInteger("ckani", ckani);
-       
-        nav.speed = 0;  // 멈춰 선다.
-        transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
-
-
-        akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.All, Time.deltaTime);
-        transform.GetChild(1).gameObject.SetActive(true);  //공격 
-        yield return null;
-        //NetAttackDamage(power)destination;
-        Debug.Log("항상 공격");
-     
-
-        //checkattackcommand = false; //<명령어 줄이기>
-        yield return new WaitForSeconds(0.5f);
-        transform.GetChild(1).gameObject.SetActive(false);
-        yield return new WaitForSeconds(1.0f);
-        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-       // nav.SetDestination(destinationbuffer); //navmesh 목표지점 원래대로 돌려놈
-
-    }
-
-
-    IEnumerator HPMoreThanHalfAttack()
-    {
-
-        if (hp >= (fullhp / 2))
-        {
-
-            //애니메이터
-            ckani = 1;
-            animation.SetInteger("ckani", ckani);
-
-            nav.speed = 0;
-            transform.LookAt(akcoll.transform);
-            angularbuffer = nav.angularSpeed;
-            nav.angularSpeed = 0;
-
-            Debug.Log("절반이상공격");
-            // isAttack = true;
-            // animation.SetBool("isAttack", isAttack); //애니메이션세팅
-            ckani = 1;
-            animation.SetInteger("ckani", ckani);
-            nav.speed = 0;
-            transform.LookAt(akcoll.transform);
-
-            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-            transform.GetChild(1).gameObject.SetActive(true);  //공격 
-            yield return null;
-
-            Debug.Log("HP more than half attack");
-            checkattackcommand = false;
-            yield return new WaitForSeconds(1.5f);
-
-            transform.GetChild(1).gameObject.SetActive(false);
-            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-        }
-
-    }
-
-
-    IEnumerator HPLessThanHalfAttack()
-    {
-        if (hp < (fullhp / 2))
-        {
-                       
-            //애니메이터
-            ckani = 1;
-            animation.SetInteger("ckani", ckani);
-
-            Debug.Log("절반이하공격");
-            // isAttack = true;
-            //animation.SetBool("isAttack", isAttack); //애니메이션세팅
-            ckani = 1;
-            animation.SetInteger("ckani", ckani);
-
-            nav.speed = 0;
-            transform.LookAt(akcoll.transform);
-            angularbuffer = nav.angularSpeed;
-            nav.angularSpeed = 0;
-
-
-
-            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-            transform.GetChild(1).gameObject.SetActive(true);  //공격 
-            yield return null;
-
-            Debug.Log("HP less than half attack");
-            checkattackcommand = false;
-            yield return new WaitForSeconds(1.5f);
-
-            transform.GetChild(1).gameObject.SetActive(false);
-            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-        }
-    }
-
-    IEnumerator EnemyHPMoreThanHalfAttack()  // 상대 체력 절반 이상일 때 공격
-    {
-
-        var enemyhp = akcoll.GetComponent<DefaultMove>();
-        if (enemyhp.hp >= (enemyhp.fullhp / 2))
-        {
-
-
-            //애니메이터
-            ckani = 1;
-            animation.SetInteger("ckani", ckani);
-
-            nav.speed = 0;
-            transform.LookAt(akcoll.transform);
-            angularbuffer = nav.angularSpeed;
-            nav.angularSpeed = 0;
-
-            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-            transform.GetChild(1).gameObject.SetActive(true);  //공격 
-            yield return null;
-
-            Debug.Log("Enemy HP more than half attack");
-            checkattackcommand = false;
-            yield return new WaitForSeconds(1.5f);
-
-            transform.GetChild(1).gameObject.SetActive(false);
-            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-
-        }
-    }
-
-
-    IEnumerator EnemyHPLessThanHalfAttack()  // 상대 체력 절반 미만일 때 공격
-    {
-
-        var enemyhp = akcoll.GetComponent<DefaultMove>();
-        if (enemyhp.hp < (enemyhp.fullhp / 2))
-        {
-
-            //애니메이터
-            ckani = 1;
-            animation.SetInteger("ckani", ckani);
-            
-            nav.speed = 0;
-            transform.LookAt(akcoll.transform);
-            angularbuffer = nav.angularSpeed;
-            nav.angularSpeed = 0;
-
-            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-            transform.GetChild(1).gameObject.SetActive(true);  //공격 
-            yield return null;
-
-            Debug.Log("Enemy HP less than half attack");
-            checkattackcommand = false;
-            yield return new WaitForSeconds(1.5f);
-
-            transform.GetChild(1).gameObject.SetActive(false);
-            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-
-        }
-    }
-
-    IEnumerator MyHPIsMoreAttack()  // 내 체력이 더 많을 때 공격
-    {
-        
-        var enemyhp = akcoll.GetComponent<DefaultMove>();
-        if (enemyhp.hp < hp)
-        {
-
-            //애니메이터
-            ckani = 1;
-            animation.SetInteger("ckani", ckani);
-
-            nav.speed = 0;
-            transform.LookAt(akcoll.transform);
-            angularbuffer = nav.angularSpeed;
-            nav.angularSpeed = 0;
-
-            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-            transform.GetChild(1).gameObject.SetActive(true);  //공격 
-            yield return null;
-
-            Debug.Log("My HP is more than enemy's HP Attack");
-            checkattackcommand = false;
-            yield return new WaitForSeconds(1.5f);
-
-            transform.GetChild(1).gameObject.SetActive(false);
-            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-
-        }
-        yield return null;
-    }
-
-    IEnumerator OurTileIsMoreAttack()   // 땅이 더 많을 때 공격
-    {
-
-        if (tag == "redcharacter")
-        {
-            if (Command.redtile > Command.bluetile)
-            {
-
-                //애니메이터
-                ckani = 1;
-                animation.SetInteger("ckani", ckani);
-
-                nav.speed = 0;   // 멈추고
-                transform.LookAt(akcoll.transform);  //적 바라봄
-                angularbuffer = nav.angularSpeed;
-                nav.angularSpeed = 0;
-
-                akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-                transform.GetChild(1).gameObject.SetActive(true);  //공격 
-                yield return null;
-
-                Debug.Log("Our tile is more than enemy's tile Attack");  // 공격
-                checkattackcommand = false;
-                yield return new WaitForSeconds(1.5f);
-
-                transform.GetChild(1).gameObject.SetActive(false);
-                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-
-            }
-        }
-        else if (tag == "bluecharacter")
-        {
-            if (Command.bluetile > Command.redtile)
-            {
-
-                //애니메이터
-                ckani = 1;
-                animation.SetInteger("ckani", ckani);
-
-                nav.speed = 0;
-                transform.LookAt(akcoll.transform);
-                angularbuffer = nav.angularSpeed;
-                nav.angularSpeed = 0;
-
-                akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-                transform.GetChild(1).gameObject.SetActive(true);  //공격 
-                yield return null;
-
-                Debug.Log("My tile is more than enemy's tile Attack");
-                checkattackcommand = false;
-                yield return new WaitForSeconds(1.5f);
-
-                transform.GetChild(1).gameObject.SetActive(false);
-                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-
-            }
-        }
-        yield return null;
-    }
-
-    IEnumerator OurTileIsLessAttack()
-    {
-
-        if (tag == "redcharacter")
-        {
-            if (Command.redtile < Command.bluetile)
-            {
-
-                //애니메이터
-                ckani = 1;
-                animation.SetInteger("ckani", ckani);
-
-                nav.speed = 0;   // 멈추고
-                transform.LookAt(akcoll.transform);  //적 바라봄
-                angularbuffer = nav.angularSpeed;
-                nav.angularSpeed = 0;
-
-                akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-                transform.GetChild(1).gameObject.SetActive(true);  //공격 
-                yield return null;
-
-                Debug.Log("Our tile is less than enemy's tile Attack");  // 공격
-                checkattackcommand = false;
-                yield return new WaitForSeconds(1.5f);
-
-                transform.GetChild(1).gameObject.SetActive(false);
-                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-            }
-        }
-        else if (tag == "bluecharacter")
-        {
-            if (Command.bluetile < Command.redtile)
-            {
-
-                Debug.Log("땅적을때");
-                // isAttack = true;
-                // animation.SetBool("isAttack", isAttack); //애니메이션세팅
-                ckani = 1;
-                animation.SetInteger("ckani", ckani);
-                nav.speed = 0;
-                transform.LookAt(akcoll.transform);
-
-                angularbuffer = nav.angularSpeed;
-                nav.angularSpeed = 0;
-
-                akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-                transform.GetChild(1).gameObject.SetActive(true);  //공격 
-                yield return null;
-
-                Debug.Log("My tile is less than enemy's tile Attack");
-                checkattackcommand = false;
-                yield return new WaitForSeconds(1.5f);
-
-                transform.GetChild(1).gameObject.SetActive(false);
-                nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-            }
-        }
-        yield return null;
-    }
-
-    IEnumerator NoEmptyTileAttack()   // 빈 땅이 없을 때 공격
-    {
-        
-        if ((Command.redtile + Command.bluetile) >= num_of_tile)
-        {
-
-            //애니메이터
-            ckani = 1;
-            animation.SetInteger("ckani", ckani);
-
-            nav.speed = 0;   // 멈추고
-            transform.LookAt(akcoll.transform);  //적 바라봄
-            angularbuffer = nav.angularSpeed;
-            nav.angularSpeed = 0;
-
-            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
-            transform.GetChild(1).gameObject.SetActive(true);  //공격 
-            yield return null;
-            Debug.Log("There are no empty tile Attack");  // 공격
-            checkattackcommand = false;
-            yield return new WaitForSeconds(1.5f);
-
-            transform.GetChild(1).gameObject.SetActive(false);
-            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
-
-        }
-    }
+ 
 
     // 여기까지 공격 조건 --------------------------------------------------------------------------------------
 
@@ -1399,6 +938,10 @@ public class DefaultMove : MonoBehaviour
         }
     }
 
+
+    // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
+
+
     [PunRPC]
     public void Poison()
     {
@@ -1409,86 +952,373 @@ public class DefaultMove : MonoBehaviour
         // pv.RPC("AttackProcess", PhotonTargets.All, attackTarget, damage);
     }
 
-    [PunRPC]
-    public void AttackInfo(int attackTarget, float damage)
-    {
-        if (hp > 0)
-        {
-            AttackProcess(attackTarget, damage);
-        }
-       // pv.RPC("AttackProcess", PhotonTargets.All, attackTarget, damage);
-    }
-
-    
-    public void AttackProcess(int attackTarget, float damage)
-    {
-        if (time != comparetime)
-        {
-            GetComponent<PhotonView>().RPC("AttackSound", PhotonTargets.All); //맞을때 나는 소리
-            hp -= damage;
-            time = comparetime;
-
-            if (transform.name == "mouse")
-            {
-                GetComponent<mouseSkill>().skill();
-            }
-            if (transform.name == "wolf")
-            {
-                GetComponent<wolfSkill>().skill();
-            }
-            if (transform.name == "buffalo")
-            {
-                GetComponent<buffaloSkill>().skill();
-            }
-            if (transform.name == "elephant")
-            {
-                GetComponent<elephantSkill>().skill();
-            }
-            ckani = 2;
-            animation.SetInteger("ckani", ckani);
-        }
-        // 전송받은 damage 값을 받아서 처리해 줍니다. 처리 받은 값은 UpdatePhoton ()의  DisplayHp ()에서 보여주게 됩니다.   
-      //  if (hp <= 0) // HP가 0 이 되서 죽었을 때 
-      //  {
-      //
-      //      //GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
-      //      //GetComponent<PhotonView>().RPC("Die", PhotonTargets.AllViaServer); //동기화 테스트
-      //  }
-
-
-        /*
-        if (attackTarget == (int)TARGET.MASTER)
-        {
-            hpGaugeMaster.fillAmount = (float)communicators[attackTarget].GetComponent<PlayerPhoton>().iHp / iMyHpBase;
-
-            clientChar.playerChar.GetComponent<PlayerFSM>().SetState(CHARCTERSTATE.Attack);   // 캐릭터 공격 애니
-            StartCoroutine(RotateChar(clientChar.playerChar, false));
-            StartCoroutine(HitChar(masterChar.playerChar, true, damage));
-        }
-        else
-        {
-            hpGaugeClient.fillAmount = (float)communicators[attackTarget].GetComponent<PlayerPhoton>().iHp / iMyHpBase;
-
-            masterChar.playerChar.GetComponent<PlayerFSM>().SetState(CHARCTERSTATE.Attack);   // 캐릭터 공격 애니
-            StartCoroutine(RotateChar(masterChar.playerChar, true));
-            StartCoroutine(HitChar(clientChar.playerChar, false, damage));
-        }
-        */
-    }
-    [PunRPC]
-    public void PreventDoubleAttack(float pda)
-    {
-        comparetime = pda;
-    }
+     
     [PunRPC]
     public void Die()
     {
         GameObject.Find("BattleManager").GetComponent<BattleManager>().Die(this.gameObject);
     }
-    [PunRPC]
-    public void AttackSound()
-    {
-        AS.Play();
-    }
-    // 여기까지 이동 행동 ----------------------------------------------------------------------------------------
+   
+   
+
+
+
+
+
+
+    // ---------------------공격조건 백업-------------------
+    //IEnumerator AlwaysAttack()
+    //{
+    //    //애니메이터
+    //    ckani = 1;
+    //    animation.SetInteger("ckani", ckani);
+
+    //    ///destinationbuffer = nav.destination;  //공격 끝나면 목표지점 돌려놓으려고 목표지점 저장해놓음
+
+    //    nav.speed = 0;  // 멈춰 선다.
+    //    transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
+    //    angularbuffer = nav.angularSpeed;
+    //    nav.angularSpeed = 0;
+
+
+    //    Debug.Log("항상공격");
+    //    //isAttack = true;
+    //    // animation.SetBool("isAttack", isAttack); //애니메이션세팅
+    //    ckani = 1;
+    //    animation.SetInteger("ckani", ckani);
+
+    //    nav.speed = 0;  // 멈춰 선다.
+    //    transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
+
+
+    //    akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.All, Time.deltaTime);
+    //    transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //    yield return null;
+    //    //NetAttackDamage(power)destination;
+    //    Debug.Log("항상 공격");
+
+
+    //    //checkattackcommand = false; //<명령어 줄이기>
+    //    yield return new WaitForSeconds(0.5f);
+    //    transform.GetChild(1).gameObject.SetActive(false);
+    //    yield return new WaitForSeconds(1.0f);
+    //    nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+    //   // nav.SetDestination(destinationbuffer); //navmesh 목표지점 원래대로 돌려놈
+
+    //}
+
+
+    //IEnumerator HPMoreThanHalfAttack()
+    //{
+
+    //    if (hp >= (fullhp / 2))
+    //    {
+
+    //        //애니메이터
+    //        ckani = 1;
+    //        animation.SetInteger("ckani", ckani);
+
+    //        nav.speed = 0;
+    //        transform.LookAt(akcoll.transform);
+    //        angularbuffer = nav.angularSpeed;
+    //        nav.angularSpeed = 0;
+
+    //        Debug.Log("절반이상공격");
+    //        // isAttack = true;
+    //        // animation.SetBool("isAttack", isAttack); //애니메이션세팅
+    //        ckani = 1;
+    //        animation.SetInteger("ckani", ckani);
+    //        nav.speed = 0;
+    //        transform.LookAt(akcoll.transform);
+
+    //        akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //        transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //        yield return null;
+
+    //        Debug.Log("HP more than half attack");
+    //        checkattackcommand = false;
+    //        yield return new WaitForSeconds(1.5f);
+
+    //        transform.GetChild(1).gameObject.SetActive(false);
+    //        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+    //    }
+
+    //}
+
+
+    //IEnumerator HPLessThanHalfAttack()
+    //{
+    //    if (hp < (fullhp / 2))
+    //    {
+
+    //        //애니메이터
+    //        ckani = 1;
+    //        animation.SetInteger("ckani", ckani);
+
+    //        Debug.Log("절반이하공격");
+    //        // isAttack = true;
+    //        //animation.SetBool("isAttack", isAttack); //애니메이션세팅
+    //        ckani = 1;
+    //        animation.SetInteger("ckani", ckani);
+
+    //        nav.speed = 0;
+    //        transform.LookAt(akcoll.transform);
+    //        angularbuffer = nav.angularSpeed;
+    //        nav.angularSpeed = 0;
+
+
+
+    //        akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //        transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //        yield return null;
+
+    //        Debug.Log("HP less than half attack");
+    //        checkattackcommand = false;
+    //        yield return new WaitForSeconds(1.5f);
+
+    //        transform.GetChild(1).gameObject.SetActive(false);
+    //        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+    //    }
+    //}
+
+    //IEnumerator EnemyHPMoreThanHalfAttack()  // 상대 체력 절반 이상일 때 공격
+    //{
+
+    //    var enemyhp = akcoll.GetComponent<DefaultMove>();
+    //    if (enemyhp.hp >= (enemyhp.fullhp / 2))
+    //    {
+
+
+    //        //애니메이터
+    //        ckani = 1;
+    //        animation.SetInteger("ckani", ckani);
+
+    //        nav.speed = 0;
+    //        transform.LookAt(akcoll.transform);
+    //        angularbuffer = nav.angularSpeed;
+    //        nav.angularSpeed = 0;
+
+    //        akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //        transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //        yield return null;
+
+    //        Debug.Log("Enemy HP more than half attack");
+    //        checkattackcommand = false;
+    //        yield return new WaitForSeconds(1.5f);
+
+    //        transform.GetChild(1).gameObject.SetActive(false);
+    //        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+
+    //    }
+    //}
+
+
+    //IEnumerator EnemyHPLessThanHalfAttack()  // 상대 체력 절반 미만일 때 공격
+    //{
+
+    //    var enemyhp = akcoll.GetComponent<DefaultMove>();
+    //    if (enemyhp.hp < (enemyhp.fullhp / 2))
+    //    {
+
+    //        //애니메이터
+    //        ckani = 1;
+    //        animation.SetInteger("ckani", ckani);
+
+    //        nav.speed = 0;
+    //        transform.LookAt(akcoll.transform);
+    //        angularbuffer = nav.angularSpeed;
+    //        nav.angularSpeed = 0;
+
+    //        akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //        transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //        yield return null;
+
+    //        Debug.Log("Enemy HP less than half attack");
+    //        checkattackcommand = false;
+    //        yield return new WaitForSeconds(1.5f);
+
+    //        transform.GetChild(1).gameObject.SetActive(false);
+    //        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+
+    //    }
+    //}
+
+    //IEnumerator MyHPIsMoreAttack()  // 내 체력이 더 많을 때 공격
+    //{
+
+    //    var enemyhp = akcoll.GetComponent<DefaultMove>();
+    //    if (enemyhp.hp < hp)
+    //    {
+
+    //        //애니메이터
+    //        ckani = 1;
+    //        animation.SetInteger("ckani", ckani);
+
+    //        nav.speed = 0;
+    //        transform.LookAt(akcoll.transform);
+    //        angularbuffer = nav.angularSpeed;
+    //        nav.angularSpeed = 0;
+
+    //        akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //        transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //        yield return null;
+
+    //        Debug.Log("My HP is more than enemy's HP Attack");
+    //        checkattackcommand = false;
+    //        yield return new WaitForSeconds(1.5f);
+
+    //        transform.GetChild(1).gameObject.SetActive(false);
+    //        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+
+    //    }
+    //    yield return null;
+    //}
+
+    //IEnumerator OurTileIsMoreAttack()   // 땅이 더 많을 때 공격
+    //{
+
+    //    if (tag == "redcharacter")
+    //    {
+    //        if (Command.redtile > Command.bluetile)
+    //        {
+
+    //            //애니메이터
+    //            ckani = 1;
+    //            animation.SetInteger("ckani", ckani);
+
+    //            nav.speed = 0;   // 멈추고
+    //            transform.LookAt(akcoll.transform);  //적 바라봄
+    //            angularbuffer = nav.angularSpeed;
+    //            nav.angularSpeed = 0;
+
+    //            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //            yield return null;
+
+    //            Debug.Log("Our tile is more than enemy's tile Attack");  // 공격
+    //            checkattackcommand = false;
+    //            yield return new WaitForSeconds(1.5f);
+
+    //            transform.GetChild(1).gameObject.SetActive(false);
+    //            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+
+    //        }
+    //    }
+    //    else if (tag == "bluecharacter")
+    //    {
+    //        if (Command.bluetile > Command.redtile)
+    //        {
+
+    //            //애니메이터
+    //            ckani = 1;
+    //            animation.SetInteger("ckani", ckani);
+
+    //            nav.speed = 0;
+    //            transform.LookAt(akcoll.transform);
+    //            angularbuffer = nav.angularSpeed;
+    //            nav.angularSpeed = 0;
+
+    //            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //            yield return null;
+
+    //            Debug.Log("My tile is more than enemy's tile Attack");
+    //            checkattackcommand = false;
+    //            yield return new WaitForSeconds(1.5f);
+
+    //            transform.GetChild(1).gameObject.SetActive(false);
+    //            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+
+    //        }
+    //    }
+    //    yield return null;
+    //}
+
+    //IEnumerator OurTileIsLessAttack()
+    //{
+
+    //    if (tag == "redcharacter")
+    //    {
+    //        if (Command.redtile < Command.bluetile)
+    //        {
+
+    //            //애니메이터
+    //            ckani = 1;
+    //            animation.SetInteger("ckani", ckani);
+
+    //            nav.speed = 0;   // 멈추고
+    //            transform.LookAt(akcoll.transform);  //적 바라봄
+    //            angularbuffer = nav.angularSpeed;
+    //            nav.angularSpeed = 0;
+
+    //            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //            yield return null;
+
+    //            Debug.Log("Our tile is less than enemy's tile Attack");  // 공격
+    //            checkattackcommand = false;
+    //            yield return new WaitForSeconds(1.5f);
+
+    //            transform.GetChild(1).gameObject.SetActive(false);
+    //            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+    //        }
+    //    }
+    //    else if (tag == "bluecharacter")
+    //    {
+    //        if (Command.bluetile < Command.redtile)
+    //        {
+
+    //            Debug.Log("땅적을때");
+    //            // isAttack = true;
+    //            // animation.SetBool("isAttack", isAttack); //애니메이션세팅
+    //            ckani = 1;
+    //            animation.SetInteger("ckani", ckani);
+    //            nav.speed = 0;
+    //            transform.LookAt(akcoll.transform);
+
+    //            angularbuffer = nav.angularSpeed;
+    //            nav.angularSpeed = 0;
+
+    //            akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //            transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //            yield return null;
+
+    //            Debug.Log("My tile is less than enemy's tile Attack");
+    //            checkattackcommand = false;
+    //            yield return new WaitForSeconds(1.5f);
+
+    //            transform.GetChild(1).gameObject.SetActive(false);
+    //            nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+    //        }
+    //    }
+    //    yield return null;
+    //}
+
+    //IEnumerator NoEmptyTileAttack()   // 빈 땅이 없을 때 공격
+    //{
+
+    //    if ((Command.redtile + Command.bluetile) >= num_of_tile)
+    //    {
+
+    //        //애니메이터
+    //        ckani = 1;
+    //        animation.SetInteger("ckani", ckani);
+
+    //        nav.speed = 0;   // 멈추고
+    //        transform.LookAt(akcoll.transform);  //적 바라봄
+    //        angularbuffer = nav.angularSpeed;
+    //        nav.angularSpeed = 0;
+
+    //        akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.Others, Time.deltaTime);
+    //        transform.GetChild(1).gameObject.SetActive(true);  //공격 
+    //        yield return null;
+    //        Debug.Log("There are no empty tile Attack");  // 공격
+    //        checkattackcommand = false;
+    //        yield return new WaitForSeconds(1.5f);
+
+    //        transform.GetChild(1).gameObject.SetActive(false);
+    //        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+
+    //    }
+    //}
 }

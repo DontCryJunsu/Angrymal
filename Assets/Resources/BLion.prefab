@@ -414,6 +414,7 @@ GameObject:
   - component: {fileID: 7583417035484594562}
   - component: {fileID: 8125725435069293391}
   - component: {fileID: 7873606510042322798}
+  - component: {fileID: 4873510354076463773}
   m_Layer: 8
   m_Name: lion
   m_TagString: bluecharacter
@@ -511,8 +512,8 @@ MonoBehaviour:
   OriPower: 25
   child: lion
   num_of_tile: 276
+  animation: {fileID: 0}
   HPBar: {fileID: 3747455986958100048}
-  AS: {fileID: 7873606510042322798}
 --- !u!114 &114775343906386568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -677,6 +678,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4873510354076463773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569481803358212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 7873606510042322798}
 --- !u!1 &1703673395707534
 GameObject:
   m_ObjectHideFlags: 0

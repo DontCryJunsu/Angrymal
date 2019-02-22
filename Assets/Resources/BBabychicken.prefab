@@ -512,6 +512,7 @@ GameObject:
   - component: {fileID: 9209352321006489092}
   - component: {fileID: 9205770034432960362}
   - component: {fileID: 255529611416221406}
+  - component: {fileID: 1516855680629466392}
   m_Layer: 8
   m_Name: babychicken
   m_TagString: bluecharacter
@@ -532,7 +533,7 @@ Transform:
   m_Children:
   - {fileID: 9099396727287530884}
   - {fileID: 9104542942924069454}
-  - {fileID: 8096679075794288392}
+  - {fileID: 4892592732357303979}
   - {fileID: 910469304484011639}
   m_Father: {fileID: 9099321932920593598}
   m_RootOrder: 0
@@ -609,8 +610,8 @@ MonoBehaviour:
   OriPower: 5
   child: babychicken
   num_of_tile: 276
-  HPBar: {fileID: 8096679075794288170}
-  AS: {fileID: 255529611416221406}
+  animation: {fileID: 0}
+  HPBar: {fileID: 7986315426080229062}
 --- !u!114 &9209352321006489092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -749,6 +750,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1516855680629466392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9102621860628111166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 255529611416221406}
 --- !u!1 &9102884299350479480
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,13 +1014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &8096679075794288392 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
-    type: 3}
-  m_PrefabInstance: {fileID: 8096679075794287481}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &8096679075794288170 stripped
+--- !u!114 &7986315426080229062 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
@@ -1018,3 +1026,9 @@ MonoBehaviour:
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &4892592732357303979 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
+    type: 3}
+  m_PrefabInstance: {fileID: 8096679075794287481}
+  m_PrefabAsset: {fileID: 0}

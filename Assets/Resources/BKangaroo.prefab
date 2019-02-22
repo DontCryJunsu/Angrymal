@@ -599,6 +599,7 @@ GameObject:
   - component: {fileID: 114573576087275970}
   - component: {fileID: 114640951597740222}
   - component: {fileID: 2486671257496906599}
+  - component: {fileID: 8424810408580668439}
   m_Layer: 8
   m_Name: kangaroo
   m_TagString: bluecharacter
@@ -620,7 +621,7 @@ Transform:
   - {fileID: 4481571686391062}
   - {fileID: 4749690197554830}
   - {fileID: 4758445536488121353}
-  - {fileID: 4894652278708822483}
+  - {fileID: 8094544968814690416}
   - {fileID: 4978427277096012161}
   m_Father: {fileID: 4472078023749838}
   m_RootOrder: 0
@@ -697,8 +698,8 @@ MonoBehaviour:
   OriPower: 10
   child: kangaroo
   num_of_tile: 276
-  HPBar: {fileID: 4894652278708822257}
-  AS: {fileID: 2486671257496906599}
+  animation: {fileID: 0}
+  HPBar: {fileID: 6729914381763385373}
 --- !u!114 &114573576087275970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -837,6 +838,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &8424810408580668439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877650051664396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 2486671257496906599}
 --- !u!1 &6104530863274418727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,13 +1073,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &4894652278708822483 stripped
+--- !u!224 &8094544968814690416 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
   m_PrefabInstance: {fileID: 4894652278708823458}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4894652278708822257 stripped
+--- !u!114 &6729914381763385373 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}

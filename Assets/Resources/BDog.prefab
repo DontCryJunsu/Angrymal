@@ -352,6 +352,7 @@ GameObject:
   - component: {fileID: 3102243211024082543}
   - component: {fileID: 3102243211024082528}
   - component: {fileID: 687933145038569961}
+  - component: {fileID: 6895622944382571546}
   m_Layer: 8
   m_Name: dog
   m_TagString: bluecharacter
@@ -372,7 +373,7 @@ Transform:
   m_Children:
   - {fileID: 3102243211059351828}
   - {fileID: 3102243212010193299}
-  - {fileID: 2639678153818215527}
+  - {fileID: 1664872639345161668}
   - {fileID: 6863079778860125475}
   m_Father: {fileID: 3102243211742606506}
   m_RootOrder: 0
@@ -449,8 +450,8 @@ MonoBehaviour:
   OriPower: 10
   child: dog
   num_of_tile: 276
-  HPBar: {fileID: 2639678153818215749}
-  AS: {fileID: 687933145038569961}
+  animation: {fileID: 0}
+  HPBar: {fileID: 4191228795514252713}
 --- !u!114 &3102243211024082543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,8 +475,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 3102243211024082529}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &3102243211024082528
@@ -589,6 +590,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6895622944382571546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3102243211024082530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 687933145038569961}
 --- !u!1 &3102243211059351829
 GameObject:
   m_ObjectHideFlags: 0
@@ -761,8 +775,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 3102243211742606506}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &3102243212010193300
@@ -1000,13 +1014,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &2639678153818215527 stripped
+--- !u!224 &1664872639345161668 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
   m_PrefabInstance: {fileID: 2639678153818214422}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2639678153818215749 stripped
+--- !u!114 &4191228795514252713 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}

@@ -586,6 +586,7 @@ GameObject:
   - component: {fileID: 114062049207174100}
   - component: {fileID: 1480780294055948853}
   - component: {fileID: 3806372720139318912}
+  - component: {fileID: 6080869634403900263}
   m_Layer: 9
   m_Name: wolf
   m_TagString: redcharacter
@@ -683,8 +684,8 @@ MonoBehaviour:
   OriPower: 15
   child: wolf
   num_of_tile: 276
+  animation: {fileID: 0}
   HPBar: {fileID: 5876222238593866583}
-  AS: {fileID: 3806372720139318912}
 --- !u!114 &114612055607025266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -840,6 +841,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &6080869634403900263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812744213930060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 3806372720139318912}
 --- !u!1 &3600519604615952443
 GameObject:
   m_ObjectHideFlags: 0

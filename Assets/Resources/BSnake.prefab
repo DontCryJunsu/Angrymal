@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5999624058453744842}
   - component: {fileID: 2524915910716263463}
   - component: {fileID: 7705747348420542858}
+  - component: {fileID: 1604613429966469390}
   m_Layer: 8
   m_Name: snake
   m_TagString: bluecharacter
@@ -38,7 +39,7 @@ Transform:
   m_Children:
   - {fileID: 4051336903755876}
   - {fileID: 4918639973499394}
-  - {fileID: 2775137667646819150}
+  - {fileID: 1529975458605296365}
   - {fileID: 1110421433126342687}
   m_Father: {fileID: 4716126892553156}
   m_RootOrder: 0
@@ -115,8 +116,8 @@ MonoBehaviour:
   OriPower: 20
   child: snake
   num_of_tile: 276
-  HPBar: {fileID: 2775137667646818924}
-  AS: {fileID: 7705747348420542858}
+  animation: {fileID: 0}
+  HPBar: {fileID: 4038458005805036160}
 --- !u!114 &114481659662347088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +282,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1604613429966469390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105078864649448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b974ce6df364f2349b15a476ada3e7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AS: {fileID: 7705747348420542858}
 --- !u!1 &1346683588252746
 GameObject:
   m_ObjectHideFlags: 0
@@ -1028,13 +1042,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d5c9e7c4f200a4a9d132445957b3fe, type: 3}
---- !u!224 &2775137667646819150 stripped
+--- !u!224 &1529975458605296365 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
   m_PrefabInstance: {fileID: 2775137667646820159}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2775137667646818924 stripped
+--- !u!114 &4038458005805036160 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: b3d5c9e7c4f200a4a9d132445957b3fe,
     type: 3}
@@ -1051,7 +1065,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 2775137667646819150}
+    m_TransformParent: {fileID: 1529975458605296365}
     m_Modifications:
     - target: {fileID: 3705004781757512949, guid: 37a67b5a3cf959b449d95cf99f2d4941,
         type: 3}
