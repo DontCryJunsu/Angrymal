@@ -11,9 +11,10 @@ public class FadeIn : MonoBehaviour {
     float time = 0f;
     public float aniTime = 2f;
     public GameObject Txt;
-
+    Image img;
     // Use this for initialization
     void Start () {
+        img = GetComponent<Image>();
         fadeImg = GetComponent<Image>();
         StartCoroutine("PlayFadein");
     }
@@ -28,6 +29,7 @@ public class FadeIn : MonoBehaviour {
             fadeImg.color = color;
             yield return null;
         }
+        img.raycastTarget = false;
         Txt.SetActive(true);
     }
 }
