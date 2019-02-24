@@ -18,6 +18,8 @@ public class AlwaysAtk : MonoBehaviour
 
     private int ckani;
 
+    Vector3 destination; //현재 동물이 목표로 하는 곳
+
     void Awake()
     {
         nav = GetComponent<NavMeshAgent>();
@@ -55,7 +57,7 @@ public class AlwaysAtk : MonoBehaviour
                             akcoll = coll;
                          
                             yield return StartCoroutine("AlwaysAttack");
-                            nav.speed = GetComponent<DefaultMove>().speed;
+                           // nav.speed = GetComponent<DefaultMove>().speed;
                      
                         }
                     }
@@ -78,7 +80,7 @@ public class AlwaysAtk : MonoBehaviour
                             akcoll = coll;
           
                             yield return StartCoroutine("AlwaysAttack");
-                            nav.speed = GetComponent<DefaultMove>().speed;
+                          //  nav.speed = GetComponent<DefaultMove>().speed;
                            
                         }
                     }
@@ -96,10 +98,13 @@ public class AlwaysAtk : MonoBehaviour
 
         ///destinationbuffer = nav.destination;  //공격 끝나면 목표지점 돌려놓으려고 목표지점 저장해놓음
 
-        nav.speed = 0;  // 멈춰 선다.
+        //nav.speed = 0;  // 멈춰 선다.  -------------test
+        nav.Stop();
+        //destination = nav.destination;
+
         transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
-        angularbuffer = nav.angularSpeed;
-        nav.angularSpeed = 0;
+        //angularbuffer = nav.angularSpeed;    ------test
+        //nav.angularSpeed = 0;  -------------------test
 
 
         Debug.Log("항상공격");
@@ -108,22 +113,23 @@ public class AlwaysAtk : MonoBehaviour
         ckani = 1;
         GetComponent<DefaultMove>().animation.SetInteger("ckani", ckani);
 
-        nav.speed = 0;  // 멈춰 선다.
-        transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄
+       // nav.speed = 0;  // 멈춰 선다. ---test
+      //  transform.LookAt(akcoll.transform);  // 공격할 상대를 바라봄  ----test
 
 
         akcoll.gameObject.GetComponent<PhotonView>().RPC("PreventDoubleAttack", PhotonTargets.All, Time.deltaTime);
         transform.GetChild(1).gameObject.SetActive(true);  //공격 
         yield return null;
         //NetAttackDamage(power)destination;
-        Debug.Log("항상 공격");
+         
 
 
         //checkattackcommand = false; //<명령어 줄이기>
         yield return new WaitForSeconds(0.5f);
         transform.GetChild(1).gameObject.SetActive(false);
         yield return new WaitForSeconds(1.0f);
-        nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음
+        //nav.angularSpeed = angularbuffer;  //회전속도 돌려놓음  ---test
+        nav.Resume();
                                            // nav.SetDestination(destinationbuffer); //navmesh 목표지점 원래대로 돌려놈
 
     }

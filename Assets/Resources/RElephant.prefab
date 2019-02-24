@@ -432,7 +432,7 @@ Transform:
   m_Children:
   - {fileID: 6311673312616144587}
   - {fileID: 6311673311773578038}
-  - {fileID: 4331694815831017343}
+  - {fileID: 1127466641032783555}
   - {fileID: 7967612952099066266}
   m_Father: {fileID: 6311673312526366785}
   m_RootOrder: 0
@@ -451,7 +451,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &6311673311958522932
 SphereCollider:
@@ -475,7 +475,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 6311673311958522930}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 800
+  m_Radius: 1100
   m_Speed: 3.5
   m_Acceleration: 300
   avoidancePriority: 50
@@ -510,7 +510,7 @@ MonoBehaviour:
   child: elephant
   num_of_tile: 276
   animation: {fileID: 0}
-  HPBar: {fileID: 1237832140539748114}
+  HPBar: {fileID: 1127466641032783860}
 --- !u!114 &6311673311958522929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,7 +915,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 4331694815831017343}
+    m_TransformParent: {fileID: 1127466641032783555}
     m_Modifications:
     - target: {fileID: 2165699921967903386, guid: 59ee5e4779c3de7419a414edd61467b3,
         type: 3}
@@ -1129,13 +1129,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73972a4f7ff1866479bf1729858d8ebf, type: 3}
---- !u!224 &4331694815831017343 stripped
+--- !u!224 &1127466641032783555 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3726963521936614866, guid: 73972a4f7ff1866479bf1729858d8ebf,
     type: 3}
   m_PrefabInstance: {fileID: 1127466641032782509}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1237832140539748114 stripped
+--- !u!114 &1127466641032783860 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2200071269426298303, guid: 73972a4f7ff1866479bf1729858d8ebf,
     type: 3}
