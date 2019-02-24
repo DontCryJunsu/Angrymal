@@ -47,4 +47,9 @@ MonoBehaviour:
   - Die
   - Poison
   - AttackSound
+  - elephantSkill
+  - BuffaloSkill
+  - ElephantSkill
+  - MouseSkill
+  - WolfSkill
   DisableAutoOpenWizard: 1

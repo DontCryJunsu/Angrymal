@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -156,19 +157,19 @@ public class AlwaysAtk : MonoBehaviour
 
             if (transform.name == "mouse")
             {
-                GetComponent<mouseSkill>().skill();
+                GetComponent<PhotonView>().RPC("MouseSkill", PhotonTargets.All);
             }
             if (transform.name == "wolf")
             {
-                GetComponent<wolfSkill>().skill();
+                GetComponent<PhotonView>().RPC("WolfSkill", PhotonTargets.All);
             }
             if (transform.name == "buffalo")
             {
-                GetComponent<buffaloSkill>().skill();
+                GetComponent<PhotonView>().RPC("BuffaloSkill", PhotonTargets.All);
             }
             if (transform.name == "elephant")
             {
-                GetComponent<elephantSkill>().skill();
+                GetComponent<PhotonView>().RPC("ElephantSkill", PhotonTargets.All);
             }
             ckani = 2;
             GetComponent<DefaultMove>().animation.SetInteger("ckani", ckani);
@@ -185,6 +186,30 @@ public class AlwaysAtk : MonoBehaviour
     public void AttackSound()
     {
         AS.Play();
+    }
+
+    [PunRPC]
+    public void MouseSkill()
+    {
+        GetComponent<mouseSkill>().skill();
+    }
+
+    [PunRPC]
+    public void WolfSkill()
+    {
+        GetComponent<wolfSkill>().skill();
+    }
+
+    [PunRPC]
+    public void BuffaloSkill()
+    {
+        GetComponent<buffaloSkill>().skill();
+    }
+
+    [PunRPC]
+    public void ElephantSkill()
+    {
+        GetComponent<elephantSkill>().skill();
     }
 
 }
