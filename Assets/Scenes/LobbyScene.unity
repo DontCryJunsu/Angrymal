@@ -22472,7 +22472,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 706555678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 769670760}
+        m_MethodName: SC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1670523083}
+        m_MethodName: SC2
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &706555678
@@ -24118,6 +24140,7 @@ GameObject:
   m_Component:
   - component: {fileID: 769670759}
   - component: {fileID: 769670758}
+  - component: {fileID: 769670760}
   m_Layer: 0
   m_Name: Zoom
   m_TagString: Untagged
@@ -24166,6 +24189,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769670760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769670757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d326b3e06ade404da1589b881d00cfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  house: {fileID: 1051041930}
 --- !u!1 &771279135
 GameObject:
   m_ObjectHideFlags: 0
@@ -54950,6 +54986,7 @@ GameObject:
   - component: {fileID: 1670523082}
   - component: {fileID: 1670523081}
   - component: {fileID: 1670523080}
+  - component: {fileID: 1670523083}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -55005,7 +55042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -55028,6 +55065,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1670523078}
   m_CullTransparentMesh: 0
+--- !u!114 &1670523083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1670523078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 103bdc911b34fdf42a70e05995fe243b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aniTime: 1.5
 --- !u!1 &1671304148
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,6 @@ public class FadeIn : MonoBehaviour {
             fadeImg.color = color;
             yield return null;
         }
-        gameObject.SetActive(false);
         Txt.SetActive(true);
     }
 }

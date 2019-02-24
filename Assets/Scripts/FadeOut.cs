@@ -30,4 +30,23 @@ public class FadeOut : MonoBehaviour
         }
         SceneManager.LoadSceneAsync("LobbyScene");
     }
+    public void SC2()
+    {
+        fadeImg = GetComponent<Image>();
+        StopAllCoroutines();
+        StartCoroutine("PlayFadein2");
+    }
+    IEnumerator PlayFadein2()
+    {
+        Color color = fadeImg.color;
+        time = 0f;
+        while (color.a < 1f)
+        {
+            time += Time.deltaTime / aniTime;
+            color.a = Mathf.Lerp(start, end, time);
+            fadeImg.color = color;
+            yield return null;
+        }
+        SceneManager.LoadSceneAsync("Shop");
+    }
 }
