@@ -13,6 +13,7 @@ public class Timer : MonoBehaviour
     public GameObject downPan;
     bool swit = false;
     int money;
+    public Animator ani;
     void Update()
     {
         if (!swit)
@@ -29,24 +30,19 @@ public class Timer : MonoBehaviour
         {
             swit = true;
             timer = 0;
-            StartCoroutine(End());
+            ani.enabled = true;
+            Invoke("End", 2f);
+            End();
         }
         if (PlayerPrefs.GetInt("isVictory", 0).Equals(1) && PlayerPrefs.GetInt("isLose").Equals(0))
         {
             PlayerPrefs.SetInt("isVictory", 0);
-            StartCoroutine(End2());
+            ani.enabled = true;
+            Invoke("End2", 2f);
         }
     }
-    IEnumerator End()
+    void End()
     {
-        for (int i = 0; i < 50; i++)
-        {
-            yield return new WaitForSeconds(0.01f);
-            upPan.transform.Translate(-29.3f, 0, 0);
-            downPan.transform.Translate(29.3f, 0, 0);
-        }
-        upPan = null;
-        downPan = null;
         if (PlayerPrefs.GetString("Team").Equals("B"))
         {
             if (Command.bluetile > Command.redtile)
@@ -85,25 +81,13 @@ public class Timer : MonoBehaviour
                 SceneManager.LoadScene("Lose");
             }
         }
-        yield return null;
     }
-    IEnumerator End2()
+    void End2()
     {
-        swit = true;
-        for (int i = 0; i < 50; i++)
-        {
-            yield return new WaitForSeconds(0.01f);
-            upPan.transform.Translate(-29.3f, 0, 0);
-            downPan.transform.Translate(29.3f, 0, 0);
-        }
-        upPan = null;
-        downPan = null;
         money = PlayerPrefs.GetInt("Money", 0);
         money += 20;
         PlayerPrefs.SetInt("Money", money);
         PhotonNetwork.LeaveRoom();
         SceneManager.LoadScene("Win");
-
-        yield return null;
     }
 }
