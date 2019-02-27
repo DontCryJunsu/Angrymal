@@ -327,6 +327,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 6921678933816684131}
+  nav: {fileID: 0}
+  runningact: 
   hp: 90
   fullhp: 90
   speed: 6

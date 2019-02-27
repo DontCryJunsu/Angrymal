@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/Administrator/Desktop/빌드/lanimal.exe
+C:/Users/rkemr5002/Desktop/유니티 빌드/lanimal.exe
 SceneListBegin?
 Assets/Scenes/StoryScene.unity
 Assets/Scenes/StartScene.unity
@@ -8,6 +8,7 @@ Assets/Scenes/LobbyScene.unity
 Assets/Scenes/BattleScene.unity
 Assets/Scenes/Win.unity
 Assets/Scenes/Lose.unity
+Assets/Scenes/Shop.unity
 SceneListEnd?
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.PunTeams
 ab039a385ef4459756519a3fe91dccc6 Assembly-CSharp.dll:.SmoothSyncMovement
@@ -19,8 +20,8 @@ b588b2cc65f0aacce6c9eb50c4427d0d Assembly-CSharp.dll:.BlockColor
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DownAnimalBtn
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
-780e8f682b3221346c034a6712a0fd25 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
-bfe92276ffffff8b72df49ef40f0c1ea UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationTrack
+8747051d8c53856e2def93af4f2a8b08 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
+c5d8c2663a1fd929fe8160c755998615 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationTrack
 1b3bcc00907f1f74e346e850f93a79c2 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioPlayableAsset
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioTrack
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.BasicPlayableBehaviour
@@ -30,7 +31,7 @@ e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.G
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 201e3fde670b00545944bb3db215c80a UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
 3ba023cd67d72cace33969ab863e0fd4 Assembly-CSharp.dll:.PhotonStatsGui
-9bf8617ff88395b9b8918d20f70505e8 Assembly-CSharp.dll:.DefaultMove
+d597cf1ff132bae56eb0561943396c9a Assembly-CSharp.dll:.DefaultMove
 a2113831d3323f931007e1b3812dc814 Assembly-CSharp.dll:Cinemachine.CinemachineFollowZoom
 e7a73f5f78ba6445195ec23b74a1ce2d Unity.TextMeshPro.dll:TMPro.TMP_ScrollbarEventHandler
 2b1d1de79e4d31f1861f586502176c81 Assembly-CSharp.dll:.PhotonAnimatorView
@@ -114,8 +115,8 @@ abf1930d8126d0b2e00e9449129a0190 UnityEngine.UI.dll:UnityEngine.EventSystems.Tou
 dfd7a2ae89b53ee12027e54728efd088 Assembly-CSharp.dll:.PhotonHandler
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 06f0fef534ca4c1d6064fd77a26bf722 UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
-780e8f682b3221346c034a6712a0fd25 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
-bfe92276ffffff8b72df49ef40f0c1ea UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationTrack
+8747051d8c53856e2def93af4f2a8b08 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationPlayableAsset
+c5d8c2663a1fd929fe8160c755998615 UnityEngine.Timeline.dll:UnityEngine.Timeline.AnimationTrack
 1b3bcc00907f1f74e346e850f93a79c2 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioPlayableAsset
 e1bbf0ab858085e38fae6b12ebbdcd35 UnityEngine.Timeline.dll:UnityEngine.Timeline.AudioTrack
 71bb6a6b6c8f052f948db64c7dd3ca4f UnityEngine.Timeline.dll:UnityEngine.Timeline.BasicPlayableBehaviour
@@ -280,8 +281,9 @@ e6873cc3d7cdd5ed2667727759757f39 Assembly-CSharp.dll:.BattleManager
 9322f9a3283a70c8733aa301ac09517a Assembly-CSharp.dll:.mouseSkill
 5799d54a2b11069b29cc9faba253c253 Assembly-CSharp.dll:.DialogManager
 4c08c7a245ae7e8974ac35ba85acf168 Assembly-CSharp.dll:.sheepSkill1
-3d263c9c528a32f168d8f2c48569a691 Assembly-CSharp.dll:.UIMgr
+5ba62df6b4334d6e96e42ad20e3f4724 Assembly-CSharp.dll:.UIMgr
 32eea3cb643bb927fd345b7e99889605 Assembly-CSharp.dll:.testrandommove
+ebaf0b4350ad9bb46f2bb6e120ae079a Assembly-CSharp.dll:.AniSelectBtn
 4c08c7a245ae7e8974ac35ba85acf168 Assembly-CSharp.dll:.snakeSkill1
 edae621e647a6f0e46c894e9af401cc7 Assembly-CSharp.dll:.CmdAdd
 e54ee5fc8428e31e722c25e3dee25f1c Assembly-CSharp.dll:.buffaloSkill
@@ -289,11 +291,18 @@ e54ee5fc8428e31e722c25e3dee25f1c Assembly-CSharp.dll:.buffaloSkill
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Hatch
 af9aec7606b87d4d1890d1129fc11862 Assembly-CSharp.dll:.objmove
 ce4fc5d7218ff4cce906e24b712c250d Assembly-CSharp.dll:.DialogTrigger
+7193d48c5eeaf50a1778f6b2659ce913 Assembly-CSharp.dll:.AniBtnEnable
 4c08c7a245ae7e8974ac35ba85acf168 Assembly-CSharp.dll:.snakeSkill
 56807c3026991f7d6bd4cf28351b3dda Assembly-CSharp.dll:.wolfSkill
+71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.ViewRotate
 4c08c7a245ae7e8974ac35ba85acf168 Assembly-CSharp.dll:.LionSkill1
+43892bb750b29c80d505c3a3889d412b Assembly-CSharp.dll:.ShopMgr
+1285c1e0dda0e05c900666b399be1290 Assembly-CSharp.dll:.BananaUI
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.DontSound
 dcfd832499cba9fb436f8eac9b6eb3e0 Assembly-CSharp.dll:.AlwaysAtk
 4c08c7a245ae7e8974ac35ba85acf168 Assembly-CSharp.dll:.LionSkill
 ffde4860abff25d1580a37ae99e6ff1a Assembly-CSharp.dll:.kangarooSkill
+f57eb6873b861ae48982f9b57c768234 Assembly-CSharp.dll:.ShopClick
 837468926c1a923b360fe610d4e094ae Assembly-CSharp.dll:.elephantSkill
+98ec24aa25904c41858c73f6d0a7614e Assembly-CSharp.dll:.Control
+f545989c502ef2d5c39b296929138494 Assembly-CSharp.dll:.ControlManager

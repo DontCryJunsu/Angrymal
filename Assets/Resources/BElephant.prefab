@@ -186,7 +186,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 7766630046226285832}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 1100
+  m_Radius: 1200
   m_Speed: 3.5
   m_Acceleration: 300
   avoidancePriority: 50
@@ -212,6 +212,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goal: {fileID: 7766630047249075447}
+  nav: {fileID: 0}
+  runningact: 
   hp: 120
   fullhp: 120
   speed: 4

@@ -14568,7 +14568,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 43e01d8f954ce1b48bb5a87027e4195a, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 43e01d8f954ce1b48bb5a87027e4195a, type: 3}
       propertyPath: m_LocalScale.x
@@ -17977,7 +17977,7 @@ Transform:
   m_Children:
   - {fileID: 99600364}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 305.1, z: 0}
 --- !u!195 &532261224
 NavMeshAgent:

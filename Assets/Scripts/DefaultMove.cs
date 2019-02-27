@@ -11,12 +11,12 @@ public class DefaultMove : MonoBehaviour
 {
 
     public GameObject goal;
-    NavMeshAgent nav;
+    public NavMeshAgent nav;
     bool JustWalk_isrunning;
     string[,] command = new string[1, 3];  //1행 3열. 1열은 조건, 2열은 행동. 각 행은 명령어 1개. 3열은 공격명령.
     private Transform target;
     private float dist;
-    string runningact;
+    public string runningact;
     int i = -1;
     int j = -1;
     bool checkcommand = true;
