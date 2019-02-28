@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     bool swit = false;
     int money;
     public Animator ani;
-    void Update()
+    void FixedUpdate()
     {
         if (!swit)
             timer -= Time.deltaTime;

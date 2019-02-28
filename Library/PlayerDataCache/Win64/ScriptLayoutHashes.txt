@@ -1,6 +1,6 @@
 Win64
 PlayerPath?
-C:/Users/rkemr5002/Desktop/유니티 빌드/lanimal.exe
+C:/Users/basso/OneDrive/바탕 화면/MARIO/BuildFile/Lanimal/lanimal.exe
 SceneListBegin?
 Assets/Scenes/StoryScene.unity
 Assets/Scenes/StartScene.unity
@@ -286,9 +286,12 @@ e6873cc3d7cdd5ed2667727759757f39 Assembly-CSharp.dll:.BattleManager
 ebaf0b4350ad9bb46f2bb6e120ae079a Assembly-CSharp.dll:.AniSelectBtn
 4c08c7a245ae7e8974ac35ba85acf168 Assembly-CSharp.dll:.snakeSkill1
 edae621e647a6f0e46c894e9af401cc7 Assembly-CSharp.dll:.CmdAdd
+0ad6432038e02b09ba18c36dadf863e5 Assembly-CSharp.dll:.Control
 e54ee5fc8428e31e722c25e3dee25f1c Assembly-CSharp.dll:.buffaloSkill
+b3b88a83977f0095ee5fd9765e4de1e8 Assembly-CSharp.dll:.AnimationScript
 4c08c7a245ae7e8974ac35ba85acf168 Assembly-CSharp.dll:.sheepSkill
 71bb6a6b6c8f052f948db64c7dd3ca4f Assembly-CSharp.dll:.Hatch
+f545989c502ef2d5c39b296929138494 Assembly-CSharp.dll:.ControlManager
 af9aec7606b87d4d1890d1129fc11862 Assembly-CSharp.dll:.objmove
 ce4fc5d7218ff4cce906e24b712c250d Assembly-CSharp.dll:.DialogTrigger
 7193d48c5eeaf50a1778f6b2659ce913 Assembly-CSharp.dll:.AniBtnEnable
@@ -304,5 +307,3 @@ dcfd832499cba9fb436f8eac9b6eb3e0 Assembly-CSharp.dll:.AlwaysAtk
 ffde4860abff25d1580a37ae99e6ff1a Assembly-CSharp.dll:.kangarooSkill
 f57eb6873b861ae48982f9b57c768234 Assembly-CSharp.dll:.ShopClick
 837468926c1a923b360fe610d4e094ae Assembly-CSharp.dll:.elephantSkill
-98ec24aa25904c41858c73f6d0a7614e Assembly-CSharp.dll:.Control
-f545989c502ef2d5c39b296929138494 Assembly-CSharp.dll:.ControlManager

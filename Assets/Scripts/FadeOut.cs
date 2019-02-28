@@ -11,10 +11,15 @@ public class FadeOut : MonoBehaviour
     float end = 1f;
     float time = 0f;
     public float aniTime = 2f;
+    
+    void Start()
+    {
+        fadeImg = GetComponent<Image>();
+    }
 
     public void Btn()
     {
-        fadeImg = GetComponent<Image>();
+        fadeImg.raycastTarget = true;
         StartCoroutine("PlayFadein");
     }
     IEnumerator PlayFadein()
@@ -32,7 +37,7 @@ public class FadeOut : MonoBehaviour
     }
     public void SC2()
     {
-        fadeImg = GetComponent<Image>();
+        fadeImg.raycastTarget = true;
         StopAllCoroutines();
         StartCoroutine("PlayFadein2");
     }

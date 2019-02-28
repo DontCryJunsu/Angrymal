@@ -47,6 +47,7 @@ public class StoryUp : MonoBehaviour
     }
     public void startScene()
     {
-        StartCoroutine("PlayFadeOut");
+        fadeImg.raycastTarget = true;
+        StartCoroutine(PlayFadeOut());
     }
 }
