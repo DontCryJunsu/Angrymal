@@ -10,10 +10,24 @@ public class Control : MonoBehaviour
 
     void OnMouseDown()
     {
-        controling = true; //컨트롤 시작
-        StartCoroutine("ControlTime");
-        Star.SetActive(true);
-        
+        if (PhotonNetwork.isMasterClient)
+        {
+            if (tag == "redcharacter")
+            {
+                controling = true; //컨트롤 시작
+                StartCoroutine("ControlTime");
+                Star.SetActive(true);
+            }
+        }
+        else
+        {
+            if (tag == "bluecharacter")
+            {
+                controling = true;
+                StartCoroutine("ControlTime");
+                Star.SetActive(true);
+            }
+        }
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //RaycastHit hit;
         //if (Physics.Raycast(ray, out hit))
