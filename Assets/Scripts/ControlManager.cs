@@ -18,16 +18,19 @@ public class ControlManager : MonoBehaviour
         {
             RaycastHit hit;
 
-            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)  )
             {
-                controlobject.GetComponent<DefaultMove>().StopCoroutine("CheckCommand"); //CheckCommand 멈춤
-                controlobject.GetComponent<DefaultMove>().StopCoroutine(controlobject.GetComponent<DefaultMove>().runningact); //runningact 멈춤
-                controlobject.GetComponent<DefaultMove>().nav.destination = hit.point; //목표지점 변경
-                controlobject.GetComponent<Control>().vec3 = hit.point;
-                controlobject.GetComponent<Control>().StartCoroutine("UntilArrive");
+                if (hit.collider.tag == "Untagged" || hit.collider.tag == "redteam" || hit.collider.tag == "blueteam")
+                {
+                    controlobject.GetComponent<DefaultMove>().StopCoroutine("CheckCommand"); //CheckCommand 멈춤
+                    controlobject.GetComponent<DefaultMove>().StopCoroutine(controlobject.GetComponent<DefaultMove>().runningact); //runningact 멈춤
+                    controlobject.GetComponent<DefaultMove>().nav.destination = hit.point; //목표지점 변경
+                    controlobject.GetComponent<Control>().vec3 = hit.point;
+                    controlobject.GetComponent<Control>().StartCoroutine("UntilArrive");
 
-                controlisenable = false;
-                controlobject = null;
+                    controlisenable = false;
+                    controlobject = null;
+                }
             }
             
         }

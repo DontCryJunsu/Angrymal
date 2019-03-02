@@ -26,12 +26,9 @@ public class AnimationScript : MonoBehaviour {
     private float scaleTimer;
 
 	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+// Update is called once per frame
+void Update () {
 
        
         
@@ -85,4 +82,14 @@ public class AnimationScript : MonoBehaviour {
             }
         }
 	}
+
+    public void  setYellow()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.yellow;
+    }
+
+    public void setCyan()
+    {
+        GetComponent<MeshRenderer>().material.color = Color.cyan;
+    }
 }

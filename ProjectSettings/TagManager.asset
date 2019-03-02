@@ -18,6 +18,8 @@ TagManager:
   - ship
   - redattack
   - blueattack
+  - Unduck
+  - duck
   layers:
   - Default
   - TransparentFX

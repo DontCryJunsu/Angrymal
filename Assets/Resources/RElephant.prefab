@@ -402,7 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6311673311958522931}
-  - component: {fileID: 6311673311958522933}
+  - component: {fileID: 7498762592042417107}
   - component: {fileID: 6311673311958522932}
   - component: {fileID: 6311673311958522935}
   - component: {fileID: 6311673311958522934}
@@ -439,7 +439,7 @@ Transform:
   m_Father: {fileID: 6311673312526366785}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &6311673311958522933
+--- !u!54 &7498762592042417107
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -488,7 +488,7 @@ NavMeshAgent:
   m_AutoRepath: 1
   m_Height: 200
   m_BaseOffset: 0
-  m_WalkableMask: 4294967295
+  m_WalkableMask: 1
   m_ObstacleAvoidanceType: 4
 --- !u!114 &6311673311958522934
 MonoBehaviour:
@@ -538,8 +538,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 6311673311958522931}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &6311673311958522928
@@ -765,8 +765,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 6311673312526366785}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!1 &6311673312616144586
@@ -1173,16 +1173,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6311673311958522931}
     m_Modifications:
-    - target: {fileID: 2047965080061858484, guid: b0556b7fb19dcc64fb1e4757ba795a1f,
-        type: 3}
-      propertyPath: m_Name
-      value: BeveledStar
-      objectReference: {fileID: 0}
-    - target: {fileID: 2047965080061858484, guid: b0556b7fb19dcc64fb1e4757ba795a1f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2046443060620436726, guid: b0556b7fb19dcc64fb1e4757ba795a1f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1252,6 +1242,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 458.98657
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047965080061858484, guid: b0556b7fb19dcc64fb1e4757ba795a1f,
+        type: 3}
+      propertyPath: m_Name
+      value: BeveledStar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2047965080061858484, guid: b0556b7fb19dcc64fb1e4757ba795a1f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0556b7fb19dcc64fb1e4757ba795a1f, type: 3}

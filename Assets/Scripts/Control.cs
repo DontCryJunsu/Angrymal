@@ -12,20 +12,22 @@ public class Control : MonoBehaviour
     {
         if (PhotonNetwork.isMasterClient)
         {
-            if (tag == "redcharacter")
-            {
-                controling = true; //컨트롤 시작
-                StartCoroutine("ControlTime");
+            if (tag == "redcharacter" && controling == false && Camera.main.GetComponent<ControlManager>().controlisenable == false)
+            {   
                 Star.SetActive(true);
+                Star.GetComponent<AnimationScript>().setYellow();
+                StartCoroutine("ControlTime");
+                controling = true; //컨트롤 시작
             }
         }
         else
         {
-            if (tag == "bluecharacter")
+            if (tag == "bluecharacter" && controling == false && Camera.main.GetComponent<ControlManager>().controlisenable == false)
             {
-                controling = true;
-                StartCoroutine("ControlTime");
                 Star.SetActive(true);
+                Star.GetComponent<AnimationScript>().setYellow();
+                StartCoroutine("ControlTime");
+                controling = true;
             }
         }
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -46,9 +48,9 @@ public class Control : MonoBehaviour
          
         yield return new WaitForSeconds(0.3f);
          
-            StartCoroutine("UntilArrive");
+  
         Camera.main.GetComponent<ControlManager>().controlobject = this.gameObject;  //카메라에 있는 변수들 조정
-        //Camera.main.GetComponent<ControlManager>().GiveObject(this.gameObject);
+   
         Camera.main.GetComponent<ControlManager>().controlisenable = true;  //카메라에 있는 변수들 조정
          
     }
@@ -56,6 +58,7 @@ public class Control : MonoBehaviour
     IEnumerator UntilArrive()  //컨트롤 목표 지점에 도착했을때 컨트롤 끝나게 해줌
     {
         controling = true;
+        Star.GetComponent<AnimationScript>().setCyan();
         while (controling == true)
         {
             yield return null;
