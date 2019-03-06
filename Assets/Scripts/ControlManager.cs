@@ -22,19 +22,17 @@ public class ControlManager : MonoBehaviour
             {
                 if (hit.collider.tag == "Untagged" || hit.collider.tag == "redteam" || hit.collider.tag == "blueteam")
                 {
+                    MouseGage.cool = 0;
                     controlobject.GetComponent<DefaultMove>().StopCoroutine("CheckCommand"); //CheckCommand 멈춤
                     controlobject.GetComponent<DefaultMove>().StopCoroutine(controlobject.GetComponent<DefaultMove>().runningact); //runningact 멈춤
                     controlobject.GetComponent<DefaultMove>().nav.destination = hit.point; //목표지점 변경
                     controlobject.GetComponent<Control>().vec3 = hit.point;
                     controlobject.GetComponent<Control>().StartCoroutine("UntilArrive");
-
                     controlisenable = false;
                     controlobject = null;
                 }
             }
-            
         }
-
     }
 
     IEnumerator ControlCoroutine()
@@ -53,7 +51,7 @@ public class ControlManager : MonoBehaviour
                     {
                         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                         RaycastHit hit;
-
+                        MouseGage.cool = 0;
                         controlisenable = false;
                         controlobject = null;
 

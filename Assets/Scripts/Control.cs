@@ -10,26 +10,30 @@ public class Control : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (PhotonNetwork.isMasterClient)
+        if(MouseGage.cool>0.9f)
         {
-            if (tag == "redcharacter" && controling == false && Camera.main.GetComponent<ControlManager>().controlisenable == false)
-            {   
-                Star.SetActive(true);
-                Star.GetComponent<AnimationScript>().setYellow();
-                StartCoroutine("ControlTime");
-                controling = true; //컨트롤 시작
-            }
-        }
-        else
-        {
-            if (tag == "bluecharacter" && controling == false && Camera.main.GetComponent<ControlManager>().controlisenable == false)
+            if (PhotonNetwork.isMasterClient)
             {
-                Star.SetActive(true);
-                Star.GetComponent<AnimationScript>().setYellow();
-                StartCoroutine("ControlTime");
-                controling = true;
+                if (tag == "redcharacter" && controling == false && Camera.main.GetComponent<ControlManager>().controlisenable == false)
+                {
+                    Star.SetActive(true);
+                    Star.GetComponent<AnimationScript>().setYellow();
+                    StartCoroutine(ControlTime());
+                    controling = true; //컨트롤 시작
+                }
+            }
+            else
+            {
+                if (tag == "bluecharacter" && controling == false && Camera.main.GetComponent<ControlManager>().controlisenable == false)
+                {
+                    Star.SetActive(true);
+                    Star.GetComponent<AnimationScript>().setYellow();
+                    StartCoroutine(ControlTime());
+                    controling = true;
+                }
             }
         }
+
         //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         //RaycastHit hit;
         //if (Physics.Raycast(ray, out hit))
@@ -45,7 +49,6 @@ public class Control : MonoBehaviour
     IEnumerator ControlTime()
     {
         Debug.Log("눌러졌습니다!!!!!!!!!");
-         
         yield return new WaitForSeconds(0.3f);
          
   
